@@ -1,0 +1,201 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#00000000"
+                android:gravity="bottom">
+
+    <LinearLayout
+        android:id="@+id/pay_input"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/white"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#e1dfdf"/>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/pay_title"
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:layout_gravity="center_horizontal"
+                android:gravity="center"
+                android:text="输入密码"
+                android:textColor="@android:color/black"
+                android:textSize="19sp"/>
+
+            <ImageView
+                android:id="@+id/close_keyboard"
+                android:layout_width="45dp"
+                android:layout_height="45dp"
+                android:src="@drawable/close_keyboard_btn"/>
+
+            <RelativeLayout
+                android:id="@+id/rl_info"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/pay_title"
+                android:visibility="gone"
+                android:paddingBottom="10dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_alignParentTop="true"
+                    android:background="#e1dfdf"/>
+
+                <TextView
+                    android:id="@+id/tv_one"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="10dp"
+                    android:text="支付金额："
+                    android:textSize="16dp"/>
+
+                <TextView
+                    android:id="@+id/tv_payMoney"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_toRightOf="@+id/tv_one"
+                    android:text="￥1000.00"
+                    android:textColor="#e54c3c"
+                    android:textSize="16dp"/>
+
+                <TextView
+                    android:id="@+id/tv_two"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/tv_one"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="10dp"
+                    android:text="购买产品："
+                    android:textColor="@color/blueness"
+                    android:textSize="16dp"/>
+
+                <TextView
+                    android:id="@+id/tv_productName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/tv_payMoney"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_toRightOf="@+id/tv_two"
+                    android:text="保险箱转让"
+                    android:textColor="@color/blueness"
+                    android:textSize="16dp"/>
+            </RelativeLayout>
+
+        </RelativeLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#e1dfdf"/>
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:id="@+id/keyboard_parts"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="fill_horizontal"
+                android:orientation="vertical">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="100dp"
+                    android:orientation="vertical">
+
+                    <com.jinr.graph_view.PasswordInputView
+                        android:id="@+id/eta_pwd"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="32dp"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginRight="20dp"
+                        android:layout_marginTop="19dp"
+                        android:cursorVisible="false"
+                        android:focusable="true"
+                        android:focusableInTouchMode="true"
+                        android:inputType="number"
+                        android:maxLength="6"/>
+
+                    <TextView
+                        android:id="@+id/forgot_password"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentBottom="true"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginBottom="7dp"
+                        android:layout_marginRight="20dp"
+                        android:text="@string/forgot_passwd"
+                        android:textColor="@color/blue_color"
+                        android:textSize="14sp"/>
+                </RelativeLayout>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="1px"
+                    android:background="#e1dfdf"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="1px"
+                    android:background="#e1dfdf"/>
+
+                <com.jinr.graph_view.XKeyBoardView
+                android:id="@+id/keyboard_view"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:background="@android:color/white"
+                android:focusable="true"
+                android:focusableInTouchMode="true"/>
+            </LinearLayout>
+
+            <RelativeLayout
+                android:id="@+id/loading_page"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@android:color/white"
+                android:gravity="center_vertical|center_horizontal"
+                android:visibility="gone">
+
+                <ProgressBar
+                    android:id="@+id/progressbar"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:indeterminateBehavior="repeat"
+                    android:indeterminateDrawable="@drawable/progress"
+                    android:indeterminateDuration="850"
+                    android:indeterminateOnly="true"
+                    android:visibility="invisible"/>
+
+                <TextView
+                    android:id="@+id/load_txt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/progressbar"
+                    android:layout_marginTop="5dp"
+                    android:text="加载中..."
+                    android:textColor="#1f7ee9"
+                    android:textSize="14sp"/>
+            </RelativeLayout>
+        </FrameLayout>
+    </LinearLayout>
+
+</RelativeLayout>

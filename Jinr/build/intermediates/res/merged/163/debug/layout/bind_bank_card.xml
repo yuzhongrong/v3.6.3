@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/gray_about_bg"
+    android:orientation="vertical" >
+
+    <!-- title布局 -->
+
+    <include
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        layout="@layout/title" />
+
+    <View style="@style/line" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:scrollbars="vertical" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <View
+                style="@style/line"
+                android:layout_marginTop="20dp" />
+
+            <!-- 开户银行 -->
+
+            <RelativeLayout
+                android:id="@+id/bind_bank_rl2"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/all_menu_height"
+                android:background="@drawable/back_select" >
+
+                <ImageView
+                    android:id="@+id/the_more_img3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="@dimen/all_left_offset"
+                    android:src="@drawable/msg_item_go" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="@dimen/all_left_offset"
+                    android:layout_marginRight="5dp"
+                    android:layout_toLeftOf="@id/the_more_img3" >
+
+                    <TextView
+                        style="@style/sec"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginTop="0dp"
+                        android:text="@string/bank_card_city"
+                        android:textColor="@color/gray_text_dark"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/tv_city"
+                        style="@style/sec"
+                        android:layout_width="match_parent"
+                        android:layout_marginLeft="15dp"
+                        android:layout_marginTop="0dp"
+                        android:hint="@string/select_bank_city"
+                        android:textColor="@color/black"
+                        android:textColorHint="@color/gray_bg_btn"
+                        android:textSize="15sp" />
+                </LinearLayout>
+            </RelativeLayout>
+
+            <View style="@style/line" />
+
+            <LinearLayout
+                android:id="@+id/bind_bank_layout"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/all_menu_height"
+                android:background="@drawable/back_select"
+                android:gravity="center_vertical" >
+
+                <TextView
+                    style="@style/sec"
+                    android:layout_marginLeft="@dimen/all_left_offset"
+                    android:layout_marginTop="0dp"
+                    android:text="卡类型"
+                    android:textColor="@color/gray_text_dark"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/tv_bank"
+                    style="@style/sec"
+                    android:layout_marginLeft="32dp"
+                    android:layout_marginTop="0dp"
+                    android:hint="@string/select_card_type"
+                    android:textColor="@color/black"
+                    android:textColorHint="@color/gray_bg_btn" />
+            </LinearLayout>
+
+            <View style="@style/line" />
+
+            <!-- 卡号 -->
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/all_menu_height"
+                android:background="@color/base_menu_bg" >
+
+                <TextView
+                    android:id="@+id/bind_bank_tv2"
+                    style="@style/sec"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="@dimen/all_left_offset"
+                    android:layout_marginTop="13dp"
+                    android:text="@string/bank_card_no"
+                    android:textColor="@color/gray_text_dark"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+                <com.jinr.core.utils.MyEditText
+                    android:id="@+id/bind_bank_et2"
+                    style="@style/edit_style"
+                    android:layout_marginLeft="38dp"
+                    android:layout_toRightOf="@id/bind_bank_tv2"
+                    android:gravity="left|center_vertical"
+                    android:hint="@string/hint_card"
+                    android:inputType="number"
+                    android:maxLength="25"
+                    android:textColor="@color/black"
+                    android:textColorHint="@color/gray_bg_btn" />
+            </RelativeLayout>
+
+            <View style="@style/line" />
+
+            <!-- 线条 -->
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingTop="10dp" >
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:src="@drawable/ic_info" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="8dp"
+                    android:text="@string/bind_card_tip"
+                    android:textColor="@color/main_out_down_text_color"
+                    android:textSize="14sp" />
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/bind_bank_submit"
+                style="@style/btn5_style"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:background="@drawable/btn_gray_bg"
+                android:text="@string/next"
+                android:textColor="@color/white" />
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

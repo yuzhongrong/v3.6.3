@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+<LinearLayout android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:background="@color/white">
+    <View
+        style="@style/line_dialog"
+        android:padding="5dp" />
+
+    <TextView
+        android:id="@+id/all_record"
+        android:layout_width="84dp"
+        android:layout_height="32dp"
+        android:layout_marginLeft="19dp"
+        android:layout_marginTop="24dp"
+        android:background="@drawable/pop_label_selected"
+        android:gravity="center"
+        android:text="@string/all_record"
+        android:textColor="@color/white"
+        android:textSize="14sp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="10dp" >
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="1px"
+            android:layout_gravity="center_vertical"
+            android:layout_margin="5dp"
+            android:layout_weight="2"
+            android:background="@color/one_dp_line" />
+
+        <TextView
+            style="@style/text_style"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="@string/turn_in"
+            android:textColor="@color/font_color"
+            android:textSize="14sp" />
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="1px"
+            android:layout_gravity="center_vertical"
+            android:layout_margin="5dp"
+            android:layout_weight="2"
+            android:background="@color/one_dp_line" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:baselineAligned="false"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="19dp"
+        android:orientation="horizontal" >
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical" >
+
+            <TextView
+                android:id="@+id/all_turn_in"
+                android:layout_width="84dp"
+                android:layout_height="32dp"
+                android:background="@drawable/pop_label"
+                android:gravity="center"
+                android:text="@string/all"
+                android:textColor="@color/redbag_black"
+                android:textSize="15sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical" >
+
+            <TextView
+                android:id="@+id/current_turn_in"
+                android:layout_width="84dp"
+                android:layout_height="32dp"
+                android:background="@drawable/pop_label"
+                android:gravity="center"
+                android:text="@string/current"
+                android:textColor="@color/redbag_black"
+                android:textSize="15sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical" >
+
+            <TextView
+                android:id="@+id/regular_turn_in"
+                android:layout_width="84dp"
+                android:layout_height="32dp"
+                android:background="@drawable/pop_label"
+                android:gravity="center"
+                android:text="@string/productCommonModel"
+                android:textColor="@color/redbag_black"
+                android:textSize="15sp" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:orientation="horizontal"
+        android:padding="10dp" >
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="1px"
+            android:layout_gravity="center_vertical"
+            android:layout_margin="5dp"
+            android:layout_weight="2"
+            android:background="@color/one_dp_line" />
+
+        <TextView
+            style="@style/text_style"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="@string/turn_out"
+            android:textColor="@color/font_color"
+            android:textSize="14sp" />
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="1px"
+            android:layout_gravity="center_vertical"
+            android:layout_margin="5dp"
+            android:layout_weight="2"
+            android:background="@color/one_dp_line" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:baselineAligned="false"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="19dp"
+        android:orientation="horizontal" >
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical" >
+
+            <TextView
+                android:id="@+id/all_turn_out"
+                android:layout_width="84dp"
+                android:layout_height="32dp"
+                android:background="@drawable/pop_label"
+                android:gravity="center"
+                android:text="@string/all"
+                android:textColor="@color/redbag_black"
+                android:textSize="15sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical" >
+
+            <TextView
+                 android:id="@+id/current_turn_out"
+                android:layout_width="84dp"
+                android:layout_height="32dp"
+                android:background="@drawable/pop_label"
+                android:gravity="center"
+                android:text="@string/current"
+                android:textColor="@color/redbag_black"
+                android:textSize="15sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical" >
+
+            <TextView
+                 android:id="@+id/regular_turn_out"
+                android:layout_width="84dp"
+                android:layout_height="32dp"
+                android:background="@drawable/pop_label"
+                android:gravity="center"
+                android:text="@string/productCommonModel"
+                android:textColor="@color/redbag_black"
+                android:textSize="15sp" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <View
+        style="@style/line_dialog"
+        android:layout_marginTop="25dp"
+        android:padding="5dp" />
+</LinearLayout>
+    <View
+        android:id="@+id/outsider"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#5f504C46" />
+
+</LinearLayout>

@@ -1,0 +1,550 @@
+package com.jinr.core.news;
+
+import android.annotation.SuppressLint;
+import android.content.BroadcastReceiver;
+import android.content.Context;
+import android.content.Intent;
+import android.content.IntentFilter;
+import android.graphics.Bitmap;
+import android.net.Uri;
+import android.net.http.SslError;
+import android.os.Build;
+import android.os.Bundle;
+import android.text.TextUtils;
+import android.view.View;
+import android.view.View.OnClickListener;
+import android.webkit.DownloadListener;
+import android.webkit.SslErrorHandler;
+import android.webkit.WebSettings;
+import android.webkit.WebView;
+import android.webkit.WebViewClient;
+import android.widget.ImageView;
+import android.widget.TextView;
+import android.widget.Toast;
+
+import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
+import com.jinr.core.JinrApp;
+import com.jinr.core.R;
+import com.jinr.core.base.BaseActivity;
+import com.jinr.core.config.Check;
+import com.jinr.core.config.EventBusKey;
+import com.jinr.core.config.UrlConfig;
+import com.jinr.core.dayup.CommonProjectDetailActivity;
+import com.jinr.core.regist.NewLoginActivity;
+import com.jinr.core.trade.purchase.CurrentPurchaseFirstActivity;
+import com.jinr.core.utils.CommonUtil;
+import com.jinr.core.utils.DensityUtil;
+import com.jinr.core.utils.MyDES;
+import com.jinr.core.utils.MyLog;
+import com.jinr.core.utils.MyhttpClient;
+import com.jinr.core.utils.PreferencesUtils;
+import com.jinr.core.utils.ToastUtil;
+import com.jinr.graph_view.ProgressWebView;
+import com.loopj.android.http.AsyncHttpResponseHandler;
+import com.loopj.android.http.RequestParams;
+
+import org.apache.http.Header;
+import org.json.JSONObject;
+import org.simple.eventbus.EventBus;
+import org.simple.eventbus.Subscriber;
+
+import cn.sharesdk.framework.Platform;
+import cn.sharesdk.framework.Platform.ShareParams;
+import cn.sharesdk.framework.ShareSDK;
+import cn.sharesdk.onekeyshare.OnekeyShare;
+import cn.sharesdk.onekeyshare.ShareContentCustomizeCallback;
+import model.BaseModel;
+import model.ProductCommonModel;
+import model.ShareObj;
+import model.UidObj;
+import model.UserBindinfo;
+
+/**
+ * 活动详情和公告详情公用的 WebView 页面，根据 turn 和 id 来加载不同的 WebView @author Ysw created at 2017/3/15 15:58
+ */
+public class ActDetailActivity extends BaseActivity implements OnClickListener, DownloadListener {
+
+    private ImageView title_left_img; // title左边图片
+    private TextView title_center_text; // title标题
+    private String id;
+    private ProgressWebView mWebView;
+    private String turn;
+    private String mUrl;
+    private String tel;
+    private String actType = "";
+    private BroadcastReceiver mRefreshBroadcastReceiver = new BroadcastReceiver() {
+        // 刷新重新进入本页，如8.88活动页登陆成功和转入成功返回
+        @Override
+        public void onReceive(Context context, Intent intent) {
+            String action = intent.getAction();
+            if (action.equals("action.refresh_actdetail")) {
+                refresh();
+            }
+        }
+    };
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_gift_detail);
+        IntentFilter intentFilter = new IntentFilter();
+        intentFilter.addAction("action.refresh_actdetail");
+        registerReceiver(mRefreshBroadcastReceiver, intentFilter);
+        id = getIntent().getStringExtra("id");
+        initData();
+        findViewById();
+        initUI();
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+    }
+
+    @Override
+    public void onClick(View v) {
+        switch (v.getId()) {
+            case R.id.title_left_img:// 左侧图标
+                finish();
+                break;
+            default:
+                break;
+        }
+    }
+
+    @Override
+    protected void initData() {
+        tel = PreferencesUtils.getValueFromSPMap(ActDetailActivity.this, PreferencesUtils.Keys.TEL);
+        PreferencesUtils.putBooleanToSPMap(ActDetailActivity.this, PreferencesUtils.Keys.IS_SETTING_CG, false);
+        try {
+            id = MyDES.encrypt(id);
+            tel = MyDES.encrypt(tel);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        turn = getIntent().getStringExtra("turn");// 1→活动 2→公告
+    }
+
+    @SuppressLint("SetJavaScriptEnabled")
+    @Override
+    protected void findViewById() {
+        title_left_img = (ImageView) findViewById(R.id.title_left_img);
+        title_center_text = (TextView) findViewById(R.id.title_center_text);
+        mWebView = (ProgressWebView) findViewById(R.id.wv_event);
+        mWebView.setWebViewClient(mWebViewClient);
+        mWebView.getSettings().setBuiltInZoomControls(true); // 放大缩放按钮
+        mWebView.getSettings().setJavaScriptEnabled(true);
+        if (Build.VERSION.SDK_INT >= 21) {
+            mWebView.getSettings().setMixedContentMode(WebSettings.MIXED_CONTENT_ALWAYS_ALLOW);
+        }
+        mWebView.setDownloadListener(this);
+        title_left_img.setOnClickListener(this);
+    }
+
+    @Override
+    protected void initUI() {
+        //EventBus.getDefault().register(this);
+        if (turn.equals("1")) {// 活动
+            title_center_text.setText(R.string.act_detail);
+            mUrl = UrlConfig.IP_M + UrlConfig.ACTIVITY_TEL + tel + UrlConfig.ACTIVITY_ID + id;
+        } else if (turn.equals("2")) {// 公告
+            title_center_text.setText(R.string.sys_detail);
+            mUrl = UrlConfig.IP_M + UrlConfig.NOTICE_DETAIL + id;
+        }
+        mWebView.loadUrl(mUrl);
+    }
+
+    public void refresh() {
+        tel = PreferencesUtils.getValueFromSPMap(ActDetailActivity.this, PreferencesUtils.Keys.TEL);
+        try {
+            tel = MyDES.encrypt(tel);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        mUrl = UrlConfig.IP_M + UrlConfig.ACTIVITY_TEL + tel + UrlConfig.ACTIVITY_ID + id;
+        mWebView.setWebViewClient(mWebViewClient);
+        mWebView.loadUrl(mUrl);
+    }
+
+    @Override
+    protected void setListener() {
+    }
+
+    private WebViewClient mWebViewClient = new WebViewClient() {// 第一个页面
+        @Override
+        public boolean shouldOverrideUrlLoading(WebView view, String url) {
+            super.onLoadResource(view, url);
+            MyLog.e(TAG, "ActDetailActivity.shouldOverrideUrlLoading：" + url);
+            try {
+                if (url.contains("tmast://appdetails")) {
+                    return super.shouldOverrideUrlLoading(view, url);
+                }
+                if (url.startsWith("mailto:") || url.startsWith("geo:") || url.startsWith("tel:")) {
+                    Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(url));
+                    startActivity(intent);
+                    return true;
+                }
+                if (url.contains("iosaction::Share:")) {
+                    String preStr = "iosaction::Share:";
+                    url = url.replaceAll(preStr, "");
+                    if (url != null) {
+                        Intent intent = null;
+                        if (url.contains("gozc")) {// 去注册
+                            String parm[] = url.split("&");
+                            String event_key = "";
+                            switch (parm.length) {
+                                case 2:
+                                    event_key = parm[2];
+                                    break;
+                                default:
+                                    break;
+                            }
+                            intent = new Intent(ActDetailActivity.this, NewLoginActivity.class);
+                            intent.putExtra("event_key", event_key);
+                            startActivity(intent);
+                            PreferencesUtils.Keys.BACK_TO_ACT = 1;
+                        } else if (url.contains("gotz_regular")) {
+                            String parm[] = url.split("&");
+                            String id = "";
+                            String event_key = "";
+                            String goods_type = "";
+                            switch (parm.length) {
+                                case 2:
+                                    id = parm[1];
+                                    break;
+                                case 3:
+                                    id = parm[1];
+                                    event_key = parm[2];
+                                    break;
+                                case 4:
+                                    id = parm[1];
+                                    event_key = parm[2];
+                                    goods_type = parm[3];
+                                    break;
+                                default:
+                                    break;
+                            }
+                            if (Check.is_login(ActDetailActivity.this)) {// 已登录
+                                try {
+                                    if (!CommonUtil.isFastDoubleClick()) {
+                                        intent = new Intent(ActDetailActivity.this, CommonProjectDetailActivity.class);
+                                        intent.putExtra("assetid", id);
+                                        intent.putExtra("event_key", event_key);
+                                        intent.putExtra("good_type", goods_type);
+                                        MyLog.e(TAG, "shouldOverrideUrlLoading: goods_type=" + goods_type);
+                                        startActivity(intent);
+                                        finish();
+                                    }
+                                } catch (Exception e) {
+                                    e.printStackTrace();
+                                }
+                            } else {// 未登录
+                                PreferencesUtils.Keys.BACK_TO_ACT = 1;
+                                intent = new Intent(ActDetailActivity.this, NewLoginActivity.class);
+                                intent.putExtra("event_key", event_key);
+                                startActivity(intent);
+                            }
+                        } else if (url.contains("gototz_daily_gain")) {
+                            String parm[] = url.split("&");
+                            String id = "";
+                            String event_key = "";
+                            String goods_type = "";
+                            switch (parm.length) {
+                                case 2:
+                                    id = parm[1];
+                                    break;
+                                case 3:
+                                    id = parm[1];
+                                    event_key = parm[2];
+                                    break;
+                                case 4:
+                                    id = parm[1];
+                                    event_key = parm[2];
+                                    goods_type = parm[3];
+                                    break;
+                                default:
+                                    break;
+                            }
+                            if (Check.is_login(ActDetailActivity.this)) {// 已登录
+                                try {
+                                    if (!CommonUtil.isFastDoubleClick()) {
+                                        intent = new Intent(ActDetailActivity.this, CommonProjectDetailActivity.class);
+                                        intent.putExtra("assetid", id);
+                                        intent.putExtra("event_key", event_key);
+                                        intent.putExtra("good_type", goods_type);
+                                        startActivity(intent);
+                                        finish();
+                                    }
+                                } catch (Exception e) {
+                                    e.printStackTrace();
+                                }
+                            } else {// 未登录
+                                PreferencesUtils.Keys.BACK_TO_ACT = 1;
+                                intent = new Intent(ActDetailActivity.this, NewLoginActivity.class);
+                                intent.putExtra("event_key", event_key);
+                                startActivity(intent);
+                            }
+                        } else if (url.contains("gotz")) {// 去投资
+                            String parm[] = url.split("&");
+                            String event_key = "";
+                            switch (parm.length) {
+                                case 2:
+                                    event_key = parm[2];
+                                    break;
+                                default:
+                                    break;
+                            }
+                            if (Check.is_login(ActDetailActivity.this)) {// 已登录
+                                try {
+                                    if (!CommonUtil.isFastDoubleClick()) {
+                                        PreferencesUtils.Keys.BACK_TO_ACT = 1;
+                                        sendVerifyuser(event_key);
+                                    }
+                                } catch (Exception e) {
+                                    e.printStackTrace();
+                                }
+                            } else {// 未登录
+                                PreferencesUtils.Keys.BACK_TO_ACT = 1;
+                                intent = new Intent(ActDetailActivity.this, NewLoginActivity.class);
+                                intent.putExtra("event_key", event_key);
+                                startActivity(intent);
+                            }
+                        } else if (url.contains("fenxiang")) {// share提示
+                            url = url.replaceAll("&fenxiang", "");
+                            if (PreferencesUtils.getValueFromSPMap(ActDetailActivity.this, PreferencesUtils.Keys.TEL) != null
+                                    && PreferencesUtils.getValueFromSPMap(ActDetailActivity.this, PreferencesUtils.Keys.TEL) != "") {
+                                actType = url;
+                                try {
+                                    if (!CommonUtil.isFastDoubleClick()) {
+                                        sendShare();
+                                    }
+                                } catch (Exception e) {
+                                    e.printStackTrace();
+                                }
+                            } else {
+                                Toast.makeText(ActDetailActivity.this, R.string.please_login, Toast.LENGTH_SHORT).show();
+                            }
+                        } else if (url.contains("reload_jinr966")) {
+                            if (DensityUtil.isNetworkAvailable(ActDetailActivity.this)) {
+                                mWebView.loadUrl(mUrl);
+                            } else {
+                                ToastUtil.show(ActDetailActivity.this, "网络异常,请检查网络");
+                            }
+                            return true;
+                        } else {
+                            mWebView.loadUrl(url);
+                        }
+                    }
+                } else {
+                    mWebView.loadUrl(url);
+                }
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+            return true;
+        }
+
+        // 在加载页面资源时会调用，每一个资源（比如图片）的加载都会调用一次。
+        @Override
+        public void onLoadResource(WebView view, String url) {
+            super.onLoadResource(view, url);
+        }
+
+        @Override
+        public void onPageStarted(WebView view, String url, Bitmap favicon) {
+            super.onPageStarted(view, url, favicon);
+        }
+
+        // 在页面加载结束时调用。
+        @Override
+        public void onPageFinished(WebView view, String url) {
+            super.onPageFinished(view, url);
+        }
+
+        @Override
+        public void onReceivedError(WebView view, int errorCode, String description, String failingUrl) {
+            super.onReceivedError(view, errorCode, description, failingUrl);
+            mWebView.loadUrl("file:///android_asset/load_error.html");
+        }
+
+        @Override
+        public void onReceivedSslError(WebView view, SslErrorHandler handler, SslError error) {
+            handler.proceed();
+        }
+    };
+
+    protected void sendVerifyuser(final String evenKey) throws Exception {
+        RequestParams params = new RequestParams();
+        String uid = PreferencesUtils.getValueFromSPMap(ActDetailActivity.this, PreferencesUtils.Keys.UID);
+        UidObj obj = new UidObj(uid);
+        String desStr = MyDES.encrypt(new Gson().toJson(obj));
+        params.put("cipher", desStr);
+        MyhttpClient.desPost(UrlConfig.USER_BANKINFO, params, new AsyncHttpResponseHandler() {
+
+            @Override
+            public void onStart() {
+                super.onStart();
+            }
+
+            @Override
+            public void onFinish() {
+                super.onFinish();
+            }
+
+            @Override
+            public void onFailure(int arg0, Header[] arg1, byte[] arg2, Throwable arg3) {
+                super.onFailure(arg0, arg1, arg2, arg3);
+                ToastUtil.show(ActDetailActivity.this, R.string.default_error);
+            }
+
+            @Override
+            public void onSuccess(int arg0, Header[] arg1, byte[] arg2) {
+                super.onSuccess(arg0, arg1, arg2);
+                String response;
+                try {
+                    response = new String(arg2, "UTF-8");
+                    JSONObject jsonObject = new JSONObject(response);
+                    String cipher = jsonObject.getString("cipher");
+                    String desc = MyDES.decrypt(cipher);
+                    if (TextUtils.isEmpty(desc))
+                        return;
+                    BaseModel<UserBindinfo> result = new Gson().fromJson(desc, new TypeToken<BaseModel<UserBindinfo>>() {
+                    }.getType());
+                    if (result.isSuccess()) {
+                        UserBindinfo state = result.getData();
+                        if (state == null)
+                            return;
+                        JinrApp.instance().state_bankBind = Integer.valueOf(state.getState_bankBind());
+                        JinrApp.instance().state_tradePassword = Integer.valueOf(state.getState_tradePassword());
+                        PreferencesUtils.putIntToSPMap(ActDetailActivity.this, PreferencesUtils.Keys.IS_BIND_CARD, Integer.valueOf(state.getState_bankBind()));
+                        PreferencesUtils.putIntToSPMap(ActDetailActivity.this, PreferencesUtils.Keys.IS_SET_TRADE_PWD, Integer.valueOf(state.getState_tradePassword()));
+                        // 跳转至转入页面
+                        ProductCommonModel productCommonModel = new ProductCommonModel();
+                        productCommonModel.setCode("2015");
+                        productCommonModel.setAssetid("2015");
+                        productCommonModel.setName("活期");
+                        productCommonModel.setEventKey(evenKey);
+                        Intent intent = new Intent();
+                        intent.putExtra("regular", productCommonModel);
+                        intent.setClass(ActDetailActivity.this, CurrentPurchaseFirstActivity.class);
+                        startActivity(intent);
+                    } else {
+                        ToastUtil.show(ActDetailActivity.this, result.getMsg());
+                    }
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            }
+        });
+    }
+
+    // 分享
+    private void sendShare() throws Exception {
+        RequestParams params = new RequestParams();
+        JSONObject cipher = new JSONObject();
+        cipher.put("uid", PreferencesUtils.getValueFromSPMap(ActDetailActivity.this, PreferencesUtils.Keys.UID));
+        cipher.put("name", actType);
+        params.put("cipher", MyDES.encrypt(cipher.toString()));
+        MyhttpClient.desPost(UrlConfig.ACT_SHARE, params, new AsyncHttpResponseHandler() {
+
+            @Override
+            public void onStart() {
+                super.onStart();
+                showWaittingDialog(ActDetailActivity.this);
+            }
+
+            @Override
+            public void onFailure(int arg0, Header[] arg1, byte[] arg2, Throwable arg3) {
+                super.onFailure(arg0, arg1, arg2, arg3);
+                dismissWaittingDialog();
+                ToastUtil.show(ActDetailActivity.this, R.string.default_error);
+            }
+
+            @Override
+            public void onSuccess(int arg0, Header[] arg1, byte[] arg2) {
+                super.onSuccess(arg0, arg1, arg2);
+                dismissWaittingDialog();
+                try {
+                    String response = new String(arg2, "UTF-8");
+                    response = CommonUtil.transResponse(response);
+                    JSONObject jsb = new JSONObject(response);
+                    String cipher = jsb.getString("cipher");
+                    cipher = MyDES.decrypt(cipher);
+                    JSONObject object = new JSONObject(cipher);
+                    BaseModel<ShareObj> result = new Gson().fromJson(cipher, new TypeToken<BaseModel<ShareObj>>() {
+                    }.getType());
+                    if (result.isSuccess()) {
+                        ShareObj objdata = result.getData();
+                        if (objdata == null) {
+                            return;
+                        }
+                        showShare(objdata);
+                    } else {
+                        ToastUtil.show(ActDetailActivity.this, result.getMsg());
+                    }
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            }
+        });
+    }
+
+    private void showShare(final ShareObj obj) {
+        PreferencesUtils.Keys.SHARE_INIT = true;
+        PreferencesUtils.Keys.ACT_TYPE = actType;
+        ShareSDK.initSDK(ActDetailActivity.this);
+        OnekeyShare oks = new OnekeyShare(OnekeyShare.SHARE_WEEK);
+        // 关闭sso授权
+        oks.disableSSOWhenAuthorize();
+        // 分享时Notification的图标和文字 2.5.9以后的版本不调用此方法
+        // title标题，印象笔记、邮箱、信息、微信、人人网和QQ空间使用
+        oks.setTitle(obj.getTitle());
+        // titleUrl是标题的网络链接，仅在人人网和QQ空间使用
+        oks.setTitleUrl(obj.getUrl());
+        oks.setUrl(obj.getUrl());
+        // APP更多分享：微信好友、朋友圈、短信
+        oks.addHiddenPlatform("SinaWeibo");
+        oks.setShareContentCustomizeCallback(new ShareContentCustomizeCallback() {
+
+            @Override
+            public void onShare(Platform platform, ShareParams paramsToShare) {
+                if ("ShortMessage".equals(platform.getName())) {
+                    String text = obj.getSharetextsm() + obj.getUrlsm();
+                    paramsToShare.setText(text);
+                } else if ("Wechat".equals(platform.getName())) {
+                    PreferencesUtils.Keys.CLICK_WX = true;
+                } else if ("WechatMoments".equals(platform.getName())) {
+                    PreferencesUtils.Keys.CLICK_WX = false;
+                }
+            }
+        });
+        oks.setSiteUrl(obj.getUrl());
+        // text是分享文本，所有平台都需要这个字段
+        oks.setText(obj.getSharetext());
+        oks.setImageUrl(obj.getLogo());// 确保SDcard下面存在此张图片
+        // 启动分享GUI
+        oks.show(ActDetailActivity.this);
+    }
+
+    @Override
+    public void onDownloadStart(String arg0, String arg1, String arg2, String arg3, long arg4) {
+        Uri uri = Uri.parse(mUrl);
+        Intent intent = new Intent(Intent.ACTION_VIEW, uri);
+        startActivity(intent);
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        unregisterReceiver(mRefreshBroadcastReceiver);
+    }
+
+    // 登录成功后获得通知进行未读信息数接口的刷新
+    @Subscriber(tag = EventBusKey.AD_GOTO_APP)
+    public void Login(boolean data) {
+        if (data == true) {
+            ActDetailActivity.this.finish();
+        }
+    }
+}

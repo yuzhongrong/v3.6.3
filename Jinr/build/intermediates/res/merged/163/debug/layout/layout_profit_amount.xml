@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 累计收益 -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/main_out_back_color"
+    android:focusable="true"
+    android:focusableInTouchMode="true"
+    android:orientation="vertical" >
+
+    <!-- title布局 -->
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/title_height"
+        android:background="@color/white" >
+
+        <!-- 侧滑按钮 -->
+
+        <ImageView
+            android:id="@+id/title_left_img"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/return_btn_auto" />
+
+
+        <TextView
+            android:id="@+id/title_center_text"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_centerInParent="true"
+            android:layout_gravity="center_horizontal"
+            android:gravity="center_vertical"
+            android:textColor="@color/title_security"
+            android:textSize="16sp"
+            />
+
+        <ImageView
+            android:id="@+id/nav_up"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_centerVertical="true"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="5dp"
+            android:paddingRight="10dp"
+            android:layout_toRightOf="@id/title_center_text"
+            android:src="@drawable/down_icon" />
+    </RelativeLayout>
+
+    <View style="@style/line" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:overScrollMode="never"
+        android:scrollbars="none" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/blue_btn_bg"
+                android:orientation="vertical" >
+
+                <TextView
+                    android:id="@+id/tv_avg_"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="left|top"
+                    android:padding="10dp"
+                    android:textColor="@color/white"
+                    android:textSize="14sp"
+                     />
+
+                <TextView
+                    android:id="@+id/tv_y_total"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:gravity="center"
+                    android:paddingBottom="20dp"
+                    android:textColor="@color/white"
+                    android:textSize="50sp" />
+            </LinearLayout>
+
+            <com.jinr.core.ui.MyListView
+                android:id="@+id/lv_profit_data"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_marginTop="7dp"
+                android:layout_weight="1"
+                android:background="#F7F7F7"
+                android:cacheColorHint="@color/translate"
+                android:divider="@null"
+                android:listSelector="@color/translate"
+                android:overScrollMode="never"
+                android:paddingBottom="5dp"
+                android:scrollbars="none" >
+            </com.jinr.core.ui.MyListView>
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

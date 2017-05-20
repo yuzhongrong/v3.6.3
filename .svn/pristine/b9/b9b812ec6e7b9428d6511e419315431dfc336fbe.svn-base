@@ -1,0 +1,200 @@
+package com.jinr.core.trade.purchase.product;
+
+import android.annotation.SuppressLint;
+import android.os.Bundle;
+import android.support.v4.app.Fragment;
+import android.text.TextUtils;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.LinearLayout;
+import android.widget.TextView;
+
+import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
+import com.jinr.core.MainActivity;
+import com.jinr.core.R;
+import com.jinr.core.config.EventBusKey;
+import com.jinr.core.utils.PreferencesUtils;
+
+import org.simple.eventbus.EventBus;
+import org.simple.eventbus.Subscriber;
+
+import java.util.ArrayList;
+
+import model.BaseModel;
+import model.MainAboutInfo;
+import model.MainAboutList;
+
+public class MainImageFragment extends Fragment {
+
+    private LinearLayout ll_guideOne;
+    private LinearLayout ll_guideTwo;
+    private LinearLayout ll_guideThree;
+    private LinearLayout ll_guideFour;
+    private LinearLayout ll_guideFive;
+    private TextView tv_guideOne;
+    private TextView tv_guideOne_first;
+    private TextView tv_guideOne_second;
+    private TextView tv_guideTwo;
+    private TextView tv_guideTwo_first;
+    private TextView tv_guideTwo_second;
+    private TextView tv_guideThree;
+    private TextView tv_guideThree_first;
+    private TextView tv_guideThree_second;
+    private TextView tv_guideFour;
+    private TextView tv_guideFour_first;
+    private TextView tv_guideFour_second;
+    private TextView tv_guideFive;
+    private TextView tv_guideFive_first;
+    private TextView tv_guideFive_second;
+    private TextView tv_guideTwo_three;
+    private TextView tv_guideFour_three;
+    private TextView tv_guideFive_three;
+    private TextView tv_guideFive_top;
+    private View mLayout;
+
+    private int positon;
+
+    @SuppressLint("ValidFragment")
+    public MainImageFragment() {
+
+    }
+
+    @SuppressLint("ValidFragment")
+    public MainImageFragment(int p) {
+        this.positon = p;
+        EventBus.getDefault().register(this);
+    }
+
+    @Override
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+        mLayout = inflater.inflate(R.layout.fragment_main_image, container, false);
+
+        ll_guideOne = (LinearLayout) mLayout.findViewById(R.id.ll_guideOne);
+        ll_guideTwo = (LinearLayout) mLayout.findViewById(R.id.ll_guideTwo);
+        ll_guideThree = (LinearLayout) mLayout.findViewById(R.id.ll_guideThree);
+        ll_guideFour = (LinearLayout) mLayout.findViewById(R.id.ll_guideFour);
+        ll_guideFive = (LinearLayout) mLayout.findViewById(R.id.ll_guideFive);
+        tv_guideOne = (TextView) mLayout.findViewById(R.id.tv_guideOne);
+        tv_guideOne_first = (TextView) mLayout.findViewById(R.id.tv_guideOne_first);
+        tv_guideOne_second = (TextView) mLayout.findViewById(R.id.tv_guideOne_second);
+        tv_guideTwo = (TextView) mLayout.findViewById(R.id.tv_guideTwo);
+        tv_guideTwo_first = (TextView) mLayout.findViewById(R.id.tv_guideTwo_first);
+        tv_guideTwo_second = (TextView) mLayout.findViewById(R.id.tv_guideTwo_second);
+        tv_guideTwo_three = (TextView) mLayout.findViewById(R.id.tv_guideTwo_three);
+        tv_guideThree = (TextView) mLayout.findViewById(R.id.tv_guideThree);
+        tv_guideThree_first = (TextView) mLayout.findViewById(R.id.tv_guideThree_first);
+        tv_guideThree_second = (TextView) mLayout.findViewById(R.id.tv_guideThree_second);
+        tv_guideFour = (TextView) mLayout.findViewById(R.id.tv_guideFour);
+        tv_guideFour_first = (TextView) mLayout.findViewById(R.id.tv_guideFour_first);
+        tv_guideFour_second = (TextView) mLayout.findViewById(R.id.tv_guideFour_second);
+        tv_guideFour_three = (TextView) mLayout.findViewById(R.id.tv_guideFour_three);
+        tv_guideFive = (TextView) mLayout.findViewById(R.id.tv_guideFive);
+        tv_guideFive_first = (TextView) mLayout.findViewById(R.id.tv_guideFive_first);
+        tv_guideFive_second = (TextView) mLayout.findViewById(R.id.tv_guideFive_second);
+        tv_guideFive_three = (TextView) mLayout.findViewById(R.id.tv_guideFive_three);
+        tv_guideFive_top = (TextView) mLayout.findViewById(R.id.tv_guideFive_top);
+        tv_guideFive_top.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                MainActivity.instance.scrollTop();
+            }
+        });
+        ll_guideOne.setVisibility(View.GONE);
+        ll_guideTwo.setVisibility(View.GONE);
+        ll_guideThree.setVisibility(View.GONE);
+        ll_guideFour.setVisibility(View.GONE);
+        ll_guideFive.setVisibility(View.GONE);
+        switch (positon) {
+            case 0:
+                ll_guideOne.setVisibility(View.VISIBLE);
+                break;
+            case 1:
+                ll_guideTwo.setVisibility(View.VISIBLE);
+                break;
+            case 2:
+                ll_guideThree.setVisibility(View.VISIBLE);
+                break;
+            case 3:
+                ll_guideFour.setVisibility(View.VISIBLE);
+                break;
+            case 4:
+                ll_guideFive.setVisibility(View.VISIBLE);
+                break;
+
+            default:
+
+                break;
+        }
+        initData();
+        return mLayout;
+    }
+
+    @Override
+    public void onDestroy() {
+        try {
+            EventBus.getDefault().unregister(this);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        super.onDestroy();
+    }
+
+
+    protected void initData() {
+        //读取本地数据
+        String guideData = PreferencesUtils.getStringToKey(PreferencesUtils.Keys.LIVEPRODUCT + "GUILDDATE", "");
+        if (!TextUtils.isEmpty(guideData)) {
+            BaseModel<MainAboutList> result = new Gson().fromJson(guideData, new TypeToken<BaseModel<MainAboutList>>() {
+            }.getType());
+            if (result.isSuccess()) {
+                try {
+                    setGuildData(result.getData().getList());
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            }
+        }
+    }
+
+    /**
+     * @author jzs created 2017/4/20
+     * 获取数据
+     */
+    @Subscriber(tag = EventBusKey.IMAGE_FRAGMENT)
+    public void getData(ArrayList<MainAboutInfo> data) {
+        setGuildData(data);
+    }
+
+    /**
+     * @author jzs created 2017/4/20
+     * 设置未登录数据信息
+     */
+    public void setGuildData(ArrayList<MainAboutInfo> list) {
+        tv_guideOne.setText(list.get(0).getName());
+        String[] one = list.get(0).getContent().split(";");
+        tv_guideOne_first.setText(one[0]);
+        tv_guideOne_second.setText(one[1]);
+        tv_guideTwo.setText(list.get(1).getName());
+        String[] two = list.get(1).getContent().split(";");
+        tv_guideTwo_first.setText(two[0]);
+        tv_guideTwo_second.setText(two[1]);
+        tv_guideTwo_three.setText(two[2]);
+        tv_guideThree.setText(list.get(2).getName());
+        String[] three = list.get(2).getContent().split(";");
+        tv_guideThree_first.setText(three[0]);
+        tv_guideThree_second.setText(three[1]);
+        tv_guideFour.setText(list.get(3).getName());
+        String[] four = list.get(3).getContent().split(";");
+        tv_guideFour_first.setText(four[0]);
+        tv_guideFour_second.setText(four[1]);
+        tv_guideFour_three.setText(four[2]);
+        tv_guideFive.setText(list.get(4).getName());
+        String[] five = list.get(4).getContent().split(";");
+        tv_guideFive_first.setText(five[0]);
+        tv_guideFive_second.setText(five[1]);
+        tv_guideFive_three.setText(five[2]);
+    }
+
+}

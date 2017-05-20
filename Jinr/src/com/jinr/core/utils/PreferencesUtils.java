@@ -1,0 +1,751 @@
+package com.jinr.core.utils;
+
+import android.app.Activity;
+import android.content.Context;
+import android.content.SharedPreferences;
+import android.content.SharedPreferences.Editor;
+import android.util.Base64;
+
+import com.jinr.core.JinrApp;
+
+import java.io.ByteArrayInputStream;
+import java.io.ByteArrayOutputStream;
+import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
+import java.util.HashSet;
+import java.util.Iterator;
+
+public class PreferencesUtils {
+
+    private static SharedPreferences preferences;
+
+
+
+    /**
+     * cn.icnt.dinners.utils.Keys
+     *
+     * @author Andrew Lee <br/>
+     *         create at 2014年7月17日 下午7:39:32
+     */
+    public static class Keys {
+        /**
+         * 版本号
+         */
+        public static final String VERSION = "version";
+        public static final String TEST = "test";
+
+        public static final String UID = "uid";
+        public static final String TEL = "tel";
+        public static final String EMAIL = "email";
+        public static final String NICKNAME = "nickName";
+        public static final String PASSWORD = "password";
+        public static final String PWD_KEY = "pwd_key";
+        public static final String BUSS_PWD = "buss_pwd";
+        public static final String NAME = "name";
+        public static final String IMG = "img";
+        public static final String IS_LOCK = "is_lock";
+        public static final String ID_CARD = "id_card";// 身份证号
+        public static final String RANDOM = "random";// 用户邀请码
+
+        public static final String IS_IDENTIFY = "is_identify";
+        public static final String IS_LOGIN = "is_login";
+        public static final String HAS_CARD = "has_card";
+        public static final String HAS_DEAL_PASSWD = "has_deal_passwd";
+        public static final String IS_GES_LOCKED = "is_ges_locked";
+
+        public static final String BANK_CARD_ID = "bank_card_id";// 卡id
+        public static final String BANK_CARD_NO = "bank_card_no";// 卡号
+        public static final String BANK_CARD_NUM = "bank_card_num";// 卡编号
+        public static final String BANK_NAME = "bank_name";// 银行名字
+        public static final String OPEN_BANK = "open_bank";// 开户行
+        public static final String BANK_STATUS = "bank_status";// 卡状态
+        public static final String BANK_CITY = "bank_city";// 所在城市
+
+        public static final String YEEPAY_BANK_CARD_ID = "yeepay_bank_card_id";// 卡id
+        public static final String USER_TEL = "user_tel";// 银行预留手机号
+        public static final String CARD_LAST = "card_last";// 尾号
+        public static final String IS_BIND_CARD = "is_bind_card";// 是否绑卡
+        public static final String IS_SET_TRADE_PWD = "is_set_trade_pwd";// 是否设置交易密码
+
+        public static final String HEAD_NOTICE_EDITION = "head_notice_edition";// 重要公告版本
+        public static final String IS_SYS_NEWS = "is_new";
+        public static final String UNREAD_SYS_NEWS = "unread_news";// 未读公告消息
+        public static final String IS_ACT_NEWS_ID = "is_act_news_id";// 限购id
+        public static final String VERSIONCOOD_SERVICE = "versioncood_service";// 服务器存有的版本号
+        public static final String IS_ACT_NEWS = "is_act";// 活动消息
+        public static final String UNREAD_ACT = "unread_act";// 未读活动消息
+        public static final String READ_ACT = "read_act";// 已读活动消息
+        public static final String UNREAD_ACT_COUNT = "unread_act_count";// 未读活动条数
+        public static final String RED_POINT = "red_point";// 红点标识:0表示不显示;1表示显示;-1请求借口;
+        public static final String IS_FIRST_MANU_LEFT = "is_first_menu_left"; // 是否第一次进入首页左侧边栏
+        public static final String IS_FIRST_MANU_RIGHT = "is_first_menu_right"; // 是否第一次进入首页右侧边栏
+        public static final String IS_FIRST_GIFT = "is_first_gift"; // 是否第一次进入左侧边栏我的红包
+        public static final String IS_FIRST_PREF = "first_pref";// 第一次首页引导引导
+        public static final String IS_FIRST_MAIN = "first_mian";// 第一次首页
+        public static final String IS_FIRST_NOTICE = "first_notice";// 第一次进入APP重要公告
+        public static final String IS_RANDOM = "is_random";// 是否填写邀请码
+        public static final String TIME_INTERVAL = "time_interval";//判断是否弹窗位置权限
+
+        public static int BACK_TO_ACT = 0;// 登陆成功后是否返回活动页面 1为去投资，4为去注册
+        public static boolean BACK_TO_GIFT = false;// 是否返回红包页面
+        public static final String IS_SETTING_CG = "setting_cg";// 设置手势密码 不跑首投接口
+        public static final String IS_FIRST_INDEX = "first_index";// 第一次进入首页弹出新老用户入口框
+        public static final String BANK_BG_URL = "url";// 银行卡背景图片的地址
+        public static final String BANK_LOGO_URL = "logo_url";// 银行卡图标的地址
+        public static final String WX_IS_SWITCH_ACCOUNT = "wx_is_switch_account";// 微信是否切换账号，用了统计分享人数
+        public static final String WX_MO_IS_SWITCH_ACCOUNT = "wx_mo_is_switch_account";// 微信朋友圈是否切换账号，用了统计分享人数
+        public static final String MES_IS_SWITCH_ACCOUNT = "mes_is_switch_account";// 短信是否切换账号，用了统计分享人数
+        public static final String QQ_IS_SWITCH_ACCOUNT = "qq_is_switch_account";// QQ是否切换账号，用了统计分享人数
+        public static final String QQSP_IS_SWITCH_ACCOUNT = "qqsp_is_switch_account";// QQ空间是否切换账号，用了统计分享人数
+
+        public static final String FD_WX_IS_SWITCH_ACCOUNT = "fd_wx_is_switch_account";// 微信是否切换账号，用了统计分享人数(五十亿)
+        public static final String FD_WX_MO_IS_SWITCH_ACCOUNT = "fd_wx_mo_is_switch_account";// 微信朋友圈是否切换账号，用了统计分享人数(五十亿)
+        public static final String FD_MES_IS_SWITCH_ACCOUNT = "fd_mes_is_switch_account";// 短信是否切换账号，用了统计分享人数(五十亿)
+        public static boolean CLICK_WX = false;// 微信回调
+        public static boolean SHARE_INIT = false;// 判断是否是活动页进入的分享
+        public static String ACT_TYPE = "";
+        public static final String IS_REINTO_APP = "is_reinto_app";// 解锁判断是否是当天
+        public static final String KEFU_PHONE = "kefu_phone";
+
+        /**
+         * 用户名
+         */
+        /**
+         * sharedPreference 文件名
+         */
+        public static final String USERINFO = "userInfo";
+        public static final String COMMONINFO = "commonInfo";
+        public static final String READPOINT = "readpoint";
+        public static final String MASKINFO = "maskInfo";
+        public static final String SHAREINFO = "shareinfo";
+        public static final String LASTTEL = "lasttel";
+        public static final String PRODUCTLIST = "productlist";
+        public static final String LIVEPRODUCT = "liveproduct";
+        /**
+         * 未登录状态下点击反馈，登录成功后应返回关于界面 应返回为true，默认为false，在反馈点击跳转至登录时为true
+         * 登录成功后如果为true则返回关于界面，并设置为false
+         */
+        public static boolean BACK_TO_ABOUT = false;
+
+
+        public static final String DEVICE_TOKEN ="device_token";
+    }
+
+
+
+    /*****************存储对象*************************/
+
+    /**
+     * writeObject 方法负责写入特定类的对象的状态，以便相应的 readObject 方法可以还原它
+     * 最后，用Base64.encode将字节文件转换成Base64编码保存在String中
+     *
+     * @param object 待加密的转换为String的对象
+     * @return String   加密后的String
+     */
+    private static String Object2String(Object object) {
+        ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
+        ObjectOutputStream objectOutputStream = null;
+        try {
+            objectOutputStream = new ObjectOutputStream(byteArrayOutputStream);
+            objectOutputStream.writeObject(object);
+            String string = new String(Base64.encode(byteArrayOutputStream.toByteArray(), Base64.DEFAULT));
+            objectOutputStream.close();
+            return string;
+        } catch (IOException e) {
+            e.printStackTrace();
+            return null;
+        }
+    }
+
+    /**
+     * 使用Base64解密String，返回Object对象
+     *
+     * @param objectString 待解密的String
+     * @return object      解密后的object
+     */
+    private static Object String2Object(String objectString) {
+        byte[] mobileBytes = Base64.decode(objectString.getBytes(), Base64.DEFAULT);
+        ByteArrayInputStream byteArrayInputStream = new ByteArrayInputStream(mobileBytes);
+        ObjectInputStream objectInputStream = null;
+        try {
+            objectInputStream = new ObjectInputStream(byteArrayInputStream);
+            Object object = objectInputStream.readObject();
+            objectInputStream.close();
+            return object;
+        } catch (Exception e) {
+            e.printStackTrace();
+            return null;
+        }
+
+    }
+
+
+
+    /**
+     * 使用SharedPreference保存对象
+     *
+     *
+     * @param key        储存对象的key
+     * @param saveObject 储存的对象
+     */
+    public static final String  LOGINRESULT= "LoginResult";//登录结果
+
+    public static void save(String key, Object saveObject) {
+        SharedPreferences sharedPreferences = JinrApp.getInstance().getSharedPreferences(key, Activity.MODE_PRIVATE);
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+        String string = Object2String(saveObject);
+        editor.putString(key, string);
+        editor.commit();
+    }
+
+    /**
+     * 获取SharedPreference保存的对象
+     *
+     *
+     * @param key     储存对象的key
+     * @return object 返回根据key得到的对象
+     */
+    public static Object get(String key) {
+        SharedPreferences sharedPreferences =JinrApp.getInstance().getSharedPreferences(key, Activity.MODE_PRIVATE);
+        String string = sharedPreferences.getString(key, null);
+        if (string != null) {
+            Object object = String2Object(string);
+            return object;
+        } else {
+            return null;
+        }
+    }
+
+
+    /*****************结束*************************/
+
+    /**
+     * 存储布尔值
+     *
+     * @param mContext
+     * @param key
+     * @param value
+     */
+    public static void putBooleanToSPMap(Context mContext, String key, boolean value) {
+        preferences = mContext.getSharedPreferences(Keys.USERINFO, Context.MODE_PRIVATE);
+        Editor edit = preferences.edit();
+        edit.putBoolean(key, value);
+        edit.commit();
+    }
+
+    public static void putIntToSPMap(Context mContext, String key, int value) {
+        preferences = mContext.getSharedPreferences(Keys.USERINFO, Context.MODE_PRIVATE);
+        Editor edit = preferences.edit();
+        edit.putInt(key, value);
+        edit.commit();
+    }
+
+    /**
+     * 获取是否绑卡
+     *
+     * @param mContext
+     * @param key
+     * @return
+     */
+    public static int getIsBindCardFromSPMap(Context mContext, String key) {
+        preferences = mContext.getSharedPreferences(Keys.USERINFO, Context.MODE_PRIVATE);
+        int value = preferences.getInt(key, -1);
+        return value;
+    }
+
+    /**
+     * @param mContext
+     * @param key
+     * @return
+     */
+    public static int getIntFromSPMap(Context mContext, String key) {
+        preferences = mContext.getSharedPreferences(Keys.USERINFO, Context.MODE_PRIVATE);
+        int value = preferences.getInt(key, 0);
+        return value;
+    }
+
+    /**
+     * 获取布尔值
+     *
+     * @param mContext
+     * @param key
+     * @return
+     */
+    public static Boolean getBooleanFromSPMap(Context mContext, String key) {
+        preferences = mContext.getSharedPreferences(Keys.USERINFO, Context.MODE_PRIVATE);
+        boolean value = preferences.getBoolean(key, false);
+        return value;
+    }
+
+    /**
+     * 存储String
+     *
+     * @param mContext
+     * @param key
+     * @param value
+     */
+    public static void putValueToSPMap(Context mContext, String key, String value) {
+        preferences = mContext.getSharedPreferences(Keys.USERINFO, Context.MODE_PRIVATE);
+        Editor edit = preferences.edit();
+        edit.putString(key, value);
+        edit.commit();
+    }
+
+    /*
+     * 存储小红点数据，防止退出的时候删除数据
+     */
+    public static void putredValueToSPMap(Context mContext, String key, String value) {
+        preferences = mContext.getSharedPreferences(Keys.READPOINT, Context.MODE_PRIVATE);
+        Editor edit = preferences.edit();
+        edit.putString(key, value);
+        edit.commit();
+    }
+
+
+    /**
+     * 存储String
+     *
+     * @param mContext
+     * @param key
+     * @param value
+     */
+    public static void putCValueToSPMap(Context mContext, String key, String value) {
+        preferences = mContext.getSharedPreferences(Keys.COMMONINFO, Context.MODE_PRIVATE);
+        Editor edit = preferences.edit();
+        edit.putString(key, value);
+        edit.commit();
+    }
+
+    /**
+     * 获取String
+     *
+     * @param mContext
+     * @param key
+     * @return value
+     */
+    public static String getCValueFromSPMap(Context mContext, String key) {
+        if (null != mContext) {
+            preferences = mContext.getSharedPreferences(Keys.COMMONINFO, Context.MODE_PRIVATE);
+            String value = preferences.getString(key, "");
+            return value;
+        } else {
+            return null;
+        }
+    }
+
+    /**
+     * 存储布尔值-引导遮罩
+     *
+     * @param mContext
+     * @param key
+     * @param value
+     */
+    public static void putMaskBooleanToSPMap(Context mContext, String key, boolean value) {
+        preferences = mContext.getSharedPreferences(Keys.MASKINFO, Context.MODE_PRIVATE);
+        Editor edit = preferences.edit();
+        edit.putBoolean(key, value);
+        edit.commit();
+    }
+
+    /**
+     * 获取引导遮罩
+     *
+     * @param mContext
+     * @param key
+     * @return
+     */
+    public static Boolean getMaskBooleanFromSPMap(Context mContext, String key) {
+        preferences = mContext.getSharedPreferences(Keys.MASKINFO, Context.MODE_PRIVATE);
+        boolean value = preferences.getBoolean(key, true);
+        return value;
+    }
+
+    /**
+     * 获取String
+     *
+     * @param mContext
+     * @param key
+     * @return value
+     */
+    public static String getValueFromSPMap(Context mContext, String key) {
+        if (null != mContext) {
+            preferences = mContext.getSharedPreferences(Keys.USERINFO, Context.MODE_PRIVATE);
+            String value = preferences.getString(key, "");
+            return value;
+        } else {
+            return null;
+        }
+    }
+
+    public static String getredValueFromSPMap(Context mContext, String key) {
+        if (null != mContext) {
+            preferences = mContext.getSharedPreferences(Keys.READPOINT, Context.MODE_PRIVATE);
+            String value = preferences.getString(key, "");
+            return value;
+        } else {
+            return null;
+        }
+    }
+
+    /**
+     * 获取String
+     *
+     * @param mContext
+     * @param key
+     * @param defaults 无值时取defaults
+     * @return
+     */
+    public static String getValueFromSPMap(Context mContext, String key, String defaults) {
+        if (null != mContext) {
+            preferences = mContext.getSharedPreferences(Keys.USERINFO, Context.MODE_PRIVATE);
+            String value = preferences.getString(key, defaults);
+            return value;
+        } else {
+            return null;
+        }
+    }
+
+    /**
+     * 清除全部
+     *
+     * @param mContext
+     */
+    public static void clearSPMap(Context mContext) {
+        preferences = mContext.getSharedPreferences(Keys.USERINFO, Context.MODE_PRIVATE);
+        Editor edit = preferences.edit();
+        edit.clear();
+        edit.commit();
+    }
+
+    /**
+     * 清除分享全部
+     *
+     * @param mContext
+     */
+    public static void clearShPMap(Context mContext) {
+        preferences = mContext.getSharedPreferences(Keys.SHAREINFO, Context.MODE_PRIVATE);
+        Editor edit = preferences.edit();
+        edit.clear();
+        edit.commit();
+    }
+
+    /**
+     * 指定key清除
+     *
+     * @param mContext
+     * @param key
+     */
+    public static void clearSpMap(Context mContext, String key) {
+        putValueToSPMap(mContext, key, "");
+    }
+
+    /**
+     * 用户注销 清除指定key
+     *
+     * @param mContext
+     */
+    public static void logout_del(Context mContext) {
+        putValueToSPMap(mContext, Keys.UID, "-1");
+    }
+
+    /**
+     * 获取布尔值
+     *
+     * @param mContext
+     * @param key
+     * @return
+     */
+    public static Boolean getCBooleanFromSPMap(Context mContext, String key) {
+        preferences = mContext.getSharedPreferences(Keys.COMMONINFO, Context.MODE_PRIVATE);
+        boolean value = preferences.getBoolean(key, true);
+        return value;
+    }
+
+    /**
+     * 存储布尔值
+     *
+     * @param mContext
+     * @param key
+     * @param value
+     */
+    public static void putCBooleanToSPMap(Context mContext, String key, boolean value) {
+        preferences = mContext.getSharedPreferences(Keys.COMMONINFO, Context.MODE_PRIVATE);
+        Editor edit = preferences.edit();
+        edit.putBoolean(key, value);
+        edit.commit();
+    }
+
+    /**
+     * 获取int
+     *
+     * @param mContext
+     * @param key
+     * @return
+     */
+    public static int getCIntFromSPMap(Context mContext, String key) {
+        preferences = mContext.getSharedPreferences(Keys.COMMONINFO, Context.MODE_PRIVATE);
+        int value = preferences.getInt(key, 0);
+        return value;
+    }
+
+    /**
+     * 存储int
+     *
+     * @param mContext
+     * @param key
+     * @param value
+     */
+    public static void putCIntToSPMap(Context mContext, String key, int value) {
+        preferences = mContext.getSharedPreferences(Keys.COMMONINFO, Context.MODE_PRIVATE);
+        Editor edit = preferences.edit();
+        edit.putInt(key, value);
+        edit.commit();
+    }
+
+
+    public static void putCloogToSPMap(Context mContext, String key, long value) {
+        preferences = mContext.getSharedPreferences(Keys.COMMONINFO, Context.MODE_PRIVATE);
+        Editor edit = preferences.edit();
+        edit.putLong(key, value);
+        edit.commit();
+    }
+
+    public static long getCloogToSPMap(Context mContext, String key) {
+        preferences = mContext.getSharedPreferences(Keys.COMMONINFO, Context.MODE_PRIVATE);
+        long value = preferences.getLong(key, 0);
+        return value;
+    }
+
+    /**
+     * 获取分享String
+     *
+     * @param mContext
+     * @param key
+     * @return value
+     */
+    public static String getSValueFromSPMap(Context mContext, String key) {
+        if (null != mContext) {
+            preferences = mContext.getSharedPreferences(Keys.SHAREINFO, Context.MODE_PRIVATE);
+            String value = preferences.getString(key, "");
+            return value;
+        } else {
+            return null;
+        }
+    }
+
+    /**
+     * 存储分享String
+     *
+     * @param mContext
+     * @param key
+     * @param value
+     */
+    public static void putSValueToSPMap(Context mContext, String key, String value) {
+        preferences = mContext.getSharedPreferences(Keys.SHAREINFO, Context.MODE_PRIVATE);
+        Editor edit = preferences.edit();
+        edit.putString(key, value);
+        edit.commit();
+    }
+
+    /**
+     * 获取布尔值
+     *
+     * @param mContext
+     * @param key
+     * @return
+     */
+    public static Boolean getSBooleanFromSPMap(Context mContext, String key) {
+        preferences = mContext.getSharedPreferences(Keys.SHAREINFO, Context.MODE_PRIVATE);
+        boolean value = preferences.getBoolean(key, true);
+        return value;
+    }
+
+    /**
+     * 存储布尔值
+     *
+     * @param mContext
+     * @param key
+     * @param value
+     */
+    public static void putSBooleanToSPMap(Context mContext, String key, boolean value) {
+        preferences = mContext.getSharedPreferences(Keys.SHAREINFO, Context.MODE_PRIVATE);
+        Editor edit = preferences.edit();
+        edit.putBoolean(key, value);
+        edit.commit();
+    }
+
+    /**
+     * 存储已读消息列表
+     */
+    public static void putEditenToSPMap(Context mContext, String key, HashSet<String> hashSet) {
+        preferences = mContext.getSharedPreferences(Keys.IS_SYS_NEWS, Context.MODE_PRIVATE);
+        Editor edit = preferences.edit();
+        edit.putStringSet(key, hashSet);
+        edit.commit();
+    }
+
+    /**
+     * 获取已读公告消息列表
+     */
+    public static HashSet<String> getEditenFormSPMap(Context mContext, String key) {
+        preferences = mContext.getSharedPreferences(Keys.IS_SYS_NEWS, Context.MODE_PRIVATE);
+        HashSet<String> hashSet = (HashSet<String>) preferences.getStringSet(key, new HashSet<String>());
+        return hashSet;
+    }
+
+    /**
+     * 存储已读活动列表
+     */
+    public static void putReadAction(Context mContext, String key, HashSet<String> hashSet) {
+        String uid = PreferencesUtils.getValueFromSPMap(mContext, PreferencesUtils.Keys.UID);
+        preferences = mContext.getSharedPreferences(Keys.READ_ACT, Context.MODE_PRIVATE);
+        Editor edit = preferences.edit();
+        edit.putStringSet(key, hashSet);
+        edit.commit();
+    }
+
+    /**
+     * 获取已读活动消息的列表
+     */
+    public static HashSet<String> getReadAction(Context mContext, String key) {
+        preferences = mContext.getSharedPreferences(Keys.READ_ACT, Context.MODE_PRIVATE);
+        HashSet<String> hashSet = (HashSet<String>) preferences.getStringSet(key, new HashSet<String>());
+        return hashSet;
+    }
+
+    /**
+     * 存储未读活动列表
+     */
+    public static void putUnReadAction(Context mContext, String key, HashSet<String> hashSet) {
+        preferences = mContext.getSharedPreferences(Keys.UNREAD_ACT, Context.MODE_PRIVATE);
+        Editor edit = preferences.edit();
+        edit.putStringSet(key, hashSet);
+        edit.commit();
+    }
+
+    /**
+     * 获取未读活动消息的列表
+     */
+    public static HashSet<String> getUnReadAction(Context mContext, String key) {
+        preferences = mContext.getSharedPreferences(Keys.UNREAD_ACT, Context.MODE_PRIVATE);
+        HashSet<String> hashSet = (HashSet<String>) preferences.getStringSet(key, new HashSet<String>());
+        return hashSet;
+    }
+
+    /**
+     * 存储未读公告消息列表
+     */
+    public static void putUnreadToSPMap(Context mContext, String key, HashSet<String> hashSet) {
+        preferences = mContext.getSharedPreferences(Keys.UNREAD_SYS_NEWS, Context.MODE_PRIVATE);
+        Editor edit = preferences.edit();
+        edit.putStringSet(key, hashSet);
+        edit.commit();
+    }
+
+    /**
+     * 获取未读公告消息的列表
+     */
+    public static HashSet<String> getUnReadFormSPMap(Context mContext, String key) {
+        preferences = mContext.getSharedPreferences(Keys.UNREAD_SYS_NEWS, Context.MODE_PRIVATE);
+        HashSet<String> hashSet = (HashSet<String>) preferences.getStringSet(key, new HashSet<String>());
+        return hashSet;
+    }
+
+    /**
+     * 清空未读公告列表
+     */
+    public static void UnReadChangeToSPMap(Context mContext) {
+
+        HashSet<String> hashSet = getEditenFormSPMap(mContext, Keys.IS_SYS_NEWS);
+        HashSet<String> unReadSet = getUnReadFormSPMap(mContext, Keys.UNREAD_SYS_NEWS);
+        Iterator<String> iterator = unReadSet.iterator();
+        while (iterator.hasNext()) {
+            hashSet.add(iterator.next());
+        }
+        putEditenToSPMap(mContext, Keys.IS_SYS_NEWS, hashSet);
+        preferences = mContext.getSharedPreferences(Keys.UNREAD_SYS_NEWS, Context.MODE_PRIVATE);
+        Editor editor = preferences.edit();
+        editor.clear();
+        editor.commit();
+    }
+
+    /**
+     * 清空未读活动列表
+     */
+    public static void UnReadActionToSPMap(Context mContext) {
+
+        HashSet<String> hashSet = getReadAction(mContext, Keys.READ_ACT);
+        HashSet<String> unReadSet = getUnReadAction(mContext, Keys.UNREAD_ACT);
+        Iterator<String> iterator = unReadSet.iterator();
+        while (iterator.hasNext()) {
+            hashSet.add(iterator.next());
+        }
+        putReadAction(mContext, Keys.READ_ACT, hashSet);
+        preferences = mContext.getSharedPreferences(Keys.UNREAD_ACT, Context.MODE_PRIVATE);
+        Editor editor = preferences.edit();
+        editor.clear();
+        editor.commit();
+    }
+
+    /**
+     * 保存服务器中存有的版本号
+     */
+    public static void saveVersionCood(Context mContext, int versionCood) {
+        preferences = mContext.getSharedPreferences(Keys.VERSIONCOOD_SERVICE, Context.MODE_PRIVATE);
+        Editor edit = preferences.edit();
+        edit.putInt("versionCood", versionCood);
+        edit.commit();
+    }
+
+    /**
+     * 获取本地存有的服务器中存有的版本号
+     */
+    public static int getServiceVersionCood(Context mContext) {
+        preferences = mContext.getSharedPreferences(Keys.VERSIONCOOD_SERVICE, Context.MODE_PRIVATE);
+        return preferences.getInt("versionCood", 0);
+    }
+
+    /**
+     * 存储最后登录手机号
+     *
+     * @param key
+     * @param value
+     */
+    public static void putLastTelToSPMap(String key, String value) {
+        preferences = JinrApp.instance().getSharedPreferences(Keys.LASTTEL, Context.MODE_PRIVATE);
+        Editor edit = preferences.edit();
+        edit.putString(key, value);
+        edit.commit();
+    }
+
+    /**
+     * 获取最后登录手机号
+     */
+    public static String getLastTel(String key, String defValue) {
+        preferences = JinrApp.instance().getSharedPreferences(Keys.LASTTEL, Context.MODE_PRIVATE);
+        return preferences.getString(key, defValue);
+    }
+
+
+    /**
+     * 存储String
+     *
+     * @param key
+     * @param value
+     */
+    public static void putStringToSPMap(String key, String value) {
+        preferences = JinrApp.instance().getSharedPreferences(key, Context.MODE_PRIVATE);
+        Editor edit = preferences.edit();
+        edit.putString(key, value);
+        edit.commit();
+    }
+
+    /**
+     * 用key获取String
+     */
+    public static String getStringToKey(String key, String defValue) {
+        preferences = JinrApp.instance().getSharedPreferences(key, Context.MODE_PRIVATE);
+        return preferences.getString(key, defValue);
+    }
+}

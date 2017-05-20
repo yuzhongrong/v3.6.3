@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/base_style_bg"
+    android:orientation="vertical" >
+
+    <!-- title布局 -->
+
+    <include
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        layout="@layout/title" />
+
+    <View style="@style/line" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:scrollbars="vertical" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <View
+                style="@style/line"
+                android:layout_marginTop="20dp" />
+
+            <!-- 绑定手机 -->
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/all_menu_height"
+                android:background="@color/base_menu_bg" >
+
+                <TextView
+                    android:id="@+id/bind_mobile_tv1"
+                    style="@style/sec"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="@dimen/all_left_offset"
+                    android:text="@string/login_passwd"
+                    android:textColor="@color/main_out_down_text_color" />
+
+                <com.jinr.core.utils.MyEditText
+                    android:id="@+id/bind_mobile_et1"
+                    style="@style/edit_style"
+                    android:layout_marginLeft="56dp"
+                    android:layout_toRightOf="@id/bind_mobile_tv1"
+                    android:hint="@string/hint_a"
+                    android:inputType="textPassword" />
+            </RelativeLayout>
+
+            <View style="@style/line" />
+            <!-- 新手机号码 -->
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/all_menu_height"
+                android:background="@color/base_menu_bg"
+                android:orientation="horizontal" >
+
+                <TextView
+                    android:id="@+id/bind_mobile_tv2"
+                    style="@style/sec"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="@dimen/all_left_offset"
+                    android:text="@string/new_mobile"
+                    android:textColor="@color/main_out_down_text_color" />
+
+                <com.jinr.core.utils.MyEditText
+                    android:id="@+id/bind_mobile_et2"
+                    style="@style/edit_style"
+                    android:layout_toRightOf="@id/bind_mobile_tv2"
+                    android:hint="@string/hint_b"
+                    android:inputType="phone"
+                    android:maxLength="11" />
+            </RelativeLayout>
+
+            <View style="@style/line" />
+            <!-- 验证码 -->
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/all_menu_height"
+                android:background="@color/base_menu_bg" >
+
+                <TextView
+                    android:id="@+id/bind_mobile_tv3"
+                    style="@style/sec"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="@dimen/all_left_offset"
+                    android:text="@string/modify_code"
+                    android:textColor="@color/main_out_down_text_color" />
+
+                <Button
+                    android:id="@+id/bind_send_code"
+                    style="@style/wrap"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="5dp"
+                    android:layout_toRightOf="@id/bind_mobile_tv3"
+                    android:background="@drawable/mobile_code"
+                    android:paddingBottom="3dp"
+                    android:paddingLeft="5dp"
+                    android:paddingRight="5dp"
+                    android:paddingTop="3dp"
+                    android:text="@string/send_modify_code"
+                    android:textColor="@color/white"
+                    android:textSize="14sp" />
+
+                <com.jinr.core.utils.MyEditText
+                    android:id="@+id/bind_mobile_et3"
+                    style="@style/edit_style"
+                    android:layout_marginLeft="0dp"
+                    android:layout_toRightOf="@id/bind_send_code"
+                    android:hint="@string/hint_code"
+                    android:inputType="number" />
+            </RelativeLayout>
+
+            <View style="@style/line" />
+
+            <Button
+                android:id="@+id/bind_mobile_submit"
+                style="@style/btn5_style"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/btn_bg"
+                android:text="@string/change"
+                android:textColor="@color/gray_hint" />
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

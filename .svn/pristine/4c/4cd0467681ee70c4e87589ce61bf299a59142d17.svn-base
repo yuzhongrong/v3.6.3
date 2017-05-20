@@ -1,0 +1,114 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/gray_about_bg"
+    android:orientation="vertical" >
+
+    <include
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        layout="@layout/title_5" />
+
+    <TextView
+        style="@style/text5_style"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="20dp"
+        android:text="到账时间"
+        android:textSize="20sp" />
+
+    <View
+        style="@style/line"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="10dp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:background="@color/white"
+        android:orientation="horizontal" >
+
+        <TextView
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:background="@color/weixin_pre_bg" />
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical" >
+
+            <TextView
+                style="@style/text5_style"
+                android:padding="5dp"
+                android:text="提出转出申请"
+                android:textColor="@color/gray_high" />
+
+            <View style="@style/line" />
+
+            <TextView
+                style="@style/text5_style"
+                android:padding="5dp"
+                android:text="周一15:00前"
+                android:textColor="@color/gray_color" />
+
+            <View style="@style/line" />
+
+            <TextView
+                style="@style/text5_style"
+                android:padding="5dp"
+                android:text="周一15:00前"
+                android:textColor="@color/gray_color" />
+
+            <View style="@style/line" />
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:background="@color/weixin_pre_bg" />
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical" >
+
+            <TextView
+                style="@style/text5_style"
+                android:padding="5dp"
+                android:text="到账时间"
+                android:textColor="@color/gray_high" />
+
+            <View style="@style/line" />
+
+            <TextView
+                style="@style/text5_style"
+                android:padding="5dp"
+                android:text="周二24:00前"
+                android:textColor="@color/gray_color" />
+
+            <View style="@style/line" />
+
+            <TextView
+                style="@style/text5_style"
+                android:padding="5dp"
+                android:text="周二24:00前"
+                android:textColor="@color/gray_color" />
+
+            <View style="@style/line" />
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:background="@color/weixin_pre_bg" />
+    </LinearLayout>
+
+</LinearLayout>

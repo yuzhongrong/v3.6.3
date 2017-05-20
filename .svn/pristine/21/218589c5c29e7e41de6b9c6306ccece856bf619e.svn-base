@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <dimen name="default_ev_border_width">1dp</dimen>
+    <dimen name="default_ev_password_width">10dp</dimen>
+
+    <color name="default_ev_border_color">#959595</color>
+    <color name="default_ev_password_color">#000000</color>
+
+    <dimen name="default_ev_border_radius">1dp</dimen>
+    <dimen name="default_ev_password_radius">8dp</dimen>
+
+    <integer name="default_ev_password_length">6</integer>
+
+</resources>

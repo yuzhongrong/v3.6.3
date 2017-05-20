@@ -1,0 +1,64 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".SystemNewsActivity"
+    android:background="@color/gray"
+     >
+    
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/title_height"
+        android:background="@color/white" >
+
+        <!-- 侧滑按钮 -->
+
+        <ImageView
+            android:id="@+id/title_left_img"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:paddingBottom="15dp"
+            android:paddingLeft="@dimen/button_title_back_offset"
+            android:paddingRight="50dp"
+            android:paddingTop="15dp"
+            android:src="@drawable/button_item_back" />
+
+        <TextView
+            android:id="@+id/tv_back_title"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="36dp"
+            android:gravity="center_vertical"
+            android:text="@string/title_trade_back"
+            android:textColor="@color/gray_text_dark"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/title_center_text"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_centerInParent="true"
+            android:layout_gravity="center_horizontal"
+            android:gravity="center_vertical"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp"
+            android:text="@string/sec_center"
+            android:textColor="@color/gray_text_dark"
+            android:textSize="20sp" />
+    </RelativeLayout>
+    <include
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        layout="@layout/line"
+        />
+
+    <ListView
+        android:id="@+id/list_news"
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+    </ListView>
+
+</LinearLayout>

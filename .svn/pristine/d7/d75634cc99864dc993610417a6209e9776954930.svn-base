@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white">
+
+    <RelativeLayout
+        android:id="@+id/rl_tab"
+        android:layout_width="match_parent"
+        android:background="@android:color/white"
+        android:layout_height="65dp" >
+
+        <TextView
+            android:id="@+id/textView1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="10dp"
+            android:textColor="@color/dark"
+            android:text="所在地区" />
+
+        <ImageView
+            android:id="@+id/image_close"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+             android:layout_alignParentTop="true"
+             android:layout_marginTop="10dp"
+            android:layout_marginRight="20dp"
+            android:src="@drawable/x" />
+
+        <TextView
+            android:id="@+id/tv_first"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_below="@+id/image_close"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="18dp"
+            android:textColor="@color/blue_btn_bg"
+            android:text="请选择" />
+
+        <TextView
+            android:id="@+id/tv_second"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/tv_first"
+            android:layout_marginLeft="20dp"
+            android:textColor="@color/dark"
+            android:layout_toRightOf="@+id/tv_first"/>
+
+        <TextView
+            android:id="@+id/tv_three"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/tv_second"
+            android:layout_alignBottom="@+id/tv_second"
+            android:layout_marginLeft="20dp"
+            android:textColor="@color/dark"
+            android:layout_toRightOf="@+id/tv_second" />
+
+        <TextView
+            android:id="@+id/tv_four"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/tv_three"
+            android:layout_marginLeft="20dp"
+            android:textColor="@color/dark"
+            android:layout_toRightOf="@+id/tv_three" />
+
+        <TextView
+            android:id="@+id/tv_five"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/tv_four"
+            android:layout_marginLeft="20dp"
+            android:textColor="@color/dark"
+            android:layout_toRightOf="@+id/tv_four"/>
+
+        <TextView
+            android:id="@+id/tv_six"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/tv_five"
+            android:layout_alignBottom="@+id/tv_five"
+            android:layout_marginLeft="20dp"
+            android:textColor="@color/dark"
+            android:layout_toRightOf="@+id/tv_five"/>
+
+        <TextView
+            android:id="@+id/tv_unfirst"
+            android:layout_width="wrap_content"
+            android:layout_height="1.5dp"
+            android:layout_alignLeft="@+id/tv_first"
+            android:layout_alignParentBottom="true"
+            android:layout_alignRight="@+id/tv_first"
+            android:background="@color/blue_btn_bg" />
+
+        <TextView
+            android:id="@+id/tv_unsecond"
+            android:layout_width="wrap_content"
+            android:layout_height="1.5dp"
+            android:layout_alignLeft="@+id/tv_second"
+            android:layout_alignParentBottom="true"
+            android:layout_alignRight="@+id/tv_second"
+            android:background="@color/blue_btn_bg" />
+
+        <TextView
+            android:id="@+id/tv_unthree"
+            android:layout_width="wrap_content"
+            android:layout_height="1.5dp"
+            android:layout_alignLeft="@+id/tv_three"
+            android:layout_alignParentBottom="true"
+            android:layout_alignRight="@+id/tv_three"
+            android:background="@color/blue_btn_bg" />
+
+        <TextView
+            android:id="@+id/tv_unfour"
+            android:layout_width="wrap_content"
+            android:layout_height="1.5dp"
+            android:layout_alignLeft="@+id/tv_four"
+            android:layout_alignParentBottom="true"
+            android:layout_alignRight="@+id/tv_four"
+            android:background="@color/blue_btn_bg" />
+
+        <TextView
+            android:id="@+id/tv_unfive"
+            android:layout_width="wrap_content"
+            android:layout_height="1.5dp"
+            android:layout_alignLeft="@+id/tv_five"
+            android:layout_alignParentBottom="true"
+            android:layout_alignRight="@+id/tv_five"
+            android:background="@color/blue_btn_bg" />
+
+        <TextView
+            android:id="@+id/tv_unsix"
+            android:layout_width="wrap_content"
+            android:layout_height="1.5dp"
+            android:layout_alignLeft="@+id/tv_six"
+            android:layout_alignParentBottom="true"
+            android:layout_alignRight="@+id/tv_six"
+            android:background="@color/blue_btn_bg" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/rl_address"
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:background="@android:color/white"
+        android:layout_below="@+id/rl_tab" >
+
+        <TextView
+            android:id="@+id/tv_line"
+            android:layout_width="match_parent"
+            android:layout_height="0.3dp"
+            android:layout_alignParentTop="true"
+            android:background="#C6C6C6" />
+
+        <com.jinr.core.security.address.NoScrollViewPager
+            android:id="@+id/page"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/tv_line" >
+        </com.jinr.core.security.address.NoScrollViewPager>
+    </RelativeLayout>
+
+</RelativeLayout>

@@ -1,0 +1,692 @@
+package com.jinr.core.bankCard;
+
+import android.content.Context;
+import android.content.Intent;
+import android.graphics.Color;
+import android.os.Bundle;
+import android.os.Handler;
+import android.os.Message;
+import android.text.Editable;
+import android.text.InputType;
+import android.text.TextUtils;
+import android.text.TextWatcher;
+import android.view.KeyEvent;
+import android.view.MotionEvent;
+import android.view.View;
+import android.view.WindowManager;
+import android.view.inputmethod.InputMethodManager;
+import android.widget.EditText;
+import android.widget.ImageView;
+import android.widget.RelativeLayout;
+import android.widget.TextView;
+
+import com.google.gson.Gson;
+import com.google.gson.JsonSyntaxException;
+import com.google.gson.reflect.TypeToken;
+import com.jinr.core.R;
+import com.jinr.core.bankCard.BankCardNoticeDialogFragment.BankCardNoticeDialogClick;
+import com.jinr.core.base.BaseActivity;
+import com.jinr.core.config.EventBusKey;
+import com.jinr.core.config.UrlConfig;
+import com.jinr.core.gift.share.MyGiftActivity;
+import com.jinr.core.ui.ChangeAddressDialog;
+import com.jinr.core.utils.CommonUtil;
+import com.jinr.core.utils.DensityUtil;
+import com.jinr.core.utils.MyDES;
+import com.jinr.core.utils.MyLog;
+import com.jinr.core.utils.MyhttpClient;
+import com.jinr.core.utils.PreferencesUtils;
+import com.jinr.core.utils.ToastUtil;
+import com.loopj.android.http.AsyncHttpResponseHandler;
+import com.loopj.android.http.RequestParams;
+
+import org.apache.http.Header;
+import org.json.JSONArray;
+import org.json.JSONObject;
+import org.simple.eventbus.EventBus;
+import org.simple.eventbus.Subscriber;
+
+import java.io.UnsupportedEncodingException;
+import java.lang.reflect.InvocationTargetException;
+import java.lang.reflect.Method;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Timer;
+import java.util.TimerTask;
+
+import model.BankNameMode;
+import model.BaseModel;
+import model.BindBankCardMode;
+
+/**
+ * Created by Ysw on 2016/10/25.
+ */
+
+public class AddBankActivity extends BaseActivity implements EditTextChange.TextChangeListener, View.OnClickListener, BankCardNoticeDialogClick, InputUseridDialogfragment.onUserIdOverListener {
+    private EditText et_cardNum;
+    private RelativeLayout rl_cardType;
+    private TextView tv_cardType;
+    private RelativeLayout rl_userName;
+    private EditText et_userName;
+    private RelativeLayout rl_userId;
+    private EditText tv_userId;
+    private RelativeLayout rl_userInfoHint;
+    private RelativeLayout rl_phoneNum;
+    private EditText et_phoneNum;
+    private ImageView image_notice;
+    private RelativeLayout rl_protocol;
+    private RelativeLayout rl_choose;
+    private ImageView image_choose;
+    private TextView tv_deal;
+    private RelativeLayout rl_next;
+    private InputUseridDialogfragment mDialog;
+    private TextView title_center_text;
+    private ImageView title_left_img;
+    // 用于判断是否勾选“我同意《鲸鱼宝用户协议》” @author Ysw created at 2017/1/6 12:04
+    private boolean isChoose = true;
+    // 用于判断成功获取银行卡所属银行后底部的信息是否可消失 @author Ysw created at 2017/1/6 11:32
+    private boolean isDisappear = true;
+    private BankCardNoticeDialogFragment giveUpBandCardDialog;
+    private BankCardNoticeDialogFragment phoneNumDialog;
+    private String Uid;
+    private boolean isClickable;
+    private Thread mThread;
+    private Handler mHandler;
+    // 银行卡卡号 @author Ysw created at 2017/1/9 12:40
+    private String mCardNum;
+    private RelativeLayout rl_cardhint;
+    private String mOldCardNum = "";
+    private ImageView image_cara;
+    private TextView tv_type;
+    private ImageView image_more;
+    private ImageView image_delete;
+    private ImageView image_delete_userid;
+    private boolean isFirst = true;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_add_bank);
+        Uid = PreferencesUtils.getValueFromSPMap(this, PreferencesUtils.Keys.UID);
+        initUI();
+        automaticPopup(et_cardNum);
+    }
+
+    @Override
+    protected void onResume() {
+        try {
+            nextClickableListener();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        super.onResume();
+    }
+
+    public void initUI() {
+        title_center_text = (TextView) findViewById(R.id.title_center_text);
+        title_center_text.setText("添加银行卡");
+        title_left_img = (ImageView) findViewById(R.id.title_left_img);
+        title_left_img.setOnClickListener(this);
+        //EventBus.getDefault().register(this);
+        et_cardNum = (EditText) findViewById(R.id.et_cardNum);
+        et_cardNum.addTextChangedListener(new EditTextChange(et_cardNum, 1, this));
+        et_cardNum.setFocusable(true);
+        et_cardNum.requestFocus();
+        et_cardNum.setFocusableInTouchMode(true);
+        rl_cardhint = (RelativeLayout) findViewById(R.id.rl_cardhint);
+        rl_cardType = (RelativeLayout) findViewById(R.id.rl_cardType);
+        rl_cardType.setOnClickListener(this);
+        tv_type = (TextView) findViewById(R.id.tv_type);
+        image_cara = (ImageView) findViewById(R.id.image_cara);
+        image_delete = (ImageView) findViewById(R.id.image_delete);
+        image_delete.setOnClickListener(this);
+        image_delete_userid = (ImageView) findViewById(R.id.image_delete_userid);
+        image_delete_userid.setOnClickListener(this);
+        image_more = (ImageView) findViewById(R.id.image_more);
+        tv_cardType = (TextView) findViewById(R.id.tv_cardType);
+        rl_userName = (RelativeLayout) findViewById(R.id.rl_userName);
+        et_userName = (EditText) findViewById(R.id.et_userName);
+        rl_userId = (RelativeLayout) findViewById(R.id.rl_userId);
+        tv_userId = (EditText) findViewById(R.id.tv_userId);
+        hideSoftInputMethod(tv_userId);
+        mDialog = InputUseridDialogfragment.getInstance(tv_userId, image_delete_userid);
+        mDialog.setOnUserIdOverListener(AddBankActivity.this);
+        tv_userId.setOnClickListener(this);
+        tv_userId.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {
+                InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
+                imm.hideSoftInputFromWindow(getWindow().getDecorView().getWindowToken(), 0);
+                return false;
+            }
+        });
+        tv_userId.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+                tv_userId.setSelection(s.length());
+            }
+        });
+        rl_userInfoHint = (RelativeLayout) findViewById(R.id.rl_userInfoHint);
+        rl_phoneNum = (RelativeLayout) findViewById(R.id.rl_phoneNum);
+        et_phoneNum = (EditText) findViewById(R.id.et_phoneNum);
+        image_notice = (ImageView) findViewById(R.id.image_notice);
+        image_notice.setOnClickListener(this);
+        rl_protocol = (RelativeLayout) findViewById(R.id.rl_protocol);
+        rl_choose = (RelativeLayout) findViewById(R.id.rl_choose);
+        rl_choose.setOnClickListener(this);
+        image_choose = (ImageView) findViewById(R.id.image_choose);
+        tv_deal = (TextView) findViewById(R.id.tv_deal);
+        tv_deal.setOnClickListener(this);
+        rl_next = (RelativeLayout) findViewById(R.id.rl_next);
+        rl_next.setOnClickListener(this);
+        giveUpBandCardDialog = BankCardNoticeDialogFragment.getInstance(R.layout.confirm_careinfo_giveup_dialog, 1);
+        giveUpBandCardDialog.setOnBankCardNoticeDialogClick(AddBankActivity.this);
+        phoneNumDialog = BankCardNoticeDialogFragment.getInstance(R.layout.phone_number_dialog, 2);
+        phoneNumDialog.setOnBankCardNoticeDialogClick(AddBankActivity.this);
+        mHandler = new Handler() {
+            public void handleMessage(Message msg) {
+                switch (msg.what) {
+                    case 1:
+                        if (isClickable && isChoose) {
+                            rl_next.setBackgroundResource(R.drawable.blue_one);
+                        } else {
+                            rl_next.setBackgroundResource(R.drawable.gray_one);
+                        }
+                        break;
+                }
+                super.handleMessage(msg);
+            }
+        };
+    }
+
+    /**
+     * 自动弹出软键盘延迟300毫秒 @author Ysw created at 2017/1/13 17:43
+     */
+    public void automaticPopup(final EditText edittext) {
+        new Timer().schedule(new TimerTask() {
+            public void run() {
+                InputMethodManager inputManager = (InputMethodManager) edittext.getContext().getSystemService(Context.INPUT_METHOD_SERVICE);
+                inputManager.showSoftInput(edittext, 0);
+            }
+        }, 300);
+    }
+
+    /**
+     * 用于监听下一步是否可点击的线程 @author Ysw created at 2017/1/7 11:41
+     */
+    public void nextClickableListener() throws InterruptedException {
+        mThread = new Thread(new Runnable() {
+            @Override
+            public void run() {
+                while (true) {
+                    if (TextUtils.isEmpty(et_cardNum.getText().toString().trim())) {
+                        isClickable = false;
+                        Message message = mHandler.obtainMessage();
+                        message.what = 1;
+                        mHandler.sendMessage(message);
+                    } else if (TextUtils.isEmpty(tv_cardType.getText().toString().trim())) {
+                        isClickable = false;
+                        Message message = mHandler.obtainMessage();
+                        message.what = 1;
+                        mHandler.sendMessage(message);
+                    } else if (TextUtils.isEmpty(et_userName.getText().toString().trim())) {
+                        isClickable = false;
+                        Message message = mHandler.obtainMessage();
+                        message.what = 1;
+                        mHandler.sendMessage(message);
+                    } else if (TextUtils.isEmpty(tv_userId.getText().toString().trim())) {
+                        isClickable = false;
+                        Message message = mHandler.obtainMessage();
+                        message.what = 1;
+                        mHandler.sendMessage(message);
+                    } else if (TextUtils.isEmpty(et_phoneNum.getText().toString().trim())) {
+                        isClickable = false;
+                        Message message = mHandler.obtainMessage();
+                        message.what = 1;
+                        mHandler.sendMessage(message);
+                    } else {
+                        isClickable = true;
+                        Message message = mHandler.obtainMessage();
+                        message.what = 1;
+                        mHandler.sendMessage(message);
+                    }
+                    if (et_phoneNum.getText().toString().trim().length() == 11 && isFirst) {
+                        ((InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE)).
+                                hideSoftInputFromWindow(AddBankActivity.this.getCurrentFocus().getWindowToken(), InputMethodManager.HIDE_NOT_ALWAYS);
+                        isFirst = false;
+                    }
+                    try {
+                        mThread.sleep(500);
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }
+                }
+            }
+        });
+        mThread.start();
+    }
+
+
+    @Override
+    public void onTextChangeCallback(String text, boolean isTrue) {
+        mCardNum = text;
+        if (text.length() > 0) {
+            image_delete.setVisibility(View.VISIBLE);
+        } else {
+            image_delete.setVisibility(View.INVISIBLE);
+        }
+        if (text.length() >= 10) {
+            rl_cardType.setVisibility(View.VISIBLE);
+            rl_cardhint.setVisibility(View.GONE);
+            if (text.length() == 12 && isTrue) {
+                if (mCardNum.equals(mOldCardNum)) {
+                    return;
+                } else {
+                    mOldCardNum = mCardNum;
+                    try {
+                        getBankName(text.substring(0, 10));
+                    } catch (Throwable throwable) {
+                        throwable.printStackTrace();
+                    }
+                }
+            }
+        } else if (isDisappear) {
+            rl_cardType.setVisibility(View.GONE);
+            rl_userName.setVisibility(View.GONE);
+            rl_userId.setVisibility(View.GONE);
+            rl_userInfoHint.setVisibility(View.GONE);
+            rl_phoneNum.setVisibility(View.GONE);
+            rl_protocol.setVisibility(View.GONE);
+            rl_cardhint.setVisibility(View.VISIBLE);
+        }
+    }
+
+    // 隐藏系统键盘
+    public void hideSoftInputMethod(EditText ed) {
+        getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_HIDDEN);
+        int currentVersion = android.os.Build.VERSION.SDK_INT;
+        String methodName = null;
+        if (currentVersion >= 16) {
+            // 4.2
+            methodName = "setShowSoftInputOnFocus";
+        } else if (currentVersion >= 14) {
+            // 4.0
+            methodName = "setSoftInputShownOnFocus";
+        }
+        if (methodName == null) {
+            ed.setInputType(InputType.TYPE_NULL);
+        } else {
+            Class<EditText> cls = EditText.class;
+            Method setShowSoftInputOnFocus;
+            try {
+                setShowSoftInputOnFocus = cls.getMethod(methodName, boolean.class);
+                setShowSoftInputOnFocus.setAccessible(true);
+                setShowSoftInputOnFocus.invoke(ed, false);
+            } catch (NoSuchMethodException e) {
+                ed.setInputType(InputType.TYPE_NULL);
+                e.printStackTrace();
+            } catch (IllegalAccessException | IllegalArgumentException | InvocationTargetException e) {
+                e.printStackTrace();
+            }
+        }
+    }
+
+    @Override
+    public void onClick(View v) {
+        switch (v.getId()) {
+            case R.id.title_left_img:
+                giveUpBandCardDialog.show(getSupportFragmentManager(), "");
+                break;
+            case R.id.rl_cardType:
+                try {
+                    getBankList();
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+                break;
+            case R.id.rl_choose:
+                if (isChoose) {
+                    image_choose.setImageDrawable(getResources().getDrawable(R.drawable.unchecked));
+                } else {
+                    image_choose.setImageDrawable(getResources().getDrawable(R.drawable.chosen));
+                }
+                isChoose = !isChoose;
+                break;
+            case R.id.tv_userId:
+                mDialog.show(getSupportFragmentManager(), "");
+                break;
+            case R.id.image_notice:
+                phoneNumDialog.show(getSupportFragmentManager(), "");
+                break;
+            case R.id.tv_deal:
+                Intent intent_agree = new Intent(AddBankActivity.this, MyGiftActivity.class);
+                intent_agree.putExtra("url", UrlConfig.IP_M + UrlConfig.APPHELP_BANKP);
+                intent_agree.putExtra("title", "服务协议");
+                startActivity(intent_agree);
+                break;
+            case R.id.image_delete:
+                et_cardNum.setText("");
+                image_delete.setVisibility(View.INVISIBLE);
+                break;
+            case R.id.image_delete_userid:
+                tv_userId.setText("");
+                image_delete_userid.setVisibility(View.INVISIBLE);
+                break;
+            case R.id.rl_next:
+                if (isClickable) {
+                    if (isDone()) {
+                        try {
+                            bindBankCardNetWork();
+                        } catch (Exception e) {
+                            e.printStackTrace();
+                        }
+                    }
+                }
+                break;
+            default:
+                break;
+        }
+    }
+
+    public boolean isDone() {
+        if (TextUtils.isEmpty(et_cardNum.getText().toString().trim())) {
+            ToastUtil.show(AddBankActivity.this, "请输入银行卡号");
+            return false;
+        } else if (TextUtils.isEmpty(tv_cardType.getText().toString().trim())) {
+            ToastUtil.show(AddBankActivity.this, "请选择卡类型");
+            return false;
+        } else if (TextUtils.isEmpty(et_userName.getText().toString().trim()) ||
+                !(et_userName.getText().toString().trim().length() >= 2 && et_userName.getText().toString().trim().length() <= 15)) {
+            ToastUtil.show(AddBankActivity.this, "持卡人姓名有误");
+            return false;
+        } else if (TextUtils.isEmpty(tv_userId.getText().toString().trim()) || tv_userId.getText().toString().trim().length() < 18) {
+            ToastUtil.show(AddBankActivity.this, "请输入持卡人身份证号码");
+            return false;
+        } else if (!DensityUtil.isMobileNO(et_phoneNum.getText().toString().trim())) {
+            ToastUtil.show(AddBankActivity.this, "您输入的手机号码格式有误");
+            return false;
+        } else if (!isChoose) {
+            ToastUtil.show(AddBankActivity.this, "请勾选我同意鲸鱼用户协议");
+            return false;
+        } else {
+            return true;
+        }
+    }
+
+    @Override
+    protected void initData() {
+    }
+
+    @Override
+    protected void findViewById() {
+    }
+
+    @Override
+    protected void setListener() {
+    }
+
+    @Override
+    public void onCancelClick(int type) {
+        if (type == 1) {
+        }
+    }
+
+    @Override
+    public void onSureClick(int type) {
+        if (type == 1) {
+            AddBankActivity.this.finish();
+        } else if (type == 2) {
+
+        }
+    }
+
+    /**
+     * 获取服务器支持的银行列表 @author Ysw created at 2017/1/5 17:45
+     */
+    protected void getBankList() throws Exception {
+        RequestParams params = new RequestParams();
+        MyhttpClient.desPost(UrlConfig.GETCARDTYPE, params, new AsyncHttpResponseHandler() {
+            @Override
+            public void onStart() {
+                super.onStart();
+                showWaittingDialog(AddBankActivity.this);
+            }
+
+            @Override
+            public void onFinish() {
+                dismissWaittingDialog();
+                super.onFinish();
+            }
+
+            @Override
+            public void onFailure(int arg0, Header[] arg1, byte[] arg2, Throwable arg3) {
+                super.onFailure(arg0, arg1, arg2, arg3);
+                ToastUtil.show(AddBankActivity.this, R.string.default_error);
+            }
+
+            @Override
+            public void onSuccess(int arg0, Header[] arg1, byte[] arg2) {
+                super.onSuccess(arg0, arg1, arg2);
+                try {
+                    String response = new String(arg2, "UTF-8");
+                    response = CommonUtil.transResponse(response);
+                    JSONObject jsb = new JSONObject(response);
+                    String cipher = jsb.getString("cipher");
+                    cipher = MyDES.decrypt(cipher);
+                    JSONObject object = new JSONObject(cipher);
+                    int code = object.getInt("code");
+                    if (code == 1000) {
+                        JSONArray dataArray = object.getJSONArray("data");
+                        if (dataArray == null || dataArray.length() == 0) {
+                            return;
+                        }
+                        final List<String> list = new ArrayList<>();
+                        for (int i = 0; i < dataArray.length(); i++) {
+                            String data = (String) dataArray.get(i);
+                            data = data.trim();
+                            list.add(data);
+                        }
+                        final ChangeAddressDialog dialog = new ChangeAddressDialog(AddBankActivity.this, list);
+                        dialog.setbank(list.get(0));
+                        dialog.show();
+                        dialog.setAddresskListener(new ChangeAddressDialog.OnAddressCListener() {
+                            @Override
+                            public void onClick(String bank) {
+                                isDisappear = false;
+                                tv_cardType.setText(bank);
+                                tv_cardType.setTextColor(Color.parseColor("#333333"));
+                                rl_userName.setVisibility(View.VISIBLE);
+                                rl_userId.setVisibility(View.VISIBLE);
+                                rl_userInfoHint.setVisibility(View.VISIBLE);
+                                rl_phoneNum.setVisibility(View.VISIBLE);
+                                rl_protocol.setVisibility(View.VISIBLE);
+                                dialog.dismiss();
+                            }
+                        });
+                    } else {
+                        ToastUtil.show(getApplication(), object.getString("msg"));
+                    }
+                } catch (UnsupportedEncodingException e) {
+                    e.printStackTrace();
+                } catch (JsonSyntaxException e) {
+                    MyLog.i("json解析错误", "解析错误");
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            }
+        });
+    }
+
+    /**
+     * 获取当前银行卡号所对应的银行 @author Ysw created at 2017/1/5 18:16
+     */
+    public void getBankName(String num) throws Throwable {
+        RequestParams params = new RequestParams();
+        JSONObject object = new JSONObject();
+        object.put("cardno", num);
+        String desStr = MyDES.encrypt(object.toString());
+        params.put("cipher", desStr);
+        MyhttpClient.desPost(UrlConfig.BANK_NAME, params, new AsyncHttpResponseHandler() {
+            @Override
+            public void onStart() {
+                super.onStart();
+            }
+
+            @Override
+            public void onFinish() {
+                super.onFinish();
+            }
+
+            @Override
+            public void onFailure(int arg0, Header[] arg1, byte[] arg2, Throwable arg3) {
+                super.onFailure(arg0, arg1, arg2, arg3);
+                ToastUtil.show(AddBankActivity.this, R.string.default_error);
+            }
+
+            @Override
+            public void onSuccess(int arg0, Header[] arg1, byte[] arg2) {
+                super.onSuccess(arg0, arg1, arg2);
+                try {
+                    String response = new String(arg2, "UTF-8");
+                    response = CommonUtil.transResponse(response);
+                    JSONObject jsb = new JSONObject(response);
+                    String cipher = jsb.getString("cipher");
+                    cipher = MyDES.decrypt(cipher);
+                    BaseModel<BankNameMode> result = new Gson().fromJson(cipher, new TypeToken<BaseModel<BankNameMode>>() {
+                    }.getType());
+                    if (result.isSuccess()) {
+                        isDisappear = false;
+                        image_cara.setVisibility(View.VISIBLE);
+                        image_more.setVisibility(View.GONE);
+                        tv_type.setText("\u3000\u3000");
+                        tv_cardType.setText(result.getData().getBankname());
+                        tv_cardType.setTextColor(Color.parseColor("#333333"));
+                        rl_userName.setVisibility(View.VISIBLE);
+                        rl_userId.setVisibility(View.VISIBLE);
+                        rl_userInfoHint.setVisibility(View.VISIBLE);
+                        rl_phoneNum.setVisibility(View.VISIBLE);
+                        rl_protocol.setVisibility(View.VISIBLE);
+                        rl_cardType.setOnClickListener(null);
+                    } else {
+                        rl_cardType.setOnClickListener(AddBankActivity.this);
+                    }
+                } catch (UnsupportedEncodingException e) {
+                    e.printStackTrace();
+                } catch (JsonSyntaxException e) {
+                    MyLog.i("json解析错误", "解析错误");
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            }
+        });
+    }
+
+    /**
+     * 绑定银行卡接口 @author Ysw created at 2017/1/6 20:13
+     */
+    private void bindBankCardNetWork() throws Exception {
+        RequestParams params = new RequestParams();
+        JSONObject object = new JSONObject();
+        object.put("cardno", mCardNum);
+        object.put("user_name", et_userName.getText().toString().trim());
+        object.put("user_number", tv_userId.getText().toString().trim());
+        object.put("user_tel", et_phoneNum.getText().toString().trim());
+        object.put("machine", "an");
+        object.put("uid", Uid);
+        object.put("bank_name", tv_cardType.getText().toString().trim());
+        String desStr = MyDES.encrypt(object.toString());
+        params.put("cipher", desStr);
+        MyhttpClient.desPost(UrlConfig.YEEPAY_BANKCARD_REQUEST, params, new AsyncHttpResponseHandler() {
+            @Override
+            public void onStart() {
+                super.onStart();
+                showWaittingDialog(AddBankActivity.this);
+            }
+
+            @Override
+            public void onFinish() {
+                dismissWaittingDialog();
+                super.onFinish();
+            }
+
+            @Override
+            public void onFailure(int arg0, Header[] arg1, byte[] arg2, Throwable arg3) {
+                super.onFailure(arg0, arg1, arg2, arg3);
+                ToastUtil.show(AddBankActivity.this, R.string.default_error);
+            }
+
+            @Override
+            public void onSuccess(int arg0, Header[] arg1, byte[] arg2) {
+                super.onSuccess(arg0, arg1, arg2);
+                try {
+                    String response = new String(arg2, "UTF-8");
+                    response = CommonUtil.transResponse(response);
+                    JSONObject jsb = new JSONObject(response);
+                    String cipher = jsb.getString("cipher");
+                    cipher = MyDES.decrypt(cipher);
+                    BaseModel<BindBankCardMode> result = new Gson().fromJson(cipher, new TypeToken<BaseModel<BindBankCardMode>>() {
+                    }.getType());
+                    if (result.isSuccess()) {
+                        Intent intent = new Intent();
+                        intent.setClass(AddBankActivity.this, PhoneMessageActivity.class);
+                        intent.putExtra("phone", et_phoneNum.getText().toString().trim());
+                        intent.putExtra("userName", et_userName.getText().toString().trim());
+                        intent.putExtra("userNum", tv_userId.getText().toString().trim());
+                        intent.putExtra("requestid", result.getData().getRequestid());
+                        intent.putExtra("zone_id", result.getData().getZone_id());
+                        intent.putExtra("open_city", result.getData().getOpen_city());
+                        startActivity(intent);
+                        mThread.destroy();
+                        finish();
+                    } else {
+                        ToastUtil.show(getApplication(), result.getMsg());
+                    }
+                } catch (UnsupportedEncodingException e) {
+                    e.printStackTrace();
+                } catch (JsonSyntaxException e) {
+                    MyLog.i("json解析错误", "解析错误");
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            }
+        });
+    }
+
+    // 身份证输入完成时电话号码框自动获取焦点 @author Ysw created at 2017/1/6 18:50
+    @Override
+    public void userIdOverListener(boolean isOver) {
+        if (isOver) {
+            et_phoneNum.setFocusable(true);
+            et_phoneNum.setFocusableInTouchMode(true);
+            et_phoneNum.requestFocus();
+            automaticPopup(et_phoneNum);
+        }
+    }
+
+    @Override
+    public boolean onKeyDown(int keyCode, KeyEvent event) {
+        if (keyCode == KeyEvent.KEYCODE_BACK) {
+            return false;
+        } else if (keyCode == KeyEvent.KEYCODE_DEL) {
+            return true;
+        } else {
+            finish();
+            return false;
+        }
+    }
+
+    // 绑卡成功后关闭页面
+    @Subscriber(tag = EventBusKey.BANDCARD_SUCCESD)
+    public void finishActivity(boolean isChoose) {
+        if (isChoose)
+            AddBankActivity.this.finish();
+    }
+}

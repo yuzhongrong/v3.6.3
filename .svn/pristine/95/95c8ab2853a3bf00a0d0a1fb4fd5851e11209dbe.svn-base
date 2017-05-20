@@ -1,0 +1,273 @@
+# To enable ProGuard in your project, edit project.properties
+# to define the proguard.config property as described in that file.
+#
+# Add project specific ProGuard rules here.
+# By default, the flags in this file are appended to flags specified
+# in ${sdk.dir}/tools/proguard/proguard-android.txt
+# You can edit the include path and order by changing the ProGuard
+# include property in project.properties.
+#
+# For more details, see
+#   http://developer.android.com/guide/developing/tools/proguard.html
+
+# Add any project specific keep options here:
+
+# If your project uses WebView with JS, uncomment the following
+# and specify the fully qualified class name to the JavaScript interface
+# class:
+#-keepclassmembers class fqcn.of.javascript.interface.for.webview {
+#   public *;
+#}
+
+-dontoptimize
+-optimizationpasses 5                                                           # 指定代码的压缩级别
+-dontusemixedcaseclassnames                                                     # 是否使用大小写混合
+-dontskipnonpubliclibraryclasses                                                # 是否混淆第三方jar
+#-dontpreverify                                                                  # 混淆时是否做预校验
+-verbose  
+-dontwarn                                                                      # 混淆时是否记录日志
+-optimizations !code/simplification/arithmetic,!field/*,!class/merging/*        # 混淆时所采用的算法
+-keepattributes InnerClasses,LineNumberTable
+
+
+
+#-libraryjars libs/android-async-http-1.4.4.jar
+#-libraryjars libs/libammsdk.jar
+#-libraryjars libs/gson-2.2.4.jar
+#-libraryjars libs/umeng-analytics-v5.2.4.jar
+#-libraryjars libs/umeng-update-v2.6.0.1.jar
+#-libraryjars libs/mframework.jar
+#-libraryjars libs/androideventbus-1.0.4.jar
+-ignorewarnings
+
+-assumenosideeffects class android.util.Log {
+    public static *** d(...);
+    public static *** w(...);
+    public static *** v(...);
+    public static *** i(...);
+    public static *** e(...);
+    public static *** a(...);
+}
+
+
+-keepclasseswithmembernames class * {                                          
+    native <methods>;
+}
+-keepclasseswithmembers class * {                                               
+    public <init>(android.content.Context, android.util.AttributeSet);
+}
+
+-keepclasseswithmembers class * {
+    public <init>(android.content.Context, android.util.AttributeSet, int);    
+}
+-keepclassmembers class * extends android.app.Activity {                       
+   public void *(android.view.View);
+}
+-keepclassmembers enum * {                                                      
+    public static **[] values();
+    public static ** valueOf(java.lang.String);
+}
+-keep class * implements android.os.Parcelable {                               
+  public static final android.os.Parcelable$Creator *;
+}
+
+#-keep class MyClass;                                                         
+
+
+
+-keep public class * extends android.app.Fragment  
+-keep public class * extends android.app.Activity
+-keep public class * extends android.app.Application
+-keep public class * extends android.app.Service
+-keep public class * extends android.content.BroadcastReceiver
+-keep public class * extends android.content.ContentProvider
+-keep public class * extends android.app.backup.BackupAgentHelper
+-keep public class * extends android.preference.Preference
+-keep public class * extends android.support.v4.**
+-keep public class com.android.vending.licensing.ILicensingService
+-keep public class  org.simple.eventbus.** { *; }
+-keepclassmembers class * {
+   public <init>(org.json.JSONObject);
+}
+-keep public class com.jinr.core.pay.** {
+    <fields>;
+    <methods>;
+}
+# 连连混淆keep规则，请添加
+-keep class com.yintong.secure.activityproxy.PayIntro$LLJavascriptInterface{*;}
+
+-keepclasseswithmembernames class * {
+    native <methods>;
+}
+-keepclassmembers public class * extends android.view.View {
+   void set*(***);
+   *** get*();
+}
+-keepclassmembers class * extends android.app.Activity {
+   public void *(android.view.View);
+}
+-keepclassmembers enum * {
+    public static **[] values();
+    public static ** valueOf(java.lang.String);
+}
+
+-keep class * implements android.os.Parcelable {
+  public static final android.os.Parcelable$Creator *;
+}
+
+-keepclassmembers class * {
+   public <init>(org.json.JSONObject);
+}
+-keep class model.** { *; }	
+-keep class com.jinr.core.gift.share.** { *; }	
+-keep class com.jinr.core.wxapi.** { *; }	
+-keep class com.jeremyfeinstein.slidingmenu.** { *; }	
+
+-dontwarn android.support.v4.**  
+-dontwarn org.apache.commons.net.** 
+-dontwarn com.tencent.**
+-dontwarn com.sina.weibo.sdk.**
+# Application classes that will be serialized/deserialized over Gson
+
+-keepclasseswithmembers class * {
+    native <methods>;
+}
+-keepclasseswithmembers class * {
+    public <init>(android.content.Context, android.util.AttributeSet);
+}
+-keepclasseswithmembers class * {
+    public <init>(android.content.Context, android.util.AttributeSet, int);
+}
+-keepclassmembers enum * {
+    public static **[] values();
+    public static ** valueOf(java.lang.String);
+}
+-keep class * implements android.os.Parcelable {
+  public static final android.os.Parcelable$Creator *;
+}
+-keepclasseswithmembers class * {
+    public <init>(android.content.Context);
+}
+-dontshrink
+-dontoptimize
+-dontwarn com.google.android.maps.**
+-dontwarn android.webkit.WebView
+-dontwarn com.umeng.**
+-dontwarn com.tencent.weibo.sdk.**
+-dontwarn com.facebook.**
+-keep enum com.facebook.**
+-keep class cn.sharesdk.**{*;}
+-keep class com.sina.**{*;}
+-keep class m.framework.**{*;}
+
+-keep class com.umeng.message.*{
+        public <fields>;
+        public <methods>;
+}
+
+-keep class com.umeng.message.protobuffer.*{
+        public <fields>;
+        public <methods>;
+}
+
+-keep class com.squareup.wire.*{
+        public <fields>;
+        public <methods>;
+}
+
+-keep class org.android.agoo.impl.*{
+        public <fields>;
+        public <methods>;
+}
+
+-keep class org.android.agoo.** { *; }
+
+-keep class org.android.agoo.service.*{*;}
+
+-keep class org.android.spdy.**{*;}
+
+-keepattributes Exceptions,InnerClasses,Signature
+-keepattributes *Annotation*
+-keepattributes SourceFile,LineNumberTable
+-keep public interface com.facebook.**
+-keep public interface com.tencent.**
+-keep public interface com.umeng.socialize.**
+-keep public interface com.umeng.socialize.sensor.**
+-keep public interface com.umeng.scrshot.**
+-keep public class com.umeng.socialize.* {*;}
+-keep public class javax.**
+-keep public class android.webkit.**
+-keep class com.facebook.**
+-keep class com.umeng.scrshot.**
+-keep public class com.tencent.** {*;}
+-keep class com.umeng.socialize.sensor.**
+-keep class com.tencent.mm.sdk.openapi.WXMediaMessage {*;}
+-keep class com.tencent.mm.sdk.openapi.** implements com.tencent.mm.sdk.openapi.WXMediaMessage$IMediaObject {*;}
+-keep class im.yixin.sdk.api.YXMessage {*;}
+-keep class im.yixin.sdk.api.** implements im.yixin.sdk.api.YXMessage$YXMessageData{*;}
+-keep public class com.jinr.core.R$*{
+    public static final int *;
+}
+#umeng tuisong
+-dontwarn com.taobao.**
+-dontwarn anet.channel.**
+-dontwarn anetwork.channel.**
+-dontwarn org.android.**
+-dontwarn org.apache.thrift.**
+-dontwarn com.xiaomi.**
+-dontwarn com.huawei.**
+-keep class com.taobao.** {*;}
+-keep class org.android.** {*;}
+-keep class anet.channel.** {*;}
+-keep class com.umeng.** {*;}
+-keep class com.xiaomi.** {*;}
+-keep class com.huawei.** {*;}
+-keep class org.apache.thrift.** {*;}
+
+-keep public class **.R$*{
+   public static final int *;
+}
+
+-assumenosideeffects class android.util.Log{ 
+public static *** d(...); 
+public static *** i(...); 
+public static *** v(...); 
+}
+#------------------EVENTBUSS-------------------
+-keep class org.simple.** { *; }
+-keep interface org.simple.** { *; }
+-keepclassmembers class * {
+    @org.simple.eventbus.Subscriber <methods>;
+}
+#------------------EVENTBUSS-------------------
+#------------------gson-------------------
+-keepattributes Signature
+# Gson specific classes
+-keep class sun.misc.Unsafe { *; }
+# Application classes that will be serialized/deserialized over Gson
+-keep class com.google.gson.** { *; }
+-keep class com.google.gson.stream.** { *; }
+-keep class com.google.gson.examples.android.model.** { *; }
+-keep class com.matrix.app.entity.json.** { *; }
+-keep class com.matrix.appsdk.network.model.** { *; }
+#------------------gson-------------------
+
+#------------------universal-image-loader-------------------
+-dontwarn com.nostra13.universalimageloader.**
+
+-keep class com.nostra13.universalimageloader.** { *; }
+#------------------universal-image-loader-------------------
+#------------------baiduSDK-------------------
+-dontwarn com.baidu.**
+-keep class com.baidu.** { *; }
+-keep class vi.com.gdi.bgl.android.**{*;}
+#------------------baiduSDK-------------------
+
+##------------------glide-------------------
+#-keep public class * implements com.bumptech.glide.module.GlideModule
+#-keep public enum com.bumptech.glide.load.resource.bitmap.ImageHeaderParser$** {
+#  **[] $VALUES;
+#  public *;
+#}
+#-keep class com.bumptech.glide.** { *; }
+##------------------glide-------------------

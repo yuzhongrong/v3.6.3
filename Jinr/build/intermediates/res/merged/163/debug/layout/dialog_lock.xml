@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/dialog_back"
+    android:gravity="top"
+    android:orientation="vertical"
+    android:paddingBottom="3dp" >
+
+    <TextView
+        android:id="@+id/dialog_title_lock"
+        android:layout_width="match_parent"
+        android:layout_height="39dp"
+        android:layout_marginTop="5dp"
+        android:background="@null"
+        android:gravity="center"
+        android:textColor="@color/blue_high"
+        android:textSize="17sp" />
+
+    <EditText
+        android:id="@+id/dialog_ed_lock"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:background="@drawable/more_feedback_bg"
+        android:ems="10"
+        android:inputType="textWebPassword"
+        android:padding="8dp"
+        android:singleLine="true"
+        android:gravity="center"
+        android:textColorHint="@color/gray_hint" >
+    </EditText>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:layout_marginBottom="10dp"
+        android:orientation="horizontal" >
+
+        <Button
+            android:id="@+id/dialog_button_cancel"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="10dp"
+            android:layout_weight="1"
+            android:background="@drawable/btn_blue_light_bg"
+            android:text="取消"
+            android:textColor="@color/white"
+            android:textSize="15sp" />
+
+        <Button
+            android:id="@+id/dialog_button_ok"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="20dp"
+            android:layout_weight="1"
+            android:background="@drawable/btn_bg_select"
+            android:text="确定"
+            android:textColor="@color/white"
+            android:textSize="15sp" />
+    </LinearLayout>
+
+</LinearLayout>

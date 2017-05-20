@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical" >
+<!-- 
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/title_height" >
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="1.5dp"
+            android:layout_marginTop="58.5dp"
+            android:background="@color/main_out_down_line_color" />
+
+        <ImageView
+            android:id="@+id/title_left_img"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/button_title_back_offset"
+            android:paddingBottom="15dp"
+            android:paddingLeft="@dimen/button_title_back_offset"
+            android:paddingRight="60dp"
+            android:paddingTop="15dp"
+            android:src="@drawable/button_item_back" />
+
+        <TextView
+            android:id="@+id/title_center_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="24dp"
+            android:text="@string/card_change_city"
+            android:textColor="@color/gray_text_dark"
+            android:textSize="16sp" />
+    </RelativeLayout>
+-->
+   <include
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        layout="@layout/title" />
+
+    <View style="@style/line" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="53dp"
+        android:background="@color/main_out_back_color"
+        android:orientation="horizontal" >
+
+        <EditText
+            android:id="@+id/et"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="5dp"
+            android:layout_toLeftOf="@+id/btn"
+            android:background="@drawable/more_feedback_bg"
+            android:hint="@string/input_city"
+            android:padding="7dp"
+            android:textColorHint="@color/gray_hint"
+            android:textSize="14sp" />
+
+        <Button
+            android:id="@+id/btn"
+            android:layout_width="37dp"
+            android:layout_height="37dp"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:background="@drawable/icon_serch"
+            android:padding="13dp" />
+    </RelativeLayout>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+
+        <RelativeLayout
+            android:id="@+id/city_layout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical" >
+
+            <ListView
+                android:id="@+id/city_list"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:cacheColorHint="@color/translate"
+                android:listSelector="@color/main_out_down_line_color"
+                android:scrollbars="none" />
+
+            <com.jinr.core.bankCard.citylist.main.MyLetterListView
+                android:id="@+id/cityLetterListView"
+                android:layout_width="30dip"
+                android:layout_height="match_parent"
+                android:layout_alignParentRight="true"
+                android:background="#40000000" />
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/overlay"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:background="@color/translate"
+            android:gravity="center"
+            android:maxWidth="80dp"
+            android:minWidth="80dp"
+            android:text=""
+            android:textColor="#3399ff"
+            android:textSize="70sp"
+            android:visibility="invisible" />
+    </FrameLayout>
+
+</LinearLayout>

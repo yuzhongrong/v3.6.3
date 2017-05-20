@@ -1,0 +1,133 @@
+apply plugin: 'android'
+
+dependencies {
+    compile fileTree(include: '*.jar', dir: 'libs')
+    compile project(':PushSDK')
+    compile files('libs/imageloader.jar')
+    compile 'com.android.support:design:22.2.1'
+    compile 'com.android.support:appcompat-v7:22.2.1'
+    compile files('libs/locSDK_6.23.jar')
+}
+
+android {
+    compileSdkVersion 22
+    buildToolsVersion "25.0.2"
+
+    defaultConfig {
+        minSdkVersion 11
+        targetSdkVersion 22
+        versionCode 47
+        versionName "3.6.3"
+        multiDexEnabled true
+        ndk {
+            abiFilters "armeabi", "armeabi-v7a", "x86", "mips"
+        }
+    }
+    //签名
+    signingConfigs {
+        release {
+            storeFile file("appsign")      //签名文件
+            storePassword "123456"
+            keyAlias "jinr"
+            keyPassword "123456"  //签名密码
+        }
+//        release {
+//            storeFile file("jinr.keystore")      //签名文件
+//            storePassword "123456"
+//            keyAlias "jinr"
+//            keyPassword "123456"  //签名密码
+//        }
+    }
+    lintOptions {
+        abortOnError false
+    }
+    buildTypes {
+        release {
+            buildConfigField "boolean", "LOG_DEBUG", "false"
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-project.txt'
+            signingConfig signingConfigs.release
+            minifyEnabled true
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility org.gradle.api.JavaVersion.VERSION_1_7
+        targetCompatibility org.gradle.api.JavaVersion.VERSION_1_7
+    }
+
+    sourceSets {
+        main {
+            manifest.srcFile 'AndroidManifest.xml'
+            java.srcDirs = ['src']
+            resources.srcDirs = ['src']
+            aidl.srcDirs = ['src']
+            renderscript.srcDirs = ['src']
+            res.srcDirs = ['res']
+            assets.srcDirs = ['assets']
+            jniLibs.srcDirs = ['libs']
+        }
+
+        instrumentTest.setRoot('tests')
+        debug.setRoot('build-types/debug')
+        release.setRoot('build-types/release')
+    }
+
+    //修改生成的apk名字
+    applicationVariants.all { variant ->
+        variant.outputs.each { output ->
+            def oldFile = output.outputFile
+            def newName = '';
+            if (variant.buildType.name.equals('release')) {
+//                println(variant.productFlavors[0].name)
+                def releaseApkName = 'jingyubao-' + variant.productFlavors[0].name + '-sign-release-v' + variant.versionName + '.apk'
+                output.outputFile = new File(oldFile.parent + "/channel", releaseApkName)
+            }
+            if (variant.buildType.name.equals('beta')) {
+                newName = oldFile.name.replace(".apk", "-v" + variant.versionName + "-build" + getDate() + ".apk")
+                output.outputFile = new File(oldFile.parent, newName)
+            }
+            if (variant.buildType.name.equals('debug')) {
+
+            }
+        }
+    }
+
+    productFlavors {  //在这里添加你所有需要打包的渠道
+        assist91 {}
+        yingyongbao {}//应用宝
+        wandou {}
+        xiaomi {}
+        baidu {}
+        huawei {}
+        "360" {}
+        yingyonghui {}
+        youyi {}
+        mumayi {}
+        "163" {}
+        PPandroid {}
+        lenovo {}
+        oppo {}
+        meizu {}
+        jinli {}
+        sogou {}
+        shop {}
+        nduo {}
+        jifeng {}
+        anzhi {}
+        sanxing {}
+        other {}
+        "moji-JY" {}
+        uc {}
+        vivo {}
+        opera {}
+        yyb {}
+        ourweb {}
+        ZJ_ShangChao {}
+        google {}//改渠道需另用签名 jinr.keystore
+    }
+    //添加如下代码
+    productFlavors.all { flavor ->
+        flavor.manifestPlaceholders = [UMENG_CHANNEL_VALUE: name]
+    }
+
+}

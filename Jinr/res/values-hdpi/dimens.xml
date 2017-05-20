@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- 首页水波及圆环的大小 -->
+    <dimen name="size_wave">100dp</dimen>
+    <dimen name="size_circle">130dp</dimen>
+    <dimen name="size_shouyi">50dp</dimen>
+    <dimen name="margin_shouyi">30dp</dimen>
+    <!-- 侧滑菜单宽度 -->
+     <dimen name="left_menu">250dp</dimen>
+</resources>

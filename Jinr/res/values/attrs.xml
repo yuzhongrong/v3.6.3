@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- LockPatternView class attributes -->
+    <declare-styleable name="LockPatternView">
+
+        <!--
+             Aspect to use when drawing LockPatternView. Choices are "square"(default), "lock_width"
+             or "lock_height"
+        -->
+        <attr name="aspect">
+            <enum name="square" value="0" />
+            <enum name="lockWidth" value="1" />
+            <enum name="lockHeight" value="2" />
+        </attr>
+        <attr name="line" format="color" />
+        <attr name="btnNormal" format="reference" />
+        <attr name="btnTouched" format="reference" />
+        <attr name="circleNormal" format="reference" />
+        <attr name="circleGreen" format="reference" />
+        <attr name="circleRed" format="reference" />
+        <attr name="arrowGreenUp" format="reference" />
+        <attr name="arrowRedUp" format="reference" />
+    </declare-styleable>
+    <declare-styleable name="dashedline">
+        <attr name="lineColor" format="color" />
+    </declare-styleable>
+    <declare-styleable name="ViewPager">
+        <attr name="orientation">
+            <enum name="horizontal" value="0" />
+            <enum name="vertical" value="1" />
+        </attr>
+    </declare-styleable>
+    <declare-styleable name="UseridKeyboardView">
+        <attr name="cancerImage" format="reference" />
+        <attr name="mpasswordtitle" format="string|reference" />
+        <attr name="titlesize" format="dimension" />
+        <attr name="titlecolor" format="color|reference" />
+        <attr name="linescolor" format="reference|color" />
+        <attr name="passwordlinecolor" format="color|reference" />
+        <attr name="passwordwidth" format="dimension|reference" />
+        <attr name="passwordlength" format="integer" />
+        <attr name="passwordimage" format="reference" />
+        <attr name="passwordpaddingtop" format="dimension|reference" />
+        <attr name="passwordpaddingleft" format="dimension|reference" />
+        <attr name="numbercolor" format="color|reference" />
+        <attr name="numbersize" format="dimension|reference" />
+        <attr name="deletecolor" format="color|reference" />
+        <attr name="deleteimage" format="reference" />
+        <attr name="mpasswordbackground" format="color|reference" />
+        <attr name="numberlineheight" format="dimension|reference" />
+        <attr name="surfacecolor" format="color|reference" />
+        <attr name="numberlines" format="integer" />
+    </declare-styleable>
+
+    <declare-styleable name="XEditText">
+        <attr name="x_separator" format="string"/>
+        <attr name="x_disableClear" format="boolean"/>
+        <attr name="x_clearDrawable" format="reference"/>
+        <attr name="x_showPwdDrawable" format="reference"/>
+        <attr name="x_hidePwdDrawable" format="reference"/>
+        <attr name="x_disableEmoji" format="boolean"/>
+    </declare-styleable>
+</resources>

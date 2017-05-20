@@ -1,0 +1,307 @@
+<?xml version="1.0" encoding="utf-8"?><!-- 604 -->
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <style name="TabLayoutStyle">
+        <item name="android:textSize">16sp</item>
+    </style>
+
+    <style name="edittext5_style">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:textSize">15dp</item>
+        <item name="android:singleLine">true</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:layout_centerVertical">true</item>
+        <item name="android:paddingLeft">10dp</item>
+        <item name="android:paddingRight">10dp</item>
+        <item name="android:paddingTop">8dp</item>
+        <item name="android:paddingBottom">8dp</item>
+        <item name="android:background">@null</item>
+        <item name="android:textColorHint">@color/gray_bg_btn</item>
+        <item name="android:textColor">@color/black</item>
+    </style>
+    <!-- text样式 -->
+    <!-- 字体样式 -->
+    <style name="text5_style">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_centerVertical">true</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:textColor">@color/phone_font_color</item>
+        <item name="android:textSize">16sp</item>
+    </style>
+    <!-- layout样式 -->
+    <style name="layout5_style">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginRight">10dp</item>
+        <item name="android:layout_marginLeft">10dp</item>
+        <item name="android:layout_marginTop">20dp</item>
+        <item name="android:padding">15dp</item>
+        <item name="android:background">@drawable/layout_bg_select</item>
+    </style>
+    <!-- 实线 -->
+    <style name="line5_style">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">0.8dip</item>
+        <item name="android:background">#e5e5e5</item>
+    </style>
+
+    <style name="line_news">
+        <item name="android:layout_width">0.5dp</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:background">@color/main_blue_color</item>
+    </style>
+    <!-- 设置箭头样式 -->
+    <style name="jiantou5_style">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginRight">5dp</item>
+        <item name="android:paddingLeft">5dp</item>
+        <item name="android:layout_alignParentRight">true</item>
+        <item name="android:layout_centerVertical">true</item>
+        <item name="android:layout_gravity">center_vertical</item>
+        <item name="android:src">@drawable/button_arrow</item>
+    </style>
+
+    <!-- 设置按钮样式 -->
+    <style name="btn5_style">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginLeft">10dp</item>
+        <item name="android:layout_marginRight">10dp</item>
+        <item name="android:layout_marginTop">@dimen/forget_password_height</item>
+        <item name="android:layout_centerVertical">true</item>
+        <item name="android:layout_gravity">center</item>
+        <item name="android:layout_centerInParent">true</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textSize">18sp</item>
+        <item name="android:background">@drawable/btn_bg</item>
+        <item name="android:textColor">@color/gray_hint</item>
+        <item name="android:padding">10dp</item>
+    </style>
+
+    <style name="btn_style">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">18sp</item>
+        <item name="android:background">@drawable/btn_bg</item>
+        <item name="android:textColor">@color/gray_hint</item>
+    </style>
+
+    <style name="btn5_style_new">
+        <item name="android:layout_marginTop">@dimen/trans_left_offset</item>
+        <item name="android:layout_marginBottom">@dimen/margin_left_left_menu</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginLeft">10dp</item>
+        <item name="android:layout_marginRight">10dp</item>
+        <item name="android:layout_centerVertical">true</item>
+        <item name="android:layout_gravity">center</item>
+        <item name="android:layout_centerInParent">true</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textSize">18sp</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:padding">10dp</item>
+    </style>
+
+    <style name="edittext5_pwd_style">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_weight">1.0</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:singleLine">true</item>
+        <item name="android:padding">10dp</item>
+        <item name="android:inputType">numberPassword</item>
+        <item name="android:autoText">true</item>
+        <item name="android:background">@color/white</item>
+        <item name="android:textColorHint">@color/gray_hint</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:maxLength">1</item>
+        <item name="android:cursorVisible">false</item>
+    </style>
+
+    <style name="btn_immediate_investment">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_centerVertical">true</item>
+        <item name="android:layout_gravity">center</item>
+        <item name="android:layout_centerInParent">true</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textSize">18sp</item>
+        <item name="android:background">@drawable/immediate_investment</item>
+        <item name="android:textColor">@color/gray_hint</item>
+    </style>
+
+    <style name="btn_regular">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginLeft">10dp</item>
+        <item name="android:layout_marginRight">12dp</item>
+        <item name="android:layout_centerVertical">true</item>
+        <item name="android:layout_gravity">center</item>
+        <item name="android:layout_centerInParent">true</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textSize">18sp</item>
+        <item name="android:background">@drawable/immediate_investment_bg</item>
+        <item name="android:textColor">@color/gray_hint</item>
+    </style>
+    <!-- layout样式2 -->
+    <style name="layout_style_two">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:background">@drawable/layout_bg_select</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:orientation">vertical</item>
+    </style>
+
+    <!-- PopupWindow动画 -->
+    <style name="popwin_anim_style">
+        <item name="android:windowEnterAnimation">@anim/pop_top_in</item>
+        <item name="android:windowExitAnimation">@anim/pop_top_out</item>
+    </style>
+
+    <style name="layout_style_one">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">44dp</item>
+        <item name="android:layout_marginTop">15dp</item>
+        <item name="android:padding">5dp</item>
+        <item name="android:background">@drawable/layout_bg</item>
+    </style>
+    <!-- 收益率动画效果 -->
+    <style name="shouyilv_one">
+        <item name="android:textSize">70dp</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="shouyilv_two">
+        <item name="android:textSize">33dp</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="dayup_shouyilv_one">
+        <item name="android:textSize">60dp</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    // 活期加息的风格一 @author Ysw created at 2017/4/7 13:11
+    <style name="shouyilv_addrate_one">
+        <item name="android:textSize">35dp</item>
+        <item name="android:textColor">#fdc264</item>
+    </style>
+
+    // 活期加息的风格二 @author Ysw created at 2017/4/7 13:11
+    <style name="shouyilv_addrate_two">
+        <item name="android:textSize">25dp</item>
+        <item name="android:textColor">#fdc264</item>
+    </style>
+
+    // 注册成功时红包效果的5,000.00元字体大小风格 @author Ysw created at 2017/3/13 17:52
+
+    <style name="register_redpackage_one">
+        <item name="android:textSize">45dp</item>
+    </style>
+
+    // 注册成功时红包效果的5,000.00元字体大小风格 @author Ysw created at 2017/3/13 17:52
+
+    <style name="register_redpackage_two">
+        <item name="android:textSize">24dp</item>
+    </style>
+
+    <style name="dayup_first">
+        <item name="android:textSize">56dp</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="dayup_second">
+        <item name="android:textSize">20dp</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="dayup_shouyilv_two">
+        <item name="android:textSize">28dp</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="dayup_push_one">
+        <item name="android:textSize">45dp</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="dayup_push_two">
+        <item name="android:textSize">20dp</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="dialogWindowAnim" mce_bogus="1" parent="android:Animation">
+        <item name="android:windowEnterAnimation">@anim/dialog_enter_anim</item>
+        <item name="android:windowExitAnimation">@anim/dialog_exit_anim</item>
+    </style>
+
+    <style name="regulardialogWindowAnim" mce_bogus="1" parent="android:Animation">
+        <item name="android:windowEnterAnimation">@anim/regular_dialog_enter_anim</item>
+        <!-- <item name="android:windowExitAnimation">@anim/regular_dialog_exit_anim</item> -->
+    </style>
+    <!-- 重发短信验证码倒数style -->
+    <style name="text_countdown_second">
+        <item name="android:textColor">@color/phone_font_color</item>
+    </style>
+
+    <style name="text_countdown_resend">
+        <item name="android:textColor">@color/gray_bg_btn</item>
+    </style>
+
+    <style name="event_dialog_hint_text">
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColor">@color/event_dialog_text</item>
+        <item name="android:gravity">center</item>
+    </style>
+
+    <style name="event_dialog_button_text">
+        <item name="android:background">@drawable/cash_bonus_investment_btn</item>
+        <item name="android:textColor">@color/event_dialog_button</item>
+        <item name="android:textSize">@dimen/font_common_1</item>
+    </style>
+
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="android:windowNoTitle">true</item>
+        <!-- 设置activity切换动画 -->
+        <item name="android:windowAnimationStyle">@style/activityAnimation</item>
+    </style>
+    <!-- animation 样式 -->
+    <style name="activityAnimation" parent="@android:style/Animation">
+        <item name="android:activityOpenEnterAnimation">@anim/right_in</item>
+        <item name="android:activityOpenExitAnimation">@anim/left_out</item>
+        <item name="android:activityCloseEnterAnimation">@anim/left_in</item>
+        <item name="android:activityCloseExitAnimation">@anim/right_out</item>
+    </style>
+
+    <style name="CustomCheckboxTheme" parent="@android:style/Widget.CompoundButton.CheckBox">
+        <item name="android:button">@drawable/checkbox_style</item>
+    </style>
+
+    <style name="Dialog" parent="android:style/Theme.Holo.Dialog">
+        <item name="android:windowBackground">@color/white</item>
+        <item name="android:windowNoTitle">true</item>
+    </style>
+
+    <style name="dialog" parent="@android:style/Theme.Dialog">
+        <item name="android:windowFrame">@null</item>
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:windowIsTranslucent">false</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:background">@android:color/black</item>
+        <item name="android:windowBackground">@null</item>
+        <item name="android:backgroundDimEnabled">false</item>
+    </style>
+
+    <!-- dialog样式 DealPwdDialog  -->
+    <style name="DialogStylePwd">
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:windowBackground">@color/translate</item>
+        <item name="android:windowIsFloating">false</item>
+    </style>
+
+</resources>

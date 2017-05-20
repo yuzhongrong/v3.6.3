@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+  	<string  name="loging_hint">请输入您的密码</string>
+  	<string  name="loging_hint_pw">请输入登录密码</string>
+    <string name="hint_a">请输入6位以上新密码</string>
+    <string name="hint_b">请输入您的手机号码</string>
+    <string name="hint_a_set">请设置登录密码</string>
+    <string name="hint_invite_code_set">请输入邀请码，额外赠送3000元红包(非必填)</string>
+    <string name="hint_code">请输入手机验证码</string>
+    <string name="hint_code_6">请输入6位验证码</string>
+    <string name="hint_c">持卡人姓名</string>
+    <string name="hint_d">身份证号码</string>
+    <string name="hint_e">银行预留手机号码</string>
+    <string name="hint_g">请输入原始登录密码</string>
+    <string name="hint_h">请输入新登录密码</string>
+    <string name="hint_i">请再次输入登录密码</string>
+    <string name="hint_j">请输入6位纯数字</string>
+    <string name="hint_yl">请输入6位纯数字</string>
+    <string name="hint_k">请确认交易密码</string>
+    <string name="hint_l">请输入转出金额</string>
+    <string name="hint_m">请输入交易密码</string>
+    <string name="hint_n">"请输入手机号／邮箱"</string>
+    <string name="hint_o">"请输入姓名"</string>
+    <string name="hint_p">"请输入身份证号"</string>
+    <string name="hint_aa">"银行卡类型"</string>
+    <string name="hint_ab">"持卡人姓名"</string>
+    <string name="hint_ac">"银行预留手机号码"</string>
+    <string name="hint_ad">"短信校验码"</string>
+    <string name="hint_ae">请输入登录密码</string>
+    <string name="hint_again">请输入原交易密码</string>
+    <string name="hint_oldloging">请输入旧的登录密码</string>
+	<string name="hint_newtel">请输入新绑定手机号</string>
+</resources>

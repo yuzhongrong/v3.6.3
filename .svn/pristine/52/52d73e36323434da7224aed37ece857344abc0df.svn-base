@@ -1,0 +1,418 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest package="com.jinr.core"
+          xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS"/>
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.CALL_PHONE"/>
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS"/>
+    <uses-permission android:name="android.permission.MANAGE_ACCOUNTS"/>
+    <uses-permission android:name="android.permission.GET_ACCOUNTS"/>
+    <uses-permission android:name="android.permission.SET_ANIMATION_SCALE"/>
+    <!-- 接收消息 -->
+    <uses-permission android:name="android.permission.RECEIVE_SMS"/>
+    <uses-permission android:name="android.permission.RECEIVE_USER_PRESENT"/>
+    <uses-permission android:name="android.permission.WAKE_LOCK"/>
+    <uses-permission android:name="android.permission.WRITE_SETTINGS"/>
+    <!-- Optional. Required for location feature -->
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_LOCATION_EXTRA_COMMANDS"/>
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN"/>
+    <uses-permission android:name="android.permission.VIBRATE"/>
+
+    <application
+        android:name=".JinrApp"
+        android:allowBackup="true"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme">
+        <activity
+            android:name=".ImageActivity"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+
+
+        <activity
+            android:name=".MainActivity"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name="com.mob.tools.MobUIShell"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar"
+            android:windowSoftInputMode="stateHidden|adjustResize">
+            <intent-filter>
+                <data android:scheme="tencent1103569041"/>
+
+                <action android:name="android.intent.action.VIEW"/>
+
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".AdvertisementActivity"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".more.AboutUsActivity"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".trade.OperationsAcitivity"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".regist.RegisterActivity"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".more.MoreActivity"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".security.SecurityCenterActivity"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".bankCard.LeftBankCardActivity"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".gift.BonusCenterActivity"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".security.ForgotPasswdActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustUnspecified|stateHidden"/>
+        <activity
+            android:name=".security.ForgotPwd1Activity"
+            android:configChanges="orientation|keyboardHidden"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustUnspecified|stateHidden"/>
+        <activity
+            android:name=".bankCard.AddBankActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustUnspecified|stateHidden"/>
+        <activity
+            android:name=".bankCard.PhoneMessageActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustResize|stateHidden"/>
+        <activity
+            android:name=".trade.purchase.PurchaseLimitNoteActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustUnspecified|stateHidden"/>
+        <activity
+            android:name=".trade.purchase.PurchaseResultActivity"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".trade.record.TradeRecordActivity"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".trade.record.RecordDetailActivity"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".bankCard.citylist.main.CityList"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".bankCard.banklist.main.BankList"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".my_change.WebViewActivity"
+            android:label="@string/title_activity_web_view"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".my_change.GiftActivity"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".security.lockpanttern.pattern.CreateGesturePasswordActivity"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".security.lockpanttern.pattern.UnlockGesturePasswordActivity"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".guide.SplashActivity"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".guide.GuideActivity"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".security.RealInfoActivity"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".security.MyBankCardActivity"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".gift.GiftDetailActivity"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait"/>
+
+        <service
+            android:name="com.umeng.update.net.DownloadingService"
+            android:process=":DownloadingService"/>
+
+        <activity
+            android:name="com.umeng.update.UpdateDialogActivity"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
+        <activity
+            android:name=".security.mobile.ChangeMobileStep1"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".security.loginpwd.ChangeLoginPwd"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".security.tradepwd.ChgTradePwd"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".security.tradepwd.SetTradePwdActivity"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".security.tradepwd.FindTradePwd"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".dayup.MyDayUpActivity"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".dayup.CommonProjectDetailActivity"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".regular.ProductInstructionsActivity"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".trade.purchase.RegularPurchaseFirstActivity"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".trade.purchase.CurrentPurchaseFirstActivity"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".security.SettingActivity"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".security.address.EditAddressActivity"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".gift.NewActActivity"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".dayup.ActBannerActivity"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
+        <activity
+            android:name=".transfer.TransferedListActivity"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait"/>
+        <!-- 微信分享回调 -->
+        <activity
+            android:name=".wxapi.WXEntryActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:exported="true"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
+
+        <receiver
+            android:name=".AppRegister"
+            android:permission="com.tencent.mm.plugin.permission.SEND">
+            <intent-filter>
+                <action android:name="com.tencent.mm.plugin.openapi.Intent.ACTION_REFRESH_WXAPP"/>
+            </intent-filter>
+        </receiver>
+
+        <meta-data
+            android:name="UMENG_APPKEY"
+            android:value="54a0be33fd98c5f00c0007cd"/>
+        <!-- 360 andmarket assist91 baidu  other ourweb xiaomi yingyongbao sina quanmin weibo test |id| -->
+        <meta-data
+            android:name="UMENG_CHANNEL"
+            android:value="${UMENG_CHANNEL_VALUE}"/>
+        <meta-data
+            android:name="UMENG_MESSAGE_SECRET"
+            android:value="bd6f1e4c6ceb97cedb382d9711434086"/>
+
+        <service
+            android:name="com.baidu.location.f"
+            android:enabled="true"
+            android:process=":remote">
+            <intent-filter>
+                <action android:name="com.baidu.location.service_v2.2">
+                </action>
+            </intent-filter>
+        </service>
+
+        <meta-data
+            android:name="com.baidu.lbsapi.API_KEY"
+            android:value="8msn94tZdcNLxSiviBknqnjbcHkRSSFh"/>
+
+        <!-- google渠道需要换成这个 -->
+        <!-- <meta-data -->
+        <!-- android:name="com.baidu.lbsapi.API_KEY" -->
+        <!-- android:value="pG3KxE07OrPutGjPB9jhaaWEGE1hGWxV" /> -->
+
+        <activity
+            android:name=".more.CjWentiActivity"
+            android:label="@string/title_activity_cj_wenti"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".more.CommonWebActivity"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".more.AboutActivity"
+            android:label="@string/title_activity_about"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".more.FeedbackActivity"
+            android:label="@string/title_activity_feedback"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".news.ActDetailActivity"
+            android:label="@string/title_activity_system_news"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".gift.share.MyGiftActivity"
+            android:label="@string/title_activity_mygift"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".more.MyFeedbackActivity"
+            android:label="@string/title_activity_my_feedback"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".more.Detial_fbckActivity"
+            android:label="@string/title_activity_detial_fbck"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".trade.my_getCash.CityAddActivity"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".trade.getCash.AssetsActivity"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".notice.NoticeListActivity"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".notice.NoticeDetailsActivity"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".MyWebViewActivity"
+            android:label="@string/title_activity_web_view"
+            android:launchMode="singleTop"/>
+        <!-- LLYT SDK START -->
+        <activity
+            android:name="com.yintong.secure.activity.BaseActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar"
+            android:windowSoftInputMode="adjustResize"/>
+
+        <service
+            android:name="com.yintong.secure.service.PayService"
+            android:exported="false"/>
+        <!-- LLYT SDK END -->
+        <activity
+            android:name=".trade.record.NewTradeRecordActivity"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".regular.RegularAssetsActivity"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".my_change.ProfitAmountActivity"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".my_change.NewProfitAmountActivity"
+            android:screenOrientation="portrait"/>
+        <!-- 活动banner  966 -->
+        <activity
+            android:name=".regular.MyAssetsActivity"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".trade.record.WebRecordGetCash"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".transfer.TransferInfoActivity"
+            android:screenOrientation="portrait"/>
+
+        <!-- 活期转出  966 -->
+        <activity
+            android:name=".balance.CurrentOutActivity"
+            android:screenOrientation="portrait"/>
+        <!-- 余额资产页 -->
+        <activity
+            android:name=".balance.AccountBalanceActivity"
+            android:screenOrientation="portrait"/>
+        <!-- 余额转入 -->
+        <activity
+            android:name=".balance.BalanceInActivity"
+            android:screenOrientation="portrait"/>
+        <!-- 余额转出 -->
+        <activity
+            android:name=".balance.BalanceOutActivity"
+            android:screenOrientation="portrait"/>
+        <!-- 余额转出结果 -->
+        <activity
+            android:name=".balance.BalanceOutResultActivity"
+            android:screenOrientation="portrait"/>
+        <!-- 余额转入结果 -->
+        <activity
+            android:name=".balance.BalanceInResultActivity"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".transfer.TransferActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan"/>
+        <activity android:name=".security.address.AddressListActivity"/>
+        <!-- 验证码登录 -->
+        <activity
+            android:name=".regist.LoginByVerifyCodeActivity"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".news.NewsCenterActivity"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".bankCard.ChooseCityActivity"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".bankCard.SecondBandCardActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".strongbox.StrongBoxPactActivity"/>
+        <activity android:name=".regist.NewLoginActivity">
+        </activity>
+        <activity android:name=".regist.SafeLoginActivity">
+        </activity>
+        <activity android:name=".regist.ForgetPasswordActivity">
+        </activity>
+        <activity android:name=".regist.ResetPasswordActivity">
+        </activity>
+        <activity android:name=".regist.NewRegisterActivity">
+        </activity>
+    </application>
+
+</manifest>

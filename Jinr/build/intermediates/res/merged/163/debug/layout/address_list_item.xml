@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/ll_address"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:id="@+id/rl_address"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingBottom="10dp">
+
+            <TextView
+                android:id="@+id/tv_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="18dp"
+                android:text="陈先生"
+                android:textColor="@color/gray_text_dark"
+                android:textSize="14sp"/>
+
+            <TextView
+                android:id="@+id/tv_phone"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="20dp"
+                android:layout_marginTop="18dp"
+                android:text="18150386586"
+                android:textColor="@color/gray_text_dark"
+                android:textSize="14sp"/>
+
+            <TextView
+                android:id="@+id/tv_address"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_below="@+id/tv_name"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginTop="18dp"
+                android:text="福建省厦门市思明区软件园二区望海路14栋之三106室 18150386856 鲸鱼金融技术服务有限公司"
+                android:textColor="@color/gray_text_dark_tv"
+                android:textSize="14sp"/>
+        </RelativeLayout>
+
+        <View style="@style/line"/>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="40dp">
+
+            <ImageView
+                android:id="@+id/image_default"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="20dp"
+                android:src="@drawable/choice"/>
+
+            <TextView
+                android:id="@+id/tv_default"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="8dp"
+                android:layout_toRightOf="@+id/image_default"
+                android:gravity="center"
+                android:text="设为默认"
+                android:textColor="#a8a8a8"/>
+
+            <TextView
+                android:id="@+id/tv_edit"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginRight="35dp"
+                android:layout_toLeftOf="@+id/tv_delete"
+                android:drawableLeft="@drawable/edit"
+                android:drawablePadding="5dp"
+                android:gravity="center_vertical"
+                android:text="编辑"
+                android:textColor="#a8a8a8"
+                android:textSize="12sp"/>
+
+            <TextView
+                android:id="@+id/tv_delete"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginEnd="19dp"
+                android:layout_marginRight="19dp"
+                android:drawableLeft="@drawable/delete"
+                android:drawablePadding="5dp"
+                android:gravity="center_vertical"
+                android:text="删除"
+                android:textColor="#a8a8a8"
+                android:textSize="12sp"/>
+        </RelativeLayout>
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="8dp"
+        android:background="#F2F2F2">
+
+    </RelativeLayout>
+</LinearLayout>

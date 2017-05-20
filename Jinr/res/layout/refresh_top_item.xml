@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+	android:layout_width="match_parent" 
+	android:layout_height="50dip"
+	android:layout_marginTop="-50dip">
+
+	<RelativeLayout
+        android:id="@+id/listview_header_content"
+        android:layout_width="match_parent"
+        android:padding="5dp"
+        android:layout_height="wrap_content" >
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:gravity="center"
+            android:orientation="vertical" android:id="@+id/listview_header_text">
+
+            <TextView
+                android:id="@+id/refresh_hint"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                />
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/indicator"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@id/listview_header_text"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="-35dp"
+            android:src="@drawable/xlistview_arrow" />
+
+        <ProgressBar
+            android:id="@+id/progress"
+            android:layout_width="34dp"
+            android:layout_height="34dp"
+            android:layout_centerVertical="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginLeft="-40dp"
+            android:visibility="invisible" />
+    </RelativeLayout>
+</LinearLayout>

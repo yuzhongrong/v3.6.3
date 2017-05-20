@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <include
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        layout="@layout/title" />
+
+    <View style="@style/line" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="fill_parent"
+        android:background="@color/base_style_bg"
+        android:orientation="vertical" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/chg_tel_pwd_bg_rect"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp" 
+            android:gravity="center"
+            >
+
+            <TextView
+                android:id="@+id/textViewOld"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:text="旧密码"
+                android:textColor="@color/blue_color"
+                android:textSize="14sp" />
+
+            <com.jinr.core.utils.MyEditText
+                android:id="@+id/txt_pwd_old"
+                style="@style/captcha_style"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:hint="@string/hint_oldloging"
+                android:paddingLeft="20dp"
+                android:paddingRight="10dp" />
+
+            <ImageView
+                android:id="@+id/btn_eye_old"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="10dp"
+                android:src="@drawable/psw_disapper"
+                android:padding="10dp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="@dimen/change_login_pw_padding"
+            android:background="@drawable/chg_tel_pwd_bg_rect"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp" 
+            android:gravity="center">
+
+            <TextView
+                android:id="@+id/textViewNew1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:text="新密码"
+                android:textColor="@color/blue_color"
+                android:textSize="14sp" />
+
+            <com.jinr.core.utils.MyEditText
+                android:id="@+id/txt_pwd_new1"
+                style="@style/captcha_style"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:hint="@string/hint_a"
+                android:paddingLeft="20dp"
+                android:paddingRight="10dp" />
+
+            <ImageView
+                android:id="@+id/btn_eye_new1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/psw_disapper" 
+                android:layout_marginRight="10dp"
+                android:padding="10dp"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="@dimen/change_login_pw_padding"
+            android:background="@drawable/chg_tel_pwd_bg_rect"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp" 
+            android:gravity="center">
+
+            <TextView
+                android:id="@+id/textViewNew2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:text="确认密码"
+                android:textColor="@color/blue_color"
+                android:textSize="14sp" />
+
+            <com.jinr.core.utils.MyEditText
+                android:id="@+id/txt_pwd_new2"
+                style="@style/captcha_style"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:hint="@string/hint_h"
+                android:paddingLeft="8dp"
+                android:paddingRight="10dp" />
+
+            <ImageView
+                android:id="@+id/btn_eye_new2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="10dp"
+                android:padding="10dp"
+                android:src="@drawable/psw_disapper" />
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/btn_sure"
+            style="@style/btn5_style"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
+            android:background="@drawable/btn_blue_light_bg"
+            android:text="确认修改"
+            android:textColor="@color/white" />
+    </LinearLayout>
+
+</LinearLayout>

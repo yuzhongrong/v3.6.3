@@ -1,0 +1,436 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" android:versionCode="42" android:versionName="3.5.2" package="com.jinr.core">
+
+    <uses-sdk android:minSdkVersion="11" android:targetSdkVersion="22"/>
+
+    <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS"/>
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.CALL_PHONE"/>
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS"/>
+    <uses-permission android:name="android.permission.MANAGE_ACCOUNTS"/>
+    <uses-permission android:name="android.permission.GET_ACCOUNTS"/>
+    <uses-permission android:name="android.permission.SET_ANIMATION_SCALE"/>
+    <!-- 鎺ユ敹娑堟伅 -->
+    <uses-permission android:name="android.permission.RECEIVE_SMS"/>
+    <uses-permission android:name="android.permission.RECEIVE_USER_PRESENT"/>
+    <uses-permission android:name="android.permission.WAKE_LOCK"/>
+    <uses-permission android:name="android.permission.WRITE_SETTINGS"/>
+    <!-- Optional. Required for location feature -->
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_LOCATION_EXTRA_COMMANDS"/>
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN"/>
+    <uses-permission android:name="android.permission.VIBRATE"/>
+
+    <application android:allowBackup="true" android:icon="@drawable/ic_launcher" android:label="@string/app_name" android:name="com.jinr.core.JinrApp" android:theme="@style/AppTheme">
+        <activity android:label="@string/app_name" android:name="com.jinr.core.ImageActivity" android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+        <activity android:label="@string/app_name" android:name="com.jinr.core.MainActivity" android:screenOrientation="portrait">
+        </activity>
+        <!--
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+<<<<<<< .mine
+            </intent-filter>
+
+
+
+<<<<<<< .mine
+
+=======
+
+
+=======
+            </intent-filter>
+
+
+
+
+>>>>>>> .r1924
+>>>>>>> .r1832
+
+        -->
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.mob.tools.MobUIShell" android:screenOrientation="portrait" android:theme="@android:style/Theme.Translucent.NoTitleBar" android:windowSoftInputMode="stateHidden|adjustResize">
+            <intent-filter>
+                <data android:scheme="tencent1103569041"/>
+
+                <action android:name="android.intent.action.VIEW"/>
+
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:name="com.jinr.core.AdvertisementActivity" android:screenOrientation="portrait">
+        </activity>
+        <activity android:name="com.jinr.core.more.AboutUsActivity" android:screenOrientation="portrait">
+        </activity>
+        <activity android:name="com.jinr.core.trade.OperationsAcitivity" android:screenOrientation="portrait">
+        </activity>
+        <activity android:name="com.jinr.core.more.WebAboutUsActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.jinr.core.regist.RegisterActivity" android:screenOrientation="portrait">
+        </activity>
+        <activity android:name="com.jinr.core.regist.EntranceActivity" android:screenOrientation="portrait">
+        </activity>
+        <activity android:name="com.jinr.core.regist.IntivitationActivity" android:screenOrientation="portrait">
+        </activity>
+        <activity android:name="com.jinr.core.regist.LoginActivity" android:screenOrientation="portrait">
+        </activity>
+        <activity android:name="com.jinr.core.more.MoreActivity" android:screenOrientation="portrait">
+        </activity>
+        <activity android:name="com.jinr.core.security.SecurityCenterActivity" android:screenOrientation="portrait">
+        </activity>
+        <activity android:name="com.jinr.core.bankCard.LeftBankCardActivity" android:screenOrientation="portrait">
+        </activity>
+        <activity android:name="com.jinr.core.gift.BonusCenterActivity" android:screenOrientation="portrait">
+        </activity>
+        <activity android:configChanges="orientation|keyboardHidden" android:name="com.jinr.core.security.ForgotPasswdActivity" android:screenOrientation="portrait" android:windowSoftInputMode="adjustUnspecified|stateHidden">
+        </activity>
+        <activity android:configChanges="orientation|keyboardHidden" android:name="com.jinr.core.security.ForgotPwd1Activity" android:screenOrientation="portrait" android:windowSoftInputMode="adjustUnspecified|stateHidden"/>
+        <activity android:configChanges="orientation|keyboardHidden" android:name="com.jinr.core.security.ForgotDealPasswdActive" android:screenOrientation="portrait" android:windowSoftInputMode="adjustUnspecified|stateHidden">
+        </activity>
+        <activity android:configChanges="orientation|keyboardHidden" android:name="com.jinr.core.security.ChangeDealPwA" android:screenOrientation="portrait" android:windowSoftInputMode="adjustUnspecified|stateHidden"/>
+        <activity android:configChanges="orientation|keyboardHidden" android:name="com.jinr.core.security.ChangeDealPwB" android:screenOrientation="portrait" android:windowSoftInputMode="adjustUnspecified|stateHidden"/>
+        <activity android:configChanges="orientation|keyboardHidden" android:name="com.jinr.core.bankCard.BindCardActivity" android:screenOrientation="portrait" android:windowSoftInputMode="adjustUnspecified|stateHidden">
+        </activity>
+        <activity android:configChanges="orientation|keyboardHidden" android:name="com.jinr.core.bankCard.BankCardInfoActivity" android:screenOrientation="portrait" android:windowSoftInputMode="adjustUnspecified|stateHidden">
+        </activity>
+        <activity android:configChanges="orientation|keyboardHidden" android:name="com.jinr.core.bankCard.AddBankActivity" android:screenOrientation="portrait" android:windowSoftInputMode="adjustUnspecified|stateHidden">
+        </activity>
+        <activity android:configChanges="orientation|keyboardHidden" android:name="com.jinr.core.bankCard.PhoneMessageActivity" android:screenOrientation="portrait" android:windowSoftInputMode="adjustResize|stateHidden">
+        </activity>
+        <activity android:configChanges="orientation|keyboardHidden" android:name="com.jinr.core.bankCard.VerifyCodeActivity" android:screenOrientation="portrait" android:windowSoftInputMode="adjustUnspecified|stateHidden">
+        </activity>
+        <activity android:configChanges="orientation|keyboardHidden" android:name="com.jinr.core.trade.purchase.PurchaseLimitNoteActivity" android:screenOrientation="portrait" android:windowSoftInputMode="adjustUnspecified|stateHidden">
+        </activity>
+        <activity android:name="com.jinr.core.bankCard.CardDetailActivity" android:screenOrientation="portrait" android:windowSoftInputMode="stateHidden|adjustPan">
+        </activity>
+        <activity android:configChanges="orientation|keyboardHidden" android:name="com.jinr.core.security.DealPasswdActivity" android:screenOrientation="portrait" android:windowSoftInputMode="adjustUnspecified|stateHidden">
+        </activity>
+        <activity android:configChanges="orientation|keyboardHidden" android:name="com.jinr.core.security.ChangePasswdActivity" android:screenOrientation="portrait" android:windowSoftInputMode="adjustUnspecified|stateHidden">
+        </activity>
+        <activity android:configChanges="orientation|keyboardHidden" android:name="com.jinr.core.security.RealNameActivity" android:screenOrientation="portrait" android:windowSoftInputMode="adjustUnspecified|stateHidden">
+        </activity>
+        <activity android:configChanges="orientation|keyboardHidden" android:name="com.jinr.core.security.BindMobileActivity" android:screenOrientation="portrait" android:windowSoftInputMode="adjustUnspecified|stateHidden">
+        </activity>
+        <activity android:name="com.jinr.core.trade.purchase.PurchaseFirstActivity" android:screenOrientation="portrait">
+        </activity>
+        <activity android:name="com.jinr.core.trade.purchase.PurchaseResultActivity" android:screenOrientation="portrait">
+        </activity>
+        <activity android:name="com.jinr.core.trade.purchase.PurchaseDemandResultActivity" android:screenOrientation="portrait">
+        </activity>
+        <activity android:name="com.jinr.core.trade.purchase.PurchaseSecondActivity" android:screenOrientation="portrait">
+        </activity>
+        <activity android:name="com.jinr.core.trade.record.TradeRecordActivity" android:screenOrientation="portrait">
+        </activity>
+        <activity android:name="com.jinr.core.trade.record.RecordDetailActivity" android:screenOrientation="portrait">
+        </activity>
+        <activity android:name="com.jinr.core.trade.record.RecordPurchase" android:screenOrientation="portrait">
+        </activity>
+        <activity android:configChanges="orientation|keyboardHidden" android:name="com.jinr.core.trade.getCash.GetCashFirstActivity" android:screenOrientation="portrait" android:windowSoftInputMode="adjustUnspecified|stateHidden"/>
+        <activity android:configChanges="orientation|keyboardHidden" android:name="com.jinr.core.trade.getCash.GetCashSecondActivity" android:screenOrientation="portrait" android:windowSoftInputMode="adjustUnspecified|stateHidden">
+        </activity>
+        <activity android:label="@string/app_name" android:name="com.jinr.core.bankCard.citylist.main.CityList" android:screenOrientation="portrait">
+        </activity>
+        <activity android:label="@string/app_name" android:name="com.jinr.core.bankCard.banklist.main.BankList" android:screenOrientation="portrait">
+        </activity>
+        <activity android:label="@string/app_name" android:name="com.jinr.core.trade.getCash.TradeFinishActivity" android:screenOrientation="portrait">
+        </activity>
+        <activity android:label="@string/app_name" android:name="com.jinr.core.trade.my_getCash.FinishGetCashActivity" android:screenOrientation="portrait">
+        </activity>
+        <activity android:name="com.jinr.core.trade.my_getCash.GetcashIntroduceActivity" android:screenOrientation="portrait">
+        </activity>
+        <activity android:name="com.jinr.core.trade.my_getCash.GetCashOneActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.jinr.core.trade.my_getCash.GetCashTwoActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.jinr.core.trade.my_getCash.IntroduceActivity" android:screenOrientation="portrait">
+        </activity>
+        <activity android:label="@string/app_name" android:name="com.jinr.core.trade.Introduce2Activity" android:screenOrientation="portrait">
+        </activity>
+        <activity android:label="@string/title_activity_web_view" android:name="com.jinr.core.my_change.WebViewActivity" android:screenOrientation="portrait">
+        </activity>
+        <activity android:name="com.jinr.core.my_change.GiftActivity" android:screenOrientation="portrait">
+        </activity>
+        <activity android:name="com.jinr.core.gift.share.DspwebActivity" android:screenOrientation="portrait">
+        </activity>
+        <activity android:name="com.jinr.core.trade.IntroduceActivity" android:screenOrientation="portrait">
+        </activity>
+        <activity android:name="com.jinr.core.trade.news_purchase.AddBankCardActivity" android:screenOrientation="portrait">
+        </activity>
+        <activity android:name="com.jinr.core.trade.news_purchase.AddInfoActivity" android:screenOrientation="portrait">
+        </activity>
+        <activity android:name="com.jinr.core.trade.news_purchase.CodeActivity" android:screenOrientation="portrait">
+        </activity>
+        <activity android:name="com.jinr.core.trade.news_purchase.TradePwActivity" android:screenOrientation="portrait">
+        </activity>
+        <activity android:name="com.jinr.core.trade.news_purchase.PurchaseFinalActivity" android:screenOrientation="portrait">
+        </activity>
+        <activity android:label="@string/app_name" android:name="com.jinr.core.security.lockpanttern.pattern.CreateGesturePasswordActivity" android:screenOrientation="portrait">
+        </activity>
+        <activity android:label="@string/app_name" android:name="com.jinr.core.security.lockpanttern.pattern.UnlockGesturePasswordActivity" android:screenOrientation="portrait">
+        </activity>
+        <activity android:label="@string/app_name" android:name="com.jinr.core.guide.SplashActivity" android:screenOrientation="portrait">
+        </activity>
+        <activity android:label="@string/app_name" android:name="com.jinr.core.guide.GuideActivity" android:screenOrientation="portrait">
+        </activity>
+        <activity android:label="@string/app_name" android:name="com.jinr.core.more.AgreementActivity" android:screenOrientation="portrait">
+        </activity>
+        <activity android:label="@string/app_name" android:name="com.jinr.core.security.RealInfoActivity" android:screenOrientation="portrait">
+        </activity>
+        <activity android:label="@string/app_name" android:name="com.jinr.core.security.MyBankCardActivity" android:screenOrientation="portrait">
+        </activity>
+        <activity android:label="@string/app_name" android:name="com.jinr.core.gift.RuleActivity" android:screenOrientation="portrait">
+        </activity>
+        <activity android:label="@string/app_name" android:name="com.jinr.core.gift.GiftNewActivity" android:screenOrientation="portrait">
+        </activity>
+        <activity android:label="@string/app_name" android:name="com.jinr.core.gift.GiftDetailActivity" android:screenOrientation="portrait">
+        </activity>
+
+        <service android:name="com.umeng.update.net.DownloadingService" android:process=":DownloadingService">
+        </service>
+
+        <activity android:name="com.umeng.update.UpdateDialogActivity" android:theme="@android:style/Theme.Translucent.NoTitleBar">
+        </activity>
+        <activity android:label="@string/app_name" android:name="com.jinr.core.security.mobile.ChangeMobileStep1" android:screenOrientation="portrait">
+        </activity>
+        <activity android:label="@string/app_name" android:name="com.jinr.core.security.loginpwd.ChangeLoginPwd" android:screenOrientation="portrait">
+        </activity>
+        <activity android:label="@string/app_name" android:name="com.jinr.core.security.tradepwd.ChgTradePwd" android:screenOrientation="portrait">
+        </activity>
+        <activity android:label="@string/app_name" android:name="com.jinr.core.security.tradepwd.SetTradePwdActivity" android:screenOrientation="portrait">
+        </activity>
+        <activity android:label="@string/app_name" android:name="com.jinr.core.security.tradepwd.FindTradePwd" android:screenOrientation="portrait">
+        </activity>
+        <activity android:label="@string/app_name" android:name="com.jinr.core.regular.RegularListActivity" android:screenOrientation="portrait">
+        </activity>
+        <activity android:label="@string/app_name" android:name="com.jinr.core.regular.RegularInfoActivity" android:screenOrientation="portrait">
+        </activity>
+        <activity android:label="@string/app_name" android:name="com.jinr.core.regular.TotalAssetsListActivity" android:screenOrientation="portrait">
+        </activity>
+        <activity android:label="@string/app_name" android:name="com.jinr.core.regular.ProductDetailActivity" android:screenOrientation="portrait">
+        </activity>
+        <activity android:label="@string/app_name" android:name="com.jinr.core.regular.RegularDetailActivity" android:screenOrientation="portrait">
+        </activity>
+        <activity android:label="@string/app_name" android:name="com.jinr.core.regular.MyRegularActivity" android:screenOrientation="portrait">
+        </activity>
+        <activity android:label="@string/app_name" android:name="com.jinr.core.dayup.MyDayUpActivity" android:screenOrientation="portrait">
+        </activity>
+        <activity android:label="@string/app_name" android:name="com.jinr.core.dayup.CommonProjectDetailActivity" android:screenOrientation="portrait">
+        </activity>
+        <activity android:label="@string/app_name" android:name="com.jinr.core.regular.ProductInstructionsActivity" android:screenOrientation="portrait">
+        </activity>
+        <activity android:label="@string/app_name" android:name="com.jinr.core.regular.CalculateActivity" android:screenOrientation="portrait">
+        </activity>
+        <activity android:label="@string/app_name" android:name="com.jinr.core.trade.purchase.RegularPurchaseFirstActivity" android:screenOrientation="portrait">
+        </activity>
+        <activity android:label="@string/app_name" android:name="com.jinr.core.trade.purchase.CurrentPurchaseFirstActivity" android:screenOrientation="portrait">
+        </activity>
+        <activity android:label="@string/app_name" android:name="com.jinr.core.regular.RegularRecodeListActivity" android:screenOrientation="portrait">
+        </activity>
+        <activity android:label="@string/app_name" android:name="com.jinr.core.regular.FragmentTotalAssets" android:screenOrientation="portrait">
+        </activity>
+        <activity android:label="@string/app_name" android:name="com.jinr.core.security.SettingActivity" android:screenOrientation="portrait">
+        </activity>
+          <activity android:label="@string/app_name" android:name="com.jinr.core.security.AddressActivity" android:screenOrientation="portrait">
+        </activity>
+        <activity android:name="com.jinr.core.gift.NewActActivity" android:screenOrientation="portrait">
+        </activity>
+        <activity android:name="com.jinr.core.dayup.ActBannerActivity" android:screenOrientation="portrait" android:theme="@android:style/Theme.Translucent.NoTitleBar">
+        </activity>
+        <activity android:label="@string/app_name" android:name="com.jinr.core.transfer.TransferedListActivity" android:screenOrientation="portrait">
+        </activity>
+        <!-- 寰俊鍒嗕韩鍥炶皟 -->
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:exported="true" android:name="com.jinr.core.wxapi.WXEntryActivity" android:screenOrientation="portrait" android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
+
+        <receiver android:name="com.jinr.core.AppRegister" android:permission="com.tencent.mm.plugin.permission.SEND">
+            <intent-filter>
+                <action android:name="com.tencent.mm.plugin.openapi.Intent.ACTION_REFRESH_WXAPP"/>
+            </intent-filter>
+        </receiver>
+
+        <meta-data android:name="UMENG_APPKEY" android:value="54a0be33fd98c5f00c0007cd">
+        </meta-data>
+        <!-- 360 andmarket assist91 baidu  other ourweb xiaomi yingyongbao sina quanmin weibo test |id| -->
+        <meta-data android:name="UMENG_CHANNEL" android:value="test"/>
+        <meta-data android:name="UMENG_MESSAGE_SECRET" android:value="bd6f1e4c6ceb97cedb382d9711434086">
+        </meta-data>
+
+        <!--
+        <service android:name="com.jinr.core.NotificationService" />
+        <service android:name="com.jinr.core.MyPushIntentService" />
+
+
+        -->
+        <activity android:label="@string/title_activity_cj_wenti" android:name="com.jinr.core.more.CjWentiActivity" android:screenOrientation="portrait">
+        </activity>
+        <activity android:name="com.jinr.core.more.CommonWebActivity" android:screenOrientation="portrait">
+        </activity>
+        <activity android:label="@string/title_activity_about" android:name="com.jinr.core.more.AboutActivity" android:screenOrientation="portrait">
+        </activity>
+        <activity android:label="@string/title_activity_feedback" android:name="com.jinr.core.more.FeedbackActivity" android:screenOrientation="portrait">
+        </activity>
+        <activity android:label="@string/title_activity_system_news" android:name="com.jinr.core.SystemNewsActivity" android:screenOrientation="portrait">
+        </activity>
+        <activity android:label="@string/title_activity_system_news" android:name="com.jinr.core.news.NewsCenterActivity" android:screenOrientation="portrait">
+        </activity>
+        <activity android:label="@string/title_activity_system_news" android:name="com.jinr.core.news.ActDetailActivity" android:screenOrientation="portrait">
+        </activity>
+        <activity android:label="@string/title_activity_system_news" android:name="com.jinr.core.news.AdvDetailActivity" android:screenOrientation="portrait">
+        </activity>
+        <activity android:label="@string/title_activity_mygift" android:name="com.jinr.core.gift.share.MyGiftActivity" android:screenOrientation="portrait">
+        </activity>
+        <activity android:label="@string/title_activity_my_feedback" android:name="com.jinr.core.more.MyFeedbackActivity" android:screenOrientation="portrait">
+        </activity>
+        <activity android:label="@string/title_activity_detial_fbck" android:name="com.jinr.core.more.Detial_fbckActivity" android:screenOrientation="portrait">
+        </activity>
+        <activity android:name="com.jinr.core.trade.my_getCash.CityAddActivity" android:screenOrientation="portrait">
+        </activity>
+        <activity android:name="com.jinr.core.trade.getCash.AssetsActivity" android:screenOrientation="portrait">
+        </activity>
+        <activity android:name="com.jinr.core.notice.NoticeListActivity" android:screenOrientation="portrait">
+        </activity>
+        <activity android:name="com.jinr.core.notice.NoticeDetailsActivity" android:screenOrientation="portrait">
+        </activity>
+        <activity android:label="@string/title_activity_web_view" android:launchMode="singleTop" android:name="com.jinr.core.MyWebViewActivity">
+        </activity>
+        <!-- LLYT SDK START -->
+        <activity android:configChanges="orientation|keyboardHidden" android:name="com.yintong.secure.activity.BaseActivity" android:screenOrientation="portrait" android:theme="@android:style/Theme.Translucent.NoTitleBar" android:windowSoftInputMode="adjustResize">
+        </activity>
+
+        <service android:exported="false" android:name="com.yintong.secure.service.PayService">
+        </service>
+        <!-- LLYT SDK END -->
+        <activity android:name="com.jinr.core.trade.record.NewTradeRecordActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.jinr.core.regular.RegularAssetsActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.jinr.core.gift.ActAndRedbagActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.jinr.core.my_change.ProfitAmountActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.jinr.core.my_change.NewProfitAmountActivity" android:screenOrientation="portrait"/>
+        <!-- 娲诲姩banner  966 -->
+        <activity android:name="com.jinr.core.regular.MyAssetsActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.jinr.core.trade.record.WebRecordGetCash" android:screenOrientation="portrait"/>
+        <activity android:name="com.jinr.core.transfer.TransferInfoActivity" android:screenOrientation="portrait"/>
+
+        <!-- 娲绘湡杞嚭  966 -->
+        <activity android:name="com.jinr.core.balance.CurrentOutActivity" android:screenOrientation="portrait"/>
+        <!-- 浣欓璧勪骇椤� -->
+        <activity android:name="com.jinr.core.balance.AccountBalanceActivity" android:screenOrientation="portrait"/>
+        <!-- 浣欓杞叆 -->
+        <!-- 浣欓杞嚭 -->
+        <activity android:name="com.jinr.core.balance.BalanceOutActivity" android:screenOrientation="portrait"/>
+        <!-- 浣欓杞嚭缁撴灉 -->
+        <activity android:name="com.jinr.core.balance.BalanceOutResultActivity" android:screenOrientation="portrait"/>
+        <!-- 浣欓杞叆缁撴灉 -->
+        <activity android:name="com.jinr.core.balance.BalanceInResultActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.jinr.core.transfer.TransferActivity" android:screenOrientation="portrait" android:windowSoftInputMode="adjustPan"/>
+
+        <service android:exported="true" android:name="com.taobao.accs.ChannelService" android:process=":channel">
+            <intent-filter>
+                <action android:name="com.taobao.accs.intent.action.SERVICE"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="com.taobao.accs.intent.action.ELECTION"/>
+            </intent-filter>
+        </service>
+
+        <service android:exported="true" android:name="com.taobao.accs.data.MsgDistributeService">
+            <intent-filter>
+                <action android:name="com.taobao.accs.intent.action.RECEIVE"/>
+            </intent-filter>
+        </service>
+
+        <service android:name="com.taobao.accs.ChannelService$KernelService" android:process=":channel">
+        </service>
+
+        <service android:exported="true" android:name="org.android.agoo.accs.AgooService">
+            <intent-filter>
+                <action android:name="com.taobao.accs.intent.action.RECEIVE"/>
+            </intent-filter>
+        </service>
+
+        <service android:exported="true" android:name="com.umeng.message.UmengIntentService">
+            <intent-filter>
+                <action android:name="org.agoo.android.intent.action.RECEIVE"/>
+            </intent-filter>
+        </service>
+        <service android:exported="false" android:name="com.umeng.message.UmengMessageCallbackHandlerService">
+            <intent-filter>
+                <action android:name="com.umeng.messge.registercallback.action"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="com.umeng.message.enablecallback.action"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="com.umeng.message.disablecallback.action"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="com.umeng.message.message.handler.action"/>
+            </intent-filter>
+        </service>
+
+        <service android:exported="false" android:name="com.umeng.message.UmengDownloadResourceService"/>
+        <service android:exported="true" android:name="com.umeng.message.UmengMessageIntentReceiverService" android:process=":channel">
+            <intent-filter>
+                <action android:name="org.android.agoo.client.MessageReceiverService"/>
+            </intent-filter>
+        </service>
+
+        <receiver android:name="com.taobao.accs.EventReceiver" android:process=":channel">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.net.conn.CONNECTIVITY_CHANGE"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.PACKAGE_REMOVED"/>
+                <data android:scheme="package"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.USER_PRESENT"/>
+            </intent-filter>
+        </receiver>
+
+        <receiver android:name="com.taobao.accs.ServiceReceiver" android:process=":channel">
+            <intent-filter>
+                <action android:name="com.taobao.accs.intent.action.COMMAND"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="com.taobao.accs.intent.action.START_FROM_AGOO"/>
+            </intent-filter>
+        </receiver>
+
+        <receiver android:exported="true" android:name="com.taobao.agoo.AgooCommondReceiver">
+            <intent-filter>
+                <action android:name="com.jinr.core.intent.action.COMMAND"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.PACKAGE_REMOVED"/>
+                <data android:scheme="package"/>
+            </intent-filter>
+        </receiver>
+
+        <receiver android:exported="false" android:name="com.umeng.message.NotificationProxyBroadcastReceiver"/>
+        <provider android:authorities="com.jinr.core.umeng.message" android:exported="false" android:name="com.umeng.message.provider.MessageProvider" android:process=":channel">
+            <grant-uri-permission android:pathPattern=".*"/>
+        </provider>
+    </application>
+    <uses-permission android:name="android.permission.BROADCAST_PACKAGE_ADDED"/>
+    <uses-permission android:name="android.permission.BROADCAST_PACKAGE_CHANGED"/>
+    <uses-permission android:name="android.permission.BROADCAST_PACKAGE_INSTALL"/>
+    <uses-permission android:name="android.permission.BROADCAST_PACKAGE_REPLACED"/>
+    <uses-permission android:name="android.permission.RESTART_PACKAGES"/>
+    <uses-permission android:name="android.permission.GET_TASKS"/>
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"/>
+    <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE"/>
+
+</manifest>

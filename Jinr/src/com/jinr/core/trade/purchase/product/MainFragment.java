@@ -1,0 +1,723 @@
+package com.jinr.core.trade.purchase.product;
+
+
+import android.app.Activity;
+import android.content.Intent;
+import android.os.Bundle;
+import android.support.design.widget.TabLayout;
+import android.support.v4.app.Fragment;
+import android.support.v4.view.ViewPager;
+import android.text.TextUtils;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.LinearLayout;
+
+import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
+import com.jinr.core.JinrApp;
+import com.jinr.core.R;
+import com.jinr.core.balance.CurrentOutActivity;
+import com.jinr.core.base.BaseFragment;
+import com.jinr.core.config.Check;
+import com.jinr.core.config.EventBusKey;
+import com.jinr.core.config.UrlConfig;
+import com.jinr.core.trade.purchase.CurrentPurchaseFirstActivity;
+import com.jinr.core.utils.CommonUtil;
+import com.jinr.core.utils.MyDES;
+import com.jinr.core.utils.MyLog;
+import com.jinr.core.utils.MyhttpClient;
+import com.jinr.core.utils.PreferencesUtils;
+import com.jinr.core.utils.TimeUtil;
+import com.jinr.core.utils.ToastUtil;
+import com.jinr.core.utils.UmUtils;
+import com.jinr.graph_view.yviewpager.YViewPager;
+import com.loopj.android.http.AsyncHttpResponseHandler;
+import com.loopj.android.http.RequestParams;
+
+import org.apache.http.Header;
+import org.json.JSONObject;
+import org.simple.eventbus.EventBus;
+import org.simple.eventbus.Subscriber;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import model.BaseModel;
+import model.DayUpLimitList;
+import model.ProductCommonModel;
+import model.ProductLimit;
+import model.ProductList;
+import model.ProductModel;
+import model.UidObj;
+import model.UserBindinfo;
+
+public class MainFragment extends BaseFragment implements View.OnClickListener {
+    public static final String TAG = "MainFragment";
+
+    private ViewPager mViewPager;
+    private ArrayList<Fragment> mPageItemList = new ArrayList<>();
+    private ArrayList<ProductModel> mProductDataList = new ArrayList<>();
+    private BaseModel<ProductList> mProductMode;
+    private TabLayout mTabLayout;
+    private Button bt_turnin, bt_turnout;// 转出, 转入
+    public int mCurrentPage;//ViewPage的当前页
+    private BaseModel<DayUpLimitList> mProductLimitModel;//产品限购数据
+    private int mTimes;
+    private boolean isArrive;
+    private LinearLayout ll_logined;
+    private LiveProductFragment mainLiveProductFragment;
+    private TransferFragemt mainTransferFragemt;
+    private FragmentMainAdapter fragmentMainAdapter;
+    private View mLayout;
+    private Activity mActivity;
+
+    public MainFragment() {
+        // Required empty public constructor
+    }
+
+    @Override
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+        if (mLayout == null) {
+            mLayout = inflater.inflate(R.layout.fragment_main, container, false);
+            //EventBus.getDefault().register(this);
+            findViewById(mLayout);
+            initUI();
+            setListener();
+            initData();
+        }
+        return mLayout;
+    }
+
+    @Override
+    public void setUserVisibleHint(boolean isVisibleToUser) {
+        super.setUserVisibleHint(isVisibleToUser);
+        if (mLayout != null) {
+            if (Check.is_login(getActivity())) {
+                MyLog.e(TAG, "setUserVisibleHint: ");
+                ll_logined.setVisibility(View.VISIBLE);
+                YViewPager.mScroll = false;
+                setSelector(mCurrentPage);
+            } else {
+                ll_logined.setVisibility(View.INVISIBLE);
+                if (mCurrentPage != mPageItemList.size() - 1) {
+                    YViewPager.mScroll = true;
+                } else {
+                    YViewPager.mScroll = false;
+                }
+            }
+        }
+    }
+
+    @Override
+    public void onAttach(Activity activity) {
+        super.onAttach(activity);
+        this.mActivity = activity;
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        if (mLayout != null) {
+            if (Check.is_login(mActivity)) {
+                MyLog.e(TAG, "setUserVisibleHint: ");
+                ll_logined.setVisibility(View.VISIBLE);
+                YViewPager.mScroll = false;
+                setSelector(mCurrentPage);
+            } else {
+                ll_logined.setVisibility(View.INVISIBLE);
+                if (mCurrentPage != mPageItemList.size() - 1) {
+                    YViewPager.mScroll = true;
+                } else {
+                    YViewPager.mScroll = false;
+                }
+            }
+        }
+    }
+
+    @Override
+    public void onDestroy() {
+        try {
+            //EventBus.getDefault().unregister(this);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        super.onDestroy();
+    }
+
+    @Override
+    protected void initData() {
+        try {
+            getProduct();
+            getProductLimit();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    @Override
+    protected void findViewById(View view) {
+        mTabLayout = (TabLayout) view.findViewById(R.id.mTabLayout);
+        mViewPager = (ViewPager) view.findViewById(R.id.mViewPager);
+        mViewPager.setOffscreenPageLimit(5);
+        bt_turnin = (Button) view.findViewById(R.id.bt_turnin);// 转入
+        bt_turnout = (Button) view.findViewById(R.id.bt_turnout);// 转出
+        ll_logined = (LinearLayout) view.findViewById(R.id.ll_logined);
+        mViewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
+            @Override
+            public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
+
+            }
+
+            @Override
+            public void onPageSelected(int position) {
+                MyLog.e(TAG, "onPageSelected: " + position);
+                if (position == mPageItemList.size() - 1) {
+                    //转入市场屏蔽滑动事件
+                    YViewPager.mScroll = false;
+                } else {
+                    if (Check.is_login(mActivity)) {
+                        YViewPager.mScroll = false;
+                    } else {
+                        YViewPager.mScroll = true;
+                    }
+                }
+                if (Check.is_login(mActivity)) {
+                    setSelector(position);
+                }
+                mCurrentPage = position;
+            }
+
+            @Override
+            public void onPageScrollStateChanged(int state) {
+
+            }
+        });
+    }
+
+    @Override
+    protected void initUI() {
+        if (Check.is_login(mActivity)) {
+            ll_logined.setVisibility(View.VISIBLE);
+            YViewPager.mScroll = false;
+        } else {
+            ll_logined.setVisibility(View.INVISIBLE);
+            YViewPager.mScroll = true;
+        }
+        //读取本地数据
+        String productList = PreferencesUtils.getStringToKey(PreferencesUtils.Keys.PRODUCTLIST, "");
+        if (!TextUtils.isEmpty(productList)) {
+            MyLog.e(TAG, "initUI: " + productList);
+            mProductMode = new Gson().fromJson(productList, new TypeToken<BaseModel<ProductList>>() {
+            }.getType());
+            mProductDataList.clear();
+            mProductDataList.addAll(mProductMode.getData().getList());
+            initViewPager(mProductMode.getData().getList());
+        }
+    }
+
+    @Override
+    protected void setListener() {
+        bt_turnin.setOnClickListener(this);
+        bt_turnout.setOnClickListener(this);
+    }
+
+    /**
+     * 初始化ViewPager，从本地获取数据
+     *
+     * @param mProductDataList
+     */
+    public void initViewPager(ArrayList<ProductModel> mProductDataList) {
+        MyLog.e(TAG, "initViewPager: ");
+        mPageItemList.clear();
+        mainLiveProductFragment = new LiveProductFragment();
+        mPageItemList.add(mainLiveProductFragment);
+        for (int i = 0; i < mProductDataList.size(); i++) {
+            mPageItemList.add(new ProductFragment(mProductDataList.get(i), i));
+        }
+        mainTransferFragemt = new TransferFragemt();
+        mPageItemList.add(mainTransferFragemt);
+
+        List<String> titleList = new ArrayList<>();
+        titleList.add(" 活期 ");
+        for (int i = 0; i < mProductDataList.size(); i++) {
+            titleList.add(mProductDataList.get(i).getName());
+        }
+        titleList.add("转让市场");
+
+        if (titleList.size() < 5) {
+            mTabLayout.setTabMode(TabLayout.MODE_FIXED);
+        } else {
+            //如果标题5个要设置成Scrollable，否则“转让市场”4个字会换行
+            mTabLayout.setTabMode(TabLayout.MODE_SCROLLABLE);
+        }
+
+        fragmentMainAdapter = new FragmentMainAdapter(getChildFragmentManager(), mPageItemList, titleList);
+        mViewPager.setAdapter(fragmentMainAdapter);
+        mTabLayout.setupWithViewPager(mViewPager);
+
+    }
+
+    /**
+     * 刷新ViewPager，从网络获取数据
+     *
+     * @param mProductDataList
+     */
+    public void refreshViewPager(ArrayList<ProductModel> mProductDataList) {
+        MyLog.e(TAG, "refreshViewPager: ");
+        mPageItemList.clear();
+        if (mainLiveProductFragment == null) {
+            mainLiveProductFragment = new LiveProductFragment();
+        }
+        mPageItemList.add(mainLiveProductFragment);
+        for (int i = 0; i < mProductDataList.size(); i++) {
+            mPageItemList.add(new ProductFragment(mProductDataList.get(i), i));
+        }
+        if (mainTransferFragemt == null) {
+            mainTransferFragemt = new TransferFragemt();
+        }
+        mPageItemList.add(mainTransferFragemt);
+
+        List<String> titleList = new ArrayList<>();
+        titleList.add(" 活期 ");
+        for (int i = 0; i < mProductDataList.size(); i++) {
+            titleList.add(mProductDataList.get(i).getName());
+        }
+        titleList.add("转让市场");
+
+        if (titleList.size() < 5) {
+            mTabLayout.setTabMode(TabLayout.MODE_FIXED);
+        } else {
+            //如果标题5个要设置成Scrollable，否则“转让市场”4个字会换行
+            mTabLayout.setTabMode(TabLayout.MODE_SCROLLABLE);
+        }
+
+        if (fragmentMainAdapter == null) {
+            fragmentMainAdapter = new FragmentMainAdapter(getChildFragmentManager(), mPageItemList, titleList);
+            mViewPager.setAdapter(fragmentMainAdapter);
+            mTabLayout.setupWithViewPager(mViewPager);
+        } else {
+            fragmentMainAdapter.setList(mPageItemList, titleList);
+            fragmentMainAdapter.notifyDataSetChanged();
+            mTabLayout.setupWithViewPager(mViewPager);
+        }
+    }
+
+    public ProductCommonModel getProductModel(ProductModel productModel) {
+        ProductCommonModel model = new ProductCommonModel();
+        model.setAssetid(productModel.getAssetid());
+        model.setType(productModel.getGoods_type());
+        model.setCode(productModel.getCode());
+        model.setName(productModel.getName());
+        model.setStatus(productModel.getArrow());
+        return model;
+    }
+
+    public void setSelector(int currentPage) {
+        ll_logined.setVisibility(View.VISIBLE);
+        if (currentPage == 0) {
+            //显示活期转出转入
+            bt_turnin.setTextColor(getResources().getColor(R.color.checked));
+            bt_turnin.setOnClickListener(this);
+            bt_turnin.setText("转 入");
+            bt_turnin.setVisibility(View.VISIBLE);
+            bt_turnout.setVisibility(View.VISIBLE);
+        } else if (currentPage == mPageItemList.size() - 1) {
+            //转让市场隐藏
+            ll_logined.setVisibility(View.GONE);
+        } else {
+            //产品显示限购和转出
+            setProductLimt(currentPage);
+            bt_turnout.setVisibility(View.GONE);
+        }
+    }
+
+
+    /**
+     * 设置限购，活期不设置限购
+     *
+     * @param productId
+     */
+    private void setProductLimt(int productId) {
+        MyLog.e(TAG, "setProductLimt:productId = " + productId);
+        if (mProductLimitModel != null && mProductMode != null) {
+            String goods_type = mProductMode.getData().getList().get(productId - 1).getGoods_type();
+            ArrayList<ProductLimit> limits = mProductLimitModel.getData().getList();
+            for (int i = 0; i < limits.size(); i++) {
+                String type = limits.get(i).getGoods_type();
+                if (type != null && type.equals(goods_type)) {
+                    ProductLimit data = limits.get(i);
+                    long start_time = data.getStart_time();
+                    long next_time = data.getNext_time();
+                    long current_time = mProductLimitModel.getData().getCurrent_time();
+                    if (start_time != 0) {
+                        if (TimeUtil.IsToday(start_time, current_time)) {
+                            if (start_time <= current_time) {
+                                if (data.getLimit() == 0) {
+                                    bt_turnin.setVisibility(View.VISIBLE);
+                                    bt_turnout.setVisibility(View.GONE);
+                                    bt_turnin.setOnClickListener(null);
+                                    bt_turnin.setTextColor(getResources().getColor(R.color.gray_bg_btn));
+                                    bt_turnin.setText("已售罄，明天" + TimeUtil.formatHourDateTime(next_time) + "开放转入");
+                                } else if (data.getLimit() == 1) {
+                                    bt_turnin.setVisibility(View.VISIBLE);
+                                    bt_turnout.setVisibility(View.GONE);
+                                    bt_turnin.setOnClickListener(this);
+                                    bt_turnin.setTextColor(getResources().getColor(R.color.checked));
+                                    bt_turnin.setText("立即转入");
+                                }
+                            } else {
+                                bt_turnin.setVisibility(View.VISIBLE);
+                                bt_turnout.setVisibility(View.GONE);
+                                bt_turnin.setOnClickListener(null);
+                                bt_turnin.setTextColor(getResources().getColor(R.color.blue_btn_bg));
+                                bt_turnin.setText("今天" + TimeUtil.formatHourDateTime(start_time) + "开放转入");
+                                startTimers(start_time - current_time);
+                            }
+                        } else if (TimeUtil.IsYesterday(start_time, current_time)) {
+                            bt_turnin.setVisibility(View.VISIBLE);
+                            bt_turnout.setVisibility(View.GONE);
+                            bt_turnin.setOnClickListener(this);
+                            bt_turnin.setTextColor(getResources().getColor(R.color.checked));
+                            bt_turnin.setText("立即转入");
+                        } else if (TimeUtil.IsTomorrow(start_time, current_time)) {
+                            bt_turnin.setVisibility(View.VISIBLE);
+                            bt_turnout.setVisibility(View.GONE);
+                            bt_turnin.setOnClickListener(this);
+                            bt_turnin.setTextColor(getResources().getColor(R.color.blue_btn_bg));
+                            bt_turnin.setText("明天" + TimeUtil.formatHourDateTime(next_time) + "开放转入");
+                        }
+                    } else {
+                        bt_turnin.setVisibility(View.VISIBLE);
+                        bt_turnout.setVisibility(View.GONE);
+                        bt_turnin.setText("立即转入");
+                        bt_turnin.setTextColor(getResources().getColor(R.color.checked));
+                        bt_turnin.setOnClickListener(this);
+                    }
+                }
+            }
+        } else {
+            bt_turnin.setVisibility(View.VISIBLE);
+            bt_turnout.setVisibility(View.GONE);
+            bt_turnin.setText("立即转入");
+            bt_turnin.setTextColor(getResources().getColor(R.color.checked));
+            bt_turnin.setOnClickListener(this);
+        }
+    }
+
+    /**
+     * 开启定时器 @author Ysw created at 2017/4/8 17:05
+     *
+     * @param times
+     */
+    public void startTimers(final long times) {
+        new Runnable() {
+            @Override
+            public void run() {
+                while (!isArrive) {
+                    try {
+                        Thread.sleep(1000);
+                        mTimes++;
+                        if (mTimes >= times) {
+                            isArrive = true;
+                            MyLog.e(TAG, "getProductLimit: 2");
+                            getProductLimit();
+                        }
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                    }
+                }
+            }
+        };
+    }
+
+    private void turnIn() {
+        try {
+            if (mCurrentPage == 0) {
+                UmUtils.customsEvent(mActivity, UmUtils.MAINCURRENT_ROLLIN_CLICK, UmUtils.MAINCURRENT_ROLLIN_HUM);
+                getUserBindInfo(1, 0);
+            } else {
+                getUserBindInfo(1, 1);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    private void turnOut() {
+        switch (mCurrentPage) {
+            case 0:
+                try {
+                    UmUtils.customsEvent(mActivity, UmUtils.MAINCURRENT_ROLLOUT_CLICK, UmUtils.MAINCURRENT_ROLLOUT_HUM);
+                    getUserBindInfo(2, 0);
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+                break;
+            default:
+                break;
+        }
+    }
+
+    @Override
+    public void onClick(View v) {
+        switch (v.getId()) {
+            case R.id.bt_turnin:
+                turnIn();
+                break;
+            case R.id.bt_turnout:
+                turnOut();
+                break;
+            default:
+
+                break;
+        }
+    }
+
+
+    /**
+     * 存呗相关产品
+     *
+     * @throws Exception
+     */
+    public void getProduct() throws Exception {
+        RequestParams params = new RequestParams();
+        String uid = PreferencesUtils.getValueFromSPMap(mActivity, PreferencesUtils.Keys.UID);
+        JSONObject cipher = new JSONObject();
+        cipher.put(PreferencesUtils.Keys.UID, uid);
+        params.put("cipher", MyDES.encrypt(cipher.toString()));
+        MyhttpClient.desPost(UrlConfig.CUNBEI_LIST, params, new AsyncHttpResponseHandler() {
+            @Override
+            public void onStart() {
+                super.onStart();
+                MyLog.e(TAG, "getProduct onStart");
+            }
+
+            @Override
+            public void onSuccess(int arg0, Header[] arg1, byte[] arg2) {
+                super.onSuccess(arg0, arg1, arg2);
+                MyLog.e(TAG, "getProduct onSuccess");
+                try {
+                    String response = new String(arg2, "UTF-8");
+                    response = CommonUtil.transResponse(response);
+                    JSONObject jsb = new JSONObject(response);
+                    String cipher = jsb.getString("cipher");
+                    cipher = MyDES.decrypt(cipher);
+                    PreferencesUtils.putStringToSPMap(PreferencesUtils.Keys.PRODUCTLIST, cipher);
+                    MyLog.e(TAG, "getProduct.onSuccess：" + cipher);
+                    mProductMode = new Gson().fromJson(cipher, new TypeToken<BaseModel<ProductList>>() {
+                    }.getType());
+                    if (mProductMode.isSuccess()) {
+                        mProductDataList.clear();
+                        mProductDataList.addAll(mProductMode.getData().getList());
+                        refreshViewPager(mProductDataList);
+                    } else {
+                        ToastUtil.show(mActivity, mProductMode.getMsg());
+                    }
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            }
+        });
+    }
+
+
+    protected void getUserBindInfo(final int action, final int status) throws Exception {
+        RequestParams params = new RequestParams();
+        String uid = PreferencesUtils.getValueFromSPMap(mActivity, PreferencesUtils.Keys.UID);
+        UidObj obj = new UidObj(uid);
+        String desStr = MyDES.encrypt(new Gson().toJson(obj));
+        params.put("cipher", desStr);
+        MyhttpClient.desPost(UrlConfig.USER_BANKINFO, params, new AsyncHttpResponseHandler() {
+            @Override
+            public void onFailure(int arg0, Header[] arg1, byte[] arg2, Throwable arg3) {
+                super.onFailure(arg0, arg1, arg2, arg3);
+                ToastUtil.show(mActivity, R.string.default_error);
+            }
+
+
+            @Override
+            public void onStart() {
+                super.onStart();
+            }
+
+            @Override
+            public void onFinish() {
+                super.onFinish();
+            }
+
+            @Override
+            public void onSuccess(int arg0, Header[] arg1, byte[] arg2) {
+                super.onSuccess(arg0, arg1, arg2);
+                String response;
+                try {
+                    response = new String(arg2, "UTF-8");
+                    JSONObject jsonObject = new JSONObject(response);
+                    String cipher = jsonObject.getString("cipher");
+                    String desc = MyDES.decrypt(cipher);
+                    MyLog.e(TAG, "onSuccess: " + desc);
+                    BaseModel<UserBindinfo> result = new Gson().fromJson(desc, new TypeToken<BaseModel<UserBindinfo>>() {
+                    }.getType());
+                    if (result.isSuccess()) {
+                        UserBindinfo state = result.getData();
+                        JinrApp.instance().state_bankBind = Integer.valueOf(state.getState_bankBind());
+                        JinrApp.instance().state_tradePassword = Integer.valueOf(state.getState_tradePassword());
+                        PreferencesUtils.putIntToSPMap(mActivity, PreferencesUtils.Keys.IS_BIND_CARD, Integer.valueOf(state.getState_bankBind()));
+                        PreferencesUtils.putIntToSPMap(mActivity, PreferencesUtils.Keys.IS_SET_TRADE_PWD, Integer.valueOf(state.getState_tradePassword()));
+                        // 1为转入， 2为转出
+                        if (action == 1) {
+                            Intent intent = new Intent();
+                            if (status == 0) {
+                                ProductCommonModel commonModel = ((LiveProductFragment) mPageItemList.get(0)).getCommonModel();
+                                if (commonModel.getAssetid() == null || commonModel.getAssetid().equals("")) {
+                                    ToastUtil.show(mActivity, R.string.default_error);
+                                    return;
+                                }
+                                intent.putExtra("regular", commonModel);
+                                intent.setClass(mActivity, CurrentPurchaseFirstActivity.class);
+                                mActivity.startActivity(intent);
+                            } else if (status == 1) {
+                                ProductCommonModel commonModel = getProductModel(mProductDataList.get(mCurrentPage - 1));
+                                if (commonModel.getAssetid() != null && !commonModel.getAssetid().equals("")) {
+                                    intent.putExtra("regular", commonModel);
+                                    intent.setClass(mActivity, CurrentPurchaseFirstActivity.class);
+                                    mActivity.startActivity(intent);
+                                } else {
+                                    ToastUtil.show(mActivity, R.string.default_error);
+                                }
+                            }
+                        } else if (action == 2) {
+                            if (JinrApp.instance().state_bankBind == 1 && JinrApp.instance().state_tradePassword == 1) {
+                                getUserCity();
+                                return;
+                            }
+                            Intent intent = new Intent(mActivity, CurrentOutActivity.class);
+                            mActivity.startActivity(intent);
+                        }
+                    } else {
+                        ToastUtil.show(mActivity, result.getMsg());
+                    }
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            }
+        });
+    }
+
+    /**
+     * 获取用户城市是否为空
+     */
+    protected void getUserCity() throws Exception {
+        RequestParams params = new RequestParams();
+        String uid = PreferencesUtils.getValueFromSPMap(mActivity, PreferencesUtils.Keys.UID);
+        JSONObject cipher = new JSONObject();
+        cipher.put(PreferencesUtils.Keys.UID, uid);
+        params.put("cipher", MyDES.encrypt(cipher.toString()));
+        MyhttpClient.desPost(UrlConfig.FORMER_INSERT_CITY, params, new AsyncHttpResponseHandler() {
+            @Override
+            public void onStart() {
+                super.onStart();
+            }
+
+            @Override
+            public void onFinish() {
+                super.onFinish();
+            }
+
+            @Override
+            public void onFailure(int arg0, Header[] arg1, byte[] arg2, Throwable arg3) {
+                super.onFailure(arg0, arg1, arg2, arg3);
+                ToastUtil.show(mActivity, R.string.default_error);
+            }
+
+            @Override
+            public void onSuccess(int arg0, Header[] arg1, byte[] arg2) {
+                super.onSuccess(arg0, arg1, arg2);
+                try {
+                    String response = new String(arg2, "UTF-8");
+                    response = CommonUtil.transResponse(response);
+                    JSONObject obj = new JSONObject(response);
+                    String cipher = obj.getString("cipher");
+                    String desc = MyDES.decrypt(cipher);
+                    JSONObject job = new JSONObject(desc);
+                    if (job.getInt("code") == 1000) {
+                        int data = job.getInt("data");
+                        if (data == 1) {
+                            Intent intent = new Intent(mActivity, CurrentOutActivity.class);
+                            intent.putExtra("has_city", true);
+                            mActivity.startActivity(intent);
+                        } else if (data == 0) {
+                            Intent intent = new Intent(mActivity, CurrentOutActivity.class);
+                            intent.putExtra("has_city", false);
+                            mActivity.startActivity(intent);
+                        }
+                    } else {
+                        ToastUtil.show(mActivity, job.getString("msg"));
+                    }
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            }
+        });
+    }
+
+    /**
+     * 限购接口调用 @author Ysw created at 2017/3/15 19:32
+     */
+    private void getProductLimit() throws Exception {
+        RequestParams params = new RequestParams();
+        String uid = PreferencesUtils.getValueFromSPMap(mActivity, PreferencesUtils.Keys.UID);
+        JSONObject cipher = new JSONObject();
+        cipher.put(PreferencesUtils.Keys.UID, uid);
+        params.put("cipher", MyDES.encrypt(cipher.toString()));
+        MyhttpClient.desPost(UrlConfig.MAIN_PRODUCT_LIMIT, params, new AsyncHttpResponseHandler() {
+
+            @Override
+            public void onFailure(int arg0, Header[] arg1, byte[] arg2, Throwable arg3) {
+                super.onFailure(arg0, arg1, arg2, arg3);
+                ToastUtil.show(mActivity, R.string.default_error);
+            }
+
+            @Override
+            public void onSuccess(int arg0, Header[] arg1, byte[] arg2) {
+                super.onSuccess(arg0, arg1, arg2);
+                try {
+                    String response = new String(arg2, "UTF-8");
+                    response = CommonUtil.transResponse(response);
+                    JSONObject obj = new JSONObject(response);
+                    String cipher = obj.getString("cipher");
+                    String desc = MyDES.decrypt(cipher);
+                    MyLog.e(TAG, "getProductLimit.onSuccess：" + desc);
+                    BaseModel<DayUpLimitList> model = new Gson().fromJson(desc, new TypeToken<BaseModel<DayUpLimitList>>() {
+                    }.getType());
+                    if (model.isSuccess()) {
+                        mProductLimitModel = model;
+                        if (Check.is_login(mActivity)) {
+                            setSelector(mCurrentPage);
+                        }
+                    } else {
+                        ToastUtil.show(mActivity, model.getMsg());
+                    }
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            }
+        });
+    }
+
+    /**
+     * @author jzs created 2017/4/20
+     */
+    @Subscriber(tag = EventBusKey.REFRESH_LIMIT)
+    public void getData(boolean refresh) {
+        if (refresh) {
+            try {
+                getProductLimit();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+    }
+
+}

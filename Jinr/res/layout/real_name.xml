@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/base_style_bg"
+    android:orientation="vertical" >
+
+    <!-- title布局 -->
+
+    <include
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        layout="@layout/title" />
+
+    <View style="@style/line" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:scrollbars="vertical" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <View
+                style="@style/line"
+                android:layout_marginTop="20dp" />
+
+            <!-- 真实姓名 -->
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/all_menu_height"
+                android:background="@color/base_menu_bg"
+                android:orientation="horizontal" >
+
+                <TextView
+                    android:id="@+id/real_name_tv1"
+                    style="@style/sec"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="@dimen/all_left_offset"
+                    android:text="@string/personal_name"
+                    android:textColor="@color/main_out_down_text_color" />
+
+                <EditText
+                    android:id="@+id/real_name_et1"
+                    style="@style/edit_style"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="@dimen/all_left_offset"
+                    android:layout_toRightOf="@id/real_name_tv1"
+                    android:hint="@string/hint_o" />
+            </RelativeLayout>
+
+            <View style="@style/line" />
+
+            <!-- 身份证号 -->
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/all_menu_height"
+                android:background="@color/base_menu_bg"
+                android:orientation="horizontal" >
+
+                <TextView
+                    android:id="@+id/real_name_tv2"
+                    style="@style/sec"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="@dimen/all_left_offset"
+                    android:text="@string/personal_id"
+                    android:textColor="@color/main_out_down_text_color" />
+
+                <EditText
+                    android:id="@+id/real_name_et2"
+                    style="@style/edit_style"
+                    android:layout_centerVertical="true"
+                    android:layout_toRightOf="@id/real_name_tv2"
+                    android:hint="@string/hint_p"
+                    android:maxLength="18" />
+            </RelativeLayout>
+
+            <View style="@style/line" />
+
+            <!-- 手机号 -->
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/all_menu_height"
+                android:background="@color/base_menu_bg" >
+
+                <TextView
+                    style="@style/sec"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="@dimen/all_left_offset"
+                    android:text="@string/mobile_no"
+                    android:textColor="@color/main_out_down_text_color" />
+
+                <TextView
+                    android:id="@+id/real_name_mobile_et"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="@dimen/all_left_offset"
+                    android:text=""
+                    android:textColor="@color/main_out_down_text_color"
+                    android:textSize="14sp" />
+            </RelativeLayout>
+
+            <View style="@style/line" />
+
+            <!-- 验证码 -->
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/all_menu_height"
+                android:background="@color/base_menu_bg"
+                android:orientation="horizontal" >
+
+                <TextView
+                    android:id="@+id/real_name_tv3"
+                    style="@style/sec"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="@dimen/all_left_offset"
+                    android:text="@string/modify_code"
+                    android:textColor="@color/main_out_down_text_color" />
+
+                <Button
+                    android:id="@+id/real_name_send_code"
+                    style="@style/wrap"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="5dp"
+                    android:layout_toRightOf="@id/real_name_tv3"
+                    android:background="@drawable/mobile_code"
+                    android:paddingBottom="3dp"
+                    android:paddingLeft="5dp"
+                    android:paddingRight="5dp"
+                    android:paddingTop="3dp"
+                    android:text="@string/send_modify_code"
+                    android:textColor="@color/white"
+                    android:textSize="14sp" />
+
+                <EditText
+                    android:id="@+id/real_name_et3"
+                    style="@style/edit_style"
+                    android:layout_centerVertical="true"
+                    android:layout_toRightOf="@id/real_name_send_code"
+                    android:hint="@string/hint_code"
+                    android:inputType="number" />
+            </RelativeLayout>
+
+            <View style="@style/line" />
+
+            <Button
+                android:id="@+id/real_name_submit"
+                style="@style/btn5_style"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/submit" />
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

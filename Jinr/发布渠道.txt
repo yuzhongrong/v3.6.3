@@ -1,0 +1,14 @@
+我们网站										 ourweb   1.2.3 code＝3
+360手机助手		http://dev.360.cn/			     360  
+百度手机助手		http://developer.baidu.com/mobile	baidu	baidu2＝1.2.5
+豌豆夹			http://developer.wandoujia.com/		wandou
+NearMe			http://www.nearme.com.cn/index/dev.html
+安卓市场		http://dev.apk.hiapk.com/login			andmarket
+安智市场		http://dev.anzhi.com/index.php?do=complete&from=index
+机锋			http://dev.gfan.com/					jifeng
+应用汇			http://www.appchina.com/
+91助手		http://zs.91.com/android/				assist91
+xiaomi												xiaomi
+
+other (其他渠道)
+update 升级专用

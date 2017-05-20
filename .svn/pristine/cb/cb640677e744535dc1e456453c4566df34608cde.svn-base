@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 发送短信验证码 -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+      <LinearLayout
+          android:id="@+id/tv_zc_layout"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:orientation="horizontal" 
+          android:layout_marginTop="13dp"
+       	  android:layout_marginLeft="15dp"	
+          android:visibility="gone">
+          	<TextView
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:textSize="16sp"
+               android:text="已向"
+               android:textColor="#838182" />
+            <TextView
+               android:id="@+id/txt_telno"
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"                
+               android:textSize="16sp"
+               android:textColor="#1F7EE9" />
+          	<TextView
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:text="发送短信"
+               android:textSize="16sp"
+               android:textColor="#838182" />
+	</LinearLayout>
+    <LinearLayout
+        android:layout_width="fill_parent"
+	    android:layout_height="wrap_content"
+	    android:layout_marginTop="15dp"
+	    android:orientation="horizontal"
+	    android:background="@drawable/layout_bg"
+	    android:gravity="center_vertical">
+       <ImageView
+           android:layout_width="20dp"
+           android:layout_height="20dp"
+           android:src="@drawable/code_icon"
+           android:layout_margin="15dp"/>
+        <com.jinr.core.utils.MyEditText
+            android:id="@+id/txt_captcha"
+             style="@style/edittext5_style"
+             android:layout_weight="5"
+             android:hint="请输入短信验证码"
+             android:inputType="number" />
+       <Button
+           android:id="@+id/btn_send"
+           style="@style/btn_code"
+           android:layout_weight="0"
+           android:background="@null"
+           android:paddingLeft="5dp"
+           android:paddingRight="5dp"
+           android:text="@string/send_modify_code"
+           android:textColor="@color/phone_font_color"
+           android:textSize="14sp" />
+    </LinearLayout>
+    <RelativeLayout
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content">
+	          <TextView
+	              android:id="@+id/no_message"
+	              android:layout_width="wrap_content"
+	              android:layout_height="wrap_content"
+	              android:textColor="@color/phone_font_color"
+	              android:layout_alignParentRight="true"
+	              android:textSize="14sp"
+	              android:layout_marginRight="10dp"
+	              android:layout_marginTop="5dp"
+	              android:text="@string/not_message"/>
+    </RelativeLayout>
+
+
+    <Button
+        android:id="@+id/btn_sure"
+        style="@style/btn5_style"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:background="@drawable/btn_blue_light_bg"
+        android:text="确认修改"
+        android:textColor="@color/white" />
+
+</LinearLayout>

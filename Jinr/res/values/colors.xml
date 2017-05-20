@@ -1,0 +1,221 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- 主体风格 背景色等等 -->
+    <color name="base_style_bg">#f7f7f7</color>
+
+    <!-- 各个子界面菜单栏颜色-白 -->
+    <color name="base_menu_bg">#ffffff</color>
+
+    <!-- 各个子界面下方灰色间隔 -->
+    <color name="gray_offset">#f7f7f7</color>
+
+    <!-- 各个子界面输入提示的字体颜色 -->
+    <color name="gray_hint">#cacbcc</color>
+    <!-- 深色字体颜色 -->
+    <color name="dark_text">#093b7c</color>
+    <!-- 黑色字体颜色 -->
+    <color name="dark">#333333</color>
+    <!-- 黑色字体颜色 -->
+    <color name="mdark">#808080</color>
+    <!-- 蓝色字体颜色 -->
+    <color name="blueness">#1F7EE9</color>
+    <!-- 灰色字体颜色 -->
+    <color name="gray_text">#9c9d9d</color>
+    <!-- 灰色背景颜色 -->
+    <color name="ashen_bg">#F2F2F2</color>
+    <!-- 透明色 -->
+    <color name="translate">@android:color/transparent</color>
+    <!-- 白色 -->
+    <color name="white">@android:color/white</color>
+    <!-- 灰白色 -->
+    <color name="safe_mode_text">#80ffffff</color>
+    <!-- 分割线颜色 -->
+    <color name="separate_line">#231915</color>
+    <!-- 主页面顶部按钮 背景色 -->
+    <color name="main_back_color">#8ad7f6</color>
+    <!-- 主页面灰色字体颜色 -->
+    <color name="main_text_color">#888888</color>
+    <!-- 主页面蓝色字体颜色 -->
+    <color name="main_text_blue_color">#428eb3</color>
+    <!-- 主页面转出上方背景颜色 -->
+    <color name="main_out_back_color">#f7f7f7</color>
+    <!-- 主页面转出上方文字颜色 -->
+    <color name="main_out_text_color">#0097db</color>
+    <!-- 主页面转出上方线条颜色 -->
+    <color name="main_out_line_color">#b6b6b6</color>
+    <!-- 主页面转出下方线条颜色 -->
+    <color name="main_out_down_line_color">#e5e5e5</color>
+    <!-- 主页面转出下方文字颜色 -->
+    <color name="main_out_down_text_color">#898989</color>
+
+    <!-- 安全中心title 下方线条颜色 -->
+    <color name="secu_below_line_color">#656155</color>
+    <!-- 绑定手机 右边线条颜色 -->
+    <color name="bind_mob_line_color">#a6a6a6</color>
+    <!-- 绑定手机 发送验证码背景颜色 -->
+    <color name="bind_mob_button_color">#7ec5ea</color>
+
+    <!-- 选择支付按钮背景颜色 -->
+    <color name="pay_button_color">#06B1FF</color>
+    <!-- 左侧菜单样式 -->
+    <color name="gray_view">#2a2a33</color>
+    <color name="gray">#f2f2f2</color>
+    <color name="gray_1">#cccccc</color>
+    <color name="gray_2">#cbcbcb</color>
+    <color name="orange">#fc9010</color>
+    <color name="left_menu_txt_normal">#ffffff</color>
+    <color name="left_menu_txt_select">#62bce3</color>
+    <color name="black">#000000</color>
+    <color name="tools_box_bg">#ff333332</color>
+    <color name="top_font_color">#cccccc</color>
+    <color name="default_font_color">#ffffff</color>
+    <color name="select_font_color">#0066cc</color>
+    <color name="cambridge_blue_btn_bg"> #83b0dc</color>
+    <!-- 图形解锁用到颜色 -->
+    <color name="gesture_background">#f8f8f8</color>
+    <color name="gesture_bg">#000621</color>
+    <color name="gesture_text_gray">#d3d4d7</color>
+    <color name="color_hei_8">#428eb3</color>
+    <color name="color_text_gr">#898989</color>
+    <color name="banner_blue">#0cb5e2</color>
+    <color name="gesture_text_wrong_red">#E22314</color>
+
+    <drawable name="trans">@color/color_hei_8</drawable>
+
+    <color name="gesture_bg_color">#000621</color>
+    <!-- 城市银行列表用到颜色 -->
+
+    <color name="color_hint">#e6e6e6</color>
+    <color name="color_listt">#ffffff</color>
+    <color name="color_serch">#f7f7f7</color>
+    <color name="color_listt_blue">#0096D9</color>
+    <color name="color_listt_blak">#1a1a1a</color>
+    <color name="color_listt_grey">#898989</color>
+
+    <!-- 总资产 -->
+    <color name="current_assets_color">#f9a723</color>
+    <color name="regular_assets_color">#50b0ff</color>
+    <color name="daily_gain_color">#E05C4F</color>
+    <!-- 主页颜色 -->
+    <color name="fl_index_bg">#48A2C9</color>
+    <color name="graphview_title_text">#b2b2b2</color>
+    <color name="assets_text_a">#727171</color>
+    <color name="assets_1px_line">#dfdfdf</color>
+    <color name="assets_1px_line_t">#dfdfdf</color>
+    <color name="assets_text_b">#113a6f</color>
+    <color name="assets_text_c">#036EB8</color>
+    <color name="assets_color_layout">#F0EFEF</color>
+    <color name="color_title_main">#004883</color>
+    <color name="but_color_main">#036EB8</color>
+    <color name="gray_about_bg">#EEEEEE</color>
+    <color name="bule_text_bg"> #32A5EC</color>
+    <color name="introduce_text_bg">#C0C0C0</color>
+    <color name="tradepw_turn_in">#ED3517</color>
+    <color name="gray_txt_bg">#999999</color>
+    <color name="blue_notice_bg">#1f7ee9</color>
+    <color name="main_blue_color">#0c72e3</color>
+    <color name="main_gray_color">#BCBCBC</color>
+    <color name="logout_guide">#666666</color>
+    <color name="logout_guide_one">#669ef7</color>
+    <color name="logout_guide_two">#fc905b</color>
+    <color name="logout_guide_three">#ff6377</color>
+    <color name="logout_guide_four">#3ecca6</color>
+    <color name="logout_guide_five">#21a4f4</color>
+
+    <!-- 2.0新增 -->
+    <!-- 左侧菜单栏 -->
+    <color name="blue_text_base"> #0066cc</color>
+    <color name="blue_title_left_menu">#222230</color>
+    <color name="blue_btn_bg"> #0c72e3</color>
+    <color name="blue_light_bg"> #f5f8fb</color>
+    <color name="blue_light_bg_btn"> #83afdb</color>
+    <color name="gray_bg_btn"> #cccccc</color>
+    <color name="gray_text_dark">#333333</color>
+    <color name="gray_text_dark_tv">#666666</color>
+    <color name="orange_text"> #c6340c</color>
+    <color name="green_text"> #39b84a</color>
+    <color name="bule_send_code"> #50B0FF</color>
+
+    <!-- 安全中心，银行名称 -->
+    <color name="bank_name"> #000000</color>
+    <!-- 安全中心标题栏 -->
+    <color name="title_security">#323232</color>
+    <!-- 身份证 提示 -->
+    <color name="cid_tip"> #ff6600</color>
+    <!-- 登录 注册 -->
+    <color name="btn_sub_blue">#0c7213</color>
+    <color name="mobile_blue_bg">#F0EFEF</color>
+    <color name="mobile_blue">#93ccf5</color>
+    <color name="font_name">#C8C8C8</color>
+    <color name="mobile_font_color">#0086F5</color>
+    <color name="my_account_font">#737373</color>
+    <color name="get_hb_color">#B8B8B8</color>
+    <!-- 拨打电话 -->
+    <color name="share_color">#99D0FA</color>
+    <color name="phone_bg_color">#4B4C4B</color>
+    <!-- 更多 评分支持 -->
+    <color name="gray_dialog_market_title">#4b5257</color>
+    <color name="gray_dialog_market_bg">#575e63</color>
+    <color name="gray_dialog_market_line">#72797e</color>
+    <!-- 引导 -->
+    <color name="guide_color">#7ed5fc</color>
+    <color name="guide_blue_color">#117ec9</color>
+    <color name="yellow_banner_plus_text_color">#ff8206</color>
+    <color name="yellow_banner_rig_text_color">#fece00</color>
+
+    <!-- 弹出框 -->
+    <color name="message_title_color">#007AFF</color>
+    <color name="phone_font_color">#1F7EE9</color>
+    <color name="dialog_text_color">#808080</color>
+    <!-- 我的邀请码 -->
+    <color name="invite_color">#EDA321</color>
+    <color name="invite_code_color">#08081A</color>
+    <!-- 我的奖励 -->
+    <color name="total_money_color">#A3A3A3</color>
+    <color name="money_color">#E74943</color>
+    <color name="share_font_color">#D2D3D2</color>
+    <color name="font_color">#CBCBCB</color>
+    <!-- 我的红包 -->
+    <color name="font_red_color">#ff0000</color>
+    <color name="redbag_black">#9D9E9E</color>
+    <!-- 银行卡 -->
+    <color name="bank_card_bg">#292e3f</color>
+    <color name="jb_back_bg">#31394f</color>
+    <color name="card_name_color">#9DC3E7</color>
+    <color name="my_bank_card">#B2B2B2</color>
+    <!-- 网络不给力提示 -->
+    <color name="net_error">#808080</color>
+    <!-- 8.88现金活动 -->
+    <color name="cash_honus">#FFD31A</color>
+    <color name="left_menu_background">#08081A</color>
+    <!-- 8.88活动新弹窗文字颜色 -->
+    <color name="event_dialog_text">#FFC364</color>
+    <color name="event_dialog_button">#EE5F50</color>
+    <!-- 转入转出到账时间文字颜色 -->
+    <color name="cash_time_in_out">#1f7ee9</color>
+    <!-- 资产详情页文字颜色 -->
+    <color name="product_detail_text">#7F7F7F</color>
+    <!-- 交易记录标签背景颜色 -->
+    <color name="table">#FDF2E1</color>
+    <color name="record_money_out">#83BA25</color>
+    <color name="record_money_in">#EE5F50</color>
+    <!-- 定期资产页进度条颜色 -->
+    <color name="regular_yellow">#FFC363</color>
+    <color name="regular_orange">#f9a121</color>
+    <color name="regular_blue">#50b0FF</color>
+    <color name="regular_line">#CECECE</color>
+    <color name="unclick">#9E9F9E</color>
+    <!-- 日增息，定期选项卡选中字体颜色 -->
+    <color name="checked">#1F7EE9</color>
+	<color name="profit_money">#666666</color>
+    <!-- 余额转出超出可用余额的颜色 -->
+    <color name="d45a4d">#d45a4d</color>
+	
+	<color name="red">#ef363b</color>
+	<color name="gray_c4">#c4c4c4</color>
+    <color name="c_e74c3c">#e74c3c</color>
+    <color name="c_555555">#555555</color>
+    <color name="c_fc9010">#fc9010</color>
+    <color name="halftransparent">#50323232</color>
+</resources>

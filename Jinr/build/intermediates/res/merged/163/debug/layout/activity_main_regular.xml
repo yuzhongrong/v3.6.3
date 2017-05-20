@@ -1,0 +1,449 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical" >
+
+    <com.jinr.pulltorefresh.CustomScrollView
+        android:id="@+id/scroll_view_redresable"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:overScrollMode="never"
+        android:scrollbars="none" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <!-- 收益率显示区 -->
+
+            <RelativeLayout
+                android:id="@+id/adjust_rl"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/fproduct_bg_height"
+                android:background="@drawable/profit_bg"
+                android:orientation="vertical" >
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical" >
+
+                    <FrameLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical" >
+
+                        <!-- 首页公告条 -->
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:gravity="left|top"
+                            android:orientation="horizontal" >
+
+                            <LinearLayout
+                                android:layout_width="0dip"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:layout_marginLeft="5dp"
+                                android:layout_weight="1" >
+
+                                <TextView
+                                    android:id="@+id/tv_shouyi"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/expected_annual_yield"
+                                    android:padding="10dp"
+                                    android:textColor="@color/white"
+                                    android:textSize="@dimen/font_common_2" />
+
+                                <TextView
+                                    android:id="@+id/rate_coupon"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="@dimen/fp_rate_coupon"
+                                    android:textColor="@color/event_dialog_text"
+                                    android:textSize="12sp"
+                                    android:visibility="invisible" />
+                            </LinearLayout>
+
+                            <FrameLayout
+                                android:id="@+id/news_system_fl"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:paddingRight="1dp"
+                                android:visibility="gone"
+                                android:paddingTop="1dp">
+
+                                <ImageView
+                                    android:id="@+id/btn_menu_right"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:contentDescription="@null"
+                                    android:padding="10dp"
+                                    android:src="@drawable/ic_main_right_bg" />
+
+                                <TextView
+                                    android:id="@+id/img_sys"
+                                    android:layout_width="6dp"
+                                    android:layout_height="6dp"
+                                    android:layout_gravity="right|top"
+                                    android:layout_marginBottom="1dp"
+                                    android:layout_marginLeft="1dp"
+                                    android:layout_marginRight="12dp"
+                                    android:layout_marginTop="9dp"
+                                    android:background="@drawable/shape_point"
+                                    android:visibility="invisible" />
+                            </FrameLayout>
+                        </LinearLayout>
+
+                        <Button
+                            android:id="@+id/btn_notice"
+                            android:layout_width="match_parent"
+                            android:layout_height="30dp"
+                            android:alpha="0.95"
+                            android:background="@color/blue_notice_bg"
+                            android:drawableLeft="@drawable/ic_notice"
+                            android:drawableRight="@drawable/arrow_notice"
+                            android:gravity="center_vertical|left"
+                            android:singleLine="true"
+                            android:textColor="@color/left_menu_txt_normal"
+                            android:textSize="@dimen/font_common_1"
+                            android:visibility="gone" />
+                    </FrameLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/product_ly_anim"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingBottom="55dp" >
+
+                        <TextView
+                            android:id="@+id/improve_earnings"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="-25dp"
+                            android:layout_marginTop="40dp"
+                            android:layout_toRightOf="@+id/product_lay"
+                            android:background="@drawable/improve_earnings_bg"
+                            android:gravity="center_horizontal"
+                            android:padding="5dp"
+                            android:text="@string/improve_earnings"
+                            android:textColor="@color/event_dialog_text"
+                            android:textSize="12sp"
+                            android:visibility="gone" />
+
+                        <RelativeLayout
+                            android:id="@+id/product_lay"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerInParent="true"
+                            android:layout_marginTop="5dp"
+                            android:gravity="center_horizontal|bottom" >
+
+                            <TextView
+                                android:id="@+id/product_txt_rate"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:paddingBottom="10dp"
+                                android:paddingTop="10dp"
+                                android:singleLine="true"
+                                android:textColor="@color/white"
+                                android:textSize="60dp" />
+
+                            <ImageView
+                                android:id="@+id/rate_up_img"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignBottom="@+id/product_txt_rate"
+                                android:layout_marginLeft="10dp"
+                                android:layout_toRightOf="@+id/product_txt_rate"
+                                android:paddingBottom="25dp"
+                                android:src="@drawable/ic_main_dayup"
+                                android:visibility="gone" />
+                        </RelativeLayout>
+                    </RelativeLayout>
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/min_money_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:layout_centerHorizontal="true"
+                    android:layout_gravity="center"
+                    android:layout_marginBottom="45dp"
+                    android:layout_marginTop="10dp"
+                    android:gravity="center"
+                    android:text="@string/min_money"
+                    android:textColor="@color/gray_1"
+                    android:textSize="@dimen/font_common_2" />
+
+                <TextView
+                    android:id="@+id/text_top"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:layout_centerHorizontal="true"
+                    android:layout_gravity="center"
+                    android:layout_marginBottom="23dp"
+                    android:gravity="center"
+                    android:text="@string/pingan_danbao"
+                    android:textColor="@color/gray_1"
+                    android:textSize="@dimen/font_common_2" />
+            </RelativeLayout>
+
+            <LinearLayout
+                android:id="@+id/product_rl"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/fproduct_content_padding"
+                android:baselineAligned="false"
+                android:orientation="horizontal"
+                android:padding="10dp" >
+
+                <!-- 高收益 -->
+
+                <LinearLayout
+                    android:layout_width="0dip"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center_horizontal"
+                    android:orientation="vertical" >
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:gravity="center_horizontal|bottom"
+                        android:orientation="horizontal"
+                        android:visibility="gone" >
+
+                        <TextView
+                            android:id="@+id/tv_count_product"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="bottom"
+                            android:gravity="bottom"
+                            android:textColor="@color/gray_txt_bg"
+                            android:textSize="40sp"
+                            android:typeface="serif" />
+
+                        <TextView
+                            android:id="@+id/tv_count_per"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="bottom"
+                            android:gravity="bottom"
+                            android:textColor="@color/main_gray_color"
+                            android:textSize="13sp"
+                            android:typeface="serif" />
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/textdown_left_top"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="bottom|center_horizontal"
+                        android:layout_marginTop="15dp"
+                        android:gravity="bottom|center_horizontal"
+                        android:text="@string/hign_profit"
+                        android:textColor="@color/gray_text_dark"
+                        android:textSize="@dimen/font_common_0" />
+
+                    <TextView
+                        android:id="@+id/textdown_left_middle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="bottom|center_horizontal"
+                        android:layout_marginTop="10dp"
+                        android:gravity="center_horizontal"
+                        android:text="@string/detail1"
+                        android:textColor="@color/main_gray_color"
+                        android:textSize="@dimen/font_common_2" />
+
+                    <TextView
+                        android:id="@+id/textdown_left_bottom"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="bottom|center_horizontal"
+                        android:gravity="bottom|center_horizontal"
+                        android:text="@string/detail2"
+                        android:textColor="@color/main_gray_color"
+                        android:textSize="@dimen/font_common_2" />
+                </LinearLayout>
+                <!-- 0风险 -->
+
+                <LinearLayout
+                    android:id="@+id/new_mid_ll"
+                    android:layout_width="0dip"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center_horizontal"
+                    android:orientation="vertical" >
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:gravity="center_horizontal|bottom"
+                        android:orientation="horizontal"
+                        android:visibility="gone" >
+
+                        <TextView
+                            android:id="@+id/tv_onehundred"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="bottom"
+                            android:gravity="bottom"
+                            android:textColor="@color/gray_txt_bg"
+                            android:textSize="40sp"
+                            android:typeface="serif" />
+
+                        <TextView
+                            android:id="@+id/tv_hundred_per"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="bottom"
+                            android:gravity="bottom"
+                            android:textColor="@color/main_gray_color"
+                            android:textSize="@dimen/font_common_1" />
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/textdown_middle_top"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="bottom|center_horizontal"
+                        android:layout_marginTop="15dp"
+                        android:gravity="bottom|center_horizontal"
+                        android:text="@string/hundredpercashed"
+                        android:textColor="@color/gray_text_dark"
+                        android:textSize="@dimen/font_common_0" />
+
+                    <TextView
+                        android:id="@+id/textdown_middle_middle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="bottom|center_horizontal"
+                        android:layout_marginTop="10dp"
+                        android:gravity="center_horizontal"
+                        android:text="@string/detail3"
+                        android:textColor="@color/main_gray_color"
+                        android:textSize="@dimen/font_common_2" />
+
+                    <TextView
+                        android:id="@+id/textdown_middle_bottom"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="bottom|center_horizontal"
+                        android:gravity="bottom|center_horizontal"
+                        android:text="@string/detail4"
+                        android:textColor="@color/main_gray_color"
+                        android:textSize="@dimen/font_common_2" />
+                </LinearLayout>
+                <!-- 高效活期 -->
+
+                <LinearLayout
+                    android:layout_width="0dip"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center_horizontal"
+                    android:orientation="vertical" >
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:gravity="center_horizontal|bottom"
+                        android:orientation="horizontal"
+                        android:visibility="gone" >
+
+                        <TextView
+                            android:id="@+id/tv_twentyfour"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="bottom"
+                            android:gravity="bottom"
+                            android:textColor="@color/gray_txt_bg"
+                            android:textSize="40sp"
+                            android:typeface="serif" />
+
+                        <TextView
+                            android:id="@+id/tv_twentyfour_hour"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="bottom"
+                            android:layout_marginLeft="2dp"
+                            android:gravity="bottom"
+                            android:textColor="@color/main_gray_color"
+                            android:textSize="@dimen/font_common_1" />
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/textdown_right_top"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="bottom|center_horizontal"
+                        android:layout_marginTop="15dp"
+                        android:gravity="bottom|center_horizontal"
+                        android:text="@string/hign_free"
+                        android:textColor="@color/gray_text_dark"
+                        android:textSize="@dimen/font_common_0" />
+
+                    <TextView
+                        android:id="@+id/textdown_right_middle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="bottom|center_horizontal"
+                        android:layout_marginTop="10dp"
+                        android:gravity="center_horizontal"
+                        android:text="@string/detail5"
+                        android:textColor="@color/main_gray_color"
+                        android:textSize="@dimen/font_common_2" />
+
+                    <TextView
+                        android:id="@+id/textdown_right_bottom"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="bottom|center_horizontal"
+                        android:gravity="bottom|center_horizontal"
+                        android:text="@string/detail8"
+                        android:textColor="@color/main_gray_color"
+                        android:textSize="@dimen/font_common_2" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/into_info_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom|center_horizontal"
+                android:layout_marginTop="10dp"
+                android:drawablePadding="5dp"
+                android:drawableRight="@drawable/ic_main_right"
+                android:gravity="bottom|center_horizontal"
+                android:text="@string/into_info"
+                android:textColor="@color/regular_line"
+                android:textSize="@dimen/font_common_2" />
+
+            <TextView
+                android:id="@+id/goto_next_img"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom|center_horizontal"
+                android:layout_marginTop="20dp"
+                android:drawablePadding="5dp"
+                android:drawableTop="@drawable/ic_go_next"
+                android:gravity="bottom|center_horizontal"
+                android:textColor="@color/regular_line"
+                android:textSize="@dimen/font_common_2"
+                android:visibility="gone" />
+        </LinearLayout>
+    </com.jinr.pulltorefresh.CustomScrollView>
+
+</LinearLayout>

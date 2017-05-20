@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/gray_dialog_market_bg"
+    android:gravity="top"
+    android:orientation="vertical" >
+
+    <TextView
+        android:id="@+id/dialog_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="15dp"
+        android:gravity="center_vertical"
+        android:paddingLeft="@dimen/all_left_offset"
+        android:background="@color/gray_dialog_market_title"
+        android:textColor="@color/white"
+        android:textSize="20sp" />
+    
+    <!-- 
+    <View style="@style/line_dialog_market" />
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="120dp" >
+    </ScrollView>
+     -->
+    
+    <LinearLayout
+        android:id="@+id/layout_market"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical" >
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/dialog_button"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_gravity="bottom|center_horizontal"
+        android:background="@drawable/btn_dialog_bg_select"
+        android:text="@string/to_finish"
+        android:textColor="@color/white"
+        android:textSize="15sp"
+        android:visibility="gone" />
+
+</LinearLayout>

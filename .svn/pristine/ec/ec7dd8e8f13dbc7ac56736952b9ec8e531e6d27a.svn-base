@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/dialog_back"
+    android:gravity="top"
+    android:orientation="vertical" >
+    <TextView
+        android:id="@+id/dialog_content"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:gravity="center"
+        android:padding="15dp"
+        android:lineSpacingMultiplier="1.5"
+        android:textColor="@color/dialog_text_color"
+        android:textSize="16sp" />
+
+    <Button
+        android:id="@+id/dialog_button"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_gravity="bottom|center_horizontal"
+        android:layout_marginTop="15dp"
+        android:background="@drawable/btn_dialog_bg_select"
+        android:textColor="@color/white"
+        android:textSize="@dimen/cash_one_tv_size" />
+
+</LinearLayout>

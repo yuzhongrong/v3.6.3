@@ -1,0 +1,91 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/gray_bg">
+
+    <include
+        android:id="@+id/title"
+        layout="@layout/title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    <View
+        android:id="@+id/view"
+        style="@style/line"
+        android:layout_below="@+id/title"/>
+
+    <View style="@style/line"/>
+
+    <com.jinr.graph_view.ProgressWebView
+        android:id="@+id/mWebview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/rl_bottom"
+        android:layout_below="@+id/view"
+        android:scrollbars="none"
+        android:visibility="visible"/>
+
+    <View
+        android:id="@+id/line2"
+        style="@style/line"
+        android:layout_above="@+id/rl_bottom"/>
+
+    <LinearLayout
+        android:id="@+id/rl_bottom"
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:background="@color/white"
+        android:orientation="horizontal"
+        android:visibility="gone">
+
+        <RelativeLayout
+            android:id="@+id/rl_transfer"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/btn_home_bg_select">
+
+            <TextView
+                android:id="@+id/tv_transfer"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:gravity="center"
+                android:textColor="@color/blue_pb"
+                android:textSize="20sp"/>
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/textView1"
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="5dp"
+            android:layout_marginTop="5dp"
+            android:background="@color/gray_bg"/>
+
+        <RelativeLayout
+            android:id="@+id/rl_turnin"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/btn_home_bg_select"
+            android:visibility="gone">
+
+            <TextView
+                android:id="@+id/turn_in_tv"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:gravity="center"
+                android:text="@string/turn_in_right_now"
+                android:textColor="@color/blue_pb"
+                android:textSize="20sp"/>
+        </RelativeLayout>
+    </LinearLayout>
+
+</RelativeLayout>

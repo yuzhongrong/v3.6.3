@@ -1,0 +1,49 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/white">
+
+    <include
+        android:id="@+id/title"
+        layout="@layout/title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    <View
+        android:id="@+id/view"
+        style="@style/line"
+        android:layout_below="@+id/title"/>
+
+    <com.jinr.graph_view.ProgressWebView
+        android:id="@+id/mWebView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/rl_transfer"
+        android:scrollbars="none"
+        android:layout_below="@+id/view">
+
+    </com.jinr.graph_view.ProgressWebView>
+
+    <RelativeLayout
+        android:id="@+id/rl_transfer"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true">
+
+        <View
+            style="@style/line"
+            android:layout_alignParentTop="true"/>
+
+        <TextView
+            android:id="@+id/tv_turnIn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:text="立即转入"
+            android:textColor="@color/checked"
+            android:textSize="20sp"/>
+    </RelativeLayout>
+
+</RelativeLayout>

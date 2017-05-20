@@ -1,0 +1,2 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merger version="3"><dataSet config="main"><source path="/Users/yuzhongrong/workspace/v3.6.3/Jinr/src/main/shaders"/></dataSet><dataSet config="163"><source path="/Users/yuzhongrong/workspace/v3.6.3/Jinr/src/163/shaders"/></dataSet><dataSet config="debug"><source path="/Users/yuzhongrong/workspace/v3.6.3/Jinr/build-types/debug/shaders"/></dataSet><dataSet config="163Debug"><source path="/Users/yuzhongrong/workspace/v3.6.3/Jinr/src/163Debug/shaders"/></dataSet></merger>

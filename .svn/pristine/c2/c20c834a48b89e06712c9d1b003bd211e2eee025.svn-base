@@ -1,0 +1,286 @@
+package com.jinr.core.security.lockpanttern.pattern;
+
+import android.app.Activity;
+import android.content.ComponentName;
+import android.content.Intent;
+import android.graphics.Color;
+import android.os.Bundle;
+import android.os.CountDownTimer;
+import android.os.Handler;
+import android.view.Gravity;
+import android.view.KeyEvent;
+import android.view.View;
+import android.view.View.OnClickListener;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
+import android.widget.TextView;
+import android.widget.Toast;
+
+import com.jinr.core.MainActivity;
+import com.jinr.core.R;
+import com.jinr.core.config.AppManager;
+import com.jinr.core.config.EventBusKey;
+import com.jinr.core.security.lockpanttern.view.LockPatternUtils;
+import com.jinr.core.security.lockpanttern.view.LockPatternView;
+import com.jinr.core.security.lockpanttern.view.LockPatternView.Cell;
+import com.jinr.core.utils.PreferencesUtils;
+
+import org.simple.eventbus.EventBus;
+import org.simple.eventbus.Subscriber;
+
+import java.io.File;
+import java.io.IOException;
+import java.util.List;
+
+/**
+ * 手势密码锁界面 @author Ysw created at 2017/3/15 18:45
+ */
+public class UnlockGesturePasswordActivity extends Activity implements OnClickListener {
+    private static final String TIMEOUT_FILE = LockPatternUtils.PATH + "timoutfile.key";
+    private LockPatternView mLockPatternView;
+    private File timeout_file = new File(TIMEOUT_FILE);
+    private CountDownTimer mCountdownTimer = null;
+    private Handler mHandler = new Handler();
+    private TextView mHeadTextView;
+    private Animation mShakeAnim;
+    private TextView mForgetPassword;
+    private TextView unlock_username;
+    private View mPreviewViews[][] = new View[3][3];
+
+    private Toast mToast;
+    private String localCancel = "";
+    private LockPatternUtils locku = new LockPatternUtils(this);
+
+    private static int mFailedPatternAttemptsSinceLastTimeout = 0;
+    private String mobile;
+
+    private void showToast(CharSequence message) {
+        if (null == mToast) {
+            mToast = Toast.makeText(this, message, Toast.LENGTH_SHORT);
+            mToast.setGravity(Gravity.CENTER, 0, 0);
+        } else {
+            mToast.setText(message);
+        }
+
+        mToast.show();
+    }
+
+    @Override
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.gesturepassword_unlock);
+        AppManager.getAppManager().addActivity(this);
+        mLockPatternView = (LockPatternView) this.findViewById(R.id.gesturepwd_unlock_lockview);
+        initPreviewViews(); // 初始化预览九宫格
+        EventBus.getDefault().register(this);
+        mLockPatternView.setOnPatternListener(mChooseNewLockPatternListener);
+        mLockPatternView.setTactileFeedbackEnabled(true);
+        mHeadTextView = (TextView) findViewById(R.id.gesturepwd_unlock_text);
+        mShakeAnim = AnimationUtils.loadAnimation(this, R.anim.shake_x);
+        mForgetPassword = (TextView) findViewById(R.id.gesturepwd_unlock_forget);
+        unlock_username = (TextView) findViewById(R.id.unlock_username);
+        mForgetPassword.setOnClickListener(this);
+        Intent intent = getIntent();
+        localCancel = intent.getStringExtra("LockCancel");
+        initDate();
+        if (localCancel == null)
+            localCancel = "";
+        try {
+            if (timeout_file.exists())
+                mFailedPatternAttemptsSinceLastTimeout = Integer.parseInt(locku.readSDFile(TIMEOUT_FILE));
+            else
+                mFailedPatternAttemptsSinceLastTimeout = 0;
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    // 初始化预览九宫格
+    private void initPreviewViews() {
+        mPreviewViews = new View[3][3];
+        mPreviewViews[0][0] = findViewById(R.id.gesturepwd_setting_preview_0);
+        mPreviewViews[0][1] = findViewById(R.id.gesturepwd_setting_preview_1);
+        mPreviewViews[0][2] = findViewById(R.id.gesturepwd_setting_preview_2);
+        mPreviewViews[1][0] = findViewById(R.id.gesturepwd_setting_preview_3);
+        mPreviewViews[1][1] = findViewById(R.id.gesturepwd_setting_preview_4);
+        mPreviewViews[1][2] = findViewById(R.id.gesturepwd_setting_preview_5);
+        mPreviewViews[2][0] = findViewById(R.id.gesturepwd_setting_preview_6);
+        mPreviewViews[2][1] = findViewById(R.id.gesturepwd_setting_preview_7);
+        mPreviewViews[2][2] = findViewById(R.id.gesturepwd_setting_preview_8);
+    }
+
+    // 重置预览九宫格
+    private void resetPreviewViews() {
+        for (int i = 0; i < mPreviewViews.length; i++) {
+            View[] views = mPreviewViews[i];
+            for (int j = 0; j < views.length; j++) {
+                View view = views[j];
+                view.setBackgroundResource(R.drawable.gesture_create_grid_unselected);
+            }
+        }
+    }
+
+    private void updatePreviewViews(List<Cell> pattern) {
+        if (pattern == null)
+            return;
+        for (LockPatternView.Cell cell : pattern) {
+            mPreviewViews[cell.getRow()][cell.getColumn()].setBackgroundResource(R.drawable.gesture_create_grid_selected);
+        }
+    }
+
+    private void initDate() {
+        String name;
+        name = PreferencesUtils.getValueFromSPMap(UnlockGesturePasswordActivity.this, PreferencesUtils.Keys.NAME);
+        mobile = PreferencesUtils.getValueFromSPMap(UnlockGesturePasswordActivity.this, PreferencesUtils.Keys.TEL);
+        if (!"".equals(name)) {
+            if (name.length() == 2 || name.length() == 1) {
+                name = name.substring(0, 1) + "*";
+            } else {
+                int length = name.length();
+                name = name.substring(0, 1) + "**";
+            }
+        }
+        if (name.equals(""))
+            name = "您尚未进行实名认证";
+        unlock_username.setText(name);
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        if (mCountdownTimer != null)
+            mCountdownTimer.cancel();
+        MainActivity.isLock = true; // 如果图形解锁退出则将图形解锁是否存在isLock 标志位记为不存在。
+
+    }
+
+    private Runnable mClearPatternRunnable = new Runnable() {
+        public void run() {
+            mLockPatternView.clearPattern();
+            resetPreviewViews();
+        }
+    };
+
+    /**
+     * 自定义返回键的效果
+     */
+    @Override
+    public boolean onKeyDown(int keyCode, KeyEvent event) {
+        if (keyCode == KeyEvent.KEYCODE_BACK) {
+            PreferencesUtils.putMaskBooleanToSPMap(UnlockGesturePasswordActivity.this, EventBusKey.UNLOCKPASSWORD, true);
+            EventBus.getDefault().post(true, EventBusKey.AD_GOTO_APP);
+            AppManager.getAppManager().finishAllActivity();
+            AppManager.getAppManager().AppExit(this);
+        }
+        return true;
+    }
+
+    protected LockPatternView.OnPatternListener mChooseNewLockPatternListener = new LockPatternView.OnPatternListener() {
+
+        public void onPatternStart() {
+            mLockPatternView.removeCallbacks(mClearPatternRunnable);
+            patternInProgress();
+        }
+
+        public void onPatternCleared() {
+            mLockPatternView.removeCallbacks(mClearPatternRunnable);
+        }
+
+        public void onPatternDetected(List<LockPatternView.Cell> pattern) {
+            if (pattern == null)
+                return;
+
+            if (LockPatternUtils.checkPattern(pattern)) {
+                mLockPatternView.setDisplayMode(LockPatternView.DisplayMode.Correct);
+                PreferencesUtils.putMaskBooleanToSPMap(UnlockGesturePasswordActivity.this, EventBusKey.UNLOCKPASSWORD, false);
+                showToast("解锁成功");
+                try {
+                    locku.writeSDFile("0", TIMEOUT_FILE);
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+                finish();
+            } else {
+                mLockPatternView.setDisplayMode(LockPatternView.DisplayMode.Wrong);
+                if (pattern.size() >= LockPatternUtils.MIN_PATTERN_REGISTER_FAIL) {
+                    mFailedPatternAttemptsSinceLastTimeout++;
+                    int retry = LockPatternUtils.FAILED_ATTEMPTS_BEFORE_TIMEOUT - mFailedPatternAttemptsSinceLastTimeout;
+                    try {
+                        locku.writeSDFile(mFailedPatternAttemptsSinceLastTimeout + "", TIMEOUT_FILE);
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
+
+                    if (retry < 0) {
+                        retry = 0;
+                    }
+                    if (retry >= 0) {
+                        if (retry == 0) {
+                            showToast("您已5次输错密码，请重新登录");
+                            try {
+                                locku.writeSDFile("0", TIMEOUT_FILE);
+                            } catch (IOException e) {
+                                e.printStackTrace();
+                            }
+                            PreferencesUtils.clearSPMap(UnlockGesturePasswordActivity.this);
+                            AppManager.getAppManager().finishAllActivity();
+                            Intent intent_LoginActivity = new Intent();
+                            intent_LoginActivity.setComponent(new ComponentName("com.jinr.core", "com.jinr.core.regist.NewLoginActivity"));
+                            intent_LoginActivity.setAction(Intent.ACTION_VIEW);
+                            intent_LoginActivity.putExtra("unlock_forget", "unlock_forget");
+                            Intent intent_MainActivity = new Intent();
+                            intent_MainActivity.setClass(UnlockGesturePasswordActivity.this, MainActivity.class);
+                            Intent intent[] = {intent_MainActivity, intent_LoginActivity};
+                            startActivities(intent);
+                            finish();
+                        }
+                        mHeadTextView.setText("密码错误，还可以再输入" + retry + "次");
+                        mHeadTextView.setTextColor(Color.RED);
+                        mHeadTextView.startAnimation(mShakeAnim);
+                    }
+                } else {
+                    showToast("输入长度不够，请重试");
+                }
+                mHandler.postDelayed(mClearPatternRunnable, 2000);
+            }
+        }
+
+        public void onPatternCellAdded(List<Cell> pattern) {
+            updatePreviewViews(pattern);
+        }
+
+        private void patternInProgress() {
+        }
+    };
+
+    @Override
+    public void onClick(View v) {
+        if (v.getId() == R.id.gesturepwd_unlock_forget) {
+            Intent intent_LoginActivity = new Intent();
+            intent_LoginActivity.setComponent(new ComponentName("com.jinr.core", "com.jinr.core.regist.NewLoginActivity"));
+            intent_LoginActivity.setAction(Intent.ACTION_VIEW);
+            intent_LoginActivity.putExtra("unlock_forget", "unlock_forget");
+            intent_LoginActivity.putExtra("flag", 1);
+            intent_LoginActivity.putExtra("mobile", mobile);
+            startActivityForResult(intent_LoginActivity, 0);
+        }
+    }
+
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if (requestCode == 0) {
+            if (data != null && data.getStringExtra("return") != null) {
+                if (data.getStringExtra("return").equals("T"))
+                    finish();
+            }
+        }
+    }
+
+    // 重新登录成功关闭密码锁
+    @Subscriber(tag = EventBusKey.LOGIN_SUCCESS)
+    public void closeActivity(String data) {
+        if (UnlockGesturePasswordActivity.this != null) {
+            finish();
+        }
+    }
+}

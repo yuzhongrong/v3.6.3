@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/shape_white" >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="180dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true" >
+
+        <TextView
+            android:id="@+id/tv_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="10dp"
+            android:text="预留手机号说明"
+            android:textColor="#333333"
+            android:textSize="15dp" />
+
+        <View
+            android:id="@+id/view1"
+            style="@style/line"
+            android:layout_below="@+id/tv_title"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:layout_marginTop="10dp" />
+
+        <TextView
+            android:id="@+id/textView1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/view1"
+            android:layout_alignRight="@+id/view1"
+            android:layout_below="@+id/view1"
+            android:layout_marginTop="15dp"
+            android:lineSpacingExtra="3dp"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:text="银行卡预留手机号码为您在办卡时填写的手机号码。若您没有预留或者已经停用该手机号码。请联系客服处理。"
+            android:textColor="#666666"
+            android:textSize="15dp" />
+
+        <View
+            android:id="@+id/view2"
+            style="@style/line"
+            android:layout_above="@+id/ll_bottom" />
+
+        <LinearLayout
+            android:id="@+id/ll_bottom"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:layout_alignParentBottom="true" >
+
+            <RelativeLayout
+                android:id="@+id/rl_sure"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/selector_phoneinfo_bottom_tab" >
+
+                <TextView
+                    android:id="@+id/textView3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_centerVertical="true"
+                    android:text="确定"
+                    android:textColor="#0C72E3"
+                    android:textSize="15dp" />
+            </RelativeLayout>
+        </LinearLayout>
+    </RelativeLayout>
+
+</RelativeLayout>

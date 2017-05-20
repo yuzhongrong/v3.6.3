@@ -1,0 +1,545 @@
+# view res/layout/main_tab_layout.xml #generated:12
+-keep class android.support.v4.app.FragmentTabHost { <init>(...); }
+
+# view res/layout/act_banner_activity.xml #generated:9
+# view res/layout/activity_dayup_detail.xml #generated:352
+# view res/layout/activity_logout_guide.xml #generated:13
+# view res/layout/activity_redbag.xml #generated:98
+# view res/layout/activity_regular_detail.xml #generated:208
+# view res/layout/fragment_index.xml #generated:119
+# view res/layout/guide.xml #generated:6
+-keep class android.support.v4.view.ViewPager { <init>(...); }
+
+# view AndroidManifest.xml #generated:97
+-keep class com.jinr.core.AdvertisementActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:538
+-keep class com.jinr.core.AppRegister { <init>(...); }
+
+# view AndroidManifest.xml #generated:42
+-keep class com.jinr.core.ImageActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:36
+-keep class com.jinr.core.JinrApp { <init>(...); }
+
+# view res/layout/main.xml #generated:98
+-keep class com.jinr.core.LeftSlidingMenuFragment { <init>(...); }
+
+# view AndroidManifest.xml #generated:52
+-keep class com.jinr.core.MainActivity { <init>(...); }
+
+# view res/layout/main.xml #generated:107
+-keep class com.jinr.core.MenuRightFragment { <init>(...); }
+
+# view AndroidManifest.xml #generated:635
+-keep class com.jinr.core.MyWebViewActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:584
+-keep class com.jinr.core.SystemNewsActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:685
+-keep class com.jinr.core.balance.AccountBalanceActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:698
+-keep class com.jinr.core.balance.BalanceInResultActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:690
+-keep class com.jinr.core.balance.BalanceOutActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:694
+-keep class com.jinr.core.balance.BalanceOutResultActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:681
+-keep class com.jinr.core.balance.CurrentOutActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:183
+-keep class com.jinr.core.bankCard.AddBankActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:177
+-keep class com.jinr.core.bankCard.BankCardInfoActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:171
+-keep class com.jinr.core.bankCard.BindCardActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:207
+-keep class com.jinr.core.bankCard.CardDetailActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:136
+-keep class com.jinr.core.bankCard.LeftBankCardActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:189
+-keep class com.jinr.core.bankCard.PhoneMessageActivity { <init>(...); }
+
+# view res/layout/activity_phone_message.xml #generated:44
+-keep class com.jinr.core.bankCard.PhoneMessageView { <init>(...); }
+
+# view res/layout/inputuserphonemessage_dialog.xml #generated:6
+-keep class com.jinr.core.bankCard.UserMessageKeyoardView { <init>(...); }
+
+# view res/layout/inputuserid_dialog.xml #generated:6
+-keep class com.jinr.core.bankCard.UseridKeyboardView { <init>(...); }
+
+# view AndroidManifest.xml #generated:195
+-keep class com.jinr.core.bankCard.VerifyCodeActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:280
+-keep class com.jinr.core.bankCard.banklist.main.BankList { <init>(...); }
+
+# view AndroidManifest.xml #generated:275
+-keep class com.jinr.core.bankCard.citylist.main.CityList { <init>(...); }
+
+# view res/layout/bank_list.xml #generated:107
+# view res/layout/city_list.xml #generated:99
+-keep class com.jinr.core.bankCard.citylist.main.MyLetterListView { <init>(...); }
+
+# view AndroidManifest.xml #generated:520
+-keep class com.jinr.core.dayup.ActBannerActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:471
+-keep class com.jinr.core.dayup.CommonProjectDetailActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:466
+-keep class com.jinr.core.dayup.MyDayUpActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:660
+-keep class com.jinr.core.gift.ActAndRedbagActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:140
+-keep class com.jinr.core.gift.BonusCenterActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:396
+-keep class com.jinr.core.gift.GiftDetailActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:391
+-keep class com.jinr.core.gift.GiftNewActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:516
+-keep class com.jinr.core.gift.NewActActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:386
+-keep class com.jinr.core.gift.RuleActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:323
+-keep class com.jinr.core.gift.share.DspwebActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:604
+-keep class com.jinr.core.gift.share.MyGiftActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:366
+-keep class com.jinr.core.guide.GuideActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:361
+-keep class com.jinr.core.guide.SplashActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:574
+-keep class com.jinr.core.more.AboutActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:101
+-keep class com.jinr.core.more.AboutUsActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:371
+-keep class com.jinr.core.more.AgreementActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:565
+-keep class com.jinr.core.more.CjWentiActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:570
+-keep class com.jinr.core.more.CommonWebActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:614
+-keep class com.jinr.core.more.Detial_fbckActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:579
+-keep class com.jinr.core.more.FeedbackActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:128
+-keep class com.jinr.core.more.MoreActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:609
+-keep class com.jinr.core.more.MyFeedbackActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:109
+-keep class com.jinr.core.more.WebAboutUsActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:319
+-keep class com.jinr.core.my_change.GiftActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:666
+-keep class com.jinr.core.my_change.NewProfitAmountActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:663
+-keep class com.jinr.core.my_change.ProfitAmountActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:314
+-keep class com.jinr.core.my_change.WebViewActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:594
+-keep class com.jinr.core.news.ActDetailActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:599
+-keep class com.jinr.core.news.AdvDetailActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:589
+-keep class com.jinr.core.news.NewsCenterActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:631
+-keep class com.jinr.core.notice.NoticeDetailsActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:627
+-keep class com.jinr.core.notice.NoticeListActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:116
+-keep class com.jinr.core.regist.EntranceActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:120
+-keep class com.jinr.core.regist.IntivitationActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:124
+-keep class com.jinr.core.regist.LoginActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:112
+-keep class com.jinr.core.regist.RegisterActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:481
+-keep class com.jinr.core.regular.CalculateActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:501
+-keep class com.jinr.core.regular.FragmentTotalAssets { <init>(...); }
+
+# view AndroidManifest.xml #generated:670
+-keep class com.jinr.core.regular.MyAssetsActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:461
+-keep class com.jinr.core.regular.MyRegularActivity { <init>(...); }
+
+# view res/layout/activity_myregular.xml #generated:166
+-keep class com.jinr.core.regular.MyTextView { <init>(...); }
+
+# view AndroidManifest.xml #generated:451
+-keep class com.jinr.core.regular.ProductDetailActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:476
+-keep class com.jinr.core.regular.ProductInstructionsActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:657
+-keep class com.jinr.core.regular.RegularAssetsActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:456
+-keep class com.jinr.core.regular.RegularDetailActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:441
+-keep class com.jinr.core.regular.RegularInfoActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:436
+-keep class com.jinr.core.regular.RegularListActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:496
+-keep class com.jinr.core.regular.RegularRecodeListActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:446
+-keep class com.jinr.core.regular.TotalAssetsListActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:511
+-keep class com.jinr.core.security.AddressActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:230
+-keep class com.jinr.core.security.BindMobileActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:161
+-keep class com.jinr.core.security.ChangeDealPwA { <init>(...); }
+
+# view AndroidManifest.xml #generated:166
+-keep class com.jinr.core.security.ChangeDealPwB { <init>(...); }
+
+# view AndroidManifest.xml #generated:218
+-keep class com.jinr.core.security.ChangePasswdActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:212
+-keep class com.jinr.core.security.DealPasswdActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:155
+-keep class com.jinr.core.security.ForgotDealPasswdActive { <init>(...); }
+
+# view AndroidManifest.xml #generated:144
+-keep class com.jinr.core.security.ForgotPasswdActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:150
+-keep class com.jinr.core.security.ForgotPwd1Activity { <init>(...); }
+
+# view AndroidManifest.xml #generated:381
+-keep class com.jinr.core.security.MyBankCardActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:376
+-keep class com.jinr.core.security.RealInfoActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:224
+-keep class com.jinr.core.security.RealNameActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:132
+-keep class com.jinr.core.security.SecurityCenterActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:506
+-keep class com.jinr.core.security.SettingActivity { <init>(...); }
+
+# view res/layout/address_dialog.xml #generated:160
+-keep class com.jinr.core.security.address.NoScrollViewPager { <init>(...); }
+
+# view AndroidManifest.xml #generated:351
+-keep class com.jinr.core.security.lockpanttern.pattern.CreateGesturePasswordActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:356
+-keep class com.jinr.core.security.lockpanttern.pattern.UnlockGesturePasswordActivity { <init>(...); }
+
+# view res/layout/gesturepassword_create.xml #generated:170
+# view res/layout/gesturepassword_unlock.xml #generated:176
+-keep class com.jinr.core.security.lockpanttern.view.LockPatternView { <init>(...); }
+
+# view AndroidManifest.xml #generated:416
+-keep class com.jinr.core.security.loginpwd.ChangeLoginPwd { <init>(...); }
+
+# view AndroidManifest.xml #generated:411
+-keep class com.jinr.core.security.mobile.ChangeMobileStep1 { <init>(...); }
+
+# view AndroidManifest.xml #generated:421
+-keep class com.jinr.core.security.tradepwd.ChgTradePwd { <init>(...); }
+
+# view AndroidManifest.xml #generated:431
+-keep class com.jinr.core.security.tradepwd.FindTradePwd { <init>(...); }
+
+# view AndroidManifest.xml #generated:426
+-keep class com.jinr.core.security.tradepwd.SetTradePwdActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:309
+-keep class com.jinr.core.trade.Introduce2Activity { <init>(...); }
+
+# view AndroidManifest.xml #generated:327
+-keep class com.jinr.core.trade.IntroduceActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:105
+-keep class com.jinr.core.trade.OperationsAcitivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:623
+-keep class com.jinr.core.trade.getCash.AssetsActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:264
+-keep class com.jinr.core.trade.getCash.GetCashFirstActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:269
+-keep class com.jinr.core.trade.getCash.GetCashSecondActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:285
+-keep class com.jinr.core.trade.getCash.TradeFinishActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:619
+-keep class com.jinr.core.trade.my_getCash.CityAddActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:290
+-keep class com.jinr.core.trade.my_getCash.FinishGetCashActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:299
+-keep class com.jinr.core.trade.my_getCash.GetCashOneActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:302
+-keep class com.jinr.core.trade.my_getCash.GetCashTwoActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:295
+-keep class com.jinr.core.trade.my_getCash.GetcashIntroduceActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:305
+-keep class com.jinr.core.trade.my_getCash.IntroduceActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:331
+-keep class com.jinr.core.trade.news_purchase.AddBankCardActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:335
+-keep class com.jinr.core.trade.news_purchase.AddInfoActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:339
+-keep class com.jinr.core.trade.news_purchase.CodeActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:347
+-keep class com.jinr.core.trade.news_purchase.PurchaseFinalActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:343
+-keep class com.jinr.core.trade.news_purchase.TradePwActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:491
+-keep class com.jinr.core.trade.purchase.CurrentPurchaseFirstActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:244
+-keep class com.jinr.core.trade.purchase.PurchaseDemandResultActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:236
+-keep class com.jinr.core.trade.purchase.PurchaseFirstActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:201
+-keep class com.jinr.core.trade.purchase.PurchaseLimitNoteActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:240
+-keep class com.jinr.core.trade.purchase.PurchaseResultActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:248
+-keep class com.jinr.core.trade.purchase.PurchaseSecondActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:486
+-keep class com.jinr.core.trade.purchase.RegularPurchaseFirstActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:654
+-keep class com.jinr.core.trade.record.NewTradeRecordActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:256
+-keep class com.jinr.core.trade.record.RecordDetailActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:260
+-keep class com.jinr.core.trade.record.RecordPurchase { <init>(...); }
+
+# view AndroidManifest.xml #generated:252
+-keep class com.jinr.core.trade.record.TradeRecordActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:673
+-keep class com.jinr.core.trade.record.WebRecordGetCash { <init>(...); }
+
+# view AndroidManifest.xml #generated:701
+-keep class com.jinr.core.transfer.TransferActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:676
+-keep class com.jinr.core.transfer.TransferInfoActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:525
+-keep class com.jinr.core.transfer.TransferedListActivity { <init>(...); }
+
+# view res/layout/main.xml #generated:1
+-keep class com.jinr.core.ui.MenuRightView { <init>(...); }
+
+# view res/layout/layout_profit_amount.xml #generated:90
+-keep class com.jinr.core.ui.MyListView { <init>(...); }
+
+# view res/layout/activity_transfer.xml #generated:60
+# view res/layout/item_regular_assets.xml #generated:23
+-keep class com.jinr.core.ui.PercentRest { <init>(...); }
+
+# view res/layout/downlode_dialog_updata.xml #generated:52
+-keep class com.jinr.core.updata.MyProgressBar { <init>(...); }
+
+# view res/layout/activity_regular_info.xml #generated:120
+# view res/layout/activity_regular_info.xml #generated:149
+# view res/layout/activity_regular_info.xml #generated:89
+-keep class com.jinr.core.utils.DashedLine { <init>(...); }
+
+# view res/layout/activity_balancein.xml #generated:90
+# view res/layout/activity_balanceout.xml #generated:120
+# view res/layout/activity_transfer.xml #generated:284
+# view res/layout/activity_verify_code.xml #generated:56
+# view res/layout/aty_chg_login_pwd.xml #generated:118
+# view res/layout/aty_chg_login_pwd.xml #generated:41
+# view res/layout/aty_chg_login_pwd.xml #generated:80
+# view res/layout/aty_chg_tel_1.xml #generated:27
+# view res/layout/aty_chg_tel_2.xml #generated:28
+# view res/layout/aty_chg_tel_3.xml #generated:47
+# view res/layout/bind_bank_card.xml #generated:127
+# view res/layout/bind_mobile.xml #generated:113
+# view res/layout/bind_mobile.xml #generated:47
+# view res/layout/bind_mobile.xml #generated:73
+# view res/layout/change_deal_passwd.xml #generated:105
+# view res/layout/change_deal_passwd.xml #generated:145
+# view res/layout/change_deal_passwd.xml #generated:51
+# view res/layout/change_deal_passwd.xml #generated:78
+# view res/layout/change_login_passwd.xml #generated:115
+# view res/layout/change_login_passwd.xml #generated:53
+# view res/layout/change_login_passwd.xml #generated:83
+# view res/layout/current_purchase_first.xml #generated:186
+# view res/layout/entrance_in.xml #generated:32
+# view res/layout/find_trade_pwd_1.xml #generated:30
+# view res/layout/find_trade_pwd_2.xml #generated:47
+# view res/layout/forgot_deal_passwd.xml #generated:118
+# view res/layout/forgot_deal_passwd.xml #generated:145
+# view res/layout/forgot_deal_passwd.xml #generated:50
+# view res/layout/forgot_deal_passwd.xml #generated:78
+# view res/layout/forgot_passwd.xml #generated:134
+# view res/layout/forgot_passwd.xml #generated:48
+# view res/layout/forgot_passwd.xml #generated:93
+# view res/layout/forgot_pwd1.xml #generated:30
+# view res/layout/fragment_curoutbal.xml #generated:24
+# view res/layout/fragment_curoutbank.xml #generated:97
+# view res/layout/get_cash_one.xml #generated:207
+# view res/layout/get_cash_two.xml #generated:32
+# view res/layout/layout_verification.xml #generated:66
+# view res/layout/login_in.xml #generated:48
+# view res/layout/purchase_first.xml #generated:147
+# view res/layout/register.xml #generated:134
+# view res/layout/register.xml #generated:75
+# view res/layout/regular_purchase_first.xml #generated:186
+# view res/layout/transfer_pop.xml #generated:30
+# view res/layout/transfer_pop.xml #generated:58
+-keep class com.jinr.core.utils.MyEditText { <init>(...); }
+
+# view res/layout/chg_trade_pwd_1.xml #generated:20
+# view res/layout/chg_trade_pwd_2.xml #generated:10
+# view res/layout/chg_trade_pwd_3.xml #generated:27
+# view res/layout/dialog_trade_passwd.xml #generated:33
+# view res/layout/find_trade_pwd_3.xml #generated:20
+# view res/layout/find_trade_pwd_4.xml #generated:20
+# view res/layout/set_trade_pwd_1.xml #generated:20
+# view res/layout/set_trade_pwd_2.xml #generated:27
+-keep class com.jinr.core.utils.PasswordInputView2 { <init>(...); }
+
+# view AndroidManifest.xml #generated:531
+-keep class com.jinr.core.wxapi.WXEntryActivity { <init>(...); }
+
+# view res/layout/activity_main_login_lay.xml #generated:13
+-keep class com.jinr.graph_view.ChildViewPager { <init>(...); }
+
+# view res/layout/activity_logout_guide_one.xml #generated:34
+-keep class com.jinr.graph_view.CountView { <init>(...); }
+
+# view res/layout/activity_main_no_login_lay.xml #generated:18
+-keep class com.jinr.graph_view.HorizontalViewPage { <init>(...); }
+
+# view res/layout/layout_paypassword.xml #generated:64
+-keep class com.jinr.graph_view.PasswordInputView { <init>(...); }
+
+# view res/layout/activity_dayup_detail.xml #generated:19
+-keep class com.jinr.graph_view.ScrollViewExtend { <init>(...); }
+
+# view res/layout/dialog_bank_choose.xml #generated:52
+-keep class com.jinr.graph_view.WheelView { <init>(...); }
+
+# view res/layout/layout_paypassword.xml #generated:99
+# view res/layout/layout_verification.xml #generated:104
+-keep class com.jinr.graph_view.XKeyBoardView { <init>(...); }
+
+# view res/layout/activity_assets.xml #generated:20
+# view res/layout/activity_my_assets.xml #generated:12
+# view res/layout/activity_profit.xml #generated:13
+# view res/layout/activity_regular.xml #generated:15
+# view res/layout/activity_regular_asset.xml #generated:28
+# view res/layout/activity_transfer_lay.xml #generated:122
+# view res/layout/activity_transfered_lay.xml #generated:64
+# view res/layout/fragment_act.xml #generated:7
+# view res/layout/trade_record.xml #generated:124
+# view res/layout/turn_in.xml #generated:28
+# view res/layout/turn_out.xml #generated:28
+-keep class com.jinr.graph_view.XListView { <init>(...); }
+
+# view res/layout/activity_main_dayup.xml #generated:8
+# view res/layout/activity_main_regular.xml #generated:8
+# view res/layout/activity_transfer_info_lay.xml #generated:15
+# view res/layout/fragment_assets.xml #generated:21
+# view res/layout/fragment_product.xml #generated:8
+-keep class com.jinr.pulltorefresh.CustomScrollView { <init>(...); }
+
+# view AndroidManifest.xml #generated:82
+-keep class com.mob.tools.MobUIShell { <init>(...); }
+
+# view AndroidManifest.xml #generated:407
+-keep class com.umeng.update.UpdateDialogActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:402
+-keep class com.umeng.update.net.DownloadingService { <init>(...); }
+
+# view AndroidManifest.xml #generated:641
+-keep class com.yintong.secure.activity.BaseActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:649
+-keep class com.yintong.secure.service.PayService { <init>(...); }
+

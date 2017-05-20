@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/gray_offset"
+    android:orientation="vertical" >
+
+    <ScrollView
+        android:layout_height="0dp"
+        android:layout_width="match_parent"
+        android:layout_weight="1"
+        android:scrollbars="vertical" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:orientation="vertical" >
+
+            <!-- title布局 -->
+
+            <include
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                layout="@layout/title" />
+
+            <include
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                layout="@layout/title_below_back" />
+
+            <!-- 线条 -->
+
+            <include
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                layout="@layout/line" />
+
+            <TextView
+                android:id="@+id/get_cash_sec_tv0"
+                style="@style/wrap"
+                android:layout_marginLeft="@dimen/all_left_offset"
+                android:layout_marginRight="40dp"
+                android:layout_marginTop="15dp"
+                android:lineSpacingMultiplier="1.5"
+                android:text=""
+                android:textColor="@color/main_out_down_text_color"
+                android:textSize="13sp" />
+
+            <TextView
+                android:id="@+id/get_cash_sec_tv11"
+                style="@style/wrap"
+                android:layout_marginLeft="@dimen/all_left_offset"
+                android:layout_marginTop="2dp"
+                android:gravity="bottom"
+                android:text="@string/tips_rule_one"
+                android:textColor="@color/main_back_color"
+                android:textSize="13sp" />
+
+            <ScrollView
+                android:id="@+id/get_cash_sec_sv11"
+                style="@style/wrap"
+                android:layout_marginLeft="@dimen/all_left_offset"
+                android:layout_marginRight="@dimen/all_left_offset"
+                android:layout_marginTop="1dp"
+                android:scrollbars="@null"
+                android:visibility="gone" >
+
+                <TextView
+                    style="@style/wrap"
+                    android:text="@string/tips_rule_three"
+                    android:textColor="@color/main_out_down_text_color"
+                    android:textSize="12sp" />
+            </ScrollView>
+
+            <!-- 线条 -->
+
+            <include
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                layout="@layout/line" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:gravity="center_vertical" >
+
+                <TextView
+                    android:id="@+id/get_cash_sec_tv1"
+                    style="@style/sec"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="@dimen/all_left_offset"
+                    android:layout_marginTop="1dp"
+                    android:text="@string/deal_passwd"
+                    android:textColor="@color/main_out_down_text_color" />
+
+                <EditText
+                    android:id="@+id/get_cash_sec_et1"
+                    style="@style/edit_style"
+                    android:layout_toRightOf="@id/get_cash_sec_tv1"
+                    android:hint="@string/hint_m"
+                    android:inputType="textPassword" />
+            </RelativeLayout>
+
+            <include
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                layout="@layout/line" />
+            <!-- 验证码 -->
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal" >
+
+                <TextView
+                    android:id="@+id/get_cash_sec_tv2"
+                    style="@style/sec"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="@dimen/all_left_offset"
+                    android:hint="@string/modify_code"
+                    android:textColor="@color/main_out_down_text_color" />
+
+                <Button
+                    android:id="@+id/get_cash_sec_send_code"
+                    style="@style/wrap"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="5dp"
+                    android:layout_toRightOf="@id/get_cash_sec_tv2"
+                    android:background="@drawable/mobile_code"
+                    android:paddingBottom="3dp"
+                    android:paddingLeft="5dp"
+                    android:paddingRight="5dp"
+                    android:paddingTop="3dp"
+                    android:text="@string/send_modify_code"
+                    android:textColor="@color/white"
+                    android:textSize="14sp" />
+
+                <EditText
+                    android:id="@+id/get_cash_sec_code"
+                    style="@style/edit_style"
+                    android:layout_toRightOf="@id/get_cash_sec_send_code"
+                    android:hint="@string/hint_code"
+                    android:inputType="number" />
+            </RelativeLayout>
+
+            <include
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                layout="@layout/line" />
+        </LinearLayout>
+    </ScrollView>
+
+    <!--  <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/gray_offset"
+        android:gravity="bottom" >-->
+
+        <Button
+            android:id="@+id/get_cash_sec_submit"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/but_about_white"
+            android:padding="10dp"
+            android:text="@string/the_submit"
+            android:textColor="@color/index_bg"
+            android:layout_gravity="bottom"
+            android:textSize="20sp" />
+     <!-- </RelativeLayout>-->
+
+</LinearLayout>

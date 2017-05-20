@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/gray"
+    android:orientation="vertical" >
+
+    <!-- title布局 -->
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/title_height"
+        android:background="@color/white" >
+
+        <!-- 侧滑按钮 -->
+
+        <ImageView
+            android:id="@+id/title_left_img"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/return_btn_auto" />
+
+        <TextView
+            android:id="@+id/title_center_text"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_centerInParent="true"
+            android:layout_gravity="center_horizontal"
+            android:gravity="center_vertical"
+            android:text="@string/sec_center"
+            android:textColor="@color/title_security"
+            android:textSize="16dp" />
+
+        <ImageView
+            android:id="@+id/nav_up"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_centerVertical="true"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="5dp"
+            android:layout_toRightOf="@id/title_center_text"
+            android:paddingRight="10dp"
+            android:src="@drawable/down_icon"
+            android:visibility="gone" />
+    </RelativeLayout>
+
+    <View style="@style/line" />
+    <!-- 线条 -->
+
+    <LinearLayout
+        android:id="@+id/ll_turn_in_out"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:background="@color/white"
+        android:gravity="center_vertical"
+        android:orientation="vertical"
+        android:visibility="gone" >
+
+        <RadioGroup
+            android:id="@+id/radioGroup"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:orientation="horizontal" >
+
+            <RadioButton
+                android:id="@+id/turn_in"
+                android:layout_width="87dp"
+                android:layout_height="30dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:layout_weight="1"
+                android:background="@drawable/record_title_background"
+                android:button="@null"
+                android:checked="true"
+                android:gravity="center"
+                android:text="@string/record_trun_in"
+                android:textColor="@drawable/record_title_textcolor"
+                android:textSize="15dp" />
+
+            <RadioButton
+                android:id="@+id/turn_out"
+                android:layout_width="87dp"
+                android:layout_height="30dp"
+               android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:layout_weight="1"
+                android:background="@drawable/record_title_background"
+                android:button="@null"
+                android:gravity="center"
+                android:text="@string/record_trun_out"
+                android:textColor="@drawable/record_title_textcolor"
+                android:textSize="15dp" />
+
+            <RadioButton
+                android:id="@+id/transfer_btn"
+                android:layout_width="87dp"
+                android:layout_height="30dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:layout_weight="1"
+                android:background="@drawable/record_title_background"
+                android:button="@null"
+                android:gravity="center"
+                android:text="@string/record_transfer"
+                android:textColor="@drawable/record_title_textcolor"
+                android:textSize="15dp"
+                android:visibility="gone" />
+        </RadioGroup>
+    </LinearLayout>
+
+    <View
+        android:id="@+id/view"
+        android:layout_width="match_parent"
+        android:layout_height="10dp"
+        android:background="@color/gray"
+        android:visibility="gone" />
+
+    <FrameLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent" >
+
+        <com.jinr.graph_view.XListViewJinr
+            android:scrollbars="none"
+            android:id="@+id/view_list"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:divider="@null"
+            android:dividerHeight="0dp"
+            android:footerDividersEnabled="false"
+            android:headerDividersEnabled="true"
+            android:listSelector="@android:color/transparent" />
+    </FrameLayout>
+
+</LinearLayout>

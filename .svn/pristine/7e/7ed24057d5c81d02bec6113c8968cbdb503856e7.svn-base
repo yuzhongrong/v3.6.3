@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/Jinr/Jinr.iml" filepath="$PROJECT_DIR$/Jinr/Jinr.iml" />
+      <module fileurl="file://$PROJECT_DIR$/PushSDK/PushSDK.iml" filepath="$PROJECT_DIR$/PushSDK/PushSDK.iml" />
+      <module fileurl="file://$PROJECT_DIR$/v3.6.3.iml" filepath="$PROJECT_DIR$/v3.6.3.iml" />
+    </modules>
+  </component>
+</project>

@@ -1,0 +1,288 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/base_style_bg"
+    android:orientation="vertical" >
+
+    <!-- title布局 -->
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+
+        <include
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            layout="@layout/title" />
+
+        <Button
+            android:id="@+id/btn_limit_note"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="10dp"
+            android:background="@null"
+            android:padding="10dp"
+            android:text="@string/trade_introduce_a"
+            android:textColor="@color/gray_text_dark"
+            android:textSize="@dimen/cash_one_turns_out_tv_size"
+            android:visibility="gone" />
+    </RelativeLayout>
+
+    <View style="@style/line" />
+
+    <ScrollView
+        android:id="@+id/scroll_view_redresable"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:overScrollMode="never"
+        android:scrollbars="none" >
+
+        <LinearLayout
+            android:id="@+id/scroll_view_lay"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:scrollbars="none" >
+
+            <LinearLayout
+                android:id="@+id/ly_adjust"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/small_profit_bg"
+                android:orientation="vertical" >
+
+                <TextView
+                    android:id="@+id/tv_about_yesterday"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginTop="15dp"
+                    android:text="@string/expected_annual_yield"
+                    android:textColor="@color/white"
+                    android:textSize="14sp" />
+
+                <RelativeLayout
+                    android:id="@+id/rl_top"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="20dp"
+                    android:gravity="center|bottom"
+                    android:orientation="horizontal"
+                    android:paddingTop="5dp" >
+
+                    <LinearLayout
+                        android:id="@+id/ll_money_yield"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal" >
+
+                        <TextView
+                            android:id="@+id/tv_money_yield"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:paddingLeft="18dp"
+                            android:paddingTop="20dp"
+                            android:textColor="@color/white"
+                            android:textSize="80dp" />
+
+                        <TextView
+                            android:id="@+id/pre_money_yield"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="%"
+                            android:textColor="@color/white"
+                            android:textSize="20sp"
+                            android:visibility="invisible" />
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/tv_yestday_money"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="-30dp"
+                        android:layout_toRightOf="@+id/ll_money_yield"
+                        android:background="@drawable/improve_earnings_bg"
+                        android:gravity="center_horizontal"
+                        android:padding="5dp"
+                        android:text="@string/improve_earnings"
+                        android:textColor="@color/event_dialog_text"
+                        android:textSize="12sp"
+                        android:visibility="gone" />
+
+                    <LinearLayout
+                        android:id="@+id/shou_money_yield"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_alignParentBottom="true"
+                        android:layout_toRightOf="@+id/ll_money_yield"
+                        android:orientation="vertical"
+                        android:paddingBottom="10dp" >
+
+                        <ImageView
+                            android:id="@+id/rate_up_img"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="10dp"
+                            android:src="@drawable/ic_push_dayup"
+                            android:visibility="gone" />
+                    </LinearLayout>
+                </RelativeLayout>
+
+                <TextView
+                    android:id="@+id/tv_content"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginTop="20dp"
+                    android:textColor="@color/white"
+                    android:textSize="15sp" />
+            </LinearLayout>
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical" >
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical" >
+
+                    <TextView
+                        android:id="@+id/tv_limit_money"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:layout_marginLeft="15dp"
+                        android:drawableLeft="@drawable/ic_info"
+                        android:drawablePadding="5dp"
+                        android:gravity="center_vertical"
+                        android:textColor="@color/main_out_down_text_color" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/back_select"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal" >
+
+                        <TextView
+                            android:id="@+id/puchase_tv1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="14dp"
+                            android:layout_marginLeft="15dp"
+                            android:layout_marginTop="14dp"
+                            android:text="@string/purchase_no"
+                            android:textColor="@color/black"
+                            android:textSize="16sp"
+                            android:textStyle="bold" />
+
+                        <com.jinr.core.utils.MyEditText
+                            android:id="@+id/puchase_et1"
+                            style="@style/edit_style"
+                            android:layout_weight="1"
+                            android:hint="@string/regular_input_int"
+                            android:inputType="number" />
+                    </LinearLayout>
+
+                    <View style="@style/line" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:paddingBottom="10dp"
+                        android:paddingLeft="@dimen/trans_left_offset"
+                        android:paddingTop="10dp" >
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/regular_out_money_time"
+                            android:textColor="@color/main_out_down_text_color" />
+
+                        <TextView
+                            android:id="@+id/tv_time_in"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/cash_time_in_out" />
+                    </LinearLayout>
+
+                    <Button
+                        android:id="@+id/purchase_submit_bt"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginLeft="@dimen/trans_left_offset"
+                        android:layout_marginRight="@dimen/trans_left_offset"
+                        android:layout_marginTop="20dp"
+                        android:background="@drawable/btn_gray_bg"
+                        android:padding="10dp"
+                        android:text="@string/pay_in"
+                        android:textColor="@color/white"
+                        android:textSize="18sp" />
+
+                    <LinearLayout
+                        android:id="@+id/switch_account_lay"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="30dp"
+                        android:gravity="center_horizontal" >
+
+                        <TextView
+                            android:id="@+id/switch_account_hint"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="使用余额账户付款，" />
+
+                        <TextView
+                            android:id="@+id/switch_account_tv"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="更换"
+                            android:textColor="@color/blue_color" />
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/limit_tv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:text="该卡本次支付限额50000.00元"
+                        android:textColor="@color/redbag_black"
+                        android:visibility="gone" />
+                </LinearLayout>
+
+                <Button
+                    android:id="@+id/btn_notice"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:alpha="0.95"
+                    android:background="#ee5f50"
+                    android:gravity="center_vertical|center"
+                    android:singleLine="true"
+                    android:textColor="@color/left_menu_txt_normal"
+                    android:textSize="15sp"
+                    android:visibility="gone" />
+            </FrameLayout>
+
+            <TextView
+                android:id="@+id/bottom_tv"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="15dp"
+                android:text="@string/expected_annual_yield"
+                android:textColor="@color/white"
+                android:textSize="14sp"
+                android:visibility="gone" />
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="securepay_auth_2.4.2.04">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/Jinr/libs/securepay_auth_2.4.2.04.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

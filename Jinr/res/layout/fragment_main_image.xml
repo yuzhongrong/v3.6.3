@@ -1,0 +1,278 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:background="@color/white"
+              android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/ll_guideOne"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:visibility="gone">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="30dp"
+            android:src="@drawable/logout_guide_one"/>
+
+        <TextView
+            android:id="@+id/tv_guideOne"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:gravity="center"
+            android:text="鲸鱼大数据"
+            android:textColor="@color/logout_guide_one"
+            android:textSize="22dp"/>
+
+        <TextView
+            android:id="@+id/tv_guideOne_first"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="80dp"
+            android:layout_marginTop="15dp"
+            android:text="总交易额(元):15,219,558,780"
+            android:textSize="14dp"/>
+
+        <TextView
+            android:id="@+id/tv_guideOne_second"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="80dp"
+            android:layout_marginTop="10dp"
+            android:text="注册用户(人):2489317"
+            android:textSize="14dp"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_guideTwo"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:visibility="gone">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="30dp"
+            android:src="@drawable/logout_guide_two"/>
+
+        <TextView
+            android:id="@+id/tv_guideTwo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:gravity="center"
+            android:text="优质资产"
+            android:textColor="@color/logout_guide_two"
+            android:textSize="22dp"/>
+
+        <TextView
+            android:id="@+id/tv_guideTwo_first"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:gravity="center"
+            android:text="极致分散投资，匹配金融类理财产品组成的资产组合"
+            android:textSize="14dp"/>
+
+        <TextView
+            android:id="@+id/tv_guideTwo_second"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:gravity="center"
+            android:text="甄选优质资产端和利用实力雄厚的金融机构完善风控系统,"
+            android:textSize="14dp"/>
+
+        <TextView
+            android:id="@+id/tv_guideTwo_three"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:gravity="center"
+            android:text="从源头过滤投资风险"
+            android:textSize="14dp"/>
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_guideThree"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:visibility="gone">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="30dp"
+            android:src="@drawable/logout_guide_three"/>
+
+        <TextView
+            android:id="@+id/tv_guideThree"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:gravity="center"
+            android:text="第三方支付"
+            android:textColor="@color/logout_guide_three"
+            android:textSize="22dp"/>
+
+        <TextView
+            android:id="@+id/tv_guideThree_first"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:gravity="center"
+            android:text="第三方支付平台全程监控资金流向,"
+            android:textSize="14dp"/>
+
+        <TextView
+            android:id="@+id/tv_guideThree_second"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:gravity="center"
+            android:text="让用户轻松掌握手上每一笔资金去向。"
+            android:textSize="14dp"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_guideFour"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:visibility="gone">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="30dp"
+            android:src="@drawable/logout_guide_four"/>
+
+        <TextView
+            android:id="@+id/tv_guideFour"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="30dp"
+            android:gravity="center"
+            android:text="安全技术"
+            android:textColor="@color/logout_guide_four"
+            android:textSize="22dp"/>
+
+        <TextView
+            android:id="@+id/tv_guideFour_first"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="55dp"
+            android:layout_marginRight="55dp"
+            android:layout_marginTop="15dp"
+            android:drawableLeft="@drawable/guide_four_ic"
+            android:drawablePadding="8dp"
+            android:gravity="center"
+            android:text="SSL安全机密，128位加密技术"
+            android:textSize="14dp"/>
+
+        <TextView
+            android:id="@+id/tv_guideFour_second"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="55dp"
+            android:layout_marginRight="55dp"
+            android:layout_marginTop="10dp"
+            android:drawableLeft="@drawable/guide_four_ic"
+            android:drawablePadding="8dp"
+            android:gravity="center"
+            android:text="电子物理管理，确保数据安全"
+            android:textSize="14dp"/>
+
+        <TextView
+            android:id="@+id/tv_guideFour_three"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="55dp"
+            android:layout_marginRight="55dp"
+            android:layout_marginTop="10dp"
+            android:drawableLeft="@drawable/guide_four_ic"
+            android:drawablePadding="8dp"
+            android:gravity="center"
+            android:text="顶尖安全系统，防止用户信息泄露"
+            android:textSize="14dp"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_guideFive"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:visibility="gone">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="30dp"
+            android:src="@drawable/logout_guide_five"/>
+
+        <TextView
+            android:id="@+id/tv_guideFive"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:gravity="center"
+            android:text="法律保障"
+            android:textColor="@color/logout_guide_five"
+            android:textSize="22dp"/>
+
+        <TextView
+            android:id="@+id/tv_guideFive_first"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:gravity="center"
+            android:text="大成律师事务所(“大成”)成立于1992年,"
+            android:textSize="14dp"/>
+
+        <TextView
+            android:id="@+id/tv_guideFive_second"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:gravity="center"
+            android:text="是中国成立最早、规模最大的综合性律师事务所,"
+            android:textSize="14dp"/>
+
+        <TextView
+            android:id="@+id/tv_guideFive_three"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:gravity="center"
+            android:text="也是鲸鱼金融所有法律事务顾问。"
+            android:textSize="14dp"/>
+
+        <TextView
+            android:id="@+id/tv_guideFive_top"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:gravity="center"
+            android:text="返回顶部"
+            android:textColor="@color/index_text_unselected"
+            android:textSize="14dp"/>
+
+    </LinearLayout>
+
+</LinearLayout>

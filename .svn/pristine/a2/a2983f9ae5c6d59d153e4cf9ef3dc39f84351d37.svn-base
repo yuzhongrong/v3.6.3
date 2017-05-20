@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/gray_bg"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:id="@+id/llay_bank_info"
+        android:layout_width="match_parent"
+        android:layout_height="49dp"
+        android:layout_marginTop="7dp"
+        android:visibility="gone"
+        android:background="@color/white_bg"
+        android:gravity="center_vertical" >
+
+        <ImageView
+            android:id="@+id/iv_bank_logo"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:layout_marginLeft="17dp" />
+
+
+         <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal" >
+
+            <TextView
+	            android:id="@+id/tv_bank_name"
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+	            android:textColor="@color/gray_text_dark"
+	            android:layout_marginRight="8dp"
+	            android:textSize="17sp" />
+            <TextView
+                android:id="@+id/tv_bank_num"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/logout_guide"
+                android:textSize="12sp" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="18dp"
+        android:layout_marginLeft="15dp"
+        android:orientation="horizontal" >
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/pro_mess" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:text="@string/get_cash_a"
+            android:textColor="@color/logout_guide"
+            android:textSize="12sp" />
+        <TextView
+            android:id="@+id/tv_out_num"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="0"
+            android:textColor="@color/blue_text_base"
+            android:textSize="12sp" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/get_cash_c"
+            android:textColor="@color/logout_guide"
+            android:textSize="12sp" />
+        
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="49dp"
+        android:background="@color/white_bg"
+        android:gravity="center_vertical"
+        android:orientation="horizontal" >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="17dp"
+            android:text="金额"
+            android:textColor="@color/gray_text_dark"
+            android:textSize="14sp" />
+
+        <com.jinr.core.utils.MyEditText
+            android:id="@+id/ed_input_money"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginLeft="16dp"
+            android:background="@null"
+            android:inputType="numberDecimal"
+            android:textColor="@color/gray_text_dark"
+            android:textColorHint="@color/gray_bg_btn"
+            android:layout_marginRight="20dp"
+            android:textSize="14sp" />
+        
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="15dp"
+        android:orientation="horizontal" >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="预期到账时间 : "
+            android:textColor="@color/logout_guide"
+            android:textSize="12sp" />
+
+        <TextView
+            android:id="@+id/tv_out_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:textColor="@color/cash_time_in_out"
+            android:textSize="12sp" />
+    </LinearLayout>
+    
+    
+    <Button
+        android:id="@+id/btn_balance_out"
+        style="@style/btn5_style"
+        android:layout_marginTop="39dp"
+        android:background="@drawable/btn_bg_selector"
+        android:enabled="false"
+        android:text="确认转出 "
+        android:textColor="@color/white"
+        android:textSize="16sp" />
+
+</LinearLayout>

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="50dp" >
+
+    <View
+        android:id="@+id/redbag_select"
+        android:layout_width="6dp"
+        android:layout_height="50dp"
+        android:background="@drawable/menu_left_selector" />
+
+    <FrameLayout
+        android:id="@+id/left_ic_more_fl"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_gravity="center_vertical"
+        android:layout_marginLeft="15dp"
+        android:paddingRight="10dp" >
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/left_ic_more" />
+
+        <ImageView
+            android:id="@+id/img_slid_more"
+            android:layout_width="6dp"
+            android:layout_height="6dp"
+            android:layout_gravity="right"
+            android:background="@drawable/shape_point"
+            android:scaleType="fitXY"
+            android:visibility="invisible" />
+    </FrameLayout>
+
+    <TextView
+        android:id="@+id/toolbox_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_gravity="center_vertical"
+        android:layout_toRightOf="@+id/left_ic_more_fl"
+        android:singleLine="true"
+        android:text="@string/more"
+        android:textColor="@drawable/left_menu_text_color_selector"
+        android:textSize="16.0sp" />
+
+</RelativeLayout>

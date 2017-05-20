@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="299dp"
+    android:layout_height="130dp"
+    android:layout_gravity="center"
+    android:background="@drawable/transfer_shape"
+    android:orientation="vertical" >
+
+    <TextView
+        android:id="@+id/times"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:gravity="center"
+        android:text="您今日还有3次撤销转让机会"
+        android:textColor="@color/dark"
+        android:textSize="16dp" />
+
+    <TextView
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp"
+        android:gravity="center"
+        android:text="是否撤销转让？"
+        android:textColor="@color/dark"
+        android:textSize="16dp" />
+
+    <View style="@style/line" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal" >
+
+        <TextView
+            android:id="@+id/cancel_transfer"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="@string/dialog_call_bt_cancel"
+            android:textColor="@color/gray_bg_btn" />
+
+        <View
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:background="@color/one_dp_line" />
+
+        <TextView
+            android:id="@+id/confirm_transfer"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="@string/dialog_call_bt_sure"
+            android:textColor="@color/blue_btn_bg" />
+    </LinearLayout>
+
+</LinearLayout>

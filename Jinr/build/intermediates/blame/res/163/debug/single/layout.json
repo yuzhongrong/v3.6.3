@@ -1,0 +1,1294 @@
+[
+    {
+        "merged": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/build/intermediates/res/merged/163/debug/layout/what_new_one.xml",
+        "source": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/res/layout/what_new_one.xml"
+    },
+    {
+        "merged": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/build/intermediates/res/merged/163/debug/layout/abc_screen_simple.xml",
+        "source": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.0.0/res/layout/abc_screen_simple.xml"
+    },
+    {
+        "merged": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/build/intermediates/res/merged/163/debug/layout/pop_profit.xml",
+        "source": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/res/layout/pop_profit.xml"
+    },
+    {
+        "merged": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/build/intermediates/res/merged/163/debug/layout/phone_message_layout.xml",
+        "source": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/res/layout/phone_message_layout.xml"
+    },
+    {
+        "merged": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/build/intermediates/res/merged/163/debug/layout/main.xml",
+        "source": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/res/layout/main.xml"
+    },
+    {
+        "merged": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/build/intermediates/res/merged/163/debug/layout/abc_expanded_menu_layout.xml",
+        "source": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.0.0/res/layout/abc_expanded_menu_layout.xml"
+    },
+    {
+        "merged": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/build/intermediates/res/merged/163/debug/layout/address_listview_item.xml",
+        "source": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/res/layout/address_listview_item.xml"
+    },
+    {
+        "merged": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/build/intermediates/res/merged/163/debug/layout/abc_search_dropdown_item_icons_2line.xml",
+        "source": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.0.0/res/layout/abc_search_dropdown_item_icons_2line.xml"
+    },
+    {
+        "merged": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/build/intermediates/res/merged/163/debug/layout/head_regular_assets.xml",
+        "source": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/res/layout/head_regular_assets.xml"
+    },
+    {
+        "merged": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/build/intermediates/res/merged/163/debug/layout/find_trade_pwd_1.xml",
+        "source": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/res/layout/find_trade_pwd_1.xml"
+    },
+    {
+        "merged": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/build/intermediates/res/merged/163/debug/layout/get_cash_one.xml",
+        "source": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/res/layout/get_cash_one.xml"
+    },
+    {
+        "merged": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/build/intermediates/res/merged/163/debug/layout/bind_bank_card.xml",
+        "source": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/res/layout/bind_bank_card.xml"
+    },
+    {
+        "merged": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/build/intermediates/res/merged/163/debug/layout/activity_detial_fbck.xml",
+        "source": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/res/layout/activity_detial_fbck.xml"
+    },
+    {
+        "merged": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/build/intermediates/res/merged/163/debug/layout/activity_transfer_lay.xml",
+        "source": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/res/layout/activity_transfer_lay.xml"
+    },
+    {
+        "merged": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/build/intermediates/res/merged/163/debug/layout/gesturepassword_create.xml",
+        "source": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/res/layout/gesturepassword_create.xml"
+    },
+    {
+        "merged": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/build/intermediates/res/merged/163/debug/layout/activity_transfered_lay.xml",
+        "source": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/res/layout/activity_transfered_lay.xml"
+    },
+    {
+        "merged": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/build/intermediates/res/merged/163/debug/layout/tools_item_asset.xml",
+        "source": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/res/layout/tools_item_asset.xml"
+    },
+    {
+        "merged": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/build/intermediates/res/merged/163/debug/layout/fragment_regular_safe.xml",
+        "source": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/res/layout/fragment_regular_safe.xml"
+    },
+    {
+        "merged": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/build/intermediates/res/merged/163/debug/layout/header_profit.xml",
+        "source": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/res/layout/header_profit.xml"
+    },
+    {
+        "merged": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/build/intermediates/res/merged/163/debug/layout/transfer_pop.xml",
+        "source": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/res/layout/transfer_pop.xml"
+    },
+    {
+        "merged": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/build/intermediates/res/merged/163/debug/layout/abc_list_menu_item_checkbox.xml",
+        "source": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.0.0/res/layout/abc_list_menu_item_checkbox.xml"
+    },
+    {
+        "merged": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/build/intermediates/res/merged/163/debug/layout/design_layout_tab_text.xml",
+        "source": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/build/intermediates/exploded-aar/com.android.support/design/23.3.0/res/layout/design_layout_tab_text.xml"
+    },
+    {
+        "merged": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/build/intermediates/res/merged/163/debug/layout/notification_media_cancel_action.xml",
+        "source": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.0.0/res/layout/notification_media_cancel_action.xml"
+    },
+    {
+        "merged": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/build/intermediates/res/merged/163/debug/layout/notification_template_media.xml",
+        "source": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.0.0/res/layout/notification_template_media.xml"
+    },
+    {
+        "merged": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/build/intermediates/res/merged/163/debug/layout/dialog_cur_morning_prompt.xml",
+        "source": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/res/layout/dialog_cur_morning_prompt.xml"
+    },
+    {
+        "merged": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/build/intermediates/res/merged/163/debug/layout/dialog_head_notice.xml",
+        "source": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/res/layout/dialog_head_notice.xml"
+    },
+    {
+        "merged": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/build/intermediates/res/merged/163/debug/layout/fragment_transfered_item.xml",
+        "source": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/res/layout/fragment_transfered_item.xml"
+    },
+    {
+        "merged": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/build/intermediates/res/merged/163/debug/layout/dialog_market.xml",
+        "source": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/res/layout/dialog_market.xml"
+    },
+    {
+        "merged": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/build/intermediates/res/merged/163/debug/layout/activity_city_add.xml",
+        "source": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/res/layout/activity_city_add.xml"
+    },
+    {
+        "merged": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/build/intermediates/res/merged/163/debug/layout/fragment_dayup_compared.xml",
+        "source": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/res/layout/fragment_dayup_compared.xml"
+    },
+    {
+        "merged": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/build/intermediates/res/merged/163/debug/layout/design_layout_snackbar.xml",
+        "source": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/build/intermediates/exploded-aar/com.android.support/design/23.3.0/res/layout/design_layout_snackbar.xml"
+    },
+    {
+        "merged": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/build/intermediates/res/merged/163/debug/layout/dialog_register.xml",
+        "source": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/res/layout/dialog_register.xml"
+    },
+    {
+        "merged": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/build/intermediates/res/merged/163/debug/layout/header.xml",
+        "source": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/res/layout/header.xml"
+    },
+    {
+        "merged": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/build/intermediates/res/merged/163/debug/layout/activity_currentout.xml",
+        "source": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/res/layout/activity_currentout.xml"
+    },
+    {
+        "merged": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/build/intermediates/res/merged/163/debug/layout/activity_transfered_head_lay.xml",
+        "source": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/res/layout/activity_transfered_head_lay.xml"
+    },
+    {
+        "merged": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/build/intermediates/res/merged/163/debug/layout/layout_profit_item.xml",
+        "source": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/res/layout/layout_profit_item.xml"
+    },
+    {
+        "merged": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/build/intermediates/res/merged/163/debug/layout/activity_about.xml",
+        "source": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/res/layout/activity_about.xml"
+    },
+    {
+        "merged": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/build/intermediates/res/merged/163/debug/layout/turn_out.xml",
+        "source": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/res/layout/turn_out.xml"
+    },
+    {
+        "merged": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/build/intermediates/res/merged/163/debug/layout/pull_to_load_footer3.xml",
+        "source": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/res/layout/pull_to_load_footer3.xml"
+    },
+    {
+        "merged": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/build/intermediates/res/merged/163/debug/layout/fragment_regular_project.xml",
+        "source": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/res/layout/fragment_regular_project.xml"
+    },
+    {
+        "merged": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/build/intermediates/res/merged/163/debug/layout/abc_action_bar_up_container.xml",
+        "source": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.0.0/res/layout/abc_action_bar_up_container.xml"
+    },
+    {
+        "merged": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/build/intermediates/res/merged/163/debug/layout/finish_get_cash_activity.xml",
+        "source": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/res/layout/finish_get_cash_activity.xml"
+    },
+    {
+        "merged": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/build/intermediates/res/merged/163/debug/layout/current_purchase_first.xml",
+        "source": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/res/layout/current_purchase_first.xml"
+    },
+    {
+        "merged": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/build/intermediates/res/merged/163/debug/layout/secu_center.xml",
+        "source": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/res/layout/secu_center.xml"
+    },
+    {
+        "merged": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/build/intermediates/res/merged/163/debug/layout/forgot_passwd.xml",
+        "source": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/res/layout/forgot_passwd.xml"
+    },
+    {
+        "merged": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/build/intermediates/res/merged/163/debug/layout/find_trade_pwd_3.xml",
+        "source": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/res/layout/find_trade_pwd_3.xml"
+    },
+    {
+        "merged": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/build/intermediates/res/merged/163/debug/layout/tool_card_bank.xml",
+        "source": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/res/layout/tool_card_bank.xml"
+    },
+    {
+        "merged": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/build/intermediates/res/merged/163/debug/layout/refresh_top_item.xml",
+        "source": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/res/layout/refresh_top_item.xml"
+    },
+    {
+        "merged": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/build/intermediates/res/merged/163/debug/layout/surfing_listview_footer.xml",
+        "source": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/res/layout/surfing_listview_footer.xml"
+    },
+    {
+        "merged": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/build/intermediates/res/merged/163/debug/layout/notification_template_big_media_narrow.xml",
+        "source": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.0.0/res/layout/notification_template_big_media_narrow.xml"
+    },
+    {
+        "merged": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/build/intermediates/res/merged/163/debug/layout/get_cash_finish.xml",
+        "source": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/res/layout/get_cash_finish.xml"
+    },
+    {
+        "merged": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/build/intermediates/res/merged/163/debug/layout/activity_regular.xml",
+        "source": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/res/layout/activity_regular.xml"
+    },
+    {
+        "merged": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/build/intermediates/res/merged/163/debug/layout/dialog_hint.xml",
+        "source": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/res/layout/dialog_hint.xml"
+    },
+    {
+        "merged": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/build/intermediates/res/merged/163/debug/layout/what_new_three.xml",
+        "source": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/res/layout/what_new_three.xml"
+    },
+    {
+        "merged": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/build/intermediates/res/merged/163/debug/layout/activity_gift.xml",
+        "source": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/res/layout/activity_gift.xml"
+    },
+    {
+        "merged": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/build/intermediates/res/merged/163/debug/layout/notification_template_big_media.xml",
+        "source": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.0.0/res/layout/notification_template_big_media.xml"
+    },
+    {
+        "merged": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/build/intermediates/res/merged/163/debug/layout/activity_assets_item.xml",
+        "source": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/res/layout/activity_assets_item.xml"
+    },
+    {
+        "merged": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/build/intermediates/res/merged/163/debug/layout/design_layout_snackbar_include.xml",
+        "source": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/build/intermediates/exploded-aar/com.android.support/design/23.3.0/res/layout/design_layout_snackbar_include.xml"
+    },
+    {
+        "merged": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/build/intermediates/res/merged/163/debug/layout/activity_forget_password.xml",
+        "source": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/res/layout/activity_forget_password.xml"
+    },
+    {
+        "merged": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/build/intermediates/res/merged/163/debug/layout/activity_my_web_view.xml",
+        "source": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/res/layout/activity_my_web_view.xml"
+    },
+    {
+        "merged": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/build/intermediates/res/merged/163/debug/layout/confirm_careinfo_giveup_dialog.xml",
+        "source": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/res/layout/confirm_careinfo_giveup_dialog.xml"
+    },
+    {
+        "merged": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/build/intermediates/res/merged/163/debug/layout/notification_action.xml",
+        "source": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.0.0/res/layout/notification_action.xml"
+    },
+    {
+        "merged": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/build/intermediates/res/merged/163/debug/layout/bottom.xml",
+        "source": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/res/layout/bottom.xml"
+    },
+    {
+        "merged": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/build/intermediates/res/merged/163/debug/layout/activity_purchase_result.xml",
+        "source": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/res/layout/activity_purchase_result.xml"
+    },
+    {
+        "merged": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/build/intermediates/res/merged/163/debug/layout/layout_paypassword.xml",
+        "source": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/res/layout/layout_paypassword.xml"
+    },
+    {
+        "merged": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/build/intermediates/res/merged/163/debug/layout/activity_balancein.xml",
+        "source": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/res/layout/activity_balancein.xml"
+    },
+    {
+        "merged": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/build/intermediates/res/merged/163/debug/layout/activity_regular_info.xml",
+        "source": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/res/layout/activity_regular_info.xml"
+    },
+    {
+        "merged": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/build/intermediates/res/merged/163/debug/layout/giveup_bindcard_dialog.xml",
+        "source": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/res/layout/giveup_bindcard_dialog.xml"
+    },
+    {
+        "merged": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/build/intermediates/res/merged/163/debug/layout/activity_image.xml",
+        "source": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/res/layout/activity_image.xml"
+    },
+    {
+        "merged": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/build/intermediates/res/merged/163/debug/layout/rbtn_bank.xml",
+        "source": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/res/layout/rbtn_bank.xml"
+    },
+    {
+        "merged": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/build/intermediates/res/merged/163/debug/layout/item_pop_trade_record.xml",
+        "source": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/res/layout/item_pop_trade_record.xml"
+    },
+    {
+        "merged": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/build/intermediates/res/merged/163/debug/layout/abc_list_menu_item_radio.xml",
+        "source": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.0.0/res/layout/abc_list_menu_item_radio.xml"
+    },
+    {
+        "merged": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/build/intermediates/res/merged/163/debug/layout/activity_balanceout.xml",
+        "source": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/res/layout/activity_balanceout.xml"
+    },
+    {
+        "merged": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/build/intermediates/res/merged/163/debug/layout/activity_myregular.xml",
+        "source": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/res/layout/activity_myregular.xml"
+    },
+    {
+        "merged": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/build/intermediates/res/merged/163/debug/layout/aty_chg_trade_pwd.xml",
+        "source": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/res/layout/aty_chg_trade_pwd.xml"
+    },
+    {
+        "merged": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/build/intermediates/res/merged/163/debug/layout/activity_balanceout_result.xml",
+        "source": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/res/layout/activity_balanceout_result.xml"
+    },
+    {
+        "merged": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/build/intermediates/res/merged/163/debug/layout/x_view_footer_load_more_simple.xml",
+        "source": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/build/intermediates/exploded-aar/com.github.limedroid/ARecyclerView/v1.1.5/res/layout/x_view_footer_load_more_simple.xml"
+    },
+    {
+        "merged": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/build/intermediates/res/merged/163/debug/layout/activity_verify_code.xml",
+        "source": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/res/layout/activity_verify_code.xml"
+    },
+    {
+        "merged": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/build/intermediates/res/merged/163/debug/layout/confirm_careinfo_dialog.xml",
+        "source": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/res/layout/confirm_careinfo_dialog.xml"
+    },
+    {
+        "merged": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/build/intermediates/res/merged/163/debug/layout/activity_my_feedback.xml",
+        "source": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/res/layout/activity_my_feedback.xml"
+    },
+    {
+        "merged": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/build/intermediates/res/merged/163/debug/layout/design_navigation_item.xml",
+        "source": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/build/intermediates/exploded-aar/com.android.support/design/23.3.0/res/layout/design_navigation_item.xml"
+    },
+    {
+        "merged": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/build/intermediates/res/merged/163/debug/layout/tool_item_more.xml",
+        "source": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/res/layout/tool_item_more.xml"
+    },
+    {
+        "merged": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/build/intermediates/res/merged/163/debug/layout/transfer_success_item.xml",
+        "source": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/res/layout/transfer_success_item.xml"
+    },
+    {
+        "merged": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/build/intermediates/res/merged/163/debug/layout/abc_action_mode_bar.xml",
+        "source": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.0.0/res/layout/abc_action_mode_bar.xml"
+    },
+    {
+        "merged": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/build/intermediates/res/merged/163/debug/layout/abc_alert_dialog_button_bar_material.xml",
+        "source": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.0.0/res/layout/abc_alert_dialog_button_bar_material.xml"
+    },
+    {
+        "merged": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/build/intermediates/res/merged/163/debug/layout/abc_screen_toolbar.xml",
+        "source": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.0.0/res/layout/abc_screen_toolbar.xml"
+    },
+    {
+        "merged": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/build/intermediates/res/merged/163/debug/layout/dialog_first_shot.xml",
+        "source": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/res/layout/dialog_first_shot.xml"
+    },
+    {
+        "merged": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/build/intermediates/res/merged/163/debug/layout/fragment_address.xml",
+        "source": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/res/layout/fragment_address.xml"
+    },
+    {
+        "merged": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/build/intermediates/res/merged/163/debug/layout/activity_add_bank.xml",
+        "source": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/res/layout/activity_add_bank.xml"
+    },
+    {
+        "merged": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/build/intermediates/res/merged/163/debug/layout/select_dialog_multichoice_material.xml",
+        "source": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.0.0/res/layout/select_dialog_multichoice_material.xml"
+    },
+    {
+        "merged": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/build/intermediates/res/merged/163/debug/layout/city_list.xml",
+        "source": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/res/layout/city_list.xml"
+    },
+    {
+        "merged": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/build/intermediates/res/merged/163/debug/layout/loading.xml",
+        "source": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/res/layout/loading.xml"
+    },
+    {
+        "merged": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/build/intermediates/res/merged/163/debug/layout/set_trade_pwd_2.xml",
+        "source": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/res/layout/set_trade_pwd_2.xml"
+    },
+    {
+        "merged": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/build/intermediates/res/merged/163/debug/layout/fragment_main_image.xml",
+        "source": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/res/layout/fragment_main_image.xml"
+    },
+    {
+        "merged": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/build/intermediates/res/merged/163/debug/layout/activity_purchase_limit_note.xml",
+        "source": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/res/layout/activity_purchase_limit_note.xml"
+    },
+    {
+        "merged": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/build/intermediates/res/merged/163/debug/layout/notification_template_lines_media.xml",
+        "source": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.0.0/res/layout/notification_template_lines_media.xml"
+    },
+    {
+        "merged": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/build/intermediates/res/merged/163/debug/layout/dialog_banner_invest.xml",
+        "source": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/res/layout/dialog_banner_invest.xml"
+    },
+    {
+        "merged": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/build/intermediates/res/merged/163/debug/layout/notification_template_custom_big.xml",
+        "source": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.0.0/res/layout/notification_template_custom_big.xml"
+    },
+    {
+        "merged": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/build/intermediates/res/merged/163/debug/layout/entrance_in.xml",
+        "source": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/res/layout/entrance_in.xml"
+    },
+    {
+        "merged": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/build/intermediates/res/merged/163/debug/layout/umeng_update_dialog.xml",
+        "source": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/res/layout/umeng_update_dialog.xml"
+    },
+    {
+        "merged": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/build/intermediates/res/merged/163/debug/layout/bank_card_detail.xml",
+        "source": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/res/layout/bank_card_detail.xml"
+    },
+    {
+        "merged": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/build/intermediates/res/merged/163/debug/layout/layout_verification.xml",
+        "source": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/res/layout/layout_verification.xml"
+    },
+    {
+        "merged": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/build/intermediates/res/merged/163/debug/layout/dialog_neterror.xml",
+        "source": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/res/layout/dialog_neterror.xml"
+    },
+    {
+        "merged": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/build/intermediates/res/merged/163/debug/layout/activity_main.xml",
+        "source": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/build/intermediates/exploded-aar/com.yzr/Jnet/1.0.1/res/layout/activity_main.xml"
+    },
+    {
+        "merged": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/build/intermediates/res/merged/163/debug/layout/left_menu.xml",
+        "source": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/res/layout/left_menu.xml"
+    },
+    {
+        "merged": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/build/intermediates/res/merged/163/debug/layout/activity_reset_password.xml",
+        "source": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/res/layout/activity_reset_password.xml"
+    },
+    {
+        "merged": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/build/intermediates/res/merged/163/debug/layout/fragment_act.xml",
+        "source": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/res/layout/fragment_act.xml"
+    },
+    {
+        "merged": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/build/intermediates/res/merged/163/debug/layout/choose_payment_terms.xml",
+        "source": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/res/layout/choose_payment_terms.xml"
+    },
+    {
+        "merged": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/build/intermediates/res/merged/163/debug/layout/activity_mydayup.xml",
+        "source": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/res/layout/activity_mydayup.xml"
+    },
+    {
+        "merged": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/build/intermediates/res/merged/163/debug/layout/activity_assets_detail_header.xml",
+        "source": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/res/layout/activity_assets_detail_header.xml"
+    },
+    {
+        "merged": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/build/intermediates/res/merged/163/debug/layout/layout_profit_amount.xml",
+        "source": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/res/layout/layout_profit_amount.xml"
+    },
+    {
+        "merged": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/build/intermediates/res/merged/163/debug/layout/listfooter_more.xml",
+        "source": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/res/layout/listfooter_more.xml"
+    },
+    {
+        "merged": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/build/intermediates/res/merged/163/debug/layout/dialog_current.xml",
+        "source": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/res/layout/dialog_current.xml"
+    },
+    {
+        "merged": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/build/intermediates/res/merged/163/debug/layout/abc_list_menu_item_layout.xml",
+        "source": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.0.0/res/layout/abc_list_menu_item_layout.xml"
+    },
+    {
+        "merged": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/build/intermediates/res/merged/163/debug/layout/activity_second_band_card.xml",
+        "source": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/res/layout/activity_second_band_card.xml"
+    },
+    {
+        "merged": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/build/intermediates/res/merged/163/debug/layout/pull_to_refresh_header2.xml",
+        "source": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/res/layout/pull_to_refresh_header2.xml"
+    },
+    {
+        "merged": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/build/intermediates/res/merged/163/debug/layout/abc_dialog_title_material.xml",
+        "source": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.0.0/res/layout/abc_dialog_title_material.xml"
+    },
+    {
+        "merged": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/build/intermediates/res/merged/163/debug/layout/activity_web_view.xml",
+        "source": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/res/layout/activity_web_view.xml"
+    },
+    {
+        "merged": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/build/intermediates/res/merged/163/debug/layout/dialog_dealpwd.xml",
+        "source": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/res/layout/dialog_dealpwd.xml"
+    },
+    {
+        "merged": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/build/intermediates/res/merged/163/debug/layout/what_new_five.xml",
+        "source": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/res/layout/what_new_five.xml"
+    },
+    {
+        "merged": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/build/intermediates/res/merged/163/debug/layout/abc_action_menu_layout.xml",
+        "source": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.0.0/res/layout/abc_action_menu_layout.xml"
+    },
+    {
+        "merged": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/build/intermediates/res/merged/163/debug/layout/ly_assets_2.xml",
+        "source": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/res/layout/ly_assets_2.xml"
+    },
+    {
+        "merged": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/build/intermediates/res/merged/163/debug/layout/main_top_activity.xml",
+        "source": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/res/layout/main_top_activity.xml"
+    },
+    {
+        "merged": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/build/intermediates/res/merged/163/debug/layout/abc_popup_menu_header_item_layout.xml",
+        "source": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.0.0/res/layout/abc_popup_menu_header_item_layout.xml"
+    },
+    {
+        "merged": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/build/intermediates/res/merged/163/debug/layout/dialog_custom_new.xml",
+        "source": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/res/layout/dialog_custom_new.xml"
+    },
+    {
+        "merged": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/build/intermediates/res/merged/163/debug/layout/abc_alert_dialog_material.xml",
+        "source": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.0.0/res/layout/abc_alert_dialog_material.xml"
+    },
+    {
+        "merged": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/build/intermediates/res/merged/163/debug/layout/fragment_common_product.xml",
+        "source": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/res/layout/fragment_common_product.xml"
+    },
+    {
+        "merged": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/build/intermediates/res/merged/163/debug/layout/activity_common_product_detail.xml",
+        "source": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/res/layout/activity_common_product_detail.xml"
+    },
+    {
+        "merged": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/build/intermediates/res/merged/163/debug/layout/pop_more_tab_activity.xml",
+        "source": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/res/layout/pop_more_tab_activity.xml"
+    },
+    {
+        "merged": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/build/intermediates/res/merged/163/debug/layout/regular_item.xml",
+        "source": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/res/layout/regular_item.xml"
+    },
+    {
+        "merged": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/build/intermediates/res/merged/163/debug/layout/aty_chg_tel.xml",
+        "source": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/res/layout/aty_chg_tel.xml"
+    },
+    {
+        "merged": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/build/intermediates/res/merged/163/debug/layout/activity_regular_detail.xml",
+        "source": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/res/layout/activity_regular_detail.xml"
+    },
+    {
+        "merged": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/build/intermediates/res/merged/163/debug/layout/title_below_back.xml",
+        "source": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/res/layout/title_below_back.xml"
+    },
+    {
+        "merged": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/build/intermediates/res/merged/163/debug/layout/trade_record_item.xml",
+        "source": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/res/layout/trade_record_item.xml"
+    },
+    {
+        "merged": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/build/intermediates/res/merged/163/debug/layout/act_banner_activity.xml",
+        "source": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/res/layout/act_banner_activity.xml"
+    },
+    {
+        "merged": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/build/intermediates/res/merged/163/debug/layout/activity_cj_wenti.xml",
+        "source": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/res/layout/activity_cj_wenti.xml"
+    },
+    {
+        "merged": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/build/intermediates/res/merged/163/debug/layout/abc_screen_simple_overlay_action_mode.xml",
+        "source": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.0.0/res/layout/abc_screen_simple_overlay_action_mode.xml"
+    },
+    {
+        "merged": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/build/intermediates/res/merged/163/debug/layout/profit_head_view.xml",
+        "source": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/res/layout/profit_head_view.xml"
+    },
+    {
+        "merged": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/build/intermediates/res/merged/163/debug/layout/design_menu_item_action_area.xml",
+        "source": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/build/intermediates/exploded-aar/com.android.support/design/23.3.0/res/layout/design_menu_item_action_area.xml"
+    },
+    {
+        "merged": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/build/intermediates/res/merged/163/debug/layout/abc_action_bar_title_item.xml",
+        "source": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.0.0/res/layout/abc_action_bar_title_item.xml"
+    },
+    {
+        "merged": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/build/intermediates/res/merged/163/debug/layout/dialog_updata_downlode.xml",
+        "source": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/res/layout/dialog_updata_downlode.xml"
+    },
+    {
+        "merged": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/build/intermediates/res/merged/163/debug/layout/overlay.xml",
+        "source": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/res/layout/overlay.xml"
+    },
+    {
+        "merged": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/build/intermediates/res/merged/163/debug/layout/list_item.xml",
+        "source": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/res/layout/list_item.xml"
+    },
+    {
+        "merged": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/build/intermediates/res/merged/163/debug/layout/fragment_sys_news.xml",
+        "source": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/res/layout/fragment_sys_news.xml"
+    },
+    {
+        "merged": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/build/intermediates/res/merged/163/debug/layout/design_navigation_menu.xml",
+        "source": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/build/intermediates/exploded-aar/com.android.support/design/23.3.0/res/layout/design_navigation_menu.xml"
+    },
+    {
+        "merged": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/build/intermediates/res/merged/163/debug/layout/guide.xml",
+        "source": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/res/layout/guide.xml"
+    },
+    {
+        "merged": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/build/intermediates/res/merged/163/debug/layout/abc_action_menu_item_layout.xml",
+        "source": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.0.0/res/layout/abc_action_menu_item_layout.xml"
+    },
+    {
+        "merged": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/build/intermediates/res/merged/163/debug/layout/x_view_recycler_content_layout.xml",
+        "source": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/build/intermediates/exploded-aar/com.github.limedroid/ARecyclerView/v1.1.5/res/layout/x_view_recycler_content_layout.xml"
+    },
+    {
+        "merged": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/build/intermediates/res/merged/163/debug/layout/forgot_pwd1.xml",
+        "source": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/res/layout/forgot_pwd1.xml"
+    },
+    {
+        "merged": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/build/intermediates/res/merged/163/debug/layout/tool_item_sec.xml",
+        "source": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/res/layout/tool_item_sec.xml"
+    },
+    {
+        "merged": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/build/intermediates/res/merged/163/debug/layout/abc_popup_menu_item_layout.xml",
+        "source": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.0.0/res/layout/abc_popup_menu_item_layout.xml"
+    },
+    {
+        "merged": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/build/intermediates/res/merged/163/debug/layout/activity_my_assets.xml",
+        "source": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/res/layout/activity_my_assets.xml"
+    },
+    {
+        "merged": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/build/intermediates/res/merged/163/debug/layout/aty_chg_tel_3.xml",
+        "source": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/res/layout/aty_chg_tel_3.xml"
+    },
+    {
+        "merged": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/build/intermediates/res/merged/163/debug/layout/abc_action_mode_close_item_material.xml",
+        "source": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.0.0/res/layout/abc_action_mode_close_item_material.xml"
+    },
+    {
+        "merged": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/build/intermediates/res/merged/163/debug/layout/no_data_layout.xml",
+        "source": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/res/layout/no_data_layout.xml"
+    },
+    {
+        "merged": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/build/intermediates/res/merged/163/debug/layout/find_trade_pwd_2.xml",
+        "source": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/res/layout/find_trade_pwd_2.xml"
+    },
+    {
+        "merged": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/build/intermediates/res/merged/163/debug/layout/child_banklist.xml",
+        "source": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/res/layout/child_banklist.xml"
+    },
+    {
+        "merged": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/build/intermediates/res/merged/163/debug/layout/activity_main_regular.xml",
+        "source": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/res/layout/activity_main_regular.xml"
+    },
+    {
+        "merged": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/build/intermediates/res/merged/163/debug/layout/aty_find_trade_pwd.xml",
+        "source": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/res/layout/aty_find_trade_pwd.xml"
+    },
+    {
+        "merged": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/build/intermediates/res/merged/163/debug/layout/activity_transfered_food_lay.xml",
+        "source": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/res/layout/activity_transfered_food_lay.xml"
+    },
+    {
+        "merged": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/build/intermediates/res/merged/163/debug/layout/design_navigation_item_separator.xml",
+        "source": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/build/intermediates/exploded-aar/com.android.support/design/23.3.0/res/layout/design_navigation_item_separator.xml"
+    },
+    {
+        "merged": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/build/intermediates/res/merged/163/debug/layout/downlode_dialog_updata.xml",
+        "source": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/res/layout/downlode_dialog_updata.xml"
+    },
+    {
+        "merged": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/build/intermediates/res/merged/163/debug/layout/dialog_custom_new_no_title.xml",
+        "source": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/res/layout/dialog_custom_new_no_title.xml"
+    },
+    {
+        "merged": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/build/intermediates/res/merged/163/debug/layout/activity_redbag.xml",
+        "source": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/res/layout/activity_redbag.xml"
+    },
+    {
+        "merged": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/build/intermediates/res/merged/163/debug/layout/xlistview_footer.xml",
+        "source": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/res/layout/xlistview_footer.xml"
+    },
+    {
+        "merged": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/build/intermediates/res/merged/163/debug/layout/support_simple_spinner_dropdown_item.xml",
+        "source": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.0.0/res/layout/support_simple_spinner_dropdown_item.xml"
+    },
+    {
+        "merged": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/build/intermediates/res/merged/163/debug/layout/pull_to_load_footer2.xml",
+        "source": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/res/layout/pull_to_load_footer2.xml"
+    },
+    {
+        "merged": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/build/intermediates/res/merged/163/debug/layout/abc_screen_content_include.xml",
+        "source": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.0.0/res/layout/abc_screen_content_include.xml"
+    },
+    {
+        "merged": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/build/intermediates/res/merged/163/debug/layout/dialog_dayupturnout.xml",
+        "source": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/res/layout/dialog_dayupturnout.xml"
+    },
+    {
+        "merged": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/build/intermediates/res/merged/163/debug/layout/notification_template_icon_group.xml",
+        "source": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.0.0/res/layout/notification_template_icon_group.xml"
+    },
+    {
+        "merged": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/build/intermediates/res/merged/163/debug/layout/select_dialog_singlechoice_material.xml",
+        "source": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.0.0/res/layout/select_dialog_singlechoice_material.xml"
+    },
+    {
+        "merged": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/build/intermediates/res/merged/163/debug/layout/left_menu_layout.xml",
+        "source": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/res/layout/left_menu_layout.xml"
+    },
+    {
+        "merged": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/build/intermediates/res/merged/163/debug/layout/activity_profit.xml",
+        "source": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/res/layout/activity_profit.xml"
+    },
+    {
+        "merged": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/build/intermediates/res/merged/163/debug/layout/activity_address_list.xml",
+        "source": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/res/layout/activity_address_list.xml"
+    },
+    {
+        "merged": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/build/intermediates/res/merged/163/debug/layout/abc_select_dialog_material.xml",
+        "source": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.0.0/res/layout/abc_select_dialog_material.xml"
+    },
+    {
+        "merged": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/build/intermediates/res/merged/163/debug/layout/dialog_custom.xml",
+        "source": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/res/layout/dialog_custom.xml"
+    },
+    {
+        "merged": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/build/intermediates/res/merged/163/debug/layout/regular_purchase_first.xml",
+        "source": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/res/layout/regular_purchase_first.xml"
+    },
+    {
+        "merged": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/build/intermediates/res/merged/163/debug/layout/act_news_web_activity.xml",
+        "source": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/res/layout/act_news_web_activity.xml"
+    },
+    {
+        "merged": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/build/intermediates/res/merged/163/debug/layout/activity_phone_message.xml",
+        "source": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/res/layout/activity_phone_message.xml"
+    },
+    {
+        "merged": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/build/intermediates/res/merged/163/debug/layout/activity_accountbalance.xml",
+        "source": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/res/layout/activity_accountbalance.xml"
+    },
+    {
+        "merged": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/build/intermediates/res/merged/163/debug/layout/notification_template_big_media_narrow_custom.xml",
+        "source": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.0.0/res/layout/notification_template_big_media_narrow_custom.xml"
+    },
+    {
+        "merged": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/build/intermediates/res/merged/163/debug/layout/activity_address.xml",
+        "source": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/res/layout/activity_address.xml"
+    },
+    {
+        "merged": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/build/intermediates/res/merged/163/debug/layout/abc_activity_chooser_view_list_item.xml",
+        "source": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.0.0/res/layout/abc_activity_chooser_view_list_item.xml"
+    },
+    {
+        "merged": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/build/intermediates/res/merged/163/debug/layout/fragment_assets.xml",
+        "source": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/res/layout/fragment_assets.xml"
+    },
+    {
+        "merged": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/build/intermediates/res/merged/163/debug/layout/activity_assets_foot.xml",
+        "source": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/res/layout/activity_assets_foot.xml"
+    },
+    {
+        "merged": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/build/intermediates/res/merged/163/debug/layout/activity_assets_detail_footer.xml",
+        "source": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/res/layout/activity_assets_detail_footer.xml"
+    },
+    {
+        "merged": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/build/intermediates/res/merged/163/debug/layout/dialog_current_item.xml",
+        "source": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/res/layout/dialog_current_item.xml"
+    },
+    {
+        "merged": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/build/intermediates/res/merged/163/debug/layout/inputuserid_dialog.xml",
+        "source": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/res/layout/inputuserid_dialog.xml"
+    },
+    {
+        "merged": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/build/intermediates/res/merged/163/debug/layout/phone_number_dialog.xml",
+        "source": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/res/layout/phone_number_dialog.xml"
+    },
+    {
+        "merged": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/build/intermediates/res/merged/163/debug/layout/address_list_item.xml",
+        "source": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/res/layout/address_list_item.xml"
+    },
+    {
+        "merged": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/build/intermediates/res/merged/163/debug/layout/activity_gift_detail.xml",
+        "source": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/res/layout/activity_gift_detail.xml"
+    },
+    {
+        "merged": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/build/intermediates/res/merged/163/debug/layout/pop_share_gift.xml",
+        "source": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/res/layout/pop_share_gift.xml"
+    },
+    {
+        "merged": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/build/intermediates/res/merged/163/debug/layout/activity_assets_head.xml",
+        "source": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/res/layout/activity_assets_head.xml"
+    },
+    {
+        "merged": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/build/intermediates/res/merged/163/debug/layout/manage_bank_card.xml",
+        "source": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/res/layout/manage_bank_card.xml"
+    },
+    {
+        "merged": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/build/intermediates/res/merged/163/debug/layout/forgot_deal_passwd.xml",
+        "source": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/res/layout/forgot_deal_passwd.xml"
+    },
+    {
+        "merged": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/build/intermediates/res/merged/163/debug/layout/dialog_bank_choose.xml",
+        "source": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/res/layout/dialog_bank_choose.xml"
+    },
+    {
+        "merged": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/build/intermediates/res/merged/163/debug/layout/design_navigation_item_header.xml",
+        "source": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/build/intermediates/exploded-aar/com.android.support/design/23.3.0/res/layout/design_navigation_item_header.xml"
+    },
+    {
+        "merged": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/build/intermediates/res/merged/163/debug/layout/the_more.xml",
+        "source": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/res/layout/the_more.xml"
+    },
+    {
+        "merged": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/build/intermediates/res/merged/163/debug/layout/activity_assets.xml",
+        "source": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/res/layout/activity_assets.xml"
+    },
+    {
+        "merged": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/build/intermediates/res/merged/163/debug/layout/address_notice_dialog.xml",
+        "source": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/res/layout/address_notice_dialog.xml"
+    },
+    {
+        "merged": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/build/intermediates/res/merged/163/debug/layout/transfer_dialog.xml",
+        "source": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/res/layout/transfer_dialog.xml"
+    },
+    {
+        "merged": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/build/intermediates/res/merged/163/debug/layout/notice_dialog_updata.xml",
+        "source": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/res/layout/notice_dialog_updata.xml"
+    },
+    {
+        "merged": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/build/intermediates/res/merged/163/debug/layout/activity_assets_detail_body.xml",
+        "source": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/res/layout/activity_assets_detail_body.xml"
+    },
+    {
+        "merged": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/build/intermediates/res/merged/163/debug/layout/fragment_curoutbank.xml",
+        "source": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/res/layout/fragment_curoutbank.xml"
+    },
+    {
+        "merged": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/build/intermediates/res/merged/163/debug/layout/fragment_product2.xml",
+        "source": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/res/layout/fragment_product2.xml"
+    },
+    {
+        "merged": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/build/intermediates/res/merged/163/debug/layout/line.xml",
+        "source": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/res/layout/line.xml"
+    },
+    {
+        "merged": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/build/intermediates/res/merged/163/debug/layout/change_deal_passwd.xml",
+        "source": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/res/layout/change_deal_passwd.xml"
+    },
+    {
+        "merged": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/build/intermediates/res/merged/163/debug/layout/fragment_index.xml",
+        "source": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/res/layout/fragment_index.xml"
+    },
+    {
+        "merged": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/build/intermediates/res/merged/163/debug/layout/abc_search_view.xml",
+        "source": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.0.0/res/layout/abc_search_view.xml"
+    },
+    {
+        "merged": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/build/intermediates/res/merged/163/debug/layout/tab_item_view.xml",
+        "source": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/res/layout/tab_item_view.xml"
+    },
+    {
+        "merged": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/build/intermediates/res/merged/163/debug/layout/what_new_four.xml",
+        "source": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/res/layout/what_new_four.xml"
+    },
+    {
+        "merged": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/build/intermediates/res/merged/163/debug/layout/activity_new_register.xml",
+        "source": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/res/layout/activity_new_register.xml"
+    },
+    {
+        "merged": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/build/intermediates/res/merged/163/debug/layout/design_navigation_menu_item.xml",
+        "source": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/build/intermediates/exploded-aar/com.android.support/design/23.3.0/res/layout/design_navigation_menu_item.xml"
+    },
+    {
+        "merged": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/build/intermediates/res/merged/163/debug/layout/find_trade_pwd_4.xml",
+        "source": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/res/layout/find_trade_pwd_4.xml"
+    },
+    {
+        "merged": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/build/intermediates/res/merged/163/debug/layout/act_item.xml",
+        "source": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/res/layout/act_item.xml"
+    },
+    {
+        "merged": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/build/intermediates/res/merged/163/debug/layout/notification_media_action.xml",
+        "source": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.0.0/res/layout/notification_media_action.xml"
+    },
+    {
+        "merged": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/build/intermediates/res/merged/163/debug/layout/aty_chg_tel_2.xml",
+        "source": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/res/layout/aty_chg_tel_2.xml"
+    },
+    {
+        "merged": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/build/intermediates/res/merged/163/debug/layout/activity_safe_login.xml",
+        "source": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/res/layout/activity_safe_login.xml"
+    },
+    {
+        "merged": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/build/intermediates/res/merged/163/debug/layout/activity_guide.xml",
+        "source": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/res/layout/activity_guide.xml"
+    },
+    {
+        "merged": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/build/intermediates/res/merged/163/debug/layout/activity_introduce.xml",
+        "source": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/res/layout/activity_introduce.xml"
+    },
+    {
+        "merged": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/build/intermediates/res/merged/163/debug/layout/notification_template_part_time.xml",
+        "source": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.0.0/res/layout/notification_template_part_time.xml"
+    },
+    {
+        "merged": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/build/intermediates/res/merged/163/debug/layout/purchase_first.xml",
+        "source": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/res/layout/purchase_first.xml"
+    },
+    {
+        "merged": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/build/intermediates/res/merged/163/debug/layout/notification_template_media_custom.xml",
+        "source": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.0.0/res/layout/notification_template_media_custom.xml"
+    },
+    {
+        "merged": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/build/intermediates/res/merged/163/debug/layout/item_market.xml",
+        "source": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/res/layout/item_market.xml"
+    },
+    {
+        "merged": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/build/intermediates/res/merged/163/debug/layout/system_gonggao.xml",
+        "source": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/res/layout/system_gonggao.xml"
+    },
+    {
+        "merged": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/build/intermediates/res/merged/163/debug/layout/item_regular_assets.xml",
+        "source": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/res/layout/item_regular_assets.xml"
+    },
+    {
+        "merged": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/build/intermediates/res/merged/163/debug/layout/pop_label.xml",
+        "source": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/res/layout/pop_label.xml"
+    },
+    {
+        "merged": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/build/intermediates/res/merged/163/debug/layout/notification_action_tombstone.xml",
+        "source": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.0.0/res/layout/notification_action_tombstone.xml"
+    },
+    {
+        "merged": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/build/intermediates/res/merged/163/debug/layout/item_profit.xml",
+        "source": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/res/layout/item_profit.xml"
+    },
+    {
+        "merged": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/build/intermediates/res/merged/163/debug/layout/phone_message_dialog.xml",
+        "source": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/res/layout/phone_message_dialog.xml"
+    },
+    {
+        "merged": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/build/intermediates/res/merged/163/debug/layout/dialog_cancle_cash_invest.xml",
+        "source": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/res/layout/dialog_cancle_cash_invest.xml"
+    },
+    {
+        "merged": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/build/intermediates/res/merged/163/debug/layout/dialog_lock.xml",
+        "source": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/res/layout/dialog_lock.xml"
+    },
+    {
+        "merged": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/build/intermediates/res/merged/163/debug/layout/chg_trade_pwd_1.xml",
+        "source": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/res/layout/chg_trade_pwd_1.xml"
+    },
+    {
+        "merged": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/build/intermediates/res/merged/163/debug/layout/fragment_product.xml",
+        "source": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/res/layout/fragment_product.xml"
+    },
+    {
+        "merged": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/build/intermediates/res/merged/163/debug/layout/bind_mobile.xml",
+        "source": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/res/layout/bind_mobile.xml"
+    },
+    {
+        "merged": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/build/intermediates/res/merged/163/debug/layout/title.xml",
+        "source": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/res/layout/title.xml"
+    },
+    {
+        "merged": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/build/intermediates/res/merged/163/debug/layout/customer_notitfication_layout.xml",
+        "source": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/res/layout/customer_notitfication_layout.xml"
+    },
+    {
+        "merged": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/build/intermediates/res/merged/163/debug/layout/abc_activity_chooser_view.xml",
+        "source": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.0.0/res/layout/abc_activity_chooser_view.xml"
+    },
+    {
+        "merged": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/build/intermediates/res/merged/163/debug/layout/dialog_score.xml",
+        "source": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/res/layout/dialog_score.xml"
+    },
+    {
+        "merged": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/build/intermediates/res/merged/163/debug/layout/activity_choose_city.xml",
+        "source": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/res/layout/activity_choose_city.xml"
+    },
+    {
+        "merged": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/build/intermediates/res/merged/163/debug/layout/dialog_trade_passwd.xml",
+        "source": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/res/layout/dialog_trade_passwd.xml"
+    },
+    {
+        "merged": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/build/intermediates/res/merged/163/debug/layout/title_5.xml",
+        "source": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/res/layout/title_5.xml"
+    },
+    {
+        "merged": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/build/intermediates/res/merged/163/debug/layout/splash.xml",
+        "source": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/res/layout/splash.xml"
+    },
+    {
+        "merged": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/build/intermediates/res/merged/163/debug/layout/fragment_main.xml",
+        "source": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/res/layout/fragment_main.xml"
+    },
+    {
+        "merged": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/build/intermediates/res/merged/163/debug/layout/activity_product_instructions.xml",
+        "source": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/res/layout/activity_product_instructions.xml"
+    },
+    {
+        "merged": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/build/intermediates/res/merged/163/debug/layout/notification_view.xml",
+        "source": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/res/layout/notification_view.xml"
+    },
+    {
+        "merged": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/build/intermediates/res/merged/163/debug/layout/pull_to_load_footer.xml",
+        "source": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/res/layout/pull_to_load_footer.xml"
+    },
+    {
+        "merged": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/build/intermediates/res/merged/163/debug/layout/inputuserphonemessage_dialog.xml",
+        "source": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/res/layout/inputuserphonemessage_dialog.xml"
+    },
+    {
+        "merged": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/build/intermediates/res/merged/163/debug/layout/activity_notice.xml",
+        "source": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/res/layout/activity_notice.xml"
+    },
+    {
+        "merged": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/build/intermediates/res/merged/163/debug/layout/tools_item_welfare.xml",
+        "source": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/res/layout/tools_item_welfare.xml"
+    },
+    {
+        "merged": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/build/intermediates/res/merged/163/debug/layout/abc_action_bar_view_list_nav_layout.xml",
+        "source": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.0.0/res/layout/abc_action_bar_view_list_nav_layout.xml"
+    },
+    {
+        "merged": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/build/intermediates/res/merged/163/debug/layout/activity_notice_details.xml",
+        "source": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/res/layout/activity_notice_details.xml"
+    },
+    {
+        "merged": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/build/intermediates/res/merged/163/debug/layout/fragment_regular_compared.xml",
+        "source": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/res/layout/fragment_regular_compared.xml"
+    },
+    {
+        "merged": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/build/intermediates/res/merged/163/debug/layout/gesturepassword_unlock.xml",
+        "source": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/res/layout/gesturepassword_unlock.xml"
+    },
+    {
+        "merged": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/build/intermediates/res/merged/163/debug/layout/dialog_no_code.xml",
+        "source": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/res/layout/dialog_no_code.xml"
+    },
+    {
+        "merged": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/build/intermediates/res/merged/163/debug/layout/real_name.xml",
+        "source": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/res/layout/real_name.xml"
+    },
+    {
+        "merged": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/build/intermediates/res/merged/163/debug/layout/get_cash_second.xml",
+        "source": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/res/layout/get_cash_second.xml"
+    },
+    {
+        "merged": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/build/intermediates/res/merged/163/debug/layout/dialog_cash_bonus.xml",
+        "source": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/res/layout/dialog_cash_bonus.xml"
+    },
+    {
+        "merged": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/build/intermediates/res/merged/163/debug/layout/dialog_custom_new_with_title.xml",
+        "source": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/res/layout/dialog_custom_new_with_title.xml"
+    },
+    {
+        "merged": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/build/intermediates/res/merged/163/debug/layout/purchase_second.xml",
+        "source": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/res/layout/purchase_second.xml"
+    },
+    {
+        "merged": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/build/intermediates/res/merged/163/debug/layout/change_login_passwd.xml",
+        "source": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/res/layout/change_login_passwd.xml"
+    },
+    {
+        "merged": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/build/intermediates/res/merged/163/debug/layout/fragment_gift.xml",
+        "source": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/res/layout/fragment_gift.xml"
+    },
+    {
+        "merged": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/build/intermediates/res/merged/163/debug/layout/activity_main_login_lay.xml",
+        "source": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/res/layout/activity_main_login_lay.xml"
+    },
+    {
+        "merged": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/build/intermediates/res/merged/163/debug/layout/activity_set_trade_pwd.xml",
+        "source": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/res/layout/activity_set_trade_pwd.xml"
+    },
+    {
+        "merged": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/build/intermediates/res/merged/163/debug/layout/bank_list.xml",
+        "source": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/res/layout/bank_list.xml"
+    },
+    {
+        "merged": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/build/intermediates/res/merged/163/debug/layout/set_trade_pwd_1.xml",
+        "source": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/res/layout/set_trade_pwd_1.xml"
+    },
+    {
+        "merged": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/build/intermediates/res/merged/163/debug/layout/dialog_regular.xml",
+        "source": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/res/layout/dialog_regular.xml"
+    },
+    {
+        "merged": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/build/intermediates/res/merged/163/debug/layout/fragment_curoutbal.xml",
+        "source": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/res/layout/fragment_curoutbal.xml"
+    },
+    {
+        "merged": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/build/intermediates/res/merged/163/debug/layout/aty_chg_tel_1.xml",
+        "source": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/res/layout/aty_chg_tel_1.xml"
+    },
+    {
+        "merged": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/build/intermediates/res/merged/163/debug/layout/pop_trade_record.xml",
+        "source": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/res/layout/pop_trade_record.xml"
+    },
+    {
+        "merged": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/build/intermediates/res/merged/163/debug/layout/trade_record.xml",
+        "source": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/res/layout/trade_record.xml"
+    },
+    {
+        "merged": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/build/intermediates/res/merged/163/debug/layout/turn_in.xml",
+        "source": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/res/layout/turn_in.xml"
+    },
+    {
+        "merged": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/build/intermediates/res/merged/163/debug/layout/activity_transfer_info_lay.xml",
+        "source": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/res/layout/activity_transfer_info_lay.xml"
+    },
+    {
+        "merged": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/build/intermediates/res/merged/163/debug/layout/activity_new_login.xml",
+        "source": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/res/layout/activity_new_login.xml"
+    },
+    {
+        "merged": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/build/intermediates/res/merged/163/debug/layout/activity_system_news.xml",
+        "source": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/res/layout/activity_system_news.xml"
+    },
+    {
+        "merged": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/build/intermediates/res/merged/163/debug/layout/left_band_card.xml",
+        "source": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/res/layout/left_band_card.xml"
+    },
+    {
+        "merged": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/build/intermediates/res/merged/163/debug/layout/fragment_gift_web_view.xml",
+        "source": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/res/layout/fragment_gift_web_view.xml"
+    },
+    {
+        "merged": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/build/intermediates/res/merged/163/debug/layout/real_info.xml",
+        "source": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/res/layout/real_info.xml"
+    },
+    {
+        "merged": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/build/intermediates/res/merged/163/debug/layout/activity_transfer.xml",
+        "source": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/res/layout/activity_transfer.xml"
+    },
+    {
+        "merged": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/build/intermediates/res/merged/163/debug/layout/header_my_assets.xml",
+        "source": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/res/layout/header_my_assets.xml"
+    },
+    {
+        "merged": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/build/intermediates/res/merged/163/debug/layout/dialog_common_confirm.xml",
+        "source": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/res/layout/dialog_common_confirm.xml"
+    },
+    {
+        "merged": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/build/intermediates/res/merged/163/debug/layout/chg_trade_pwd_3.xml",
+        "source": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/res/layout/chg_trade_pwd_3.xml"
+    },
+    {
+        "merged": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/build/intermediates/res/merged/163/debug/layout/dialog_regualr_item.xml",
+        "source": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/res/layout/dialog_regualr_item.xml"
+    },
+    {
+        "merged": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/build/intermediates/res/merged/163/debug/layout/address_dialog.xml",
+        "source": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/res/layout/address_dialog.xml"
+    },
+    {
+        "merged": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/build/intermediates/res/merged/163/debug/layout/dialog_guide_mask.xml",
+        "source": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/res/layout/dialog_guide_mask.xml"
+    },
+    {
+        "merged": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/build/intermediates/res/merged/163/debug/layout/pop_feedback.xml",
+        "source": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/res/layout/pop_feedback.xml"
+    },
+    {
+        "merged": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/build/intermediates/res/merged/163/debug/layout/menu_layout_right.xml",
+        "source": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/res/layout/menu_layout_right.xml"
+    },
+    {
+        "merged": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/build/intermediates/res/merged/163/debug/layout/abc_list_menu_item_icon.xml",
+        "source": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.0.0/res/layout/abc_list_menu_item_icon.xml"
+    },
+    {
+        "merged": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/build/intermediates/res/merged/163/debug/layout/activity_pay_list_item.xml",
+        "source": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/res/layout/activity_pay_list_item.xml"
+    },
+    {
+        "merged": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/build/intermediates/res/merged/163/debug/layout/activity_feedback.xml",
+        "source": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/res/layout/activity_feedback.xml"
+    },
+    {
+        "merged": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/build/intermediates/res/merged/163/debug/layout/login_in.xml",
+        "source": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/res/layout/login_in.xml"
+    },
+    {
+        "merged": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/build/intermediates/res/merged/163/debug/layout/activity_strong_box_pact.xml",
+        "source": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/res/layout/activity_strong_box_pact.xml"
+    },
+    {
+        "merged": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/build/intermediates/res/merged/163/debug/layout/activity_regular_asset.xml",
+        "source": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/res/layout/activity_regular_asset.xml"
+    },
+    {
+        "merged": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/build/intermediates/res/merged/163/debug/layout/tools_item_gift.xml",
+        "source": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/res/layout/tools_item_gift.xml"
+    },
+    {
+        "merged": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/build/intermediates/res/merged/163/debug/layout/aty_chg_login_pwd.xml",
+        "source": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/res/layout/aty_chg_login_pwd.xml"
+    },
+    {
+        "merged": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/build/intermediates/res/merged/163/debug/layout/fragment_news_center.xml",
+        "source": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/res/layout/fragment_news_center.xml"
+    },
+    {
+        "merged": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/build/intermediates/res/merged/163/debug/layout/dialog_roll_out.xml",
+        "source": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/res/layout/dialog_roll_out.xml"
+    },
+    {
+        "merged": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/build/intermediates/res/merged/163/debug/layout/activity_balancein_result.xml",
+        "source": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/res/layout/activity_balancein_result.xml"
+    },
+    {
+        "merged": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/build/intermediates/res/merged/163/debug/layout/notification_template_part_chronometer.xml",
+        "source": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.0.0/res/layout/notification_template_part_chronometer.xml"
+    },
+    {
+        "merged": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/build/intermediates/res/merged/163/debug/layout/chg_trade_pwd_2.xml",
+        "source": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/res/layout/chg_trade_pwd_2.xml"
+    },
+    {
+        "merged": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/build/intermediates/res/merged/163/debug/layout/top.xml",
+        "source": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/res/layout/top.xml"
+    },
+    {
+        "merged": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/build/intermediates/res/merged/163/debug/layout/xlistview_header.xml",
+        "source": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/res/layout/xlistview_header.xml"
+    },
+    {
+        "merged": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/build/intermediates/res/merged/163/debug/layout/select_dialog_item_material.xml",
+        "source": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.0.0/res/layout/select_dialog_item_material.xml"
+    },
+    {
+        "merged": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/build/intermediates/res/merged/163/debug/layout/activity_login_verifycode.xml",
+        "source": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/res/layout/activity_login_verifycode.xml"
+    },
+    {
+        "merged": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/build/intermediates/res/merged/163/debug/layout/register.xml",
+        "source": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/res/layout/register.xml"
+    },
+    {
+        "merged": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/build/intermediates/res/merged/163/debug/layout/title2.xml",
+        "source": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/res/layout/title2.xml"
+    },
+    {
+        "merged": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/build/intermediates/res/merged/163/debug/layout/activity_my_bank_card.xml",
+        "source": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/res/layout/activity_my_bank_card.xml"
+    },
+    {
+        "merged": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/build/intermediates/res/merged/163/debug/layout/activity_bank_card_info.xml",
+        "source": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/res/layout/activity_bank_card_info.xml"
+    },
+    {
+        "merged": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/build/intermediates/res/merged/163/debug/layout/pull_to_refresh_header.xml",
+        "source": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/res/layout/pull_to_refresh_header.xml"
+    },
+    {
+        "merged": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/build/intermediates/res/merged/163/debug/layout/about_us.xml",
+        "source": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/res/layout/about_us.xml"
+    },
+    {
+        "merged": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/build/intermediates/res/merged/163/debug/layout/design_bottom_sheet_dialog.xml",
+        "source": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/build/intermediates/exploded-aar/com.android.support/design/23.3.0/res/layout/design_bottom_sheet_dialog.xml"
+    },
+    {
+        "merged": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/build/intermediates/res/merged/163/debug/layout/surfing_listview_header.xml",
+        "source": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/res/layout/surfing_listview_header.xml"
+    },
+    {
+        "merged": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/build/intermediates/res/merged/163/debug/layout/design_layout_tab_icon.xml",
+        "source": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/build/intermediates/exploded-aar/com.android.support/design/23.3.0/res/layout/design_layout_tab_icon.xml"
+    },
+    {
+        "merged": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/build/intermediates/res/merged/163/debug/layout/activity_left_setting_lay.xml",
+        "source": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/res/layout/activity_left_setting_lay.xml"
+    },
+    {
+        "merged": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/build/intermediates/res/merged/163/debug/layout/get_cash_two.xml",
+        "source": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/res/layout/get_cash_two.xml"
+    },
+    {
+        "merged": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/build/intermediates/res/merged/163/debug/layout/fragment_live_product.xml",
+        "source": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/res/layout/fragment_live_product.xml"
+    },
+    {
+        "merged": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/build/intermediates/res/merged/163/debug/layout/xlistview_jinr_header.xml",
+        "source": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/res/layout/xlistview_jinr_header.xml"
+    },
+    {
+        "merged": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/build/intermediates/res/merged/163/debug/layout/what_new_two.xml",
+        "source": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/res/layout/what_new_two.xml"
+    },
+    {
+        "merged": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/build/intermediates/res/merged/163/debug/layout/dialog_open_gps.xml",
+        "source": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/res/layout/dialog_open_gps.xml"
+    },
+    {
+        "merged": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/build/intermediates/res/merged/163/debug/layout/design_navigation_item_subheader.xml",
+        "source": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/build/intermediates/exploded-aar/com.android.support/design/23.3.0/res/layout/design_navigation_item_subheader.xml"
+    },
+    {
+        "merged": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/build/intermediates/res/merged/163/debug/layout/notification_template_big_media_custom.xml",
+        "source": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.0.0/res/layout/notification_template_big_media_custom.xml"
+    },
+    {
+        "merged": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/build/intermediates/res/merged/163/debug/layout/dialog_total_push.xml",
+        "source": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/res/layout/dialog_total_push.xml"
+    },
+    {
+        "merged": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/build/intermediates/res/merged/163/debug/layout/get_cash_first.xml",
+        "source": "/Users/yuzhongrong/workspace/v3.6.3/Jinr/res/layout/get_cash_first.xml"
+    }
+]

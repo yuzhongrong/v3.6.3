@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white"
+    android:orientation="vertical"
+    android:id="@+id/banklist_dialog" >
+
+    <View style="@style/line" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+
+        <Button
+            android:id="@+id/btn_cancel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:background="@null"
+            android:padding="13dp"
+            android:text="取消"
+            android:textColor="@color/blue_text_base"
+            android:textSize="15sp" />
+
+        <Button
+            android:id="@+id/btn_complete"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="10dp"
+            android:background="@null"
+            android:padding="13dp"
+            android:text="完成"
+            android:textColor="@color/blue_text_base"
+            android:textSize="15sp" />
+    </RelativeLayout>
+
+    <View style="@style/line" />
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+
+        <LinearLayout
+            android:id="@+id/ly_myinfo_changeaddress_child"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_dialog_selector"
+            android:orientation="vertical" >
+
+            <com.jinr.graph_view.WheelView
+                android:id="@+id/rgroup_bank"
+                android:layout_width="match_parent"
+                android:layout_height="0dip"
+                android:layout_gravity="center_vertical"
+                android:layout_weight="1" />
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/wheel_cover"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/wheel_shape" />
+    </FrameLayout>
+
+</LinearLayout>

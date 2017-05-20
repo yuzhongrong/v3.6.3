@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/main_out_back_color"
+    android:orientation="vertical" >
+
+    <!-- title布局 -->
+
+    <include
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        layout="@layout/title" />
+    <!-- title下方块布局 -->
+
+    <include
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        layout="@layout/title_below_back" />
+
+    <include
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        layout="@layout/line" />
+    <!-- 线条 -->
+
+    <LinearLayout
+        android:id="@+id/get_cash_first_rl1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/back_select"
+        android:gravity="center_vertical"
+        android:orientation="horizontal" >
+
+        <ImageView
+            android:id="@+id/iv_bank"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_marginLeft="14dp"
+            android:padding="10dp" />
+
+        <LinearLayout
+            android:id="@+id/get_cash_first_rl2"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_weight="1"
+            android:orientation="vertical" >
+
+            <TextView
+                android:id="@+id/get_cash_first_tv0"
+                style="@style/sec"
+                android:padding="5dp"
+                android:text=""
+                android:textColor="@color/main_out_down_text_color" />
+
+            <TextView
+                android:id="@+id/get_cash_first_card_tv0"
+                style="@style/sec"
+                android:padding="5dp"
+                android:text=""
+                android:textColor="@color/main_out_down_text_color" />
+        </LinearLayout>
+
+        <ImageView
+            style="@style/image_arrow"
+            android:layout_marginRight="@dimen/all_left_offset"
+            android:src="@drawable/button_arrow" />
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:background="@drawable/back_select"
+        android:orientation="horizontal" >
+
+        <include
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="0dp"
+            layout="@layout/line" />
+
+        <TextView
+            android:id="@+id/get_cash_first_tv1"
+            style="@style/sec"
+            android:layout_marginLeft="@dimen/all_left_offset"
+            android:layout_marginTop="20dp"
+            android:text="@string/get_cash_much"
+            android:textColor="@color/main_out_down_text_color" />
+
+        <EditText
+            android:id="@+id/get_cash_first_et1"
+            style="@style/edit_style"
+            android:layout_centerVertical="false"
+            android:layout_marginRight="@dimen/all_left_offset"
+            android:layout_marginTop="9dp"
+            android:hint="@string/hint_l"
+            android:inputType="numberDecimal" />
+
+        <TextView
+            style="@style/sec"
+            android:layout_alignParentBottom="true"
+            android:layout_centerVertical="true"
+            android:layout_marginBottom="15dp"
+            android:layout_marginLeft="@dimen/all_left_offset"
+            android:text="@string/can_use_cash"
+            android:textColor="@color/main_out_down_text_color" />
+
+        <TextView
+            android:id="@+id/get_cash_first_tv2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginBottom="15dp"
+            android:layout_marginRight="@dimen/all_left_offset"
+            android:text="@string/string_zero"
+            android:textColor="@color/main_out_down_text_color"
+            android:textSize="14sp" />
+    </RelativeLayout>
+
+    <include
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        layout="@layout/line"
+        android:paddingTop="0dp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="right"
+        android:orientation="horizontal"
+        android:padding="10dp" >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="预期到账时间："
+            android:textColor="@color/main_out_down_text_color" />
+
+        <TextView
+            android:id="@+id/tv_time_out"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="14dp"
+            android:text=""
+            android:textColor="#007db3" />
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/get_cash_first_bt"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/btn_sure_height"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/button_inout"
+        android:padding="10dp"
+        android:text="@string/pay_out"
+        android:textColor="@color/main_out_down_text_color"
+        android:textSize="20sp" />
+
+</LinearLayout>
