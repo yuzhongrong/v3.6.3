@@ -1,8 +1,8 @@
 <component name="libraryTable">
   <library name="androideventbus-1.0.5.1">
     <CLASSES>
-      <root url="file://$PROJECT_DIR$/commonlibrary/build/intermediates/exploded-aar/org.simple/androideventbus/1.0.5.1/res" />
-      <root url="jar://$PROJECT_DIR$/commonlibrary/build/intermediates/exploded-aar/org.simple/androideventbus/1.0.5.1/jars/classes.jar!/" />
+      <root url="jar://$USER_HOME$/.android/build-cache/678e02ee32bf7cedef4a31a6e57398e0e3fea655/output/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.android/build-cache/678e02ee32bf7cedef4a31a6e57398e0e3fea655/output/res" />
     </CLASSES>
     <JAVADOC />
     <SOURCES>

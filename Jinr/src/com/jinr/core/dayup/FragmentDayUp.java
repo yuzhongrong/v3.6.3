@@ -28,12 +28,11 @@ import com.loopj.android.http.RequestParams;
 
 import org.apache.http.Header;
 import org.json.JSONObject;
-import org.simple.eventbus.EventBus;
 
 import java.util.ArrayList;
 
-import model.ProductModel;
 import model.ProductCommonModel;
+import model.ProductModel;
 
 /**
  * 日增息 Fragment 界面 @author Ysw created at 2017/3/15 17:11

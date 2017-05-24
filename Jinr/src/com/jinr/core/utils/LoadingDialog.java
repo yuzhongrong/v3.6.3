@@ -47,7 +47,8 @@ public class LoadingDialog {
     public void show() {
         try {
             if (currentActivity != null && !currentActivity.isFinishing()) {
-                mDialog.show();
+                if(!mDialog.isShowing())mDialog.show();
+
             }
         } catch (Exception e) {
             e.printStackTrace();
@@ -57,7 +58,7 @@ public class LoadingDialog {
     public void dismiss() {
         try {
             if (currentActivity != null && !currentActivity.isFinishing() && mDialog.isShowing()) {
-                mDialog.dismiss();
+                if(mDialog.isShowing())mDialog.dismiss();
             }
         } catch (Exception e) {
             e.printStackTrace();

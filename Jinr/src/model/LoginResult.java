@@ -1,10 +1,12 @@
 package model;
 
+import java.io.Serializable;
+
 /**
  * Created by yuzhongrong on 2017/5/12.
  */
 
-public class LoginResult {
+public class LoginResult implements Serializable{
 
     /**
      * code : 0
@@ -18,8 +20,25 @@ public class LoginResult {
      */
     private String token;
     private String login_time;
+    private String name;
+    private String tel;
 
 
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getTel() {
+        return tel;
+    }
+
+    public void setTel(String tel) {
+        this.tel = tel;
+    }
 
     public String getToken() {
         return token;

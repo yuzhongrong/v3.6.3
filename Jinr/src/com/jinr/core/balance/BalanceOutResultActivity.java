@@ -15,7 +15,6 @@ import com.jinr.core.config.EventBusKey;
 import com.jinr.core.config.UrlConfig;
 import com.jinr.core.utils.CommonUtil;
 import com.jinr.core.utils.MyDES;
-import com.jinr.core.utils.MyLog;
 import com.jinr.core.utils.MyhttpClient;
 import com.jinr.core.utils.ToastUtil;
 import com.loopj.android.http.AsyncHttpResponseHandler;

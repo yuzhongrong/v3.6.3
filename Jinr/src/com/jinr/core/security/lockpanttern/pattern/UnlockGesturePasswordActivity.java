@@ -1,6 +1,5 @@
 package com.jinr.core.security.lockpanttern.pattern;
 
-import android.app.Activity;
 import android.content.ComponentName;
 import android.content.Intent;
 import android.graphics.Color;
@@ -18,6 +17,7 @@ import android.widget.Toast;
 
 import com.jinr.core.MainActivity;
 import com.jinr.core.R;
+import com.jinr.core.base.BaseActivity;
 import com.jinr.core.config.AppManager;
 import com.jinr.core.config.EventBusKey;
 import com.jinr.core.security.lockpanttern.view.LockPatternUtils;
@@ -35,7 +35,7 @@ import java.util.List;
 /**
  * 手势密码锁界面 @author Ysw created at 2017/3/15 18:45
  */
-public class UnlockGesturePasswordActivity extends Activity implements OnClickListener {
+public class UnlockGesturePasswordActivity extends BaseActivity implements OnClickListener {
     private static final String TIMEOUT_FILE = LockPatternUtils.PATH + "timoutfile.key";
     private LockPatternView mLockPatternView;
     private File timeout_file = new File(TIMEOUT_FILE);
@@ -173,6 +173,26 @@ public class UnlockGesturePasswordActivity extends Activity implements OnClickLi
             AppManager.getAppManager().AppExit(this);
         }
         return true;
+    }
+
+    @Override
+    protected void initData() {
+
+    }
+
+    @Override
+    protected void findViewById() {
+
+    }
+
+    @Override
+    protected void initUI() {
+
+    }
+
+    @Override
+    protected void setListener() {
+
     }
 
     protected LockPatternView.OnPatternListener mChooseNewLockPatternListener = new LockPatternView.OnPatternListener() {

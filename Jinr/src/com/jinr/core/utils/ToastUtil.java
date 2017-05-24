@@ -9,6 +9,10 @@ import android.widget.LinearLayout;
 import android.widget.Toast;
 
 import com.jinr.core.R;
+import com.jinr.core.net.Md5JsonCallBack;
+
+import model.BaseModel;
+import model.LoginResult;
 
 public class ToastUtil {
     private static Toast toast = null;
@@ -131,4 +135,6 @@ public class ToastUtil {
             dialog.dismiss();
         }
     }
+
+
 }

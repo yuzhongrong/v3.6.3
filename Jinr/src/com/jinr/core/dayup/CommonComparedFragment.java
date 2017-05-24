@@ -1,7 +1,6 @@
 package com.jinr.core.dayup;
 
 import android.os.Bundle;
-import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -9,15 +8,15 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.jinr.core.R;
+import com.jinr.core.base.BaseFragment;
 import com.jinr.core.config.EventBusKey;
 import com.nostra13.universalimageloader.core.ImageLoader;
 
-import org.simple.eventbus.EventBus;
 import org.simple.eventbus.Subscriber;
 
 import model.CommonProjectMode;
 
-public class CommonComparedFragment extends Fragment {
+public class CommonComparedFragment extends BaseFragment {
     private View view;
     private ImageView image_compared;
     private TextView tv_compare;
@@ -59,5 +58,25 @@ public class CommonComparedFragment extends Fragment {
             ImageLoader.getInstance().displayImage(data.getLogo(), image_compared);
         } catch (Exception e) {
         }
+    }
+
+    @Override
+    protected void initData() {
+
+    }
+
+    @Override
+    protected void findViewById(View view) {
+
+    }
+
+    @Override
+    protected void initUI() {
+
+    }
+
+    @Override
+    protected void setListener() {
+
     }
 }

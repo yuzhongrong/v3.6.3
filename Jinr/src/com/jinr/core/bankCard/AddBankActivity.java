@@ -43,7 +43,6 @@ import com.loopj.android.http.RequestParams;
 import org.apache.http.Header;
 import org.json.JSONArray;
 import org.json.JSONObject;
-import org.simple.eventbus.EventBus;
 import org.simple.eventbus.Subscriber;
 
 import java.io.UnsupportedEncodingException;

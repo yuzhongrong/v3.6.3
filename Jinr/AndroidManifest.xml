@@ -231,7 +231,7 @@
         <activity
             android:name=".dayup.ActBannerActivity"
             android:screenOrientation="portrait"
-            android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
+           />
         <activity
             android:name=".transfer.TransferedListActivity"
             android:label="@string/app_name"
@@ -407,7 +407,7 @@
             android:name=".bankCard.SecondBandCardActivity"
             android:screenOrientation="portrait"/>
         <activity android:name=".strongbox.StrongBoxPactActivity"/>
-        <activity android:name=".regist.NewLoginActivity">
+        <activity android:name="com.jinr.new_mvp.ui.activity.NewLoginActivity">
         </activity>
         <activity android:name=".regist.SafeLoginActivity">
         </activity>

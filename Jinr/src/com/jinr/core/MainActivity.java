@@ -9,6 +9,7 @@ import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.Gravity;
 import android.view.KeyEvent;
 import android.view.View;
@@ -37,6 +38,7 @@ import com.jinr.core.security.lockpanttern.view.LockPatternUtils;
 import com.jinr.core.trade.purchase.product.MainFragment;
 import com.jinr.core.trade.purchase.product.MainImageFragment;
 import com.jinr.core.ui.MenuRightView;
+import com.jinr.core.ui.NewCustomDialog;
 import com.jinr.core.updata.UpdataUtils;
 import com.jinr.core.utils.BaiduUtils;
 import com.jinr.core.utils.CommonUtil;
@@ -54,11 +56,14 @@ import com.jinr.graph_view.yviewpager.YViewPager;
 import com.loopj.android.http.AsyncHttpResponseHandler;
 import com.loopj.android.http.RequestParams;
 import com.umeng.analytics.MobclickAgent;
+import com.umeng.message.ALIAS_TYPE;
 import com.umeng.message.PushAgent;
+import com.umeng.message.UTrack;
 
 import org.apache.http.Header;
 import org.json.JSONObject;
 import org.simple.eventbus.EventBus;
+import org.simple.eventbus.Subscriber;
 
 import java.util.ArrayList;
 import java.util.HashSet;
@@ -70,6 +75,8 @@ import model.ProductList;
 import model.ProductModel;
 import model.SystemNoticeModel;
 import model.UmMessageItem;
+
+import static anetwork.channel.http.NetworkSdkSetting.context;
 
 public class MainActivity extends BaseActivity implements OnClickListener {
     public static final String TAG = "MainActivity";
@@ -104,6 +111,8 @@ public class MainActivity extends BaseActivity implements OnClickListener {
     private ArrayList<ProductModel> mProductDataList = new ArrayList<>();
     private YViewPager mYViewPager;
     private YVFragmentAdapter yvFragmentAdapter;
+
+
 
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -141,6 +150,8 @@ public class MainActivity extends BaseActivity implements OnClickListener {
         if (Check.is_login(this)) {
             scrollTop();
         }
+
+        Log.d(TAG, "onResume:");
     }
 
     private void screenSleepListener() {
@@ -609,6 +620,7 @@ public class MainActivity extends BaseActivity implements OnClickListener {
                         }.getType());
                         String sysNewsEdition = model.getData().getGonggao();
                         String actEdition = model.getData().getHuodong();
+                       // EventBus.getDefault().postSticky(model.getData().getBk(), EventBusKey.BING_BANK_CARD);
                         if (model.getData().getBk() != PreferencesUtils.getIntFromSPMap(MainActivity.this, PreferencesUtils.Keys.IS_BIND_CARD)) {
                             PreferencesUtils.putIntToSPMap(MainActivity.this, PreferencesUtils.Keys.IS_BIND_CARD, model.getData().getBk());
                             EventBus.getDefault().postSticky(model.getData().getBk(), EventBusKey.BING_BANK_CARD);
@@ -633,11 +645,62 @@ public class MainActivity extends BaseActivity implements OnClickListener {
     }
 
 
+
+    private NewCustomDialog dialog;//被t 弹出对话框
+    @Subscriber(tag = EventBusKey.T_LINE)
+    public void doT(String str) {
+        dialog = new NewCustomDialog(this, getString(R.string.warning), getString(R.string.relogin));
+        dialog.btn_custom_dialog_sure.setText(getString(R.string.dialog_call_bt_ok));
+        dialog.btn_custom_dialog_cancel.setText(getString(R.string.dialog_call_bt_cancel));
+        dialog.btn_custom_dialog_cancel.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View arg0) {//取消退出app
+                PreferencesUtils.clearSPMap(MainActivity.instance);
+                dialog.dismiss();
+                AppManager.getAppManager().AppExit(MainActivity.this);
+            }
+        });
+        dialog.btn_custom_dialog_sure.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                dialog.dismiss();
+                PushAgent mPushAgent = PushAgent.getInstance(context);
+                mPushAgent.removeAlias(PreferencesUtils.getValueFromSPMap(context, PreferencesUtils.Keys.UID),
+                        ALIAS_TYPE.SINA_WEIBO, new UTrack.ICallBack() {
+                            @Override
+                            public void onMessage(boolean isSuccess, String message) {
+                            }
+                        });
+                PreferencesUtils.putLastTelToSPMap(PreferencesUtils.Keys.TEL, PreferencesUtils.getValueFromSPMap(context, PreferencesUtils.Keys.TEL));
+                PreferencesUtils.clearSPMap(MainActivity.instance);
+                // AppManager.getAppManager().finishAllActivity();
+                startActivity(new Intent(MainActivity.this, NewLoginActivity.class));
+                overridePendingTransition(R.anim.right_in, R.anim.left_out);
+
+            }
+        });
+
+        dialog.show();
+    }
+
+
+
+
+
     @Override
     protected void onPause() {
         super.onPause();
         MobclickAgent.onPause(this);
         isForeground = false;
+        Log.d(TAG, "onPause:");
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+
+        Log.d(TAG, "onStop:");
     }
 
     @Override

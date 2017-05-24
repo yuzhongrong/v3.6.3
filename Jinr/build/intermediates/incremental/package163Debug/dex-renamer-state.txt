@@ -1,7 +1,0 @@
-#Sat May 20 12:10:44 CST 2017
-base.0=/Users/yuzhongrong/workspace/v3.6.3/Jinr/build/intermediates/transforms/dex/163/debug/folders/1000/10/instant-run_25a46ebbc223ce5a6e971e4d2460201121ebd36c
-renamed.1=classes2.dex
-renamed.0=classes.dex
-file.1=/Users/yuzhongrong/workspace/v3.6.3/Jinr/build/intermediates/transforms/dex/163/debug/folders/1000/10/instant-run-bootstrap_0685b2647c7e38e920a598087762031519b582ec/classes.dex
-base.1=/Users/yuzhongrong/workspace/v3.6.3/Jinr/build/intermediates/transforms/dex/163/debug/folders/1000/10/instant-run-bootstrap_0685b2647c7e38e920a598087762031519b582ec
-file.0=/Users/yuzhongrong/workspace/v3.6.3/Jinr/build/intermediates/transforms/dex/163/debug/folders/1000/10/instant-run_25a46ebbc223ce5a6e971e4d2460201121ebd36c/classes.dex

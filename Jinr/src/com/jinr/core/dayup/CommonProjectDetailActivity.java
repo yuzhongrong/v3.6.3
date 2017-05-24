@@ -20,7 +20,6 @@ import android.widget.TextView;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 import com.jinr.core.JinrApp;
-import com.jinr.core.MainActivity;
 import com.jinr.core.R;
 import com.jinr.core.base.BaseActivity;
 import com.jinr.core.config.Check;
@@ -42,7 +41,6 @@ import com.loopj.android.http.RequestParams;
 
 import org.apache.http.Header;
 import org.json.JSONObject;
-import org.simple.eventbus.EventBus;
 
 import java.util.ArrayList;
 

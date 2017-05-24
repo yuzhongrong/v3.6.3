@@ -53,10 +53,8 @@ import com.loopj.android.http.RequestParams;
 import org.apache.http.Header;
 import org.json.JSONArray;
 import org.json.JSONObject;
-import org.simple.eventbus.EventBus;
 import org.simple.eventbus.Subscriber;
 
-import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Locale;

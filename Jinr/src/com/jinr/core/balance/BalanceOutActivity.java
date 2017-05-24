@@ -53,7 +53,6 @@ import com.nostra13.universalimageloader.core.ImageLoader;
 
 import org.apache.http.Header;
 import org.json.JSONObject;
-import org.simple.eventbus.EventBus;
 import org.simple.eventbus.Subscriber;
 
 import model.BalanceOutInfoObj;

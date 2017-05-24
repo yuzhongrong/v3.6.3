@@ -25,7 +25,6 @@ import com.jinr.core.R;
 import com.jinr.core.base.BaseActivity;
 import com.jinr.core.config.EventBusKey;
 import com.jinr.core.config.UrlConfig;
-import com.jinr.core.net.Md5JsonCallBack;
 import com.jinr.core.security.lockpanttern.pattern.CreateGesturePasswordActivity;
 import com.jinr.core.security.lockpanttern.view.LockPatternUtils;
 import com.jinr.core.ui.ErrorDialog;
@@ -37,10 +36,11 @@ import com.jinr.core.utils.MyLog;
 import com.jinr.core.utils.MyhttpClient;
 import com.jinr.core.utils.PreferencesUtils;
 import com.jinr.core.utils.ToastUtil;
+import com.jinr.new_mvp.network.DialogMd5JsonCallBack;
+import com.jinr.new_mvp.network.Md5JsonCallBack;
 import com.loopj.android.http.AsyncHttpResponseHandler;
 import com.loopj.android.http.RequestParams;
 import com.lzy.okgo.OkGo;
-import com.lzy.okgo.request.BaseRequest;
 import com.umeng.message.ALIAS_TYPE;
 import com.umeng.message.PushAgent;
 import com.umeng.message.UTrack;
@@ -209,7 +209,7 @@ public class NewLoginActivity extends BaseActivity implements View.OnClickListen
         } else {
             try {
                 checkMobile(et_phoneNum.toString().trim());
-              //  New_checkMobile(et_phoneNum.getText().toString().trim());
+           //     New_checkMobile(et_phoneNum.getText().toString().trim());
             } catch (Exception e) {
                 e.printStackTrace();
             }
@@ -273,9 +273,7 @@ public class NewLoginActivity extends BaseActivity implements View.OnClickListen
 
 
     }
-
     private void New_login() {
-
 
         JSONObject params=new JSONObject();
         try {
@@ -293,25 +291,17 @@ public class NewLoginActivity extends BaseActivity implements View.OnClickListen
         }
         OkGo.post(UrlConfig.BASE)
                 .tag(this)
-                .execute(new Md5JsonCallBack<BaseModel<LoginResult>>(params) {
-
-
-                    @Override
-                    public void onBefore(BaseRequest request) {
-                        super.onBefore(request);
-                        showWaittingDialog(NewLoginActivity.this);
-                    }
+                .execute(new DialogMd5JsonCallBack<BaseModel<LoginResult>>(params) {
 
                     @Override
                     public void onError(Call call, Response response, Exception e) {
                         super.onError(call, response, e);
-                        dismissWaittingDialog();
-                        Log.d(TAG, response.message());
+                         ToastUtil.show(NewLoginActivity.this,response.message());
                     }
+
 
                     @Override
                     public void onSuccess(BaseModel<LoginResult> result, Call call, Response response) {
-                        dismissWaittingDialog();
                         Log.d(TAG, "voidLoginResult:" + result);
                         if(result.getCode()==200){
 
@@ -338,11 +328,27 @@ public class NewLoginActivity extends BaseActivity implements View.OnClickListen
                             EventBus.getDefault().post("", EventBusKey.LOGIN_SUCCESS);
 
                             PreferencesUtils.save(PreferencesUtils.LOGINRESULT,result);
-                          //  PreferencesUtils.putBooleanToSPMap();
+                            PreferencesUtils.putBooleanToSPMap(//保存登录状态
+                                    NewLoginActivity.this,PreferencesUtils.Keys.IS_LOGIN, true);
+
+                            PushAgent mPushAgent = PushAgent.getInstance(NewLoginActivity.this);
+                            mPushAgent.addAlias(user_id, ALIAS_TYPE.SINA_WEIBO, new UTrack.ICallBack() {
+                                @Override
+                                public void onMessage(boolean isSuccess, String message) {
+                                }
+                            });
+                            //通知ProductFragment刷新三倍收益
+                            EventBus.getDefault().post(true, EventBusKey.REFRESH_MULTIPLE);
+
+
+                            finish();
 
 
 
 
+                        }else{
+
+                            ToastUtil.show(getApplication(), result.getMsg());
 
                         }
 

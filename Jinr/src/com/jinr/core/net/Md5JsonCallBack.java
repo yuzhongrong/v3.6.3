@@ -1,6 +1,12 @@
 package com.jinr.core.net;
 
+import android.util.Log;
+
 import com.android.jnet.utils.Convert;
+import com.jinr.core.JinrApp;
+import com.jinr.core.callback.TokenFaile;
+import com.jinr.core.config.AppManager;
+import com.jinr.core.regist.NewLoginActivity;
 
 import org.json.JSONObject;
 
@@ -15,8 +21,14 @@ import okhttp3.Response;
  */
 
 public abstract class Md5JsonCallBack<T> extends JsonMD5CallBack<T> {
-    public Md5JsonCallBack(JSONObject baseJson) {
+
+
+    private TokenFaile mTokenFaile;
+
+    public Md5JsonCallBack(JSONObject baseJson,TokenFaile tokenFaile) {
         super(baseJson);
+        this.mTokenFaile=tokenFaile;
+
     }
 
 
@@ -40,9 +52,12 @@ public abstract class Md5JsonCallBack<T> extends JsonMD5CallBack<T> {
             BaseModel<T> tBaseModel = Convert.fromJson(result, type);
             response.close();
             int code = tBaseModel.getCode();
+            Log.d("Md5JsonCallBack", "mTokenFaile:");
+
             //这里的0是以下意思
             //一般来说服务器会和客户端约定一个数表示成功，其余的表示失败，这里根据实际情况修改
             if (code == 200) {
+
                 //noinspection unchecked
                 return (T)tBaseModel;
             } else if (code == 104) {
@@ -57,7 +72,23 @@ public abstract class Md5JsonCallBack<T> extends JsonMD5CallBack<T> {
             } else if (code == 300) {
                 //比如：其他乱七八糟的等，在此实现相应的逻辑，弹出对话或者跳转到其他页面等,该抛出错误，会在onError中回调。
                 throw new IllegalStateException("其他乱七八糟的等");
-            } else {
+            }
+            else if (code == 401) {
+                //比如：其他乱七八糟的等，在此实现相应的逻辑，弹出对话或者跳转到其他页面等,该抛出错误，会在onError中回调。
+             //  throw new IllegalStateException("其他乱七八糟的等");
+                synchronized (JinrApp.instance()){//同步一个单利对象 让几个线程互斥
+                    if(!(AppManager.getAppManager().currentActivity() instanceof NewLoginActivity)){
+
+                        mTokenFaile.tokenFaile();
+
+                    }
+
+                }
+
+            }
+
+
+            else {
                 throw new IllegalStateException("错误代码：" + code + "，错误信息：" + tBaseModel.getMsg());
             }
         } else {
@@ -65,6 +96,8 @@ public abstract class Md5JsonCallBack<T> extends JsonMD5CallBack<T> {
             throw new IllegalStateException("基类错误无法解析!");
         }
 
+
+        return null;
     }
 
 

@@ -1,5 +1,6 @@
 package com.jinr.core;
 
+import android.app.Activity;
 import android.app.Notification;
 import android.content.Context;
 import android.content.Intent;
@@ -14,9 +15,11 @@ import android.util.Log;
 import android.widget.Toast;
 
 import com.android.jnet.Jnetapp;
+import com.jinr.core.config.AppManager;
 import com.jinr.core.config.EventBusKey;
 import com.jinr.core.utils.AuthImageDownloader;
 import com.jinr.core.utils.GetImsi;
+import com.jinr.core.utils.MyLog;
 import com.jinr.core.utils.PreferencesUtils;
 import com.lzy.okgo.OkGo;
 import com.nostra13.universalimageloader.cache.memory.impl.WeakMemoryCache;
@@ -42,6 +45,7 @@ import java.util.Map;
 import model.UmMessageItem;
 
 public class JinrApp extends Jnetapp {
+    public static final String TAG = "JinrApp";
     private static JinrApp instance;
     public int state_bankBind;
     public int state_tradePassword;
@@ -104,7 +108,9 @@ public class JinrApp extends Jnetapp {
             @Override
             public void dealWithCustomMessage(final Context context, final UMessage msg) {
 
-                Log.d("JinrApp", "dealWithCustomMessage:");
+              //  Log.d("JinrApp", "dealWithCustomMessage:msg");
+
+                MyLog.e(TAG,"JinrApp.dealWithCustomMessage：msg="+msg.toString());
 
                 new Handler().post(new Runnable() {
 
@@ -125,7 +131,20 @@ public class JinrApp extends Jnetapp {
 
                 //弹出被t下线对话框
 
-                EventBus.getDefault().post(null,EventBusKey.T_LINE);
+
+                Activity activity= AppManager.getAppManager().currentActivity();
+                if( activity instanceof MainActivity){//当前在主界面
+
+                    EventBus.getDefault().post("", EventBusKey.T_LINE);
+
+                }else{
+
+                    EventBus.getDefault().postSticky("", EventBusKey.T_LINE);
+                    activity.startActivity(new Intent(activity,MainActivity.class));
+
+                }
+
+
 
 
 

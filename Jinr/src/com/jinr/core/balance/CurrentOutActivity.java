@@ -27,7 +27,6 @@ import com.jinr.core.ui.NewCustomDialogNoTitleFinish;
 import com.jinr.core.utils.CommonUtil;
 import com.jinr.core.utils.PreferencesUtils;
 
-import org.simple.eventbus.EventBus;
 import org.simple.eventbus.Subscriber;
 
 public class CurrentOutActivity extends BaseActivity implements OnClickListener {

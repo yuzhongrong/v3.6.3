@@ -20,10 +20,10 @@ public class UrlConfig {
     public static final String KEY = "12345678"; // DES ECB加密模式下，密钥只能是8位
     public static String SMS_IDENTIFY = "561"; // 短信新版本区分
     // -----------------------------M站url----------------------------------------//
-    public static final String IP_M = "https://jrdev32.jingyubank.com/Appm/Edition3/";// 开发机
+   public static final String IP_M = "https://jrdev32.jingyubank.com/Appm/Edition3/";// 开发机
 //    public static final String IP_M = "https://apinpre.jinr.com/Appm/Edition3/";//预发布
 //	public static final String IP_M = "https://apipre.jinr.com/Appm/Edition3/";//公测版
- //   public static final String IP_M = "https://api.jinr.com/Appm/Edition3/";//正式机
+//    public static final String IP_M = "https://api.jinr.com/Appm/Edition3/";//正式机
 
     // -----------------------------日增息url----------------`------------------------//
     public static final String IP_R = "https://jrdev32.jingyubank.com/Appm/Dailygain/";// 开发机
@@ -35,13 +35,13 @@ public class UrlConfig {
     public static final String IP_V = "https://jrdev32.jingyubank.com/Appm/V3_6_1/";// 开发机
 //    public static final String IP_V = "https://apinpre.jinr.com/Appm/V3_6_1/";//预发布
 //    public static final String IP_V = "https://apipre.jinr.com/Appm/V3_6_1/";//公测版
-  //  public static final String IP_V = "https://api.jinr.com/Appm/V3_6_1/";//正式机
+//    public static final String IP_V = "https://api.jinr.com/Appm/V3_6_1/";//正式机
 
     // -----------------------------新url------------------------------
     public static final String BASE_IP_DES = "https://jrdev32.jingyubank.com/Api/V3_6_1/";//开发机
 //    public static final String BASE_IP_DES = "https://apinpre.jinr.com/Api/V3_6_1/";//预发布
 //	public static final String BASE_IP_DES = "https://apipre.jinr.com/api/V3_6_1/";//公测版
- //   public static final String BASE_IP_DES = "https://api.jinr.com/api/V3_6_1/";//正式
+  //  public static final String BASE_IP_DES = "https://api.jinr.com/api/V3_6_1/";//正式
 
     public static final String PRODUCT_DETAIL = "homeAssetDetail?uid=";//产品详情
     public static final String PRODUCT_PROTOCOL = "assertProtocol?id=";//产品协议
@@ -158,8 +158,8 @@ public class UrlConfig {
     /*new url*/
 
     public static final String BASE = "http://appdev.jinr.com/";//base
-    public  static final String key="sdf6gfd";
-    public  static final String appid="1000000001";
+    public  static final String key="androidSecretKhYnM9";
+    public  static final String appid="android";
     public   static final String LOGIN="user.login";
     public   static final String LOGIN_CHECKN="user.mobilephone.check";
 

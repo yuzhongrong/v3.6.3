@@ -42,7 +42,6 @@ import com.loopj.android.http.RequestParams;
 
 import org.apache.http.Header;
 import org.json.JSONObject;
-import org.simple.eventbus.EventBus;
 
 import model.ProductCommonModel;
 

@@ -25,9 +25,11 @@ public abstract class JsonMD5CallBack<T> extends AbsCallback<T> {
 
 
     private JSONObject baseJson;
+
     public JsonMD5CallBack(JSONObject baseJson){
 
         this.baseJson=baseJson;
+
 
 
     }
@@ -42,6 +44,7 @@ public abstract class JsonMD5CallBack<T> extends AbsCallback<T> {
         // 使用的设备信息
         // 可以随意添加,也可以什么都不传
         // 还可以在这里对所有的参数进行加密，均在这里实现
+
 
         String imei = GetImsi.getImeiAll(Jnetapp.getInstance());
         String md5Str="";
@@ -87,9 +90,6 @@ public abstract class JsonMD5CallBack<T> extends AbsCallback<T> {
 
 
     public abstract T subConvertSuccess(Response response,String cipher);//由依賴項目子類實現 可以參考forexample
-
-
-
 
 
 

@@ -1,50 +1,45 @@
 package com.jinr.core.base;
 
 import android.content.Context;
-import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.KeyEvent;
 import android.view.MotionEvent;
-import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 
 import com.jinr.core.MainActivity;
-import com.jinr.core.R;
-import com.jinr.core.config.AppManager;
-import com.jinr.core.config.EventBusKey;
-import com.jinr.core.ui.NewCustomDialog;
 import com.jinr.core.utils.LoadingDialog;
-import com.jinr.core.utils.PreferencesUtils;
+import com.lzy.okgo.OkGo;
 import com.umeng.analytics.MobclickAgent;
-import com.umeng.message.ALIAS_TYPE;
 import com.umeng.message.PushAgent;
-import com.umeng.message.UTrack;
 
 import org.simple.eventbus.EventBus;
-import org.simple.eventbus.Subscriber;
+
+import static com.jinr.core.config.AppManager.getAppManager;
 
 /**
  * Base2Activity.java description:activity 基类 主要是对activity的管理
  *
  * @author Andrew Lee version 2014-10-16 上午8:41:34
  */
-public abstract class BaseActivity extends AppCompatActivity {
+public abstract class BaseActivity extends AppCompatActivity{
     public static final String TAG = "BaseActivity";
 
     private InputMethodManager manager;
 
     private LoadingDialog waittingDialog;
 
-    private NewCustomDialog dialog;//被t 弹出对话框
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        AppManager.getAppManager().addActivity(this);
+        getAppManager().addActivity(this);
         PushAgent.getInstance(this).onAppStart();
         manager = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
         EventBus.getDefault().register(this);
+
+
 
 
     }
@@ -54,8 +49,11 @@ public abstract class BaseActivity extends AppCompatActivity {
         super.onDestroy();
         EventBus.getDefault().unregister(this);
 
+
         dismissWaittingDialog();
-        AppManager.getAppManager().finishActivity(this);
+        getAppManager().finishActivity(this);
+        OkGo.getInstance().cancelTag(this);
+
     }
 
     @Override
@@ -122,40 +120,6 @@ public abstract class BaseActivity extends AppCompatActivity {
         return true;
     }
 
-
-
-@Subscriber(tag = EventBusKey.T_LINE)
-    private void doT() {
-        dialog = new NewCustomDialog(BaseActivity.this, getString(R.string.warning), getString(R.string.relogin));
-        dialog.btn_custom_dialog_sure.setText(getString(R.string.dialog_call_bt_ok));
-        dialog.btn_custom_dialog_cancel.setText(getString(R.string.dialog_call_bt_cancel));
-        dialog.btn_custom_dialog_cancel.setOnClickListener(new View.OnClickListener() {
-
-            @Override
-            public void onClick(View arg0) {
-                dialog.dismiss();
-            }
-        });
-        dialog.btn_custom_dialog_sure.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                dialog.dismiss();
-                PushAgent mPushAgent = PushAgent.getInstance(BaseActivity.this);
-                mPushAgent.removeAlias(PreferencesUtils.getValueFromSPMap(BaseActivity.this, PreferencesUtils.Keys.UID),
-                        ALIAS_TYPE.SINA_WEIBO, new UTrack.ICallBack() {
-                            @Override
-                            public void onMessage(boolean isSuccess, String message) {
-                            }
-                        });
-                PreferencesUtils.putLastTelToSPMap(PreferencesUtils.Keys.TEL, PreferencesUtils.getValueFromSPMap(BaseActivity.this, PreferencesUtils.Keys.TEL));
-                PreferencesUtils.clearSPMap(MainActivity.instance);
-                AppManager.getAppManager().finishAllActivity();
-                startActivity(new Intent(BaseActivity.this, MainActivity.class));
-            }
-        });
-
-        dialog.show();
-    }
 
 
     /**

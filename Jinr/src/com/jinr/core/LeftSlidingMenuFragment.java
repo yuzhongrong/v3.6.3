@@ -6,7 +6,6 @@ package com.jinr.core;
 import android.content.Intent;
 import android.graphics.Paint;
 import android.os.Bundle;
-import android.support.v4.app.Fragment;
 import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -18,6 +17,7 @@ import android.widget.TextView;
 import com.baidu.location.BDLocation;
 import com.jinr.core.bankCard.AddBankActivity;
 import com.jinr.core.bankCard.SecondBandCardActivity;
+import com.jinr.core.base.BaseFragment;
 import com.jinr.core.config.Check;
 import com.jinr.core.config.EventBusKey;
 import com.jinr.core.config.UrlConfig;
@@ -29,11 +29,13 @@ import com.jinr.core.regist.NewLoginActivity;
 import com.jinr.core.regular.MyAssetsActivity;
 import com.jinr.core.security.SettingActivity;
 import com.jinr.core.utils.BaiduUtils;
+import com.jinr.core.utils.MyLog;
 import com.jinr.core.utils.PreferencesUtils;
 import com.jinr.core.utils.TextAdjustUtil;
 import com.jinr.core.utils.TimeUtil;
 import com.jinr.core.utils.UmUtils;
 
+import org.simple.eventbus.EventBus;
 import org.simple.eventbus.Subscriber;
 
 /**
@@ -41,7 +43,7 @@ import org.simple.eventbus.Subscriber;
  *
  * @author CQJ
  */
-public class LeftSlidingMenuFragment extends Fragment implements OnClickListener {
+public class LeftSlidingMenuFragment extends BaseFragment implements OnClickListener {
     public static final String TAG = "LeftSlidingMenuFragment";
     private View toolBtnSec;// 安全中心
     private View toolBtnMore;// 更多
@@ -65,6 +67,26 @@ public class LeftSlidingMenuFragment extends Fragment implements OnClickListener
     }
 
     @Override
+    protected void initData() {
+
+    }
+
+    @Override
+    protected void findViewById(View view) {
+
+    }
+
+    @Override
+    protected void initUI() {
+
+    }
+
+    @Override
+    protected void setListener() {
+
+    }
+
+    @Override
     public void onResume() {
         super.onResume();
         setTitle();
@@ -73,7 +95,7 @@ public class LeftSlidingMenuFragment extends Fragment implements OnClickListener
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.left_menu, container, false);
-        //EventBus.getDefault().register(this);
+        EventBus.getDefault().register(this);
 
         toolBtnSec = view.findViewById(R.id.jinrBtnSec);
         toolBtnSec.setOnClickListener(this);
@@ -230,6 +252,8 @@ public class LeftSlidingMenuFragment extends Fragment implements OnClickListener
 
     @Subscriber(tag = EventBusKey.BING_BANK_CARD)
     public void bingBankCard(int data) {
+
+        MyLog.e(TAG,"LeftSlidingMenuFragment.bingBankCard：");
         setTitle();
     }
 

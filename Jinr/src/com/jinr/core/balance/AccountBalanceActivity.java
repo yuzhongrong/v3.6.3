@@ -17,7 +17,6 @@ import com.jinr.core.base.BaseActivity;
 import com.jinr.core.config.EventBusKey;
 import com.jinr.core.config.UrlConfig;
 import com.jinr.core.more.CommonWebActivity;
-import com.jinr.core.trade.purchase.CurrentPurchaseFirstActivity;
 import com.jinr.core.trade.record.NewTradeRecordActivity;
 import com.jinr.core.ui.NewCustomDialogNoTitleFinish;
 import com.jinr.core.utils.CommonUtil;
@@ -31,7 +30,6 @@ import com.loopj.android.http.RequestParams;
 
 import org.apache.http.Header;
 import org.json.JSONObject;
-import org.simple.eventbus.EventBus;
 import org.simple.eventbus.Subscriber;
 
 /**
