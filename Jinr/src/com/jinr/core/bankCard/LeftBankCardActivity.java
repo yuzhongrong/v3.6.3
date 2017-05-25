@@ -22,7 +22,7 @@ import com.jinr.core.R;
 import com.jinr.core.base.BaseActivity;
 import com.jinr.core.config.Check;
 import com.jinr.core.config.UrlConfig;
-import com.jinr.core.regist.NewLoginActivity;
+import com.jinr.new_mvp.ui.activity.NewLoginActivity;
 import com.jinr.core.security.MyBankCardActivity;
 import com.jinr.core.security.lockpanttern.view.LockPatternUtils;
 import com.jinr.core.trade.record.NewTradeRecordActivity;

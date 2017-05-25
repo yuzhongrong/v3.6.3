@@ -20,7 +20,7 @@ import com.jinr.core.R;
 import com.jinr.core.base.BaseActivity;
 import com.jinr.core.config.Check;
 import com.jinr.core.gift.BonusCenterActivity;
-import com.jinr.core.regist.NewLoginActivity;
+import com.jinr.new_mvp.ui.activity.NewLoginActivity;
 import com.jinr.core.regular.RegularAssetsActivity;
 import com.jinr.core.utils.CommonUtil;
 import com.jinr.core.utils.DensityUtil;

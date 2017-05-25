@@ -29,7 +29,7 @@ import com.jinr.core.config.UrlConfig;
 import com.jinr.core.gift.BonusCenterActivity;
 import com.jinr.core.my_change.NewProfitAmountActivity;
 import com.jinr.core.regist.MyRotate3dAnimation;
-import com.jinr.core.regist.NewLoginActivity;
+import com.jinr.new_mvp.ui.activity.NewLoginActivity;
 import com.jinr.core.trade.getCash.AssetsActivity;
 import com.jinr.core.trade.record.NewTradeRecordActivity;
 import com.jinr.core.utils.CommonUtil;

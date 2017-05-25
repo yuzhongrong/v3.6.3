@@ -30,7 +30,7 @@ import com.jinr.core.config.EventBusKey;
 import com.jinr.core.config.UrlConfig;
 import com.jinr.core.dayup.ActBannerActivity;
 import com.jinr.core.news.ActDetailActivity;
-import com.jinr.core.regist.NewLoginActivity;
+import com.jinr.new_mvp.ui.activity.NewLoginActivity;
 import com.jinr.core.regist.NewRegisterActivity;
 import com.jinr.core.regular.MyAssetsActivity;
 import com.jinr.core.security.lockpanttern.pattern.UnlockGesturePasswordActivity;

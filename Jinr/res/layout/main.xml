@@ -205,7 +205,7 @@
 
     <fragment
         android:id="@+id/id_left_menu"
-        android:name="com.jinr.core.LeftSlidingMenuFragment"
+        android:name="com.jinr.new_mvp.ui.fragment.LeftSlidingMenuFragment"
         android:layout_width="@dimen/left_menu"
         android:layout_height="match_parent"
         android:layout_gravity="left"

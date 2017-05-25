@@ -16,7 +16,7 @@ import java.io.ObjectOutputStream;
 import java.util.HashSet;
 import java.util.Iterator;
 
-public class New_PreferencesUtils {
+public class New_PreferencesUtils{
 
     private static SharedPreferences preferences;
 
@@ -108,6 +108,9 @@ public class New_PreferencesUtils {
         public static final String IS_REINTO_APP = "is_reinto_app";// 解锁判断是否是当天
         public static final String KEFU_PHONE = "kefu_phone";
 
+
+
+
         /**
          * 用户名
          */
@@ -131,6 +134,9 @@ public class New_PreferencesUtils {
 
         public static final String DEVICE_TOKEN ="device_token";
     }
+
+
+
 
 
 
@@ -206,11 +212,11 @@ public class New_PreferencesUtils {
      * @param key     储存对象的key
      * @return object 返回根据key得到的对象
      */
-    public static Object get(String key) {
+    public static Object getObj(String key) {
         SharedPreferences sharedPreferences =JinrApp.getInstance().getSharedPreferences(key, Activity.MODE_PRIVATE);
         String string = sharedPreferences.getString(key, null);
         if (string != null) {
-            Object object = String2Object(string);
+            Object object =  String2Object(string);
             return object;
         } else {
             return null;
@@ -222,7 +228,7 @@ public class New_PreferencesUtils {
 
     /**
      * 存储布尔值
-     *@param mContext
+     *@param
      * @param key
      * @param value
      */

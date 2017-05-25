@@ -6,7 +6,7 @@ import com.android.jnet.utils.Convert;
 import com.jinr.core.JinrApp;
 import com.jinr.core.callback.TokenFaile;
 import com.jinr.core.config.AppManager;
-import com.jinr.core.regist.NewLoginActivity;
+import com.jinr.new_mvp.ui.activity.NewLoginActivity;
 
 import org.json.JSONObject;
 

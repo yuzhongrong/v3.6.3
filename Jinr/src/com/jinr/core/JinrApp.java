@@ -61,7 +61,6 @@ public class JinrApp extends Jnetapp {
     @Override
     public void onCreate() {
         super.onCreate();
-        EventBus.getDefault().register(this);
         instance = this;
         state_bankBind = -1;
         state_tradePassword = -1;

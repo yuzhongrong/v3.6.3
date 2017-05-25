@@ -32,7 +32,7 @@ import com.jinr.core.R;
 import com.jinr.core.base.BaseActivity;
 import com.jinr.core.config.MessageType;
 import com.jinr.core.config.UrlConfig;
-import com.jinr.core.regist.NewLoginActivity;
+import com.jinr.new_mvp.ui.activity.NewLoginActivity;
 import com.jinr.core.utils.AutoSmsUtil;
 import com.jinr.core.utils.CommonUtil;
 import com.jinr.core.utils.MyDES;

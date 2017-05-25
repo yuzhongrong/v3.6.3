@@ -29,7 +29,7 @@ import com.jinr.core.config.UrlConfig;
 import com.jinr.core.gift.BonusCenterActivity;
 import com.jinr.core.more.CjWentiActivity;
 import com.jinr.core.my_change.ProfitAmountActivity;
-import com.jinr.core.regist.NewLoginActivity;
+import com.jinr.new_mvp.ui.activity.NewLoginActivity;
 import com.jinr.core.trade.purchase.CurrentPurchaseFirstActivity;
 import com.jinr.core.trade.record.TradeRecordActivity;
 import com.jinr.core.utils.CommonUtil;

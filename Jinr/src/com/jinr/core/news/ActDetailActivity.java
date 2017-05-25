@@ -31,7 +31,7 @@ import com.jinr.core.config.Check;
 import com.jinr.core.config.EventBusKey;
 import com.jinr.core.config.UrlConfig;
 import com.jinr.core.dayup.CommonProjectDetailActivity;
-import com.jinr.core.regist.NewLoginActivity;
+import com.jinr.new_mvp.ui.activity.NewLoginActivity;
 import com.jinr.core.trade.purchase.CurrentPurchaseFirstActivity;
 import com.jinr.core.utils.CommonUtil;
 import com.jinr.core.utils.DensityUtil;

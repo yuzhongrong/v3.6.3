@@ -55,7 +55,9 @@
 
             <include
                 android:id="@+id/jinrBtnBankCard"
-                layout="@layout/tool_card_bank"/>
+                layout="@layout/tool_card_bank"
+                android:visibility="gone"
+                />
 
             <include
                 android:id="@+id/jinrBtnAsset"

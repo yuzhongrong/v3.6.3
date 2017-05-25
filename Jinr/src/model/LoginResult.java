@@ -21,8 +21,25 @@ public class LoginResult implements Serializable{
     private String token;
     private String login_time;
     private String name;
-    private String tel;
+    private String mobilephone;
+    private String uid;
 
+
+    public String getToken() {
+        return token;
+    }
+
+    public void setToken(String token) {
+        this.token = token;
+    }
+
+    public String getLogin_time() {
+        return login_time;
+    }
+
+    public void setLogin_time(String login_time) {
+        this.login_time = login_time;
+    }
 
     public String getName() {
         return name;
@@ -32,25 +49,19 @@ public class LoginResult implements Serializable{
         this.name = name;
     }
 
-    public String getTel() {
-        return tel;
+    public String getMobilephone() {
+        return mobilephone;
     }
 
-    public void setTel(String tel) {
-        this.tel = tel;
+    public void setMobilephone(String mobilephone) {
+        this.mobilephone = mobilephone;
     }
 
-    public String getToken() {
-        return token;
+    public String getUid() {
+        return uid;
     }
 
-
-    public String getLogin_time() {
-        return login_time;
+    public void setUid(String uid) {
+        this.uid = uid;
     }
-
-
-
-
-
 }

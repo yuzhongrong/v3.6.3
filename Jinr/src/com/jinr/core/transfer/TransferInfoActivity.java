@@ -43,7 +43,7 @@ import com.jinr.core.config.Check;
 import com.jinr.core.config.EventBusKey;
 import com.jinr.core.config.UrlConfig;
 import com.jinr.core.more.CommonWebActivity;
-import com.jinr.core.regist.NewLoginActivity;
+import com.jinr.new_mvp.ui.activity.NewLoginActivity;
 import com.jinr.core.security.tradepwd.FindTradePwd;
 import com.jinr.core.security.tradepwd.SetTradePwdActivity;
 import com.jinr.core.trade.PayListAdapter;
