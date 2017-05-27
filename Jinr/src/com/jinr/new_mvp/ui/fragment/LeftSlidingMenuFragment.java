@@ -28,7 +28,7 @@ import com.jinr.core.more.CommonWebActivity;
 import com.jinr.core.more.MoreActivity;
 import com.jinr.core.news.NewsCenterActivity;
 import com.jinr.core.regular.MyAssetsActivity;
-import com.jinr.core.security.SettingActivity;
+import com.jinr.new_mvp.ui.activity.SettingActivity;
 import com.jinr.core.utils.BaiduUtils;
 import com.jinr.core.utils.MyLog;
 import com.jinr.core.utils.PreferencesUtils;

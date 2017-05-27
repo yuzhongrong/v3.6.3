@@ -69,10 +69,10 @@ public abstract class Md5JsonCallBack<T> extends JsonMD5CallBack<T> {
                 //比如：其他乱七八糟的等，在此实现相应的逻辑，弹出对话或者跳转到其他页面等,该抛出错误，会在onError中回调。
                 throw new IllegalStateException("其他乱七八糟的等");
             }
-            else if (code == 401) {
+            else if (code == 404) {
                 //比如：其他乱七八糟的等，在此实现相应的逻辑，弹出对话或者跳转到其他页面等,该抛出错误，会在onError中回调。
              //  throw new IllegalStateException("其他乱七八糟的等");
-
+                throw new IllegalStateException("服务器开小差");
 
             }
 
@@ -86,7 +86,7 @@ public abstract class Md5JsonCallBack<T> extends JsonMD5CallBack<T> {
         }
 
 
-        return null;
+
     }
 
 

@@ -221,6 +221,13 @@
             android:name=".security.SettingActivity"
             android:label="@string/app_name"
             android:screenOrientation="portrait"/>
+
+        <activity
+            android:name="com.jinr.new_mvp.ui.activity.SettingActivity"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait"/>
+
+
         <activity
             android:name=".security.address.EditAddressActivity"
             android:label="@string/app_name"

@@ -38,6 +38,7 @@ import com.jinr.core.utils.PreferencesUtils;
 import com.jinr.core.utils.ToastUtil;
 import com.jinr.new_mvp.network.DialogMd5JsonCallBack;
 import com.jinr.new_mvp.network.Md5JsonCallBack;
+import com.jinr.new_mvp.params.UserMethod;
 import com.loopj.android.http.AsyncHttpResponseHandler;
 import com.loopj.android.http.RequestParams;
 import com.lzy.okgo.OkGo;
@@ -223,7 +224,7 @@ public class NewLoginActivity extends BaseActivity implements View.OnClickListen
 
         JSONObject jsonObject = new JSONObject();
         try {
-            jsonObject.put("method",UrlConfig.LOGIN_CHECKN);
+            jsonObject.put("method", UserMethod.LOGIN_CHECKN);
             jsonObject.put("mobilephone",mobilephone);
 
         } catch (JSONException e) {
@@ -280,7 +281,7 @@ public class NewLoginActivity extends BaseActivity implements View.OnClickListen
 
             String tel = et_phoneNum.toString();
             String password = et_password.getText().toString().trim();
-            params.put("method",UrlConfig.LOGIN);
+            params.put("method",UserMethod.LOGIN);
             params.put("mobilephone",tel);
             params.put("password",password);
             params.put("login_type","pwd");

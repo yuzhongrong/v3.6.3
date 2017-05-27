@@ -7,7 +7,7 @@
     android:layout_height="match_parent"
     android:background="@color/base_style_bg"
     android:orientation="vertical"
-    tools:context="com.jinr.core.regist.NewLoginActivity">
+    tools:context="com.jinr.new_mvp.ui.activity.NewLoginActivity">
 
     <RelativeLayout
         android:layout_width="match_parent"

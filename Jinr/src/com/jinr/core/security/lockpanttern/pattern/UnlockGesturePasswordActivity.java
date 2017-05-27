@@ -245,7 +245,7 @@ public class UnlockGesturePasswordActivity extends BaseActivity implements OnCli
                             PreferencesUtils.clearSPMap(UnlockGesturePasswordActivity.this);
                             AppManager.getAppManager().finishAllActivity();
                             Intent intent_LoginActivity = new Intent();
-                            intent_LoginActivity.setComponent(new ComponentName("com.jinr.core", "com.jinr.core.regist.NewLoginActivity"));
+                            intent_LoginActivity.setComponent(new ComponentName("com.jinr.core", "com.jinr.new_mvp.ui.activity.NewLoginActivity"));
                             intent_LoginActivity.setAction(Intent.ACTION_VIEW);
                             intent_LoginActivity.putExtra("unlock_forget", "unlock_forget");
                             Intent intent_MainActivity = new Intent();
@@ -277,7 +277,7 @@ public class UnlockGesturePasswordActivity extends BaseActivity implements OnCli
     public void onClick(View v) {
         if (v.getId() == R.id.gesturepwd_unlock_forget) {
             Intent intent_LoginActivity = new Intent();
-            intent_LoginActivity.setComponent(new ComponentName("com.jinr.core", "com.jinr.core.regist.NewLoginActivity"));
+            intent_LoginActivity.setComponent(new ComponentName("com.jinr.core", "com.jinr.new_mvp.ui.activity.NewLoginActivity"));
             intent_LoginActivity.setAction(Intent.ACTION_VIEW);
             intent_LoginActivity.putExtra("unlock_forget", "unlock_forget");
             intent_LoginActivity.putExtra("flag", 1);

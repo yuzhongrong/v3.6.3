@@ -8,6 +8,7 @@ import com.jinr.core.utils.PreferencesUtils;
 import com.jinr.core.utils.ToastUtil;
 import com.jinr.new_mvp.network.DialogMd5JsonCallBack;
 import com.jinr.new_mvp.network.Md5JsonCallBack;
+import com.jinr.new_mvp.params.UserMethod;
 import com.jinr.new_mvp.ui.activity.NewLoginActivity;
 import com.lzy.okgo.OkGo;
 
@@ -23,7 +24,7 @@ import okhttp3.Call;
 import okhttp3.Response;
 
 /**
- * Created by yuzhongrong on 2017/5/25.
+ * Created by: yuzhongrong on 2017/5/25.
  */
 
 public class LoginPresenter extends XPresent<NewLoginActivity> {
@@ -47,7 +48,7 @@ public class LoginPresenter extends XPresent<NewLoginActivity> {
 
         JSONObject jsonObject = new JSONObject();
         try {
-            jsonObject.put("method", UrlConfig.LOGIN_CHECKN);
+            jsonObject.put("method", UserMethod.LOGIN_CHECKN);
             jsonObject.put("mobilephone",mobilephone);
 
         } catch (JSONException e) {
@@ -95,7 +96,7 @@ public class LoginPresenter extends XPresent<NewLoginActivity> {
         JSONObject params=new JSONObject();
         try {
 
-            params.put("method",UrlConfig.LOGIN);
+            params.put("method", UserMethod.LOGIN);
             params.put("mobilephone",tel);
             params.put("password",password);
             params.put("login_type","pwd");

@@ -160,8 +160,7 @@ public class UrlConfig {
     public static final String BASE = "http://appdev.jinr.com/";//base
     public  static final String key="androidSecretKhYnM9";
     public  static final String appid="android";
-    public   static final String LOGIN="user.login";
-    public   static final String LOGIN_CHECKN="user.mobilephone.check";
+
 
 
 

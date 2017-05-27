@@ -19,7 +19,7 @@ import cn.droidlover.xdroidmvp.mvp.XActivity;
 import static com.jinr.core.config.AppManager.getAppManager;
 
 /**
- * Created by yuzhongrong on 2017/5/25.
+ * Created by: yuzhongrong on 2017/5/25.
  */
 
 public abstract class BaseActivity<P extends IPresent> extends XActivity<P> {
