@@ -1,10 +1,11 @@
 *.iml
 build
-.gradle
-.idea
+
+.idea/
 /PushSDK/
 /gradlew
 /settings.gradle
 /gradlew.bat
 /gradle/
 /commonlibrary/proguard-rules.pro
+/.gradle/
