@@ -36,12 +36,107 @@
         </RelativeLayout>
     </RelativeLayout>
 
+    <RelativeLayout
+        android:id="@+id/rl_success"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/rl_one"
+        android:visibility="gone">
+
+        <ImageView
+            android:id="@+id/image_goldlogo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="80dp"
+            android:src="@drawable/goldlogo"/>
+
+        <TextView
+            android:id="@+id/tv_success"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/image_goldlogo"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="40dp"
+            android:text="恭喜你注册成功！"
+            android:textColor="@color/blueness"
+            android:textSize="18dp"/>
+
+        <LinearLayout
+            android:id="@+id/ll_success"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_success"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="5dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="赶紧去领"
+                android:textColor="#999999"
+                android:textSize="18dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="5000"
+                android:textColor="@color/blueness"
+                android:textSize="18dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="元红包投资赚收益吧~"
+                android:textColor="#999999"
+                android:textSize="18dp"/>
+        </LinearLayout>
+
+        <RelativeLayout
+            android:id="@+id/rl_ok"
+            android:layout_width="180dp"
+            android:layout_height="50dp"
+            android:layout_below="@+id/ll_success"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="50dp"
+            android:background="@drawable/shape_register_success">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_centerHorizontal="true"
+                android:gravity="center">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="好的"
+                    android:textColor="@color/blueness"
+                    android:textSize="18dp"/>
+
+                <TextView
+                    android:id="@+id/tv_time"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:text="(3s)"
+                    android:textColor="@color/blueness"
+                    android:textSize="14dp"/>
+
+            </LinearLayout>
+        </RelativeLayout>
+
+    </RelativeLayout>
+
     <com.jinr.core.regist.RegisterViewGroup
         android:id="@+id/vg_register"
         android:layout_width="match_parent"
         android:layout_height="210dp"
+        android:layout_marginTop="20dp"
         android:layout_below="@+id/rl_one"
-        android:layout_marginTop="20dp">
+        android:layout_toRightOf="@+id/rl_success"
+        android:layout_toEndOf="@+id/rl_success">
 
         <RelativeLayout
             android:id="@+id/rl_first"
@@ -81,19 +176,6 @@
                     android:background="#0c72e3"/>
             </RelativeLayout>
 
-            <Button
-                android:id="@+id/bt_firstNext"
-                android:layout_width="match_parent"
-                android:layout_height="45dp"
-                android:layout_below="@+id/rl_firstTop"
-                android:layout_marginLeft="20dp"
-                android:layout_marginRight="20dp"
-                android:layout_marginTop="40dp"
-                android:background="@drawable/btn_blue_light_bg"
-                android:text="下一步"
-                android:textColor="@color/white"
-                android:textSize="18dp"/>
-
             <TextView
                 android:id="@+id/tv_one"
                 android:layout_width="wrap_content"
@@ -115,6 +197,19 @@
                 android:text="《鲸鱼金融用户服务协议》"
                 android:textColor="#0c71e3"
                 android:textSize="12dp"/>
+
+            <Button
+                android:id="@+id/bt_firstNext"
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:background="@drawable/btn_blue_light_bg"
+                android:text="下一步"
+                android:textColor="@color/white"
+                android:textSize="18dp"
+                android:layout_alignParentBottom="true"
+                android:layout_alignLeft="@+id/tv_one"
+                android:layout_alignStart="@+id/tv_one"
+                android:layout_marginBottom="35dp" />
 
         </RelativeLayout>
 
@@ -289,98 +384,5 @@
         </RelativeLayout>
 
     </com.jinr.core.regist.RegisterViewGroup>
-
-    <RelativeLayout
-        android:id="@+id/rl_success"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_below="@+id/rl_one"
-        android:visibility="gone">
-
-        <ImageView
-            android:id="@+id/image_goldlogo"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="80dp"
-            android:src="@drawable/goldlogo"/>
-
-        <TextView
-            android:id="@+id/tv_success"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/image_goldlogo"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="40dp"
-            android:text="恭喜你注册成功！"
-            android:textColor="@color/blueness"
-            android:textSize="18dp"/>
-
-        <LinearLayout
-            android:id="@+id/ll_success"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/tv_success"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="5dp"
-            android:orientation="horizontal">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="赶紧去领"
-                android:textColor="#999999"
-                android:textSize="18dp"/>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="5000"
-                android:textColor="@color/blueness"
-                android:textSize="18dp"/>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="元红包投资赚收益吧~"
-                android:textColor="#999999"
-                android:textSize="18dp"/>
-        </LinearLayout>
-
-        <RelativeLayout
-            android:id="@+id/rl_ok"
-            android:layout_width="180dp"
-            android:layout_height="50dp"
-            android:layout_below="@+id/ll_success"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="50dp"
-            android:background="@drawable/shape_register_success">
-
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_centerHorizontal="true"
-                android:gravity="center">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="好的"
-                    android:textColor="@color/blueness"
-                    android:textSize="18dp"/>
-
-                <TextView
-                    android:id="@+id/tv_time"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="5dp"
-                    android:text="(3s)"
-                    android:textColor="@color/blueness"
-                    android:textSize="14dp"/>
-
-            </LinearLayout>
-        </RelativeLayout>
-
-    </RelativeLayout>
 
 </RelativeLayout>

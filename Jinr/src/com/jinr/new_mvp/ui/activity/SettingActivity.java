@@ -10,11 +10,13 @@ import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
+import com.jinr.core.JinrApp;
 import com.jinr.core.MainActivity;
 import com.jinr.core.R;
 import com.jinr.core.bankCard.AddBankActivity;
 import com.jinr.core.bankCard.LeftBankCardActivity;
 import com.jinr.core.bankCard.SecondBandCardActivity;
+import com.jinr.core.config.AppManager;
 import com.jinr.core.config.Check;
 import com.jinr.core.security.SecurityCenterActivity;
 import com.jinr.core.security.address.AddressListActivity;
@@ -178,12 +180,18 @@ public class SettingActivity extends BaseActivity<SetingPresenter> implements On
                             }
                         });
 
-                try {
-                    getP().RequestLogout();
-                } catch (JSONException e) {
-                    e.printStackTrace();
-                }
+//                try {
+//                    getP().RequestLogout();
+//                } catch (JSONException e) {
+//                    e.printStackTrace();
+//                }
 
+
+                PreferencesUtils.putLastTelToSPMap(PreferencesUtils.Keys.TEL, PreferencesUtils.getValueFromSPMap(SettingActivity.this, PreferencesUtils.Keys.TEL));
+                PreferencesUtils.clearSPMap(JinrApp.getInstance().getApplicationContext());
+                AppManager.getAppManager().finishAllActivity();
+
+                startActivity(new Intent(SettingActivity.this, MainActivity.class));
 
             }
         });
