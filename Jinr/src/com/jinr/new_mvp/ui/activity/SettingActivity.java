@@ -24,6 +24,7 @@ import com.jinr.core.security.mobile.ChangeMobileStep1;
 import com.jinr.core.ui.NewCustomDialog;
 import com.jinr.core.utils.PreferencesUtils;
 import com.jinr.core.utils.TextAdjustUtil;
+import com.jinr.new_mvp.presenter.BaseView;
 import com.jinr.new_mvp.presenter.SetingPresenter;
 import com.nostra13.universalimageloader.core.ImageLoader;
 import com.umeng.message.ALIAS_TYPE;
@@ -33,7 +34,7 @@ import com.umeng.message.UTrack;
 import org.json.JSONException;
 
 
-public class SettingActivity extends BaseActivity<SetingPresenter> implements OnClickListener {
+public class SettingActivity extends BaseActivity<SetingPresenter> implements OnClickListener{
 
     private ImageView title_left_img; // title左边图片
     private TextView title_center_text; // title标题
@@ -216,4 +217,6 @@ public class SettingActivity extends BaseActivity<SetingPresenter> implements On
     public SetingPresenter newP() {
         return new SetingPresenter();
     }
+
+
 }

@@ -23,7 +23,7 @@ import com.jinr.core.config.EventBusKey;
 import com.jinr.core.config.UrlConfig;
 import com.jinr.core.regist.ForgetPasswordActivity;
 import com.jinr.core.regist.MyRegistEditText;
-import com.jinr.core.regist.NewRegisterActivity;
+import com.jinr.new_mvp.ui.activity.NewRegisterActivity;
 import com.jinr.core.regist.SafeLoginActivity;
 import com.jinr.core.regist.XEditText;
 import com.jinr.core.security.lockpanttern.pattern.CreateGesturePasswordActivity;

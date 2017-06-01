@@ -4,7 +4,6 @@ import android.util.Log;
 
 import com.android.jnet.utils.Convert;
 import com.jinr.core.JinrApp;
-import com.jinr.core.callback.TokenFaile;
 import com.jinr.core.config.AppManager;
 import com.jinr.new_mvp.ui.activity.NewLoginActivity;
 
@@ -23,11 +22,11 @@ import okhttp3.Response;
 public abstract class Md5JsonCallBack<T> extends JsonMD5CallBack<T> {
 
 
-    private TokenFaile mTokenFaile;
 
-    public Md5JsonCallBack(JSONObject baseJson,TokenFaile tokenFaile) {
+
+    public Md5JsonCallBack(JSONObject baseJson) {
         super(baseJson);
-        this.mTokenFaile=tokenFaile;
+
 
     }
 
@@ -75,15 +74,8 @@ public abstract class Md5JsonCallBack<T> extends JsonMD5CallBack<T> {
             }
             else if (code == 401) {
                 //比如：其他乱七八糟的等，在此实现相应的逻辑，弹出对话或者跳转到其他页面等,该抛出错误，会在onError中回调。
-             //  throw new IllegalStateException("其他乱七八糟的等");
-                synchronized (JinrApp.instance()){//同步一个单利对象 让几个线程互斥
-                    if(!(AppManager.getAppManager().currentActivity() instanceof NewLoginActivity)){
+               throw new IllegalStateException("其他乱七八糟的等");
 
-                        mTokenFaile.tokenFaile();
-
-                    }
-
-                }
 
             }
 
@@ -97,7 +89,7 @@ public abstract class Md5JsonCallBack<T> extends JsonMD5CallBack<T> {
         }
 
 
-        return null;
+
     }
 
 

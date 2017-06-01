@@ -35,14 +35,17 @@ public class LoginPresenter extends XPresent<NewLoginActivity> {
 
 
     public void login(String mobilephone,String password){
-        NewCheckMobile(mobilephone,password);
+        NewCheckMobile(mobilephone,password,true);
     }
 
 
-
-
-
-    private  void NewCheckMobile(final String mobilephone,final String password){
+    /**
+     *
+     * @param mobilephone 手机号码
+     * @param password：用来登录使用
+     * @param login 是否需要登录操作
+     */
+    private  void NewCheckMobile(final String mobilephone, final String password, final boolean login){
 
 
 
@@ -66,6 +69,7 @@ public class LoginPresenter extends XPresent<NewLoginActivity> {
                         ToastUtil.show(getV(),response.message());
                     }
 
+
                     @Override
                     public void onSuccess(SimpleResponse<Void> voidSimpleResponse, Call call, Response response) {
 
@@ -73,7 +77,8 @@ public class LoginPresenter extends XPresent<NewLoginActivity> {
                         if(voidSimpleResponse.getCode()==200){
 
                             //登录
-                            NewLogin(mobilephone,password);
+                            if(login) NewLogin(mobilephone,password);
+
 
 
                         }else{

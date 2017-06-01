@@ -422,8 +422,9 @@
         </activity>
         <activity android:name=".regist.ResetPasswordActivity">
         </activity>
-        <activity android:name=".regist.NewRegisterActivity">
-        </activity>
+        <activity android:name=".regist.NewRegisterActivity" />
+        <activity android:name="com.jinr.new_mvp.ui.activity.NewRegisterActivity" />
+
     </application>
 
 </manifest>

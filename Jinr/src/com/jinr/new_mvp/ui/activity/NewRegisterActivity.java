@@ -1,4 +1,4 @@
-package com.jinr.core.regist;
+package com.jinr.new_mvp.ui.activity;
 
 import android.animation.Animator;
 import android.animation.ObjectAnimator;
@@ -24,11 +24,20 @@ import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 import com.jinr.core.JinrApp;
 import com.jinr.core.R;
-import com.jinr.core.base.BaseActivity;
+import com.jinr.new_mvp.presenter.RegisterPresenter;
+import com.jinr.new_mvp.ui.activity.BaseActivity;
 import com.jinr.core.config.EventBusKey;
 import com.jinr.core.config.MessageType;
 import com.jinr.core.config.UrlConfig;
 import com.jinr.core.gift.share.MyGiftActivity;
+import com.jinr.core.regist.BezierCurve;
+import com.jinr.core.regist.EditTextChangeListener;
+import com.jinr.core.regist.MyAnimationListener;
+import com.jinr.core.regist.MyRegistEditText;
+import com.jinr.core.regist.NewLoginActivity;
+import com.jinr.core.regist.RegisterViewGroup;
+import com.jinr.core.regist.RoundProgressBar;
+import com.jinr.core.regist.XEditText;
 import com.jinr.core.regular.MyAssetsActivity;
 import com.jinr.core.ui.CannotReceiveTextDialog;
 import com.jinr.core.ui.NewCustomDialogNoTitle;
@@ -41,6 +50,7 @@ import com.jinr.core.utils.PreferencesUtils;
 import com.jinr.core.utils.ToastUtil;
 import com.loopj.android.http.AsyncHttpResponseHandler;
 import com.loopj.android.http.RequestParams;
+import com.lzy.okgo.OkGo;
 
 import org.apache.http.Header;
 import org.json.JSONObject;
@@ -49,12 +59,13 @@ import org.simple.eventbus.EventBus;
 import model.BaseModel;
 import model.SCONF;
 import model.UserInfo;
-public class NewRegisterActivity extends BaseActivity implements View.OnClickListener {
+
+public class NewRegisterActivity extends BaseActivity<RegisterPresenter> implements View.OnClickListener {
 
     private ImageView image_back;
     private BezierCurve bc_curve;
     private XEditText et_phoneNum;
-    private Button bt_firstNext;
+    public Button bt_firstNext;
     private TextView tv_protocol;
     private RelativeLayout rl_first;
     private RelativeLayout rl_second;
@@ -63,11 +74,11 @@ public class NewRegisterActivity extends BaseActivity implements View.OnClickLis
     private TextView tv_sendAgain;
     private RoundProgressBar pb_round;
     private TextView tv_noMassage;
-    private Button bt_secondNext;
+    public Button bt_secondNext;
     private RelativeLayout rl_three;
     private MyRegistEditText et_password;
     private TextView tv_look;
-    private Button bt_threeNext;
+    public Button bt_threeNext;
     // 控制动画的距离 @author Ysw created at 2017/3/10 15:06
     private int times;
     // 控制第几步的状态 @author Ysw created at 2017/3/10 15:07
@@ -92,15 +103,9 @@ public class NewRegisterActivity extends BaseActivity implements View.OnClickLis
     private RelativeLayout rl_success;
     private CannotReceiveTextDialog dialog;
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_new_register);
-        findViewById();
-        setListener();
-    }
 
-    @Override
+
+
     protected void findViewById() {
         image_back = (ImageView) findViewById(R.id.image_back);
         bc_curve = (BezierCurve) findViewById(R.id.bc_curve);
@@ -155,7 +160,7 @@ public class NewRegisterActivity extends BaseActivity implements View.OnClickLis
         }
     }
 
-    @Override
+
     protected void setListener() {
         image_back.setOnClickListener(this);
         tv_protocol.setOnClickListener(this);
@@ -204,15 +209,8 @@ public class NewRegisterActivity extends BaseActivity implements View.OnClickLis
         });
     }
 
-    @Override
-    protected void initData() {
 
-    }
 
-    @Override
-    protected void initUI() {
-
-    }
 
     @Override
     public boolean onKeyDown(int keyCode, KeyEvent event) {
@@ -263,7 +261,8 @@ public class NewRegisterActivity extends BaseActivity implements View.OnClickLis
             case R.id.tv_sendAgain:
                 if (CommonUtil.isFastDoubleClick()) return;
                 try {
-                    getPhoneMessageAgain(et_phoneNum.toString().trim());
+                  //  getPhoneMessageAgain(et_phoneNum.toString().trim());
+                    getP().getPhoneMessage(et_phoneNum.toString().trim(),true);
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
@@ -291,7 +290,8 @@ public class NewRegisterActivity extends BaseActivity implements View.OnClickLis
             case R.id.bt_secondNext:
                 if (CommonUtil.isFastDoubleClick()) return;
                 try {
-                    verifyMessage(et_phoneNum.toString().trim(), et_message.getText().toString().trim());
+                    getP().verifyMessage(et_phoneNum.toString().trim(), et_message.getText().toString().trim());
+                  //  verifyMessage(et_phoneNum.toString().trim(), et_message.getText().toString().trim());
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
@@ -315,7 +315,7 @@ public class NewRegisterActivity extends BaseActivity implements View.OnClickLis
                 }
                 try {
                     CommonUtil.hideKeyboard(NewRegisterActivity.this);
-                    register(et_phoneNum.toString().trim(), et_message.getText().toString().trim(),
+                    getP().register(et_phoneNum.toString().trim(), et_message.getText().toString().trim(),
                             et_password.getText().toString().trim());
                 } catch (Exception e) {
                     e.printStackTrace();
@@ -348,61 +348,6 @@ public class NewRegisterActivity extends BaseActivity implements View.OnClickLis
         }
     }
 
-    /**
-     * @author jzs created 2017/4/10
-     * 判断手机是否注册
-     */
-    protected void checkMobile(final String mobile) throws Exception {
-        RequestParams params = new RequestParams();
-        JSONObject jsonObject = new JSONObject();
-        jsonObject.put("tel", mobile);
-        params.put("cipher", MyDES.encrypt(jsonObject.toString()));
-        showWaittingDialog(this);
-        MyhttpClient.desPost(UrlConfig.USER_JUDGE_TEL, params, new AsyncHttpResponseHandler() {
-            @Override
-            public void onFailure(int arg0, Header[] arg1, byte[] arg2, Throwable arg3) {
-                super.onFailure(arg0, arg1, arg2, arg3);
-                dismissWaittingDialog();
-                ToastUtil.show(NewRegisterActivity.this, R.string.default_error);
-            }
-
-            @Override
-            public void onSuccess(int arg0, Header[] arg1, byte[] arg2) {
-                super.onSuccess(arg0, arg1, arg2);
-                dismissWaittingDialog();
-                try {
-                    String response = new String(arg2, "UTF-8");
-                    response = CommonUtil.transResponse(response);
-                    JSONObject job = new JSONObject(response);
-                    String cipher = job.getString("cipher");
-                    String desc = MyDES.decrypt(cipher);
-                    JSONObject obj = new JSONObject(desc);
-                    int isSuccess = obj.getInt("code");
-                    Intent intent;
-                    if (isSuccess == SCONF.SUCCESS) {
-                        //已注册
-                        NewCustomDialogNoTitle dialog = new NewCustomDialogNoTitle(NewRegisterActivity.this, "");
-                        dialog.dialog_message.setText(Html.fromHtml("该手机号已被注册<br>" + "<font color='#0c72e3'>" + "请前往登录" + "</font>"));
-                        dialog.btn_custom_dialog_sure.setText("马上登录");
-                        dialog.btn_custom_dialog_sure.setOnClickListener(new View.OnClickListener() {
-                            @Override
-                            public void onClick(View v) {
-                                Intent intent = new Intent(NewRegisterActivity.this, NewLoginActivity.class);
-                                startActivity(intent);
-                                finish();
-                            }
-                        });
-                        dialog.show();
-                    } else {
-                        //未注册
-                        getPhoneMessage(et_phoneNum.toString().trim());
-                    }
-                } catch (Exception ignored) {
-                }
-            }
-        });
-    }
-
 
     /**
      * 准备获取验证码 @author Ysw created at 2017/3/10 16:16
@@ -413,7 +358,8 @@ public class NewRegisterActivity extends BaseActivity implements View.OnClickLis
             return;
         } else {
             try {
-                checkMobile(et_phoneNum.toString().trim());
+              //  checkMobile(et_phoneNum.toString().trim());
+                getP().NewcheckMobile(et_phoneNum.toString().trim());
             } catch (Exception e) {
                 e.printStackTrace();
             }
@@ -598,101 +544,82 @@ public class NewRegisterActivity extends BaseActivity implements View.OnClickLis
         mThread.start();
     }
 
-    /**
-     * 获取手机短信验证码 @author Ysw created at 2017/3/10 14:53
-     */
-    public void getPhoneMessage(final String phoneNum) throws Exception {
-        bt_firstNext.setOnClickListener(null);
-        RequestParams params = new RequestParams();
-        JSONObject jsonObject = new JSONObject();
-        jsonObject.put("tel", phoneNum);
-        jsonObject.put("kw", MessageType.MESSAGE_MOBILE_ZCXX);
-        params.put("cipher", MyDES.encrypt(jsonObject.toString()));
-        MyhttpClient.desPost(UrlConfig.SMS_SENDSMS, params, new AsyncHttpResponseHandler() {
 
-            @Override
-            public void onFailure(int arg0, Header[] arg1, byte[] arg2, Throwable arg3) {
-                super.onFailure(arg0, arg1, arg2, arg3);
-                bt_firstNext.setOnClickListener(NewRegisterActivity.this);
-                dismissWaittingDialog();
-                ToastUtil.show(NewRegisterActivity.this, R.string.default_error);
-            }
+    public void GetMessageOk(String phoneNum){
 
-            @Override
-            public void onSuccess(int arg0, Header[] arg1, byte[] arg2) {
-                super.onSuccess(arg0, arg1, arg2);
-                bt_firstNext.setOnClickListener(NewRegisterActivity.this);
-                dismissWaittingDialog();
-                String response;
-                try {
-                    response = new String(arg2, "UTF-8");
-                    response = response.substring(response.indexOf("{"));
-                    JSONObject jsonObject = new JSONObject(response);
-                    String cipher = jsonObject.getString("cipher");
-                    String desc = MyDES.decrypt(cipher);
-                    BaseModel<String> result = new Gson().fromJson(desc, new TypeToken<BaseModel<String>>() {
-                    }.getType());
-                    if (result.isSuccess()) {
-                        tv_secondPhoneNum.setText(phoneNum);
-                        startTranslationAnimation(times);
-                        times++;
-                        changeValue(true);
-                        isRunning = true;
-                    } else {
-                        ToastUtil.show(getApplication(), result.getMsg());
-                    }
-                } catch (Exception e) {
-                    e.printStackTrace();
-                }
-            }
-        });
+        tv_secondPhoneNum.setText(phoneNum);
+        startTranslationAnimation(times);
+        times++;
+        changeValue(true);
+        isRunning = true;
+
+    }
+    public void GetMessageAgainOk(){
+
+        pb_round.setVisibility(View.VISIBLE);
+        tv_sendAgain.setVisibility(View.GONE);
+        isRunning = true;
+        startTiming();
+
+    }
+    public void GetMessageFaile(boolean isnull){
+        if(!isnull){
+            bt_firstNext.setOnClickListener(NewRegisterActivity.this);
+
+        }else{
+            bt_firstNext.setOnClickListener(null);
+        }
+
     }
 
-    /**
-     * 重新获取手机短信验证码，由于动画原因，故重写一个方法 @author Ysw created at 2017/3/10 14:53
-     */
-    public void getPhoneMessageAgain(final String phoneNum) throws Exception {
-        RequestParams params = new RequestParams();
-        JSONObject jsonObject = new JSONObject();
-        jsonObject.put("tel", phoneNum);
-        jsonObject.put("kw", MessageType.MESSAGE_MOBILE_ZCXX);
-        params.put("cipher", MyDES.encrypt(jsonObject.toString()));
-        MyhttpClient.desPost(UrlConfig.SMS_SENDSMS, params, new AsyncHttpResponseHandler() {
+    public void GetSecondMessageFaile(boolean isnull){
+        if(!isnull){
+            bt_secondNext.setOnClickListener(NewRegisterActivity.this);
 
-            @Override
-            public void onFailure(int arg0, Header[] arg1, byte[] arg2, Throwable arg3) {
-                super.onFailure(arg0, arg1, arg2, arg3);
-                dismissWaittingDialog();
-                ToastUtil.show(NewRegisterActivity.this, R.string.default_error);
-            }
+        }else{
+            bt_secondNext.setOnClickListener(null);
+        }
 
+    }
+
+    public void GetthreeNextMessageFaile(boolean isnull){
+        if(!isnull){
+            bt_threeNext.setOnClickListener(NewRegisterActivity.this);
+
+        }else{
+            bt_threeNext.setOnClickListener(null);
+        }
+
+    }
+
+    public void CheckMobileOk(){
+
+        //已注册
+        NewCustomDialogNoTitle dialog = new NewCustomDialogNoTitle(NewRegisterActivity.this, "");
+        dialog.dialog_message.setText(Html.fromHtml("该手机号已被注册<br>" + "<font color='#0c72e3'>" + "请前往登录" + "</font>"));
+        dialog.btn_custom_dialog_sure.setText("马上登录");
+        dialog.btn_custom_dialog_sure.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onSuccess(int arg0, Header[] arg1, byte[] arg2) {
-                super.onSuccess(arg0, arg1, arg2);
-                dismissWaittingDialog();
-                String response;
-                try {
-                    response = new String(arg2, "UTF-8");
-                    response = response.substring(response.indexOf("{"));
-                    JSONObject jsonObject = new JSONObject(response);
-                    String cipher = jsonObject.getString("cipher");
-                    String desc = MyDES.decrypt(cipher);
-                    BaseModel<String> result = new Gson().fromJson(desc, new TypeToken<BaseModel<String>>() {
-                    }.getType());
-                    if (result.isSuccess()) {
-                        pb_round.setVisibility(View.VISIBLE);
-                        tv_sendAgain.setVisibility(View.GONE);
-                        isRunning = true;
-                        startTiming();
-                    } else {
-                        ToastUtil.show(getApplication(), result.getMsg());
-                    }
-                } catch (Exception e) {
-                    e.printStackTrace();
-                }
+            public void onClick(View v) {
+                Intent intent = new Intent(NewRegisterActivity.this, NewLoginActivity.class);
+                startActivity(intent);
+                finish();
             }
         });
+        dialog.show();
+
+
     }
+
+
+
+    public void VerifyOk(){
+            startTranslationAnimation(times);
+            times++;
+            changeValue(false);
+
+    }
+
 
     /**
      * 验证手机短信验证码是否正确 @author Ysw created at 2017/3/10 16:05
@@ -767,7 +694,7 @@ public class NewRegisterActivity extends BaseActivity implements View.OnClickLis
             public void onSuccess(int arg0, Header[] arg1, byte[] arg2) {
                 super.onSuccess(arg0, arg1, arg2);
                 bt_secondNext.setOnClickListener(NewRegisterActivity.this);
-                dismissWaittingDialog();
+               // dismissWaittingDialog();
                 try {
                     String response = new String(arg2, "UTF-8");
                     response = CommonUtil.transResponse(response);
@@ -813,14 +740,14 @@ public class NewRegisterActivity extends BaseActivity implements View.OnClickLis
             @Override
             public void onFailure(int arg0, Header[] arg1, byte[] arg2, Throwable arg3) {
                 super.onFailure(arg0, arg1, arg2, arg3);
-                dismissWaittingDialog();
+               // dismissWaittingDialog();
                 ToastUtil.show(NewRegisterActivity.this, R.string.default_error);
             }
 
             @Override
             public void onSuccess(int arg0, Header[] arg1, byte[] arg2) {
                 super.onSuccess(arg0, arg1, arg2);
-                dismissWaittingDialog();
+            //    dismissWaittingDialog();
                 try {
                     String response = new String(arg2, "UTF-8");
                     response = CommonUtil.transResponse(response);
@@ -914,5 +841,32 @@ public class NewRegisterActivity extends BaseActivity implements View.OnClickLis
         intent.putExtra("isRegister", true);
         startActivity(intent);
         finish();
+    }
+
+    @Override
+    public void initData(Bundle savedInstanceState) {
+        findViewById();
+        setListener();
+    }
+
+    @Override
+    public int getLayoutId() {
+        return R.layout.activity_new_register;
+    }
+
+    @Override
+    public RegisterPresenter newP() {
+        return new RegisterPresenter();
+    }
+
+    public void RegisterSuccess() {
+        bt_secondNext.setOnClickListener(NewRegisterActivity.this);
+        startTranslationAnimation(times);
+        times++;
+        changeValue(false);
+        vg_register.setVisibility(View.GONE);
+        rl_success.setVisibility(View.VISIBLE);
+
+
     }
 }
